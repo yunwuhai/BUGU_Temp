@@ -107,4 +107,12 @@
 
 10. 在Windows上安装[乐鑫Espressif的Flash下载工具](https://www.espressif.com/zh-hans/support/download/other-tools)以及[STM32的STM32CubeProg](https://www.st.com/zh/development-tools/stm32cubeprog.html)和[STM32CubeMX](https://www.st.com/zh/development-tools/stm32cubemx.html)，前面两个工具分别是用于烧录ESP芯片和STM32芯片的烧录工具，最后一个是STM32的模板代码生成工具，请测试STM32CubeProg是否能够使用DAPLink进行烧录，如果不能请另外购买STLink进行烧录。
 
+## 资料汇总
+
+考虑到各位对集体开发尚缺少经验（包括我也是），所以大家可以将自己搜集到的认为有价值的资料放至此处：
+
+- [git一些常用指令汇总](https://yunwuhai.blog.csdn.net/article/details/122515950)
+
+- [github如何上传自己的代码到自己的仓库和到别人的仓库](https://blog.csdn.net/weixin_43851149/article/details/107283174)
+
 ## 项目规划
