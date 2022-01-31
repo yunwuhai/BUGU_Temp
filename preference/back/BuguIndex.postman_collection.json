@@ -1,0 +1,994 @@
+{
+	"info": {
+		"_postman_id": "66291e6c-3b28-4f8f-a620-2a3e78269b66",
+		"name": "BuguIndex",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user(登录注册部分跟以前一样)",
+			"item": [
+				{
+					"name": "注册",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"jzp\",\r\n    \"password\":\"123456\",\r\n    \"security_code\":\"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/v1/user/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "用户已存在",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"123456\",\r\n    \"security_code\":\"123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8001/api/v1/user/register",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8001",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"register"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT, DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 07:12:57 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "74"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 20010001,\n    \"details\": [\n        \"用户已存在\"\n    ],\n    \"msg\": \"创建用户失败\"\n}"
+						},
+						{
+							"name": "成功",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"jzp\",\r\n    \"password\":\"123456\",\r\n    \"security_code\":\"123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8001/api/v1/user/register",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8001",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT, DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 07:15:32 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "22"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"注册成功\"\n}"
+						}
+					]
+				},
+				{
+					"name": "登录",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/v1/user/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "成功",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8001/api/v1/user/login",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8001",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT, DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 07:16:45 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "170"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"登录成功\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySUQiOjEsImV4cCI6NjQzMDM2NDkxMiwiaXNzIjoiYnVndSJ9.qCk19FaSkohMt1cFqSjGWqFTrQjDdTrrWiXmwUM0XfU\"\n}"
+						},
+						{
+							"name": "登录失败",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"12345\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8001/api/v1/user/login",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8001",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT, DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 07:17:19 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "80"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 20010002,\n    \"details\": [\n        \"账号或密码错误\"\n    ],\n    \"msg\": \"用户登录失败\"\n}"
+						}
+					]
+				},
+				{
+					"name": "重置密码",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"admin\",\r\n    \"new_pwd\":\"123456\",\r\n    \"security_code\":\"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/v1/user/update_code",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"update_code"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "成功",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"admin\",\r\n    \"new_pwd\":\"123456\",\r\n    \"security_code\":\"123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8001/api/v1/user/update_code",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8001",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"update_code"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT, DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 07:20:43 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"修改密码成功\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "插件",
+			"item": [
+				{
+					"name": "获取所有一级插件（记得同时获取所有模块然后一起显现）",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/v1/plugins/list_first",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"v1",
+								"plugins",
+								"list_first"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "成功",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8001/api/v1/plugins/list_first",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8001",
+									"path": [
+										"api",
+										"v1",
+										"plugins",
+										"list_first"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT, DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 07:29:38 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "246"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"list\": [\n        {\n            \"ID\": 2,\n            \"CreatedAt\": \"2021-09-10T11:44:26+08:00\",\n            \"UpdatedAt\": \"2021-09-10T11:44:26+08:00\",\n            \"DeletedAt\": null,\n            \"plugin_name\": \"test\",\n            \"plugin_introduction\": \"test\",\n            \"file_mask_code\": \"test\",\n            \"chip_id\": 1,\n            \"level\": 1,\n            \"father_level_id\": 1\n        }\n    ],\n    \"totalRows\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "获取某个插件的下级插件",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/v1/plugins/list/:plugin_id",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"v1",
+								"plugins",
+								"list",
+								":plugin_id"
+							],
+							"variable": [
+								{
+									"key": "plugin_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "成功",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8001/api/v1/plugins/list/:plugin_id",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8001",
+									"path": [
+										"api",
+										"v1",
+										"plugins",
+										"list",
+										":plugin_id"
+									],
+									"variable": [
+										{
+											"key": "plugin_id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT, DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 07:30:44 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "247"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"list\": [\n        {\n            \"ID\": 3,\n            \"CreatedAt\": \"2021-09-10T12:15:27+08:00\",\n            \"UpdatedAt\": \"2021-09-10T12:15:27+08:00\",\n            \"DeletedAt\": null,\n            \"plugin_name\": \"test2\",\n            \"plugin_introduction\": \"test\",\n            \"file_mask_code\": \"test\",\n            \"chip_id\": 1,\n            \"level\": 2,\n            \"father_level_id\": 2\n        }\n    ],\n    \"totalRows\": 1\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySUQiOjEsImV4cCI6NjQzMDM2NDkxMiwiaXNzIjoiYnVndSJ9.qCk19FaSkohMt1cFqSjGWqFTrQjDdTrrWiXmwUM0XfU",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "模块",
+			"item": [
+				{
+					"name": "获取所有模块",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/v1/modules/list",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"v1",
+								"modules",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "成功",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8001/api/v1/modules/list",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8001",
+									"path": [
+										"api",
+										"v1",
+										"modules",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT, DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 07:34:14 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "206"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"list\": [\n        {\n            \"ID\": 1,\n            \"CreatedAt\": \"2021-09-10T12:14:26+08:00\",\n            \"UpdatedAt\": \"2021-09-10T12:14:26+08:00\",\n            \"DeletedAt\": null,\n            \"module_name\": \"test\",\n            \"module_introduction\": \"test\",\n            \"plugin_id\": 2,\n            \"is_func\": 1\n        }\n    ],\n    \"totalRows\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "获取某插件下的模块",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/v1/modules/list/:plugin_id",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"v1",
+								"modules",
+								"list",
+								":plugin_id"
+							],
+							"variable": [
+								{
+									"key": "plugin_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "成功",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8001/api/v1/modules/list/:plugin_id",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8001",
+									"path": [
+										"api",
+										"v1",
+										"modules",
+										"list",
+										":plugin_id"
+									],
+									"variable": [
+										{
+											"key": "plugin_id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT, DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 07:38:04 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "206"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"list\": [\n        {\n            \"ID\": 1,\n            \"CreatedAt\": \"2021-09-10T12:14:26+08:00\",\n            \"UpdatedAt\": \"2021-09-10T12:14:26+08:00\",\n            \"DeletedAt\": null,\n            \"module_name\": \"test\",\n            \"module_introduction\": \"test\",\n            \"plugin_id\": 2,\n            \"is_func\": 1\n        }\n    ],\n    \"totalRows\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "获取某个模块的具体信息",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/v1/modules/:id",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"v1",
+								"modules",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "成功",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8001/api/v1/modules/:id",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8001",
+									"path": [
+										"api",
+										"v1",
+										"modules",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT, DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 07:39:17 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "164"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ID\": 1,\n    \"CreatedAt\": \"2021-09-10T12:14:26+08:00\",\n    \"UpdatedAt\": \"0001-01-01T00:00:00Z\",\n    \"DeletedAt\": null,\n    \"module_name\": \"test\",\n    \"module_introduction\": \"test\",\n    \"plugin_id\": 2\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySUQiOjEsImV4cCI6NjQzMDM2NDkxMiwiaXNzIjoiYnVndSJ9.qCk19FaSkohMt1cFqSjGWqFTrQjDdTrrWiXmwUM0XfU",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}
