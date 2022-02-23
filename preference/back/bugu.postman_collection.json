@@ -1,0 +1,3221 @@
+{
+	"info": {
+		"_postman_id": "31fd2e80-9393-4e05-9bf6-33618c6f3bae",
+		"name": "bugu",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "芯片",
+			"item": [
+				{
+					"name": "获取芯片列表",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/chips/list?page=1&page_size=10",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"chips",
+								"list"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "page_size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "成功",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "page",
+											"value": "2",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "page_size",
+											"value": "10",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/chips/list?page=1&page_size=10",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"chips",
+										"list"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1",
+											"description": "如果为空，后台默认为1"
+										},
+										{
+											"key": "page_size",
+											"value": "10",
+											"description": "如果为空，后台默认为10，totalrows为总数"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Aug 2021 08:56:50 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1769"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"list\": [\n        {\n            \"ID\": 1,\n            \"CreatedAt\": \"2021-06-03T14:41:18+08:00\",\n            \"UpdatedAt\": \"2021-06-03T14:41:18+08:00\",\n            \"DeletedAt\": null,\n            \"chip_name\": \"test\",\n            \"manufacturer_name\": \"test\",\n            \"type\": \"test\"\n        },\n        {\n            \"ID\": 2,\n            \"CreatedAt\": \"2021-06-03T14:41:38+08:00\",\n            \"UpdatedAt\": \"2021-06-03T15:48:02+08:00\",\n            \"DeletedAt\": null,\n            \"chip_name\": \"test4\",\n            \"manufacturer_name\": \"test4\",\n            \"type\": \"test4\"\n        },\n        {\n            \"ID\": 3,\n            \"CreatedAt\": \"2021-06-03T14:41:52+08:00\",\n            \"UpdatedAt\": \"2021-06-03T14:41:52+08:00\",\n            \"DeletedAt\": null,\n            \"chip_name\": \"test3\",\n            \"manufacturer_name\": \"test3\",\n            \"type\": \"test3\"\n        },\n        {\n            \"ID\": 4,\n            \"CreatedAt\": \"2021-06-04T00:33:45+08:00\",\n            \"UpdatedAt\": \"2021-06-04T00:33:45+08:00\",\n            \"DeletedAt\": null,\n            \"chip_name\": \"test2\",\n            \"manufacturer_name\": \"test2\",\n            \"type\": \"test2\"\n        },\n        {\n            \"ID\": 5,\n            \"CreatedAt\": \"2021-06-04T19:49:12+08:00\",\n            \"UpdatedAt\": \"2021-06-09T14:29:41+08:00\",\n            \"DeletedAt\": null,\n            \"chip_name\": \"test5\",\n            \"manufacturer_name\": \"test5\",\n            \"type\": \"test5\"\n        },\n        {\n            \"ID\": 6,\n            \"CreatedAt\": \"2021-06-09T14:12:19+08:00\",\n            \"UpdatedAt\": \"2021-06-09T14:12:19+08:00\",\n            \"DeletedAt\": null,\n            \"chip_name\": \"test1\",\n            \"manufacturer_name\": \"test1\",\n            \"type\": \"test1\"\n        },\n        {\n            \"ID\": 7,\n            \"CreatedAt\": \"2021-06-13T19:10:26+08:00\",\n            \"UpdatedAt\": \"2021-06-13T19:10:31+08:00\",\n            \"DeletedAt\": null,\n            \"chip_name\": \"test6\",\n            \"manufacturer_name\": \"test6\",\n            \"type\": \"test6\"\n        },\n        {\n            \"ID\": 8,\n            \"CreatedAt\": \"2021-06-13T19:47:50.363+08:00\",\n            \"UpdatedAt\": \"2021-06-13T20:54:39.44+08:00\",\n            \"DeletedAt\": null,\n            \"chip_name\": \"test10\",\n            \"manufacturer_name\": \"test10\",\n            \"type\": \"test10\"\n        },\n        {\n            \"ID\": 9,\n            \"CreatedAt\": \"2021-06-13T19:49:06+08:00\",\n            \"UpdatedAt\": \"2021-06-13T19:50:27.087+08:00\",\n            \"DeletedAt\": null,\n            \"chip_name\": \"test9\",\n            \"manufacturer_name\": \"test9\",\n            \"type\": \"test9\"\n        },\n        {\n            \"ID\": 10,\n            \"CreatedAt\": \"2021-06-13T21:06:28+08:00\",\n            \"UpdatedAt\": \"2021-06-13T21:16:32.391+08:00\",\n            \"DeletedAt\": null,\n            \"chip_name\": \"test12\",\n            \"manufacturer_name\": \"test12\",\n            \"type\": \"test12\"\n        }\n    ],\n    \"pager\": {\n        \"page\": 1,\n        \"page_size\": 10,\n        \"total_rows\": 10\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "获取某个芯片的相关信息",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": [
+						{
+							"name": "成功",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/chips/:id",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"chips",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Aug 2021 09:12:01 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "160"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ID\": 1,\n    \"CreatedAt\": \"2021-06-03T14:41:18+08:00\",\n    \"UpdatedAt\": \"0001-01-01T00:00:00Z\",\n    \"DeletedAt\": null,\n    \"chip_name\": \"test\",\n    \"manufacturer_name\": \"test\",\n    \"type\": \"test\"\n}"
+						}
+					]
+				},
+				{
+					"name": "创建芯片",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "chip_name",
+									"value": "test",
+									"description": "芯片名",
+									"type": "text"
+								},
+								{
+									"key": "manufacturer_name",
+									"value": "test",
+									"description": "厂商名",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "test",
+									"description": "芯片类型",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/chips/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"chips",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "芯片已存在",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "chip_name",
+											"value": "test",
+											"description": "芯片名",
+											"type": "text"
+										},
+										{
+											"key": "manufacturer_name",
+											"value": "test",
+											"description": "厂商名",
+											"type": "text"
+										},
+										{
+											"key": "type",
+											"value": "test",
+											"description": "芯片类型",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/chips/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"chips",
+										""
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Aug 2021 09:17:49 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "74"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 20020001,\n    \"details\": [\n        \"芯片已存在\"\n    ],\n    \"msg\": \"创建芯片失败\"\n}"
+						},
+						{
+							"name": "成功",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "chip_name",
+											"value": "test11",
+											"description": "芯片名",
+											"type": "text"
+										},
+										{
+											"key": "manufacturer_name",
+											"value": "test",
+											"description": "厂商名",
+											"type": "text"
+										},
+										{
+											"key": "type",
+											"value": "test",
+											"description": "芯片类型",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/chips/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"chips",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Aug 2021 09:19:33 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"创建芯片成功\"\n}"
+						}
+					]
+				},
+				{
+					"name": "更新芯片相关信息",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "chip_name",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "manufacturer_name",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "test",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/chips/:id",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"chips",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "失败，若芯片已存在",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "chip_name",
+											"value": "test",
+											"type": "text"
+										},
+										{
+											"key": "manufacturer_name",
+											"value": "test",
+											"type": "text"
+										},
+										{
+											"key": "type",
+											"value": "test",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/chips/:id",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"chips",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Aug 2021 09:21:40 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "74"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 20020002,\n    \"details\": [\n        \"芯片已存在\"\n    ],\n    \"msg\": \"更新芯片失败\"\n}"
+						},
+						{
+							"name": "成功",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "chip_name",
+											"value": "test13",
+											"type": "text"
+										},
+										{
+											"key": "manufacturer_name",
+											"value": "test",
+											"type": "text"
+										},
+										{
+											"key": "type",
+											"value": "test",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/chips/:id",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"chips",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Aug 2021 09:23:01 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"更新芯片成功\"\n}"
+						}
+					]
+				},
+				{
+					"name": "删除芯片",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/chips/:id",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"chips",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "成功",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/chips/:id",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"chips",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Aug 2021 13:07:55 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"删除芯片成功\"\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySUQiOjEsImV4cCI6NjQzMDI2NTA1MywiaXNzIjoiYnVndSJ9.CfD23b8GppGxMPa33SHNGsLQ4ujMkVDF9pJyXbHk2eM",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "插件",
+			"item": [
+				{
+					"name": "创建插件",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "plugin_name",
+									"value": "test",
+									"description": "插件名",
+									"type": "text"
+								},
+								{
+									"key": "plugin_introduction",
+									"value": "test",
+									"description": "插件介绍",
+									"type": "text"
+								},
+								{
+									"key": "file_mask_code",
+									"value": "test",
+									"description": "文件掩码",
+									"type": "text"
+								},
+								{
+									"key": "chip_name",
+									"value": "test",
+									"description": "上属芯片名称",
+									"type": "text"
+								},
+								{
+									"key": "level",
+									"value": "2",
+									"description": "在数据库有个默认的插件 这个插件是所有的插件的祖宗，所以插件级别从2开始",
+									"type": "text"
+								},
+								{
+									"key": "father_level_id",
+									"value": "1",
+									"description": "上级插件的id，如果是一级插件，则上级插件id为1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/plugins/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"plugins",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "上属芯片不存在",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "plugin_name",
+											"value": "test",
+											"description": "插件名",
+											"type": "text"
+										},
+										{
+											"key": "plugin_introduction",
+											"value": "test",
+											"description": "插件介绍",
+											"type": "text"
+										},
+										{
+											"key": "file_mask_code",
+											"value": "test",
+											"description": "文件掩码",
+											"type": "text"
+										},
+										{
+											"key": "chip_name",
+											"value": "test",
+											"description": "上属芯片名称",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/plugins/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"plugins",
+										""
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Aug 2021 09:51:37 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "77"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 20030001,\n    \"details\": [\n        \"不存在该芯片\"\n    ],\n    \"msg\": \"创建插件失败\"\n}"
+						},
+						{
+							"name": "成功",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "plugin_name",
+											"value": "test1",
+											"description": "插件名",
+											"type": "text"
+										},
+										{
+											"key": "plugin_introduction",
+											"value": "test",
+											"description": "插件介绍",
+											"type": "text"
+										},
+										{
+											"key": "file_mask_code",
+											"value": "test",
+											"description": "文件掩码",
+											"type": "text"
+										},
+										{
+											"key": "chip_name",
+											"value": "test1",
+											"description": "上属芯片名称",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/plugins/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"plugins",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Aug 2021 09:52:15 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"创建插件成功\"\n}"
+						},
+						{
+							"name": "创建的插件已存在",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "plugin_name",
+											"value": "test",
+											"description": "插件名",
+											"type": "text"
+										},
+										{
+											"key": "plugin_introduction",
+											"value": "test",
+											"description": "插件介绍",
+											"type": "text"
+										},
+										{
+											"key": "file_mask_code",
+											"value": "test",
+											"description": "文件掩码",
+											"type": "text"
+										},
+										{
+											"key": "chip_name",
+											"value": "test1",
+											"description": "上属芯片名称",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/plugins/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"plugins",
+										""
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Aug 2021 09:52:49 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "74"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 20030001,\n    \"details\": [\n        \"插件已存在\"\n    ],\n    \"msg\": \"创建插件失败\"\n}"
+						}
+					]
+				},
+				{
+					"name": "更新插件相关信息",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/chips/list",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"chips",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "插件已存在",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "plugin_name",
+											"value": "test1",
+											"type": "text"
+										},
+										{
+											"key": "plugin_introduction",
+											"value": "test",
+											"type": "text"
+										},
+										{
+											"key": "file_mask_code",
+											"value": "test",
+											"type": "text"
+										},
+										{
+											"key": "chip_name",
+											"value": "test2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/plugins/:id",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"plugins",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Aug 2021 10:00:59 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "74"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 20030002,\n    \"details\": [\n        \"插件已存在\"\n    ],\n    \"msg\": \"更新插件失败\"\n}"
+						},
+						{
+							"name": "成功",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "plugin_name",
+											"value": "test20",
+											"type": "text"
+										},
+										{
+											"key": "plugin_introduction",
+											"value": "test",
+											"type": "text"
+										},
+										{
+											"key": "file_mask_code",
+											"value": "test",
+											"type": "text"
+										},
+										{
+											"key": "chip_name",
+											"value": "test2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/plugins/:id",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"plugins",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Aug 2021 10:01:29 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"更新插件成功\"\n}"
+						}
+					]
+				},
+				{
+					"name": "获取某个插件信息",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": [
+						{
+							"name": "成功",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/plugins/:id",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"plugins",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Aug 2021 10:05:16 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "188"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ID\": 1,\n    \"CreatedAt\": \"2021-06-09T14:45:20+08:00\",\n    \"UpdatedAt\": \"0001-01-01T00:00:00Z\",\n    \"DeletedAt\": null,\n    \"plugin_name\": \"test20\",\n    \"plugin_introduction\": \"test\",\n    \"file_mask_code\": \"test\",\n    \"chip_id\": 4\n}"
+						}
+					]
+				},
+				{
+					"name": "获取插件信息列表",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": [
+						{
+							"name": "获取所有插件信息列表",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/plugins/list/:chip_id",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"plugins",
+										"list",
+										":chip_id"
+									],
+									"variable": [
+										{
+											"key": "chip_id",
+											"value": "0",
+											"description": "如果查询所有的插件，输入0"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Aug 2021 10:15:23 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "641"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"list\": [\n        {\n            \"ID\": 5,\n            \"CreatedAt\": \"2021-06-13T18:46:57+08:00\",\n            \"UpdatedAt\": \"2021-06-13T18:47:01+08:00\",\n            \"DeletedAt\": null,\n            \"plugin_name\": \"test5\",\n            \"plugin_introduction\": \"test5\",\n            \"file_mask_code\": \"test5\",\n            \"chip_id\": 6\n        },\n        {\n            \"ID\": 11,\n            \"CreatedAt\": \"2021-08-10T17:52:15+08:00\",\n            \"UpdatedAt\": \"2021-08-10T17:52:15+08:00\",\n            \"DeletedAt\": null,\n            \"plugin_name\": \"test1\",\n            \"plugin_introduction\": \"test\",\n            \"file_mask_code\": \"test\",\n            \"chip_id\": 6\n        },\n        {\n            \"ID\": 12,\n            \"CreatedAt\": \"2021-08-10T17:52:34+08:00\",\n            \"UpdatedAt\": \"2021-08-10T17:52:34+08:00\",\n            \"DeletedAt\": null,\n            \"plugin_name\": \"test\",\n            \"plugin_introduction\": \"test\",\n            \"file_mask_code\": \"test\",\n            \"chip_id\": 6\n        }\n    ],\n    \"pager\": {\n        \"page\": 1,\n        \"page_size\": 10,\n        \"total_rows\": 3\n    }\n}"
+						},
+						{
+							"name": "获取某个芯片的下属插件",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/plugins/list/:chip_id",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"plugins",
+										"list",
+										":chip_id"
+									],
+									"variable": [
+										{
+											"key": "chip_id",
+											"value": "6",
+											"description": "如果查询某个芯片下的插件，输入对应的chip_id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Aug 2021 10:16:23 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "641"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"list\": [\n        {\n            \"ID\": 5,\n            \"CreatedAt\": \"2021-06-13T18:46:57+08:00\",\n            \"UpdatedAt\": \"2021-06-13T18:47:01+08:00\",\n            \"DeletedAt\": null,\n            \"plugin_name\": \"test5\",\n            \"plugin_introduction\": \"test5\",\n            \"file_mask_code\": \"test5\",\n            \"chip_id\": 6\n        },\n        {\n            \"ID\": 11,\n            \"CreatedAt\": \"2021-08-10T17:52:15+08:00\",\n            \"UpdatedAt\": \"2021-08-10T17:52:15+08:00\",\n            \"DeletedAt\": null,\n            \"plugin_name\": \"test1\",\n            \"plugin_introduction\": \"test\",\n            \"file_mask_code\": \"test\",\n            \"chip_id\": 6\n        },\n        {\n            \"ID\": 12,\n            \"CreatedAt\": \"2021-08-10T17:52:34+08:00\",\n            \"UpdatedAt\": \"2021-08-10T17:52:34+08:00\",\n            \"DeletedAt\": null,\n            \"plugin_name\": \"test\",\n            \"plugin_introduction\": \"test\",\n            \"file_mask_code\": \"test\",\n            \"chip_id\": 6\n        }\n    ],\n    \"pager\": {\n        \"page\": 1,\n        \"page_size\": 10,\n        \"total_rows\": 3\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "删除插件",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/plugins/:id",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"plugins",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "成功",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/plugins/:id",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"plugins",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Aug 2021 13:14:56 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"删除插件成功\"\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySUQiOjEsImV4cCI6NjQzMDI2NTA1MywiaXNzIjoiYnVndSJ9.CfD23b8GppGxMPa33SHNGsLQ4ujMkVDF9pJyXbHk2eM",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "模块",
+			"item": [
+				{
+					"name": "创建模块",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "module_name",
+									"value": "test",
+									"description": "模块",
+									"type": "text"
+								},
+								{
+									"key": "module_introduction",
+									"value": "test",
+									"description": "模块介绍",
+									"type": "text"
+								},
+								{
+									"key": "plugin_name",
+									"value": "test",
+									"description": "上属插件名",
+									"type": "text"
+								},
+								{
+									"key": "is_func",
+									"value": "1",
+									"description": "1是函数模块 2是模板模块",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/modules/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"modules",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "成功",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "module_name",
+											"value": "test",
+											"description": "模块名",
+											"type": "text"
+										},
+										{
+											"key": "module_introduction",
+											"value": "test",
+											"description": "模块介绍",
+											"type": "text"
+										},
+										{
+											"key": "plugin_name",
+											"value": "test",
+											"description": "上属插件名",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/modules/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"modules",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Aug 2021 10:21:53 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"创建模块成功\"\n}"
+						},
+						{
+							"name": "模块已存在",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "module_name",
+											"value": "test1",
+											"description": "模块名",
+											"type": "text"
+										},
+										{
+											"key": "module_introduction",
+											"value": "test",
+											"description": "模块介绍",
+											"type": "text"
+										},
+										{
+											"key": "plugin_name",
+											"value": "test",
+											"description": "上属插件名",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/modules/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"modules",
+										""
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Aug 2021 10:22:12 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "74"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 20040001,\n    \"details\": [\n        \"模块已存在\"\n    ],\n    \"msg\": \"创建模块失败\"\n}"
+						},
+						{
+							"name": "上属插件不存在",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "module_name",
+											"value": "test",
+											"description": "模块名",
+											"type": "text"
+										},
+										{
+											"key": "module_introduction",
+											"value": "test",
+											"description": "模块介绍",
+											"type": "text"
+										},
+										{
+											"key": "plugin_name",
+											"value": "test111",
+											"description": "上属插件名",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/modules/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"modules",
+										""
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Aug 2021 10:22:36 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "77"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 20040001,\n    \"details\": [\n        \"不存在该插件\"\n    ],\n    \"msg\": \"创建模块失败\"\n}"
+						}
+					]
+				},
+				{
+					"name": "更新模块",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "module_name",
+									"value": "test",
+									"description": "模块名",
+									"type": "text"
+								},
+								{
+									"key": "module_introduction",
+									"value": "test",
+									"description": "模块介绍",
+									"type": "text"
+								},
+								{
+									"key": "plugin_name",
+									"value": "test",
+									"description": "插件名",
+									"type": "text"
+								},
+								{
+									"key": "is_func",
+									"value": "2",
+									"description": "1是函数模块 2是模板模块",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/modules/:id",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"modules",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "模块已存在",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "module_name",
+											"value": "test",
+											"description": "模块名",
+											"type": "text"
+										},
+										{
+											"key": "module_introduction",
+											"value": "test",
+											"type": "text"
+										},
+										{
+											"key": "plugin_name",
+											"value": "test",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/modules/:id",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"modules",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Aug 2021 10:24:39 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "74"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 20040002,\n    \"details\": [\n        \"模块已存在\"\n    ],\n    \"msg\": \"更新模块失败\"\n}"
+						},
+						{
+							"name": "成功",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "module_name",
+											"value": "test11",
+											"description": "模块名",
+											"type": "text"
+										},
+										{
+											"key": "module_introduction",
+											"value": "test",
+											"type": "text"
+										},
+										{
+											"key": "plugin_name",
+											"value": "test",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/modules/:id",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"modules",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Aug 2021 10:25:03 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"更新模块成功\"\n}"
+						},
+						{
+							"name": "上属插件不存在",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "module_name",
+											"value": "test11111",
+											"description": "模块名",
+											"type": "text"
+										},
+										{
+											"key": "module_introduction",
+											"value": "test",
+											"type": "text"
+										},
+										{
+											"key": "plugin_name",
+											"value": "test1111",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/modules/:id",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"modules",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Aug 2021 10:25:26 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "77"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 20040002,\n    \"details\": [\n        \"不存在该插件\"\n    ],\n    \"msg\": \"更新模块失败\"\n}"
+						}
+					]
+				},
+				{
+					"name": "获取模块列表",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": [
+						{
+							"name": "获取所有模块列表",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/modules/list/:plugin_id",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"modules",
+										"list",
+										":plugin_id"
+									],
+									"variable": [
+										{
+											"key": "plugin_id",
+											"value": "0",
+											"description": "同上"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Aug 2021 10:27:12 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "585"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"list\": [\n        {\n            \"ID\": 1,\n            \"CreatedAt\": \"2021-06-09T20:45:21+08:00\",\n            \"UpdatedAt\": \"2021-08-10T18:25:03.949+08:00\",\n            \"DeletedAt\": null,\n            \"module_name\": \"test11\",\n            \"module_introduction\": \"test\",\n            \"plugin_id\": 12\n        },\n        {\n            \"ID\": 2,\n            \"CreatedAt\": \"2021-06-09T20:45:39+08:00\",\n            \"UpdatedAt\": \"2021-06-09T20:45:39+08:00\",\n            \"DeletedAt\": null,\n            \"module_name\": \"test2\",\n            \"module_introduction\": \"test2\",\n            \"plugin_id\": 1\n        },\n        {\n            \"ID\": 3,\n            \"CreatedAt\": \"2021-08-10T18:21:53.14+08:00\",\n            \"UpdatedAt\": \"2021-08-10T18:21:53.14+08:00\",\n            \"DeletedAt\": null,\n            \"module_name\": \"test\",\n            \"module_introduction\": \"test\",\n            \"plugin_id\": 12\n        }\n    ],\n    \"pager\": {\n        \"page\": 1,\n        \"page_size\": 10,\n        \"total_rows\": 3\n    }\n}"
+						},
+						{
+							"name": "获取某插件下属模块",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/modules/list/:plugin_id",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"modules",
+										"list",
+										":plugin_id"
+									],
+									"variable": [
+										{
+											"key": "plugin_id",
+											"value": "12",
+											"description": "同上"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Aug 2021 10:33:56 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "413"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"list\": [\n        {\n            \"ID\": 1,\n            \"CreatedAt\": \"2021-06-09T20:45:21+08:00\",\n            \"UpdatedAt\": \"2021-08-10T18:25:03.949+08:00\",\n            \"DeletedAt\": null,\n            \"module_name\": \"test11\",\n            \"module_introduction\": \"test\",\n            \"plugin_id\": 12\n        },\n        {\n            \"ID\": 3,\n            \"CreatedAt\": \"2021-08-10T18:21:53.14+08:00\",\n            \"UpdatedAt\": \"2021-08-10T18:21:53.14+08:00\",\n            \"DeletedAt\": null,\n            \"module_name\": \"test\",\n            \"module_introduction\": \"test\",\n            \"plugin_id\": 12\n        }\n    ],\n    \"pager\": {\n        \"page\": 1,\n        \"page_size\": 10,\n        \"total_rows\": 2\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "获取某模块信息",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": [
+						{
+							"name": "成功",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/modules/:id",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"modules",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Aug 2021 10:34:59 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "167"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ID\": 1,\n    \"CreatedAt\": \"2021-06-09T20:45:21+08:00\",\n    \"UpdatedAt\": \"0001-01-01T00:00:00Z\",\n    \"DeletedAt\": null,\n    \"module_name\": \"test11\",\n    \"module_introduction\": \"test\",\n    \"plugin_id\": 12\n}"
+						}
+					]
+				},
+				{
+					"name": "删除某模块",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/modules/:id",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"modules",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "成功",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/modules/:id",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"modules",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Aug 2021 13:15:13 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"删除模块成功\"\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySUQiOjEsImV4cCI6NjQzMDI2NTA1MywiaXNzIjoiYnVndSJ9.CfD23b8GppGxMPa33SHNGsLQ4ujMkVDF9pJyXbHk2eM",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "重载",
+			"item": [
+				{
+					"name": "获取重载列表",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": [
+						{
+							"name": "获取所有重载列表",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/overloads/list/:module_id",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"overloads",
+										"list",
+										":module_id"
+									],
+									"variable": [
+										{
+											"key": "module_id",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Aug 2021 10:38:38 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1859"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"list\": [\n        {\n            \"ID\": 1,\n            \"CreatedAt\": \"2021-06-12T16:09:02+08:00\",\n            \"UpdatedAt\": \"2021-06-12T16:09:02+08:00\",\n            \"DeletedAt\": null,\n            \"overload_introduction\": \"test\",\n            \"overload_mask_code\": \"test\",\n            \"module_id\": 1\n        },\n        {\n            \"ID\": 19,\n            \"CreatedAt\": \"2021-06-12T19:58:14+08:00\",\n            \"UpdatedAt\": \"2021-06-12T19:58:14+08:00\",\n            \"DeletedAt\": null,\n            \"overload_introduction\": \"test\",\n            \"overload_mask_code\": \"test\",\n            \"module_id\": 1\n        },\n        {\n            \"ID\": 20,\n            \"CreatedAt\": \"2021-06-12T19:58:39+08:00\",\n            \"UpdatedAt\": \"2021-06-12T19:58:39+08:00\",\n            \"DeletedAt\": null,\n            \"overload_introduction\": \"test\",\n            \"overload_mask_code\": \"test\",\n            \"module_id\": 1\n        },\n        {\n            \"ID\": 21,\n            \"CreatedAt\": \"2021-06-12T20:20:14+08:00\",\n            \"UpdatedAt\": \"2021-06-12T20:20:14+08:00\",\n            \"DeletedAt\": null,\n            \"overload_introduction\": \"test\",\n            \"overload_mask_code\": \"test\",\n            \"module_id\": 1\n        },\n        {\n            \"ID\": 22,\n            \"CreatedAt\": \"2021-06-12T20:20:41+08:00\",\n            \"UpdatedAt\": \"2021-06-12T20:20:41+08:00\",\n            \"DeletedAt\": null,\n            \"overload_introduction\": \"test\",\n            \"overload_mask_code\": \"test\",\n            \"module_id\": 1\n        },\n        {\n            \"ID\": 23,\n            \"CreatedAt\": \"2021-06-12T20:24:12+08:00\",\n            \"UpdatedAt\": \"2021-06-12T20:24:12+08:00\",\n            \"DeletedAt\": null,\n            \"overload_introduction\": \"test\",\n            \"overload_mask_code\": \"test\",\n            \"module_id\": 1\n        },\n        {\n            \"ID\": 24,\n            \"CreatedAt\": \"2021-06-12T20:28:43+08:00\",\n            \"UpdatedAt\": \"2021-06-12T20:28:43+08:00\",\n            \"DeletedAt\": null,\n            \"overload_introduction\": \"test\",\n            \"overload_mask_code\": \"test\",\n            \"module_id\": 1\n        },\n        {\n            \"ID\": 25,\n            \"CreatedAt\": \"2021-06-13T00:07:05+08:00\",\n            \"UpdatedAt\": \"2021-06-13T00:07:05+08:00\",\n            \"DeletedAt\": null,\n            \"overload_introduction\": \"test\",\n            \"overload_mask_code\": \"test\",\n            \"module_id\": 1\n        },\n        {\n            \"ID\": 26,\n            \"CreatedAt\": \"2021-06-13T00:09:15+08:00\",\n            \"UpdatedAt\": \"2021-06-13T00:09:15+08:00\",\n            \"DeletedAt\": null,\n            \"overload_introduction\": \"test\",\n            \"overload_mask_code\": \"test\",\n            \"module_id\": 1\n        },\n        {\n            \"ID\": 27,\n            \"CreatedAt\": \"2021-06-13T00:40:19+08:00\",\n            \"UpdatedAt\": \"2021-06-13T00:40:19+08:00\",\n            \"DeletedAt\": null,\n            \"overload_introduction\": \"test\",\n            \"overload_mask_code\": \"test\",\n            \"module_id\": 1\n        }\n    ],\n    \"pager\": {\n        \"page\": 1,\n        \"page_size\": 10,\n        \"total_rows\": 12\n    }\n}"
+						},
+						{
+							"name": "获取某模块下属重载",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/overloads/list/:module_id",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"overloads",
+										"list",
+										":module_id"
+									],
+									"variable": [
+										{
+											"key": "module_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Aug 2021 10:41:19 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1859"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"list\": [\n        {\n            \"ID\": 1,\n            \"CreatedAt\": \"2021-06-12T16:09:02+08:00\",\n            \"UpdatedAt\": \"2021-06-12T16:09:02+08:00\",\n            \"DeletedAt\": null,\n            \"overload_introduction\": \"test\",\n            \"overload_mask_code\": \"test\",\n            \"module_id\": 1\n        },\n        {\n            \"ID\": 19,\n            \"CreatedAt\": \"2021-06-12T19:58:14+08:00\",\n            \"UpdatedAt\": \"2021-06-12T19:58:14+08:00\",\n            \"DeletedAt\": null,\n            \"overload_introduction\": \"test\",\n            \"overload_mask_code\": \"test\",\n            \"module_id\": 1\n        },\n        {\n            \"ID\": 21,\n            \"CreatedAt\": \"2021-06-12T20:20:14+08:00\",\n            \"UpdatedAt\": \"2021-06-12T20:20:14+08:00\",\n            \"DeletedAt\": null,\n            \"overload_introduction\": \"test\",\n            \"overload_mask_code\": \"test\",\n            \"module_id\": 1\n        },\n        {\n            \"ID\": 22,\n            \"CreatedAt\": \"2021-06-12T20:20:41+08:00\",\n            \"UpdatedAt\": \"2021-06-12T20:20:41+08:00\",\n            \"DeletedAt\": null,\n            \"overload_introduction\": \"test\",\n            \"overload_mask_code\": \"test\",\n            \"module_id\": 1\n        },\n        {\n            \"ID\": 23,\n            \"CreatedAt\": \"2021-06-12T20:24:12+08:00\",\n            \"UpdatedAt\": \"2021-06-12T20:24:12+08:00\",\n            \"DeletedAt\": null,\n            \"overload_introduction\": \"test\",\n            \"overload_mask_code\": \"test\",\n            \"module_id\": 1\n        },\n        {\n            \"ID\": 24,\n            \"CreatedAt\": \"2021-06-12T20:28:43+08:00\",\n            \"UpdatedAt\": \"2021-06-12T20:28:43+08:00\",\n            \"DeletedAt\": null,\n            \"overload_introduction\": \"test\",\n            \"overload_mask_code\": \"test\",\n            \"module_id\": 1\n        },\n        {\n            \"ID\": 25,\n            \"CreatedAt\": \"2021-06-13T00:07:05+08:00\",\n            \"UpdatedAt\": \"2021-06-13T00:07:05+08:00\",\n            \"DeletedAt\": null,\n            \"overload_introduction\": \"test\",\n            \"overload_mask_code\": \"test\",\n            \"module_id\": 1\n        },\n        {\n            \"ID\": 26,\n            \"CreatedAt\": \"2021-06-13T00:09:15+08:00\",\n            \"UpdatedAt\": \"2021-06-13T00:09:15+08:00\",\n            \"DeletedAt\": null,\n            \"overload_introduction\": \"test\",\n            \"overload_mask_code\": \"test\",\n            \"module_id\": 1\n        },\n        {\n            \"ID\": 27,\n            \"CreatedAt\": \"2021-06-13T00:40:19+08:00\",\n            \"UpdatedAt\": \"2021-06-13T00:40:19+08:00\",\n            \"DeletedAt\": null,\n            \"overload_introduction\": \"test\",\n            \"overload_mask_code\": \"test\",\n            \"module_id\": 1\n        },\n        {\n            \"ID\": 28,\n            \"CreatedAt\": \"2021-06-13T19:55:23+08:00\",\n            \"UpdatedAt\": \"2021-06-13T19:55:23+08:00\",\n            \"DeletedAt\": null,\n            \"overload_introduction\": \"test\",\n            \"overload_mask_code\": \"test\",\n            \"module_id\": 1\n        }\n    ],\n    \"pager\": {\n        \"page\": 1,\n        \"page_size\": 10,\n        \"total_rows\": 11\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "获取某重载",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": [
+						{
+							"name": "成功",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": null
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "删除某重载",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/modules/:id",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"modules",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "成功",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/overloads/:id",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"overloads",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Aug 2021 13:26:13 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"删除重载成功\"\n}"
+						}
+					]
+				},
+				{
+					"name": "创建重载",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": null
+					},
+					"response": [
+						{
+							"name": "成功",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "overload_introduction",
+											"value": "test",
+											"description": "重载介绍",
+											"type": "text"
+										},
+										{
+											"key": "overload_mask_code",
+											"value": "test",
+											"description": "重载掩码",
+											"type": "text"
+										},
+										{
+											"key": "json_overload_input",
+											"value": "[\n{\"oi_introduction\": \"test\", \"oi_type\": \"test\"},\n{\"oi_introduction\": \"test2\", \"oi_type\": \"test2\"}\n]",
+											"description": "重载输入,参数是可变的",
+											"type": "text"
+										},
+										{
+											"key": "json_overload_output",
+											"value": "[\n{\"oo_introduction\": \"test\", \"oo_type\": \"test\"},\n{\"oo_introduction\": \"test2\", \"oo_type\": \"test2\"}\n]",
+											"description": "重载输出，参数是可变的,注意字段是oo不是oi",
+											"type": "text"
+										},
+										{
+											"key": "module_name",
+											"value": "test2",
+											"description": "上属模块名",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/overloads/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"overloads",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Aug 2021 14:17:51 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"创建重载成功\"\n}"
+						}
+					]
+				},
+				{
+					"name": "修改重载相关信息",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "overload_introduction",
+									"value": "test",
+									"description": "不提供修改输入输出",
+									"type": "text"
+								},
+								{
+									"key": "overload_mask_code",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "module_name",
+									"value": "test2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/overloads/:id",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"overloads",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "19"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "不存在上级模块",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "overload_introduction",
+											"value": "test",
+											"type": "text"
+										},
+										{
+											"key": "overload_mask_code",
+											"value": "test",
+											"type": "text"
+										},
+										{
+											"key": "module_name",
+											"value": "test15151",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/overloads/:id",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"overloads",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "19"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Aug 2021 14:22:18 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "77"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 20050002,\n    \"details\": [\n        \"不存在该模块\"\n    ],\n    \"msg\": \"更新重载失败\"\n}"
+						},
+						{
+							"name": "成功",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "overload_introduction",
+											"value": "test",
+											"description": "不提供修改输入输出",
+											"type": "text"
+										},
+										{
+											"key": "overload_mask_code",
+											"value": "test",
+											"type": "text"
+										},
+										{
+											"key": "module_name",
+											"value": "test2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/overloads/:id",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"overloads",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "19"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With, Token, Language, From"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, OPTIONS, GET, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Aug 2021 14:23:26 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"更新模块成功\"\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySUQiOjMsImV4cCI6NjQyNzUxOTU1NiwiaXNzIjoiYnVndSJ9.Lkg55i6RtSNA5OX2MWXmyyq-Mx0yrGAPhCUnVW_crYs",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}
