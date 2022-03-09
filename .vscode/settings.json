@@ -1,0 +1,84 @@
+{
+    "commit-message-editor.staticTemplate": [
+        "修改类型: 简述修改",
+        "",
+        "修改主体",
+        "",
+        "注意事项"
+    ],
+    "commit-message-editor.dynamicTemplate": [
+        "{修改类型}: {简述修改}",
+        "",
+        "{修改主体}",
+        "",
+        "{注意事项}"
+    ],
+    "commit-message-editor.tokens": [
+        {
+            "label": "修改类型",
+            "name": "修改类型",
+            "type": "enum",
+            "description": "本次修改的综述",
+            "combobox": true,
+            "options": [
+                {
+                    "label": "功能",
+                    "value": "功能",
+                    "description": "新增功能"
+                },
+                {
+                    "label": "修复",
+                    "value": "修复",
+                    "description": "修补bug"
+                },
+                {
+                    "label": "文档",
+                    "value": "文档",
+                    "description": "修改文档"
+                },
+                {
+                    "label": "格式",
+                    "value": "格式",
+                    "description": "除文档外任何不影响代码运行的修改"
+                },
+                {
+                    "label": "重构",
+                    "value": "重构",
+                    "description": "对原有功能的重构，不影响实现结果"
+                },
+                {
+                    "label": "微调",
+                    "value": "微调",
+                    "description": "进行对已有功能的细节调整"
+                },
+                {
+                    "label": "测试",
+                    "value": "测试",
+                    "description": "增加测试"
+                }
+            ]
+        },
+        {
+            "label": "简述修改",
+            "name": "简述修改",
+            "type": "text",
+            "description": "一句话概括本次修改内容"
+        },
+        {
+            "label": "修改主体",
+            "name": "修改主体",
+            "type": "text",
+            "description": "详细介绍本次修改，请将不同修改分行介绍",
+            "maxLines": 12,
+            "multiline": true,
+            "lines": 3
+        },
+        {
+            "label": "注意事项",
+            "name": "注意事项",
+            "type": "text",
+            "description": "（可选）本次提交中有需要注意的内容",
+            "prefix": "注意："
+        }
+    ]
+}
