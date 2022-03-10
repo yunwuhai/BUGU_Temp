@@ -1,3 +1,0 @@
-[submodule "data/embedded/tools/openocd"]
-	path = data/embedded/tools/openocd
-	url = https://gitee.com/char-x/openocd-exptension.git
