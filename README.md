@@ -70,4 +70,12 @@
 
 - [编译原理网课](https://www.bilibili.com/video/BV1zW411t7YE?from=search&seid=13066746962877628745&spm_id_from=333.337.0.0)
 
+- [OpenOCD使用指南](http://blog.chinaunix.net/uid-24565138-id-2127551.html)
+
+- [OpenOCD添加第三方设备支持:HT32F52352 Cortex-M0+](https://blog.csdn.net/weixin_41328027/article/details/122969985)
+
+- [记gnu-mcu-eclipse-openocd工具链移植](https://blog.csdn.net/idk500/article/details/98476288?spm=1001.2014.3001.5502)
+
+- [Ubuntu下使用OpenOCD通过Jlink烧写HEX到STM32](https://blog.csdn.net/SMarxX/article/details/8486052)
+
 ## 项目规划
