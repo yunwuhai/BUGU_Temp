@@ -52,7 +52,7 @@
 
 ## 开发环境安装
 
-- [嵌入式](./preference/embedded/install.md)
+- [嵌入式开发环境安装指南](./preference/embedded/install.md)
 
 ## 资料汇总
 
