@@ -24,7 +24,7 @@
 
 6. 差别较大的功能请分别提交commit，并保证commit清晰（尽量使用VSCode插件进行提交）。
 
-7. 开发人员根据TODO的任务分配进行开发，完成后需要在TODO中进行记录:[TODO](./log/embedded/yun/TODO.md)。
+7. 开发人员根据TODO所需内容进行开发，完成后需要在TODO中进行记录:[TODO](./log/embedded/yun/TODO.md)，记录包括已完成事项（删除表示正在进行中的括号及代号，在Markdown中使用x标记），接下来将要进行的工作（使用括号写上自己的代号表示正在进行中）。
 
 ## 分组合作
 
