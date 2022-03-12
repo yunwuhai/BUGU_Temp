@@ -1,0 +1,8 @@
+G:/OneDrive/Code/C/Project/BUGU_Temp/workspace/embedded/test/CMake_test/build/CMakeFiles/rebuild_cache.dir
+G:/OneDrive/Code/C/Project/BUGU_Temp/workspace/embedded/test/CMake_test/build/CMakeFiles/DEMO.elf.dir
+G:/OneDrive/Code/C/Project/BUGU_Temp/workspace/embedded/test/CMake_test/build/CMakeFiles/edit_cache.dir
+G:/OneDrive/Code/C/Project/BUGU_Temp/workspace/embedded/test/CMake_test/build/Drivers/CMSIS/CMakeFiles/edit_cache.dir
+G:/OneDrive/Code/C/Project/BUGU_Temp/workspace/embedded/test/CMake_test/build/Drivers/CMSIS/CMakeFiles/rebuild_cache.dir
+G:/OneDrive/Code/C/Project/BUGU_Temp/workspace/embedded/test/CMake_test/build/Drivers/STM32F4xx_HAL_Driver/CMakeFiles/edit_cache.dir
+G:/OneDrive/Code/C/Project/BUGU_Temp/workspace/embedded/test/CMake_test/build/Drivers/STM32F4xx_HAL_Driver/CMakeFiles/stm32f4xx_hal.dir
+G:/OneDrive/Code/C/Project/BUGU_Temp/workspace/embedded/test/CMake_test/build/Drivers/STM32F4xx_HAL_Driver/CMakeFiles/rebuild_cache.dir

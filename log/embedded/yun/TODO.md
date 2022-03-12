@@ -32,4 +32,4 @@
 - [ ] 使用CubeIDE验证测试HT32F5开发板
 - [ ] 使用已验证的开发板配合DAPLink验证测试OpenOCD
 - [ ] 使用Makefile测试验证Ubuntu Server上的编译
-- [ ] 完成cmake移植和编译测试（chao）
+- [x] 完成cmake移植和编译测试（chao）
