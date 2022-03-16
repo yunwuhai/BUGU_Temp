@@ -1,5 +1,17 @@
 <template>
-  <div id="app"></div>
+  <div>
+    <router-view></router-view>
+  </div>
 </template>
+<script>
+export default {
+  data() {
+    return {
 
-<style></style>
+    };
+  },
+};
+</script>
+
+<style>
+</style>

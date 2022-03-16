@@ -12,7 +12,6 @@ import (
 	"github.com/jinzhu/gorm"
 )
 
-// Module isFunc字段 1是函数模块 2是模板模块
 type Module struct {
 	*gorm.Model
 	ModuleName         string `json:"module_name" gorm:"type:varchar(255)"`
