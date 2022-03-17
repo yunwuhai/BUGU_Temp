@@ -1,0 +1,2 @@
+src = ../Testdata/TestSDK.c User/Main_0/src/main.c User/Test_Func_1/src/Func0_1_0_0.c User/Test_Func_1/src/Func1_1_0_1.c
+# 本来手写需要使用\来换行，但是自动生成可以不用管，当然为了好看也可以按换行的方式写，区别不大
