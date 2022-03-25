@@ -1,14 +1,18 @@
-<!-- 编程界面布局 -->
+<!-- 项目界面布局 -->
 <template>
-  <a-layout>
+  <div>
     <Header></Header>
-    <a-layout style="margin: 10px 20px">
-      <Slider></Slider>
-      <a-layout style="margin-left:10px;">
+    <a-row class="row">
+      <a-col :span="sliderSpan">
+        <!-- <Slider :changeSpan="changeSpan"></Slider> -->
+        <Slider></Slider>
+      </a-col>
+      <a-col :span="contentSpan"
+             :class="transObj">
         <Content></Content>
-      </a-layout>
-    </a-layout>
-  </a-layout>
+      </a-col>
+    </a-row>
+  </div>
 </template>
 
 <script>
@@ -22,25 +26,51 @@ export default {
   components: {
     Header,
     Slider,
-    Content,
+    Content
   },
   data() {
     //这里存放数据
     return {
-
-    };
+    }
   },
   //监听属性 类似于data概念
-  computed: {},
+  computed: {
+    collapsed() {
+      return this.$store.state.slider.collapsed
+    },
+    sliderSpan() {
+      if (this.collapsed) {
+        return 2
+      }
+      return 4
+    },
+    contentSpan() {
+      if (this.collapsed) {
+        return 22
+      }
+      return 20
+    },
+    transObj() {
+      if (this.collapsed) {
+        return {
+          'animate__animated animate__fadeInLeft': false,
+          'animate__animated animate__fadeInRight': true
+        }
+      }
+      return {
+        'animate__animated animate__fadeInLeft': true,
+        'animate__animated animate__fadeInRight': false
+      }
+    }
+  },
   //监控data中的数据变化
-  watch: {},
-  //方法集合
-  methods: {
+  watch: {
 
   },
+  //方法集合
+  methods: {},
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {
-
   },
   //生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {
@@ -56,4 +86,16 @@ export default {
 }
 </script>
 <style scoped>
+.row {
+  margin: 10px 20px;
+  background: rgb(240, 242, 245);
+  min-height: 89vh;
+}
+/* 内容栏动画效果 */
+.animate__animated.animate__fadeInRight {
+  --animate-duration: 1s;
+}
+.animate__animated.animate__fadeInRight {
+  --animate-duration: 1s;
+}
 </style>
