@@ -1,14 +1,9 @@
 ENTRY(Reset_Handler)
 
-_estack = 0x20020000;
-
-_Min_Heap_Size = 0x;     
-_Min_Stack_Size = 0x;
-
 MEMORY
 {
-RAM (xrw)      : ORIGIN = 0x20000000, LENGTH = 128K
-FLASH (rx)      : ORIGIN = 0x8000000, LENGTH = 512K
+FLASH (rx)     : ORIGIN = 0x00000000, LENGTH = 1024K
+RAM (xrw)      : ORIGIN = 0x20000000, LENGTH = 1024K
 }
 
 SECTIONS
@@ -23,24 +18,24 @@ SECTIONS
   .text :
   {
     . = ALIGN(4);
-    *(.text)           
-    *(.text*)          
-    *(.glue_7)         
-    *(.glue_7t)        
+    *(.text)
+    *(.text*)
+    *(.glue_7)
+    *(.glue_7t)
     *(.eh_frame)
 
     KEEP (*(.init))
     KEEP (*(.fini))
 
     . = ALIGN(4);
-    _etext = .;        
+    _etext = .;
   } >FLASH
 
   .rodata :
   {
     . = ALIGN(4);
-    *(.rodata)         
-    *(.rodata*)        
+    *(.rodata)
+    *(.rodata*)
     . = ALIGN(4);
   } >FLASH
 
@@ -74,15 +69,15 @@ SECTIONS
 
   _sidata = LOADADDR(.data);
 
-  .data : 
+  .data :
   {
     . = ALIGN(4);
-    _sdata = .;        
-    *(.data)           
-    *(.data*)          
+    _sdata = .;
+    *(.data)
+    *(.data*)
 
     . = ALIGN(4);
-    _edata = .;        
+    _edata = .;
   } >RAM AT> FLASH
 
   . = ALIGN(4);
@@ -95,18 +90,18 @@ SECTIONS
     *(COMMON)
 
     . = ALIGN(4);
-    _ebss = .; 
+    _ebss = .;
     __bss_end__ = _ebss;
   } >RAM
 
-  ._user_heap_stack :
+  .heap :
   {
-    . = ALIGN(8);
-    PROVIDE ( end = . );
-    PROVIDE ( _end = . );
-    . = . + _Min_Heap_Size;
-    . = . + _Min_Stack_Size;
-    . = ALIGN(8);
+    *(.heap)
+  } >RAM
+
+  .stack :
+  {
+    *(.stack)
   } >RAM
 
   /DISCARD/ :
@@ -118,5 +113,3 @@ SECTIONS
 
   .ARM.attributes 0 : { *(.ARM.attributes) }
 }
-
-
