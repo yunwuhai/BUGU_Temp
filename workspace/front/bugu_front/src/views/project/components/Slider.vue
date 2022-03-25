@@ -1,56 +1,59 @@
 <!-- 侧边栏组件 -->
 <template>
-  <!-- :style="{ background: '#fff', height: '80vh', position: 'fixed'}" -->
-  <a-layout-sider width="15vw"
-                  v-model="collapsed"
-                  style="background: #fff">
-    <a-menu mode="inline"
-            :default-selected-keys="['1']"
-            :default-open-keys="['sub1']"
-            :style="{ height: '100%', borderRight: 0 }">
-      <a-sub-menu key="sub1">
-        <span slot="title">
-          <a-icon type="user" />subnav 1
-        </span>
-        <a-menu-item key="1"> option1 </a-menu-item>
-        <a-menu-item key="2"> option2 </a-menu-item>
-        <a-menu-item key="3"> option3 </a-menu-item>
-        <a-menu-item key="4"> option4 </a-menu-item>
-      </a-sub-menu>
-      <a-sub-menu key="sub2">
-        <span slot="title">
-          <a-icon type="laptop" />subnav 2
-        </span>
-        <a-menu-item key="5"> option5 </a-menu-item>
-        <a-menu-item key="6"> option6 </a-menu-item>
-        <a-menu-item key="7"> option7 </a-menu-item>
-        <a-menu-item key="8"> option8 </a-menu-item>
-      </a-sub-menu>
-      <a-sub-menu key="sub3">
-        <span slot="title">
-          <a-icon type="notification" />subnav 3
-        </span>
-        <a-menu-item key="9"> option9 </a-menu-item>
-        <a-menu-item key="10"> option10 </a-menu-item>
-        <a-menu-item key="11"> option11 </a-menu-item>
-        <a-menu-item key="12"> option12 </a-menu-item>
-      </a-sub-menu>
-    </a-menu>
-  </a-layout-sider>
+  <div>
+    <a-tooltip placement="top"
+               title="收起菜单栏">
+      <a-button type="link"
+                @click="sliderCollapsed">
+        <a-icon :type="collapsed ? 'menu-unfold' : 'menu-fold'" />
+      </a-button>
+    </a-tooltip>
+    <a-tooltip placement="left"
+               title="全部折叠">
+      <a-button type="link"
+                @click="allCollapsed">
+        <a-icon type="switcher" />
+      </a-button>
+    </a-tooltip>
+    <div class="slider">
+      <a-menu mode="inline"
+              :openKeys.sync="openKeys"
+              :inline-collapsed="collapsed">
+        <a-sub-menu key="sub1">
+          <span slot="title">
+            <a-icon type="laptop" />
+            <span>系统组件</span>
+          </span>
+          <DirectoryTree></DirectoryTree>
+        </a-sub-menu>
+        <a-sub-menu key="sub2">
+          <span slot="title">
+            <a-icon type="user" />
+            <span>用户组件</span>
+          </span>
+          <DirectoryTree></DirectoryTree>
+        </a-sub-menu>
+      </a-menu>
+    </div>
+  </div>
 </template>
 
 <script>
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
+import DirectoryTree from "./DirectoryTree"
 
 export default {
   name: 'Slider',
   //import引入的组件需要注入到对象中才能使用
-  components: {},
+  components: {
+    DirectoryTree
+  },
   data() {
     //这里存放数据
     return {
       collapsed: false,
+      openKeys: [],//已展开的侧边栏项
     };
   },
   //监听属性 类似于data概念
@@ -59,7 +62,16 @@ export default {
   watch: {},
   //方法集合
   methods: {
-
+    //改变侧边栏收缩状态
+    sliderCollapsed() {
+      this.collapsed = !this.collapsed
+      this.$store.commit('SET_COLLAPSED', this.collapsed)
+    },
+    //清空展开状态
+    allCollapsed() {
+      this.openKeys = []
+      this.$store.commit('SET_CLOSE', [])
+    }
   },
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {
@@ -79,4 +91,19 @@ export default {
 }
 </script>
 <style scoped>
+.slider {
+  background: rgb(240, 242, 245);
+  width: 15vw;
+  /* height: calc(84vh + 40px); */
+  height: 83.3vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.ant-btn {
+  margin-bottom: 0px;
+  border: 0px;
+  /* background: none; */
+  height: 40px;
+  color: rgb(89, 89, 89);
+}
 </style>

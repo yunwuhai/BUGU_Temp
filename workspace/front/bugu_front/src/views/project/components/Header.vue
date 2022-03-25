@@ -1,6 +1,10 @@
 <!-- 顶栏组件 -->
 <template>
   <a-layout-header class="header">
+    <a-button type="link"
+              style="float:right; margin: 16px 28px 16px 0;">
+      <router-link to="/login">注销</router-link>
+    </a-button>
     <div class="logo"></div>
     <div style="margin-left: 13.7vw;">
       <a-menu theme="dark"
@@ -12,6 +16,7 @@
         <a-menu-item key="3"> 个人中心 </a-menu-item>
       </a-menu>
     </div>
+
   </a-layout-header>
 </template>
 

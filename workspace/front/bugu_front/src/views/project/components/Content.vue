@@ -1,13 +1,28 @@
 <!-- 内容组件 -->
 <template>
-  <a-layout-content :style="{
-            background: '#fff',
-            padding: '16px',
-            minHeight: '90vh',
-          }">
-    <Card></Card>
-    <Card></Card>
-  </a-layout-content>
+  <div>
+    <!-- <a-button @click="add">
+      ADD
+    </a-button> -->
+    <a-tabs v-model="activeKey"
+            :hide-add="false"
+            size="small"
+            type="editable-card"
+            @edit="onEdit">
+      <a-tab-pane v-for="pane in panes"
+                  :key="pane.key"
+                  :tab="pane.title"
+                  :closable="pane.closable">
+        <div class="content">
+          <div v-for="(item,index) in 10"
+               :key="index">
+            <Card></Card>
+            <!-- {{ pane.content }} -->
+          </div>
+        </div>
+      </a-tab-pane>
+    </a-tabs>
+  </div>
 </template>
 
 <script>
@@ -19,8 +34,13 @@ export default {
   components: { Card },
   data() {
     //这里存放数据
+    const panes = [
+      { title: 'Tab 1', content: 'Content of Tab 1', key: '1' },
+    ];
     return {
-
+      activeKey: panes[0].key,
+      panes,
+      newTabIndex: 0,
     };
   },
   //监听属性 类似于data概念
@@ -29,7 +49,42 @@ export default {
   watch: {},
   //方法集合
   methods: {
-
+    callback(key) {
+      console.log(key);
+    },
+    onEdit(targetKey, action) {
+      this[action](targetKey);
+    },
+    add() {
+      const panes = this.panes;
+      const activeKey = `newTab${this.newTabIndex++}`;
+      panes.push({
+        title: `New Tab ${activeKey}`,
+        content: `Content of new Tab ${activeKey}`,
+        key: activeKey,
+      });
+      this.panes = panes;
+      this.activeKey = activeKey;
+    },
+    remove(targetKey) {
+      let activeKey = this.activeKey;
+      let lastIndex;
+      this.panes.forEach((pane, i) => {
+        if (pane.key === targetKey) {
+          lastIndex = i - 1;
+        }
+      });
+      const panes = this.panes.filter(pane => pane.key !== targetKey);
+      if (panes.length && activeKey === targetKey) {
+        if (lastIndex >= 0) {
+          activeKey = panes[lastIndex].key;
+        } else {
+          activeKey = panes[0].key;
+        }
+      }
+      this.panes = panes;
+      this.activeKey = activeKey;
+    },
   },
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {
@@ -49,4 +104,10 @@ export default {
 }
 </script>
 <style scoped>
+.content {
+  background: #fff;
+  padding: 16px;
+  height: 83.3vh;
+  overflow-y: auto;
+}
 </style>

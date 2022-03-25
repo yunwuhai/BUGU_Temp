@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a-collapse v-model="activeKey">
+    <a-collapse>
       <a-collapse-panel key="1"
                         header="This is panel header 1">
         <a-table :columns="columns"
