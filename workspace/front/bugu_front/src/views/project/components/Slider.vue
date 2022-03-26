@@ -24,14 +24,15 @@
             <a-icon type="laptop" />
             <span>系统组件</span>
           </span>
-          <DirectoryTree></DirectoryTree>
+          <DirectoryTree :treeData="treeData1"></DirectoryTree>
         </a-sub-menu>
         <a-sub-menu key="sub2">
           <span slot="title">
             <a-icon type="user" />
             <span>用户组件</span>
           </span>
-          <DirectoryTree></DirectoryTree>
+          <DirectoryTree :delDis="true"
+                         :treeData="treeData2"></DirectoryTree>
         </a-sub-menu>
       </a-menu>
     </div>
@@ -54,6 +55,61 @@ export default {
     return {
       collapsed: false,
       openKeys: [],//已展开的侧边栏项
+
+      //测试
+      treeData1: [
+        {
+          title: '组件xxx',
+          key: '0-0',
+          editStatus: 0,
+          level: 1,//所在层数
+          children: [
+            {
+              title: '类1',
+              key: '0-0-0',
+              editStatus: 0,
+              level: 2,
+              children: [
+                { title: '方法1', key: '0-0-0-0', editStatus: 0, level: 3 },
+                { title: '方法2', key: '0-0-0-1', editStatus: 0, level: 3 },
+                { title: '方法3', key: '0-0-0-2', editStatus: 0, level: 3 },
+              ],
+            },
+            {
+              title: '类2',
+              key: '0-0-1',
+              editStatus: 0,
+              level: 2,
+              children: [
+                { title: '方法1', key: '0-0-1-0', editStatus: 0, level: 3 },
+                { title: '方法2', key: '0-0-1-1', editStatus: 0, level: 3 },
+                { title: '方法3', key: '0-0-1-2', editStatus: 0, level: 3 },
+              ],
+            },
+          ],
+        },
+      ],
+      treeData2: [
+        {
+          title: '组件xxx',
+          key: '1-0',
+          editStatus: 0,
+          level: 1,//所在层数
+          children: [
+            {
+              title: '类1',
+              key: '1-0-0',
+              editStatus: 0,
+              level: 2,
+              children: [
+                { title: '方法1', key: '1-0-0-0', editStatus: 0, level: 3 },
+                { title: '方法2', key: '1-0-0-1', editStatus: 0, level: 3 },
+                { title: '方法3', key: '1-0-0-2', editStatus: 0, level: 3 },
+              ],
+            },
+          ],
+        },
+      ],
     };
   },
   //监听属性 类似于data概念
@@ -70,7 +126,7 @@ export default {
     //清空展开状态
     allCollapsed() {
       this.openKeys = []
-      this.$store.commit('SET_CLOSE', [])
+      this.$store.commit('SET_CLOSE_CLEAR')
     }
   },
   //生命周期 - 创建完成（可以访问当前this实例）
