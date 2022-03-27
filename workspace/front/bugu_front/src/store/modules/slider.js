@@ -1,8 +1,8 @@
 export default {
 	state:{
-		collapsed: false,
-		close:[],
-		selected:[]
+		collapsed: false,//收起侧边栏
+		expanded:[],//树形菜单展开项
+		selected:[]//树形菜单选择项
 	},
 	actions:{
 
@@ -12,13 +12,9 @@ export default {
 			state.collapsed = value
 			console.log("SETCOLLAPSED被调用")
 		},
-		SET_CLOSE_PUSH(state,value){
-			state.close.push(...value)
-			console.log("SETCLOSEPUSH被调用")
-		},
-		SET_CLOSE_CLEAR(state){
-			state.close=[]
-			console.log("SETCLOSECLEAR被调用")
+		SET_EXPAND(state,value){
+			state.expanded=value
+			console.log("SETEXPAND被调用")
 		},
 		SET_SELECTED(state,value){
 			state.selected = value
