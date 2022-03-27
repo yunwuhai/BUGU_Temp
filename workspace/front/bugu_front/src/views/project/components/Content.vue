@@ -1,14 +1,16 @@
 <!-- 内容组件 -->
 <template>
   <div>
-    <!-- <a-button @click="add">
-      ADD
-    </a-button> -->
-    <a-tabs v-model="activeKey"
-            :hide-add="false"
+    <div style="padding:40vh;"
+         v-if="panes.length === 0">
+      <a-empty description="暂无方法编辑中" />
+    </div>
+    <a-tabs v-model="$store.state.content.activeKey"
+            hide-add
             size="small"
             type="editable-card"
-            @edit="onEdit">
+            @edit="onEdit"
+            v-else>
       <a-tab-pane v-for="pane in panes"
                   :key="pane.key"
                   :tab="pane.title"
@@ -17,7 +19,6 @@
           <div v-for="(item,index) in 10"
                :key="index">
             <Card></Card>
-            <!-- {{ pane.content }} -->
           </div>
         </div>
       </a-tab-pane>
@@ -34,11 +35,9 @@ export default {
   components: { Card },
   data() {
     //这里存放数据
-    const panes = [
-      { title: 'Tab 1', content: 'Content of Tab 1', key: '1' },
-    ];
+    const panes = this.$store.state.content.panes
     return {
-      activeKey: panes[0].key,
+      // activeKey: panes[0].key,
       panes,
       newTabIndex: 0,
     };
@@ -52,38 +51,31 @@ export default {
     callback(key) {
       console.log(key);
     },
+    //新增和删除(调用remove)页签的回调
     onEdit(targetKey, action) {
+      //调用remove
       this[action](targetKey);
     },
-    add() {
-      const panes = this.panes;
-      const activeKey = `newTab${this.newTabIndex++}`;
-      panes.push({
-        title: `New Tab ${activeKey}`,
-        content: `Content of new Tab ${activeKey}`,
-        key: activeKey,
-      });
-      this.panes = panes;
-      this.activeKey = activeKey;
-    },
     remove(targetKey) {
-      let activeKey = this.activeKey;
-      let lastIndex;
+      let activeKey = this.$store.state.content.activeKey
+      let lastIndex
       this.panes.forEach((pane, i) => {
         if (pane.key === targetKey) {
           lastIndex = i - 1;
         }
       });
-      const panes = this.panes.filter(pane => pane.key !== targetKey);
-      if (panes.length && activeKey === targetKey) {
+      this.$store.commit("REMOVE_KEYS", targetKey)
+      this.$store.commit("REMOVE_PANES", targetKey)
+      //更新当前展示中的选项卡
+      this.panes = this.$store.state.content.panes
+      if (this.panes.length && activeKey === targetKey) {
         if (lastIndex >= 0) {
-          activeKey = panes[lastIndex].key;
+          activeKey = this.panes[lastIndex].key;
         } else {
-          activeKey = panes[0].key;
+          activeKey = this.panes[0].key;
         }
       }
-      this.panes = panes;
-      this.activeKey = activeKey;
+      this.$store.commit("SET_ACTIVE", activeKey)
     },
   },
   //生命周期 - 创建完成（可以访问当前this实例）

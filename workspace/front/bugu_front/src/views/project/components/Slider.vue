@@ -63,16 +63,18 @@ export default {
           key: '0-0',
           editStatus: 0,
           level: 1,//所在层数
+          description: "组件：xxxx",//简介
           children: [
             {
               title: '类1',
               key: '0-0-0',
               editStatus: 0,
               level: 2,
+              description: "类：xxxx",//简介
               children: [
-                { title: '方法1', key: '0-0-0-0', editStatus: 0, level: 3 },
-                { title: '方法2', key: '0-0-0-1', editStatus: 0, level: 3 },
-                { title: '方法3', key: '0-0-0-2', editStatus: 0, level: 3 },
+                { title: '方法1', key: '0-0-0-0', editStatus: 0, level: 3, description: "方法：xxxx" },
+                { title: '方法2', key: '0-0-0-1', editStatus: 0, level: 3, description: "方法：xxxx" },
+                { title: '方法3', key: '0-0-0-2', editStatus: 0, level: 3, description: "方法：xxxx" },
               ],
             },
             {
@@ -80,10 +82,11 @@ export default {
               key: '0-0-1',
               editStatus: 0,
               level: 2,
+              description: "类：xxxx",//简介
               children: [
-                { title: '方法1', key: '0-0-1-0', editStatus: 0, level: 3 },
-                { title: '方法2', key: '0-0-1-1', editStatus: 0, level: 3 },
-                { title: '方法3', key: '0-0-1-2', editStatus: 0, level: 3 },
+                { title: '方法1', key: '0-0-1-0', editStatus: 0, level: 3, description: "方法：xxxx" },
+                { title: '方法2', key: '0-0-1-1', editStatus: 0, level: 3, description: "方法：xxxx" },
+                { title: '方法3', key: '0-0-1-2', editStatus: 0, level: 3, description: "方法：xxxx" },
               ],
             },
           ],
@@ -95,16 +98,18 @@ export default {
           key: '1-0',
           editStatus: 0,
           level: 1,//所在层数
+          description: "组件：xxxx",//简介
           children: [
             {
               title: '类1',
               key: '1-0-0',
               editStatus: 0,
               level: 2,
+              description: "类：xxxx",//简介
               children: [
-                { title: '方法1', key: '1-0-0-0', editStatus: 0, level: 3 },
-                { title: '方法2', key: '1-0-0-1', editStatus: 0, level: 3 },
-                { title: '方法3', key: '1-0-0-2', editStatus: 0, level: 3 },
+                { title: '方法1', key: '1-0-0-0', editStatus: 0, level: 3, description: "方法：xxxx" },
+                { title: '方法2', key: '1-0-0-1', editStatus: 0, level: 3, description: "方法：xxxx" },
+                { title: '方法3', key: '1-0-0-2', editStatus: 0, level: 3, description: "方法：xxxx" },
               ],
             },
           ],
@@ -126,7 +131,7 @@ export default {
     //清空展开状态
     allCollapsed() {
       this.openKeys = []
-      this.$store.commit('SET_CLOSE_CLEAR')
+      this.$bus.$emit('clear', [])
     }
   },
   //生命周期 - 创建完成（可以访问当前this实例）
