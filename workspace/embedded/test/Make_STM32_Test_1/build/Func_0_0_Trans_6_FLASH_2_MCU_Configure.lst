@@ -1,0 +1,54 @@
+ARM GAS  /tmp/ccWi92Mf.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 4
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"Func_0_0_Trans_6_FLASH_2_MCU_Configure.c"
+  16              		.text
+  17              		.section	.text.Func_0_0_Trans_6_FLASH_2_MCU_Configure_0_Basic,"ax",%progbits
+  18              		.align	1
+  19              		.global	Func_0_0_Trans_6_FLASH_2_MCU_Configure_0_Basic
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	Func_0_0_Trans_6_FLASH_2_MCU_Configure_0_Basic:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27 0000 08B5     		push	{r3, lr}
+  28 0002 0220     		movs	r0, #2
+  29 0004 FFF7FEFF 		bl	Func_0_0_Trans_6_FLASH_0_FLASH_SetLatency_0_Basic
+  30 0008 034A     		ldr	r2, .L4
+  31              	.L2:
+  32 000a 1368     		ldr	r3, [r2]
+  33 000c 03F00703 		and	r3, r3, #7
+  34 0010 012B     		cmp	r3, #1
+  35 0012 FAD1     		bne	.L2
+  36 0014 08BD     		pop	{r3, pc}
+  37              	.L5:
+  38 0016 00BF     		.align	2
+  39              	.L4:
+  40 0018 003C0240 		.word	1073888256
+  42              		.ident	"GCC: (GNU Arm Embedded Toolchain 10.3-2021.10) 10.3.1 20210824 (release)"
+ARM GAS  /tmp/ccWi92Mf.s 			page 2
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 Func_0_0_Trans_6_FLASH_2_MCU_Configure.c
+     /tmp/ccWi92Mf.s:18     .text.Func_0_0_Trans_6_FLASH_2_MCU_Configure_0_Basic:0000000000000000 $t
+     /tmp/ccWi92Mf.s:24     .text.Func_0_0_Trans_6_FLASH_2_MCU_Configure_0_Basic:0000000000000000 Func_0_0_Trans_6_FLASH_2_MCU_Configure_0_Basic
+     /tmp/ccWi92Mf.s:40     .text.Func_0_0_Trans_6_FLASH_2_MCU_Configure_0_Basic:0000000000000018 $d
+
+UNDEFINED SYMBOLS
+Func_0_0_Trans_6_FLASH_0_FLASH_SetLatency_0_Basic

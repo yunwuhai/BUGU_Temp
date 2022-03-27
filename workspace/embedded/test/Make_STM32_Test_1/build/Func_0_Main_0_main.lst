@@ -1,0 +1,50 @@
+ARM GAS  /tmp/ccZoMPby.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 4
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"Func_0_Main_0_main.c"
+  16              		.text
+  17              		.section	.text.startup.main,"ax",%progbits
+  18              		.align	1
+  19              		.global	main
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	main:
+  25              		@ Volatile: function does not return.
+  26              		@ args = 0, pretend = 0, frame = 0
+  27              		@ frame_needed = 0, uses_anonymous_args = 0
+  28 0000 08B5     		push	{r3, lr}
+  29 0002 FFF7FEFF 		bl	Func_0_0_Trans_0_SYS_0_MCU_Configure_0_Basic
+  30 0006 FFF7FEFF 		bl	Func_0_0_Trans_2_CLK_9_Init_0_Basic
+  31 000a FFF7FEFF 		bl	Func_1_BSP_0_CLK_0_Init_0
+  32 000e FFF7FEFF 		bl	Func_0_0_Trans_4_USART_0_Enable_0_Basic
+  33              	.L2:
+  34 0012 FEE7     		b	.L2
+  36              		.ident	"GCC: (GNU Arm Embedded Toolchain 10.3-2021.10) 10.3.1 20210824 (release)"
+ARM GAS  /tmp/ccZoMPby.s 			page 2
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 Func_0_Main_0_main.c
+     /tmp/ccZoMPby.s:18     .text.startup.main:0000000000000000 $t
+     /tmp/ccZoMPby.s:24     .text.startup.main:0000000000000000 main
+
+UNDEFINED SYMBOLS
+Func_0_0_Trans_0_SYS_0_MCU_Configure_0_Basic
+Func_0_0_Trans_2_CLK_9_Init_0_Basic
+Func_1_BSP_0_CLK_0_Init_0
+Func_0_0_Trans_4_USART_0_Enable_0_Basic

@@ -1,0 +1,47 @@
+ARM GAS  /tmp/cc0BPgFR.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 4
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"Func_1_BSP_0_CLK_0_Init.c"
+  16              		.text
+  17              		.section	.text.Func_1_BSP_0_CLK_0_Init_0,"ax",%progbits
+  18              		.align	1
+  19              		.global	Func_1_BSP_0_CLK_0_Init_0
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	Func_1_BSP_0_CLK_0_Init_0:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27 0000 08B5     		push	{r3, lr}
+  28 0002 0420     		movs	r0, #4
+  29 0004 FFF7FEFF 		bl	Func_0_0_Trans_3_GPIO_0_ClockEnable_0_Basic
+  30 0008 8020     		movs	r0, #128
+  31 000a FFF7FEFF 		bl	Func_0_0_Trans_3_GPIO_0_ClockEnable_0_Basic
+  32 000e BDE80840 		pop	{r3, lr}
+  33 0012 0120     		movs	r0, #1
+  34 0014 FFF7FEBF 		b	Func_0_0_Trans_3_GPIO_0_ClockEnable_0_Basic
+  36              		.ident	"GCC: (GNU Arm Embedded Toolchain 10.3-2021.10) 10.3.1 20210824 (release)"
+ARM GAS  /tmp/cc0BPgFR.s 			page 2
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 Func_1_BSP_0_CLK_0_Init.c
+     /tmp/cc0BPgFR.s:18     .text.Func_1_BSP_0_CLK_0_Init_0:0000000000000000 $t
+     /tmp/cc0BPgFR.s:24     .text.Func_1_BSP_0_CLK_0_Init_0:0000000000000000 Func_1_BSP_0_CLK_0_Init_0
+
+UNDEFINED SYMBOLS
+Func_0_0_Trans_3_GPIO_0_ClockEnable_0_Basic

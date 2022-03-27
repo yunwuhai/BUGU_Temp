@@ -1,0 +1,58 @@
+ARM GAS  /tmp/cc47r4bE.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 4
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"Func_0_0_Trans_2_CLK_3_PLL_ConfigDomain_SYS.c"
+  16              		.text
+  17              		.section	.text.Func_0_0_Trans_2_CLK_0_PLL_ConfigDomain_SYS_0_Basic,"ax",%progbits
+  18              		.align	1
+  19              		.global	Func_0_0_Trans_2_CLK_0_PLL_ConfigDomain_SYS_0_Basic
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	Func_0_0_Trans_2_CLK_0_PLL_ConfigDomain_SYS_0_Basic:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27 0000 30B5     		push	{r4, r5, lr}
+  28 0002 074C     		ldr	r4, .L2
+  29 0004 41EA8212 		orr	r2, r1, r2, lsl #6
+  30 0008 6568     		ldr	r5, [r4, #4]
+  31 000a 0649     		ldr	r1, .L2+4
+  32 000c 2940     		ands	r1, r1, r5
+  33 000e 0A43     		orrs	r2, r2, r1
+  34 0010 1043     		orrs	r0, r0, r2
+  35 0012 6060     		str	r0, [r4, #4]
+  36 0014 6268     		ldr	r2, [r4, #4]
+  37 0016 22F44032 		bic	r2, r2, #196608
+  38 001a 1343     		orrs	r3, r3, r2
+  39 001c 6360     		str	r3, [r4, #4]
+  40 001e 30BD     		pop	{r4, r5, pc}
+  41              	.L3:
+  42              		.align	2
+  43              	.L2:
+  44 0020 00380240 		.word	1073887232
+  45 0024 0080BFFF 		.word	-4227072
+  47              		.ident	"GCC: (GNU Arm Embedded Toolchain 10.3-2021.10) 10.3.1 20210824 (release)"
+ARM GAS  /tmp/cc47r4bE.s 			page 2
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 Func_0_0_Trans_2_CLK_3_PLL_ConfigDomain_SYS.c
+     /tmp/cc47r4bE.s:18     .text.Func_0_0_Trans_2_CLK_0_PLL_ConfigDomain_SYS_0_Basic:0000000000000000 $t
+     /tmp/cc47r4bE.s:24     .text.Func_0_0_Trans_2_CLK_0_PLL_ConfigDomain_SYS_0_Basic:0000000000000000 Func_0_0_Trans_2_CLK_0_PLL_ConfigDomain_SYS_0_Basic
+     /tmp/cc47r4bE.s:44     .text.Func_0_0_Trans_2_CLK_0_PLL_ConfigDomain_SYS_0_Basic:0000000000000020 $d
+
+NO UNDEFINED SYMBOLS

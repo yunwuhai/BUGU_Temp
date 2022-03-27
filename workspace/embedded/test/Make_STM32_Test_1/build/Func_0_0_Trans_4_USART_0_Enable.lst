@@ -1,0 +1,119 @@
+ARM GAS  /tmp/ccIUJUn6.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 4
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"Func_0_0_Trans_4_USART_0_Enable.c"
+  16              		.text
+  17              		.section	.text.Func_0_0_Trans_4_USART_0_Enable_0_Basic,"ax",%progbits
+  18              		.align	1
+  19              		.global	Func_0_0_Trans_4_USART_0_Enable_0_Basic
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	Func_0_0_Trans_4_USART_0_Enable_0_Basic:
+  25              		@ args = 0, pretend = 0, frame = 64
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27 0000 70B5     		push	{r4, r5, r6, lr}
+  28 0002 1E4C     		ldr	r4, .L2
+  29 0004 2646     		mov	r6, r4
+  30 0006 0FCE     		ldmia	r6!, {r0, r1, r2, r3}
+  31 0008 90B0     		sub	sp, sp, #64
+  32 000a 09AD     		add	r5, sp, #36
+  33 000c 0FC5     		stmia	r5!, {r0, r1, r2, r3}
+  34 000e 96E80700 		ldm	r6, {r0, r1, r2}
+  35 0012 1C34     		adds	r4, r4, #28
+  36 0014 85E80700 		stm	r5, {r0, r1, r2}
+  37 0018 0FCC     		ldmia	r4!, {r0, r1, r2, r3}
+  38 001a 03AD     		add	r5, sp, #12
+  39 001c 0FC5     		stmia	r5!, {r0, r1, r2, r3}
+  40 001e 94E80300 		ldm	r4, {r0, r1}
+  41 0022 85E80300 		stm	r5, {r0, r1}
+  42 0026 164B     		ldr	r3, .L2+4
+  43 0028 164C     		ldr	r4, .L2+8
+  44 002a 5A6C     		ldr	r2, [r3, #68]
+  45 002c 1648     		ldr	r0, .L2+12
+  46 002e 42F01002 		orr	r2, r2, #16
+  47 0032 5A64     		str	r2, [r3, #68]
+  48 0034 5A6C     		ldr	r2, [r3, #68]
+  49 0036 02F01002 		and	r2, r2, #16
+  50 003a 0292     		str	r2, [sp, #8]
+  51 003c 029A     		ldr	r2, [sp, #8]
+  52 003e 1A6B     		ldr	r2, [r3, #48]
+  53 0040 42F00102 		orr	r2, r2, #1
+  54 0044 1A63     		str	r2, [r3, #48]
+  55 0046 1B6B     		ldr	r3, [r3, #48]
+  56 0048 03F00103 		and	r3, r3, #1
+  57 004c 0193     		str	r3, [sp, #4]
+  58 004e 03A9     		add	r1, sp, #12
+ARM GAS  /tmp/ccIUJUn6.s 			page 2
+
+
+  59 0050 019B     		ldr	r3, [sp, #4]
+  60 0052 FFF7FEFF 		bl	LL_GPIO_Init
+  61 0056 09A9     		add	r1, sp, #36
+  62 0058 2046     		mov	r0, r4
+  63 005a FFF7FEFF 		bl	LL_USART_Init
+  64 005e 2369     		ldr	r3, [r4, #16]
+  65 0060 23F49043 		bic	r3, r3, #18432
+  66 0064 2361     		str	r3, [r4, #16]
+  67 0066 6369     		ldr	r3, [r4, #20]
+  68 0068 23F02A03 		bic	r3, r3, #42
+  69 006c 6361     		str	r3, [r4, #20]
+  70 006e E368     		ldr	r3, [r4, #12]
+  71 0070 43F40053 		orr	r3, r3, #8192
+  72 0074 E360     		str	r3, [r4, #12]
+  73 0076 10B0     		add	sp, sp, #64
+  74              		@ sp needed
+  75 0078 70BD     		pop	{r4, r5, r6, pc}
+  76              	.L3:
+  77 007a 00BF     		.align	2
+  78              	.L2:
+  79 007c 00000000 		.word	.LANCHOR0
+  80 0080 00380240 		.word	1073887232
+  81 0084 00100140 		.word	1073811456
+  82 0088 00000240 		.word	1073872896
+  84              		.section	.rodata
+  85              		.align	2
+  86              		.set	.LANCHOR0,. + 0
+  87              	.LC0:
+  88 0000 00C20100 		.word	115200
+  89 0004 00000000 		.word	0
+  90 0008 00000000 		.word	0
+  91 000c 00000000 		.word	0
+  92 0010 0C000000 		.word	12
+  93 0014 00000000 		.word	0
+  94 0018 00000000 		.word	0
+  95              	.LC1:
+  96 001c 00060000 		.word	1536
+  97 0020 02000000 		.word	2
+  98 0024 03000000 		.word	3
+  99 0028 00000000 		.word	0
+ 100 002c 00000000 		.word	0
+ 101 0030 07000000 		.word	7
+ 102              		.ident	"GCC: (GNU Arm Embedded Toolchain 10.3-2021.10) 10.3.1 20210824 (release)"
+ARM GAS  /tmp/ccIUJUn6.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 Func_0_0_Trans_4_USART_0_Enable.c
+     /tmp/ccIUJUn6.s:18     .text.Func_0_0_Trans_4_USART_0_Enable_0_Basic:0000000000000000 $t
+     /tmp/ccIUJUn6.s:24     .text.Func_0_0_Trans_4_USART_0_Enable_0_Basic:0000000000000000 Func_0_0_Trans_4_USART_0_Enable_0_Basic
+     /tmp/ccIUJUn6.s:79     .text.Func_0_0_Trans_4_USART_0_Enable_0_Basic:000000000000007c $d
+     /tmp/ccIUJUn6.s:85     .rodata:0000000000000000 $d
+
+UNDEFINED SYMBOLS
+LL_GPIO_Init
+LL_USART_Init
