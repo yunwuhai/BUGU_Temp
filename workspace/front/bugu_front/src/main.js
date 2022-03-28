@@ -6,7 +6,7 @@ import '@/styles/global.css' // 全局样式
 import Animated from 'animate.css'
 import router from "./router";
 import store from "./store";
-
+import './icons/index.js' //引入svg
 
 Vue.config.productionTip = false;
 Vue.use(Antd);
