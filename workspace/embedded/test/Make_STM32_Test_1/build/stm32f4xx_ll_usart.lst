@@ -1,0 +1,291 @@
+ARM GAS  /tmp/ccDzNW1w.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 4
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"stm32f4xx_ll_usart.c"
+  16              		.text
+  17              		.section	.text.LL_USART_DeInit,"ax",%progbits
+  18              		.align	1
+  19              		.global	LL_USART_DeInit
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	LL_USART_DeInit:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28 0000 154B     		ldr	r3, .L8
+  29 0002 9842     		cmp	r0, r3
+  30 0004 0AD1     		bne	.L2
+  31 0006 03F59433 		add	r3, r3, #75776
+  32 000a 5A6A     		ldr	r2, [r3, #36]
+  33 000c 42F01002 		orr	r2, r2, #16
+  34 0010 5A62     		str	r2, [r3, #36]
+  35 0012 5A6A     		ldr	r2, [r3, #36]
+  36 0014 22F01002 		bic	r2, r2, #16
+  37              	.L7:
+  38 0018 5A62     		str	r2, [r3, #36]
+  39 001a 0CE0     		b	.L6
+  40              	.L2:
+  41 001c 0F4B     		ldr	r3, .L8+4
+  42 001e 9842     		cmp	r0, r3
+  43 0020 0BD1     		bne	.L4
+  44 0022 03F5FA33 		add	r3, r3, #128000
+  45 0026 1A6A     		ldr	r2, [r3, #32]
+  46 0028 42F40032 		orr	r2, r2, #131072
+  47 002c 1A62     		str	r2, [r3, #32]
+  48 002e 1A6A     		ldr	r2, [r3, #32]
+  49 0030 22F40032 		bic	r2, r2, #131072
+  50 0034 1A62     		str	r2, [r3, #32]
+  51              	.L6:
+  52 0036 0020     		movs	r0, #0
+  53 0038 7047     		bx	lr
+  54              	.L4:
+  55 003a 094B     		ldr	r3, .L8+8
+  56 003c 9842     		cmp	r0, r3
+  57 003e 09D1     		bne	.L5
+  58 0040 03F59233 		add	r3, r3, #74752
+ARM GAS  /tmp/ccDzNW1w.s 			page 2
+
+
+  59 0044 5A6A     		ldr	r2, [r3, #36]
+  60 0046 42F02002 		orr	r2, r2, #32
+  61 004a 5A62     		str	r2, [r3, #36]
+  62 004c 5A6A     		ldr	r2, [r3, #36]
+  63 004e 22F02002 		bic	r2, r2, #32
+  64 0052 E1E7     		b	.L7
+  65              	.L5:
+  66 0054 0120     		movs	r0, #1
+  67 0056 7047     		bx	lr
+  68              	.L9:
+  69              		.align	2
+  70              	.L8:
+  71 0058 00100140 		.word	1073811456
+  72 005c 00440040 		.word	1073759232
+  73 0060 00140140 		.word	1073812480
+  75              		.global	__aeabi_uldivmod
+  76              		.global	__aeabi_ldivmod
+  77              		.section	.text.LL_USART_Init,"ax",%progbits
+  78              		.align	1
+  79              		.global	LL_USART_Init
+  80              		.syntax unified
+  81              		.thumb
+  82              		.thumb_func
+  84              	LL_USART_Init:
+  85              		@ args = 0, pretend = 0, frame = 16
+  86              		@ frame_needed = 0, uses_anonymous_args = 0
+  87 0000 7FB5     		push	{r0, r1, r2, r3, r4, r5, r6, lr}
+  88 0002 C368     		ldr	r3, [r0, #12]
+  89 0004 9B04     		lsls	r3, r3, #18
+  90 0006 0446     		mov	r4, r0
+  91 0008 0D46     		mov	r5, r1
+  92 000a 02D5     		bpl	.L11
+  93              	.L17:
+  94 000c 0120     		movs	r0, #1
+  95              	.L12:
+  96 000e 04B0     		add	sp, sp, #16
+  97              		@ sp needed
+  98 0010 70BD     		pop	{r4, r5, r6, pc}
+  99              	.L11:
+ 100 0012 4B68     		ldr	r3, [r1, #4]
+ 101 0014 C968     		ldr	r1, [r1, #12]
+ 102 0016 C268     		ldr	r2, [r0, #12]
+ 103 0018 0B43     		orrs	r3, r3, r1
+ 104 001a 2969     		ldr	r1, [r5, #16]
+ 105 001c 0B43     		orrs	r3, r3, r1
+ 106 001e A969     		ldr	r1, [r5, #24]
+ 107 0020 22F41642 		bic	r2, r2, #38400
+ 108 0024 0B43     		orrs	r3, r3, r1
+ 109 0026 22F00C02 		bic	r2, r2, #12
+ 110 002a 1343     		orrs	r3, r3, r2
+ 111 002c C360     		str	r3, [r0, #12]
+ 112 002e 0369     		ldr	r3, [r0, #16]
+ 113 0030 AA68     		ldr	r2, [r5, #8]
+ 114 0032 23F44053 		bic	r3, r3, #12288
+ 115 0036 1343     		orrs	r3, r3, r2
+ 116 0038 0361     		str	r3, [r0, #16]
+ 117 003a 4369     		ldr	r3, [r0, #20]
+ARM GAS  /tmp/ccDzNW1w.s 			page 3
+
+
+ 118 003c 6A69     		ldr	r2, [r5, #20]
+ 119 003e 23F44073 		bic	r3, r3, #768
+ 120 0042 1343     		orrs	r3, r3, r2
+ 121 0044 4361     		str	r3, [r0, #20]
+ 122 0046 6846     		mov	r0, sp
+ 123 0048 FFF7FEFF 		bl	LL_RCC_GetSystemClocksFreq
+ 124 004c 224B     		ldr	r3, .L26
+ 125 004e 9C42     		cmp	r4, r3
+ 126 0050 28D1     		bne	.L13
+ 127              	.L16:
+ 128 0052 0399     		ldr	r1, [sp, #12]
+ 129              	.L14:
+ 130 0054 0029     		cmp	r1, #0
+ 131 0056 D9D0     		beq	.L17
+ 132 0058 2B68     		ldr	r3, [r5]
+ 133 005a 002B     		cmp	r3, #0
+ 134 005c D6D0     		beq	.L17
+ 135 005e AA69     		ldr	r2, [r5, #24]
+ 136 0060 1920     		movs	r0, #25
+ 137 0062 B2F5004F 		cmp	r2, #32768
+ 138 0066 A1FB0001 		umull	r0, r1, r1, r0
+ 139 006a 24D1     		bne	.L18
+ 140 006c DA18     		adds	r2, r3, r3
+ 141 006e 4FF00005 		mov	r5, #0
+ 142 0072 45EB0503 		adc	r3, r5, r5
+ 143 0076 FFF7FEFF 		bl	__aeabi_uldivmod
+ 144 007a 6421     		movs	r1, #100
+ 145 007c B0FBF1F6 		udiv	r6, r0, r1
+ 146 0080 01FB1603 		mls	r3, r1, r6, r0
+ 147 0084 DB00     		lsls	r3, r3, #3
+ 148 0086 3233     		adds	r3, r3, #50
+ 149 0088 B3FBF1F3 		udiv	r3, r3, r1
+ 150 008c 03F00702 		and	r2, r3, #7
+ 151 0090 5B00     		lsls	r3, r3, #1
+ 152 0092 02EB0612 		add	r2, r2, r6, lsl #4
+ 153 0096 03F4F873 		and	r3, r3, #496
+ 154 009a 1344     		add	r3, r3, r2
+ 155              	.L25:
+ 156 009c 9BB2     		uxth	r3, r3
+ 157 009e A360     		str	r3, [r4, #8]
+ 158 00a0 0020     		movs	r0, #0
+ 159 00a2 B4E7     		b	.L12
+ 160              	.L13:
+ 161 00a4 0D4B     		ldr	r3, .L26+4
+ 162 00a6 9C42     		cmp	r4, r3
+ 163 00a8 01D1     		bne	.L15
+ 164 00aa 0299     		ldr	r1, [sp, #8]
+ 165 00ac D2E7     		b	.L14
+ 166              	.L15:
+ 167 00ae 0C4B     		ldr	r3, .L26+8
+ 168 00b0 9C42     		cmp	r4, r3
+ 169 00b2 ABD1     		bne	.L17
+ 170 00b4 CDE7     		b	.L16
+ 171              	.L18:
+ 172 00b6 9A00     		lsls	r2, r3, #2
+ 173 00b8 9B0F     		lsrs	r3, r3, #30
+ 174 00ba FFF7FEFF 		bl	__aeabi_uldivmod
+ARM GAS  /tmp/ccDzNW1w.s 			page 4
+
+
+ 175 00be 6422     		movs	r2, #100
+ 176 00c0 B0FBF2F1 		udiv	r1, r0, r2
+ 177 00c4 02FB1103 		mls	r3, r2, r1, r0
+ 178 00c8 1B01     		lsls	r3, r3, #4
+ 179 00ca 3233     		adds	r3, r3, #50
+ 180 00cc B3FBF2F3 		udiv	r3, r3, r2
+ 181 00d0 03EB0113 		add	r3, r3, r1, lsl #4
+ 182 00d4 E2E7     		b	.L25
+ 183              	.L27:
+ 184 00d6 00BF     		.align	2
+ 185              	.L26:
+ 186 00d8 00100140 		.word	1073811456
+ 187 00dc 00440040 		.word	1073759232
+ 188 00e0 00140140 		.word	1073812480
+ 190              		.section	.text.LL_USART_StructInit,"ax",%progbits
+ 191              		.align	1
+ 192              		.global	LL_USART_StructInit
+ 193              		.syntax unified
+ 194              		.thumb
+ 195              		.thumb_func
+ 197              	LL_USART_StructInit:
+ 198              		@ args = 0, pretend = 0, frame = 0
+ 199              		@ frame_needed = 0, uses_anonymous_args = 0
+ 200              		@ link register save eliminated.
+ 201 0000 0023     		movs	r3, #0
+ 202 0002 4FF41652 		mov	r2, #9600
+ 203 0006 C0E90023 		strd	r2, r3, [r0]
+ 204 000a 0C22     		movs	r2, #12
+ 205 000c C0E90233 		strd	r3, r3, [r0, #8]
+ 206 0010 C0E90423 		strd	r2, r3, [r0, #16]
+ 207 0014 8361     		str	r3, [r0, #24]
+ 208 0016 7047     		bx	lr
+ 210              		.section	.text.LL_USART_ClockInit,"ax",%progbits
+ 211              		.align	1
+ 212              		.global	LL_USART_ClockInit
+ 213              		.syntax unified
+ 214              		.thumb
+ 215              		.thumb_func
+ 217              	LL_USART_ClockInit:
+ 218              		@ args = 0, pretend = 0, frame = 0
+ 219              		@ frame_needed = 0, uses_anonymous_args = 0
+ 220 0000 C268     		ldr	r2, [r0, #12]
+ 221 0002 12F40052 		ands	r2, r2, #8192
+ 222 0006 30B5     		push	{r4, r5, lr}
+ 223 0008 15D1     		bne	.L32
+ 224 000a 0C68     		ldr	r4, [r1]
+ 225 000c 2CB9     		cbnz	r4, .L31
+ 226 000e 0369     		ldr	r3, [r0, #16]
+ 227 0010 23F40063 		bic	r3, r3, #2048
+ 228 0014 0361     		str	r3, [r0, #16]
+ 229 0016 2046     		mov	r0, r4
+ 230              	.L30:
+ 231 0018 30BD     		pop	{r4, r5, pc}
+ 232              	.L31:
+ 233 001a D1E90135 		ldrd	r3, r5, [r1, #4]
+ 234 001e 0469     		ldr	r4, [r0, #16]
+ 235 0020 C968     		ldr	r1, [r1, #12]
+ARM GAS  /tmp/ccDzNW1w.s 			page 5
+
+
+ 236 0022 2B43     		orrs	r3, r3, r5
+ 237 0024 24F47064 		bic	r4, r4, #3840
+ 238 0028 2343     		orrs	r3, r3, r4
+ 239 002a 0B43     		orrs	r3, r3, r1
+ 240 002c 43F40063 		orr	r3, r3, #2048
+ 241 0030 0361     		str	r3, [r0, #16]
+ 242 0032 1046     		mov	r0, r2
+ 243 0034 F0E7     		b	.L30
+ 244              	.L32:
+ 245 0036 0120     		movs	r0, #1
+ 246 0038 EEE7     		b	.L30
+ 248              		.section	.text.LL_USART_ClockStructInit,"ax",%progbits
+ 249              		.align	1
+ 250              		.global	LL_USART_ClockStructInit
+ 251              		.syntax unified
+ 252              		.thumb
+ 253              		.thumb_func
+ 255              	LL_USART_ClockStructInit:
+ 256              		@ args = 0, pretend = 0, frame = 0
+ 257              		@ frame_needed = 0, uses_anonymous_args = 0
+ 258              		@ link register save eliminated.
+ 259 0000 0023     		movs	r3, #0
+ 260 0002 C0E90033 		strd	r3, r3, [r0]
+ 261 0006 C0E90233 		strd	r3, r3, [r0, #8]
+ 262 000a 7047     		bx	lr
+ 264              		.ident	"GCC: (GNU Arm Embedded Toolchain 10.3-2021.10) 10.3.1 20210824 (release)"
+ARM GAS  /tmp/ccDzNW1w.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 stm32f4xx_ll_usart.c
+     /tmp/ccDzNW1w.s:18     .text.LL_USART_DeInit:0000000000000000 $t
+     /tmp/ccDzNW1w.s:24     .text.LL_USART_DeInit:0000000000000000 LL_USART_DeInit
+     /tmp/ccDzNW1w.s:71     .text.LL_USART_DeInit:0000000000000058 $d
+     /tmp/ccDzNW1w.s:78     .text.LL_USART_Init:0000000000000000 $t
+     /tmp/ccDzNW1w.s:84     .text.LL_USART_Init:0000000000000000 LL_USART_Init
+     /tmp/ccDzNW1w.s:186    .text.LL_USART_Init:00000000000000d8 $d
+     /tmp/ccDzNW1w.s:191    .text.LL_USART_StructInit:0000000000000000 $t
+     /tmp/ccDzNW1w.s:197    .text.LL_USART_StructInit:0000000000000000 LL_USART_StructInit
+     /tmp/ccDzNW1w.s:211    .text.LL_USART_ClockInit:0000000000000000 $t
+     /tmp/ccDzNW1w.s:217    .text.LL_USART_ClockInit:0000000000000000 LL_USART_ClockInit
+     /tmp/ccDzNW1w.s:249    .text.LL_USART_ClockStructInit:0000000000000000 $t
+     /tmp/ccDzNW1w.s:255    .text.LL_USART_ClockStructInit:0000000000000000 LL_USART_ClockStructInit
+
+UNDEFINED SYMBOLS
+__aeabi_uldivmod
+__aeabi_ldivmod
+LL_RCC_GetSystemClocksFreq

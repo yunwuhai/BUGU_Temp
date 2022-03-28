@@ -1,0 +1,905 @@
+Archive member included to satisfy reference by file (symbol)
+
+/home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-exit.o)
+                              /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o (exit)
+/home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-impure.o)
+                              /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-exit.o) (_global_impure_ptr)
+/home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
+                              /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o (__libc_init_array)
+/home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
+                              /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o (memset)
+/home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(_exit.o)
+                              /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-exit.o) (_exit)
+/home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_ldivmod.o)
+                              build/stm32f4xx_ll_usart.o (__aeabi_ldivmod)
+/home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
+                              build/stm32f4xx_ll_usart.o (__aeabi_uldivmod)
+/home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+                              /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_ldivmod.o) (__udivmoddi4)
+/home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a(_dvmd_tls.o)
+                              /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_ldivmod.o) (__aeabi_ldiv0)
+
+Discarded input sections
+
+ .text          0x0000000000000000        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crti.o
+ .data          0x0000000000000000        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crti.o
+ .bss           0x0000000000000000        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crti.o
+ .data          0x0000000000000000        0x4 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .rodata        0x0000000000000000       0x24 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .text          0x0000000000000000       0x7c /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
+ .data          0x0000000000000000        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
+ .bss           0x0000000000000000        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
+ .ARM.extab     0x0000000000000000        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
+ .ARM.exidx     0x0000000000000000       0x10 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
+ .ARM.attributes
+                0x0000000000000000       0x1c /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
+ .text          0x0000000000000000        0x0 build/system_stm32f4xx.o
+ .data          0x0000000000000000        0x0 build/system_stm32f4xx.o
+ .bss           0x0000000000000000        0x0 build/system_stm32f4xx.o
+ .text.SystemCoreClockUpdate
+                0x0000000000000000       0x74 build/system_stm32f4xx.o
+ .text          0x0000000000000000        0x0 build/stm32f4xx_ll_gpio.o
+ .data          0x0000000000000000        0x0 build/stm32f4xx_ll_gpio.o
+ .bss           0x0000000000000000        0x0 build/stm32f4xx_ll_gpio.o
+ .text.LL_GPIO_DeInit
+                0x0000000000000000       0xbc build/stm32f4xx_ll_gpio.o
+ .text.LL_GPIO_StructInit
+                0x0000000000000000       0x16 build/stm32f4xx_ll_gpio.o
+ .text          0x0000000000000000        0x0 build/stm32f4xx_ll_rcc.o
+ .data          0x0000000000000000        0x0 build/stm32f4xx_ll_rcc.o
+ .bss           0x0000000000000000        0x0 build/stm32f4xx_ll_rcc.o
+ .text.LL_RCC_DeInit
+                0x0000000000000000       0x94 build/stm32f4xx_ll_rcc.o
+ .text.RCC_PLL_GetFreqDomain_48M
+                0x0000000000000000       0x3c build/stm32f4xx_ll_rcc.o
+ .text.LL_RCC_GetSDIOClockFreq
+                0x0000000000000000       0x1c build/stm32f4xx_ll_rcc.o
+ .text.LL_RCC_GetUSBClockFreq
+                0x0000000000000000       0x14 build/stm32f4xx_ll_rcc.o
+ .text.RCC_PLLI2S_GetFreqDomain_I2S
+                0x0000000000000000       0x40 build/stm32f4xx_ll_rcc.o
+ .text.LL_RCC_GetI2SClockFreq
+                0x0000000000000000       0x2c build/stm32f4xx_ll_rcc.o
+ .text          0x0000000000000000        0x0 build/stm32f4xx_ll_utils.o
+ .data          0x0000000000000000        0x0 build/stm32f4xx_ll_utils.o
+ .bss           0x0000000000000000        0x0 build/stm32f4xx_ll_utils.o
+ .text.UTILS_PLL_IsBusy
+                0x0000000000000000       0x1c build/stm32f4xx_ll_utils.o
+ .text.LL_mDelay
+                0x0000000000000000       0x28 build/stm32f4xx_ll_utils.o
+ .text.LL_SetFlashLatency
+                0x0000000000000000       0x8c build/stm32f4xx_ll_utils.o
+ .text.UTILS_EnablePLLAndSwitchSystem
+                0x0000000000000000       0x94 build/stm32f4xx_ll_utils.o
+ .text.LL_PLL_ConfigSystemClock_HSI
+                0x0000000000000000       0x74 build/stm32f4xx_ll_utils.o
+ .text.LL_PLL_ConfigSystemClock_HSE
+                0x0000000000000000       0x8c build/stm32f4xx_ll_utils.o
+ .text          0x0000000000000000        0x0 build/stm32f4xx_ll_usart.o
+ .data          0x0000000000000000        0x0 build/stm32f4xx_ll_usart.o
+ .bss           0x0000000000000000        0x0 build/stm32f4xx_ll_usart.o
+ .text.LL_USART_DeInit
+                0x0000000000000000       0x64 build/stm32f4xx_ll_usart.o
+ .text.LL_USART_StructInit
+                0x0000000000000000       0x18 build/stm32f4xx_ll_usart.o
+ .text.LL_USART_ClockInit
+                0x0000000000000000       0x3a build/stm32f4xx_ll_usart.o
+ .text.LL_USART_ClockStructInit
+                0x0000000000000000        0xc build/stm32f4xx_ll_usart.o
+ .text          0x0000000000000000        0x0 build/stm32f4xx_ll_exti.o
+ .data          0x0000000000000000        0x0 build/stm32f4xx_ll_exti.o
+ .bss           0x0000000000000000        0x0 build/stm32f4xx_ll_exti.o
+ .text.LL_EXTI_DeInit
+                0x0000000000000000       0x1c build/stm32f4xx_ll_exti.o
+ .text.LL_EXTI_Init
+                0x0000000000000000       0xa8 build/stm32f4xx_ll_exti.o
+ .text.LL_EXTI_StructInit
+                0x0000000000000000        0xc build/stm32f4xx_ll_exti.o
+ .comment       0x0000000000000000       0x4a build/stm32f4xx_ll_exti.o
+ .ARM.attributes
+                0x0000000000000000       0x34 build/stm32f4xx_ll_exti.o
+ .text          0x0000000000000000        0x0 build/Func_0_0_Trans_0_SYS_0_MCU_Configure.o
+ .data          0x0000000000000000        0x0 build/Func_0_0_Trans_0_SYS_0_MCU_Configure.o
+ .bss           0x0000000000000000        0x0 build/Func_0_0_Trans_0_SYS_0_MCU_Configure.o
+ .text          0x0000000000000000        0x0 build/Func_0_0_Trans_1_INT_0_MCU_Configure.o
+ .data          0x0000000000000000        0x0 build/Func_0_0_Trans_1_INT_0_MCU_Configure.o
+ .bss           0x0000000000000000        0x0 build/Func_0_0_Trans_1_INT_0_MCU_Configure.o
+ .text          0x0000000000000000        0x0 build/Func_0_0_Trans_2_CLK_0_MCU_Configure.o
+ .data          0x0000000000000000        0x0 build/Func_0_0_Trans_2_CLK_0_MCU_Configure.o
+ .bss           0x0000000000000000        0x0 build/Func_0_0_Trans_2_CLK_0_MCU_Configure.o
+ .text          0x0000000000000000        0x0 build/Func_0_0_Trans_2_CLK_1_HSE_Enable.o
+ .data          0x0000000000000000        0x0 build/Func_0_0_Trans_2_CLK_1_HSE_Enable.o
+ .bss           0x0000000000000000        0x0 build/Func_0_0_Trans_2_CLK_1_HSE_Enable.o
+ .text          0x0000000000000000        0x0 build/Func_0_0_Trans_2_CLK_2_HSE_IsReady.o
+ .data          0x0000000000000000        0x0 build/Func_0_0_Trans_2_CLK_2_HSE_IsReady.o
+ .bss           0x0000000000000000        0x0 build/Func_0_0_Trans_2_CLK_2_HSE_IsReady.o
+ .text          0x0000000000000000        0x0 build/Func_0_0_Trans_2_CLK_3_PLL_ConfigDomain_SYS.o
+ .data          0x0000000000000000        0x0 build/Func_0_0_Trans_2_CLK_3_PLL_ConfigDomain_SYS.o
+ .bss           0x0000000000000000        0x0 build/Func_0_0_Trans_2_CLK_3_PLL_ConfigDomain_SYS.o
+ .text          0x0000000000000000        0x0 build/Func_0_0_Trans_2_CLK_4_PLL_Enable.o
+ .data          0x0000000000000000        0x0 build/Func_0_0_Trans_2_CLK_4_PLL_Enable.o
+ .bss           0x0000000000000000        0x0 build/Func_0_0_Trans_2_CLK_4_PLL_Enable.o
+ .text          0x0000000000000000        0x0 build/Func_0_0_Trans_2_CLK_5_PLL_IsReady.o
+ .data          0x0000000000000000        0x0 build/Func_0_0_Trans_2_CLK_5_PLL_IsReady.o
+ .bss           0x0000000000000000        0x0 build/Func_0_0_Trans_2_CLK_5_PLL_IsReady.o
+ .text          0x0000000000000000        0x0 build/Func_0_0_Trans_2_CLK_6_SetPrescaler.o
+ .data          0x0000000000000000        0x0 build/Func_0_0_Trans_2_CLK_6_SetPrescaler.o
+ .bss           0x0000000000000000        0x0 build/Func_0_0_Trans_2_CLK_6_SetPrescaler.o
+ .text          0x0000000000000000        0x0 build/Func_0_0_Trans_2_CLK_7_SetSysClkSource.o
+ .data          0x0000000000000000        0x0 build/Func_0_0_Trans_2_CLK_7_SetSysClkSource.o
+ .bss           0x0000000000000000        0x0 build/Func_0_0_Trans_2_CLK_7_SetSysClkSource.o
+ .text          0x0000000000000000        0x0 build/Func_0_0_Trans_2_CLK_8_GetSysClkSource.o
+ .data          0x0000000000000000        0x0 build/Func_0_0_Trans_2_CLK_8_GetSysClkSource.o
+ .bss           0x0000000000000000        0x0 build/Func_0_0_Trans_2_CLK_8_GetSysClkSource.o
+ .text          0x0000000000000000        0x0 build/Func_0_0_Trans_2_CLK_9_Init.o
+ .data          0x0000000000000000        0x0 build/Func_0_0_Trans_2_CLK_9_Init.o
+ .bss           0x0000000000000000        0x0 build/Func_0_0_Trans_2_CLK_9_Init.o
+ .text          0x0000000000000000        0x0 build/Func_0_0_Trans_3_GPIO_0_ClockEnable.o
+ .data          0x0000000000000000        0x0 build/Func_0_0_Trans_3_GPIO_0_ClockEnable.o
+ .bss           0x0000000000000000        0x0 build/Func_0_0_Trans_3_GPIO_0_ClockEnable.o
+ .text          0x0000000000000000        0x0 build/Func_0_0_Trans_4_USART_0_Enable.o
+ .data          0x0000000000000000        0x0 build/Func_0_0_Trans_4_USART_0_Enable.o
+ .bss           0x0000000000000000        0x0 build/Func_0_0_Trans_4_USART_0_Enable.o
+ .text          0x0000000000000000        0x0 build/Func_0_0_Trans_5_PWR_0_MCU_Configure.o
+ .data          0x0000000000000000        0x0 build/Func_0_0_Trans_5_PWR_0_MCU_Configure.o
+ .bss           0x0000000000000000        0x0 build/Func_0_0_Trans_5_PWR_0_MCU_Configure.o
+ .text          0x0000000000000000        0x0 build/Func_0_0_Trans_6_FLASH_0_FLASH_SetLatency.o
+ .data          0x0000000000000000        0x0 build/Func_0_0_Trans_6_FLASH_0_FLASH_SetLatency.o
+ .bss           0x0000000000000000        0x0 build/Func_0_0_Trans_6_FLASH_0_FLASH_SetLatency.o
+ .text          0x0000000000000000        0x0 build/Func_0_0_Trans_6_FLASH_1_FLASH_GetLatency.o
+ .data          0x0000000000000000        0x0 build/Func_0_0_Trans_6_FLASH_1_FLASH_GetLatency.o
+ .bss           0x0000000000000000        0x0 build/Func_0_0_Trans_6_FLASH_1_FLASH_GetLatency.o
+ .text.Func_0_0_Trans_6_FLASH_1_FLASH_GetLatency_0_Basic
+                0x0000000000000000       0x10 build/Func_0_0_Trans_6_FLASH_1_FLASH_GetLatency.o
+ .comment       0x0000000000000000       0x4a build/Func_0_0_Trans_6_FLASH_1_FLASH_GetLatency.o
+ .ARM.attributes
+                0x0000000000000000       0x34 build/Func_0_0_Trans_6_FLASH_1_FLASH_GetLatency.o
+ .text          0x0000000000000000        0x0 build/Func_0_0_Trans_6_FLASH_2_MCU_Configure.o
+ .data          0x0000000000000000        0x0 build/Func_0_0_Trans_6_FLASH_2_MCU_Configure.o
+ .bss           0x0000000000000000        0x0 build/Func_0_0_Trans_6_FLASH_2_MCU_Configure.o
+ .text          0x0000000000000000        0x0 build/Func_0_Main_0_main.o
+ .data          0x0000000000000000        0x0 build/Func_0_Main_0_main.o
+ .bss           0x0000000000000000        0x0 build/Func_0_Main_0_main.o
+ .text          0x0000000000000000        0x0 build/Func_1_BSP_0_CLK_0_Init.o
+ .data          0x0000000000000000        0x0 build/Func_1_BSP_0_CLK_0_Init.o
+ .bss           0x0000000000000000        0x0 build/Func_1_BSP_0_CLK_0_Init.o
+ .text          0x0000000000000000       0x14 build/startup_stm32f401xc.o
+ .data          0x0000000000000000        0x0 build/startup_stm32f401xc.o
+ .bss           0x0000000000000000        0x0 build/startup_stm32f401xc.o
+ .text          0x0000000000000000        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-exit.o)
+ .data          0x0000000000000000        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-exit.o)
+ .bss           0x0000000000000000        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-exit.o)
+ .text.exit     0x0000000000000000       0x28 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-exit.o)
+ .debug_frame   0x0000000000000000       0x28 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-exit.o)
+ .ARM.attributes
+                0x0000000000000000       0x34 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-exit.o)
+ .text          0x0000000000000000        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-impure.o)
+ .data          0x0000000000000000        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-impure.o)
+ .bss           0x0000000000000000        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-impure.o)
+ .data._impure_ptr
+                0x0000000000000000        0x4 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-impure.o)
+ .data.impure_data
+                0x0000000000000000       0x60 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-impure.o)
+ .rodata._global_impure_ptr
+                0x0000000000000000        0x4 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-impure.o)
+ .ARM.attributes
+                0x0000000000000000       0x34 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-impure.o)
+ .text          0x0000000000000000        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
+ .data          0x0000000000000000        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
+ .bss           0x0000000000000000        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
+ .text          0x0000000000000000        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
+ .data          0x0000000000000000        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
+ .bss           0x0000000000000000        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
+ .text.memset   0x0000000000000000       0x10 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
+ .debug_frame   0x0000000000000000       0x20 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
+ .ARM.attributes
+                0x0000000000000000       0x34 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
+ .text          0x0000000000000000        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(_exit.o)
+ .data          0x0000000000000000        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(_exit.o)
+ .bss           0x0000000000000000        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(_exit.o)
+ .text._exit    0x0000000000000000        0x4 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(_exit.o)
+ .debug_frame   0x0000000000000000       0x20 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(_exit.o)
+ .ARM.attributes
+                0x0000000000000000       0x34 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(_exit.o)
+ .text          0x0000000000000000       0xa0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_ldivmod.o)
+ .data          0x0000000000000000        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_ldivmod.o)
+ .bss           0x0000000000000000        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_ldivmod.o)
+ .debug_frame   0x0000000000000000       0x44 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_ldivmod.o)
+ .ARM.attributes
+                0x0000000000000000       0x1e /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_ldivmod.o)
+ .data          0x0000000000000000        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
+ .bss           0x0000000000000000        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
+ .data          0x0000000000000000        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+ .bss           0x0000000000000000        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+ .ARM.extab     0x0000000000000000        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+ .data          0x0000000000000000        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a(_dvmd_tls.o)
+ .bss           0x0000000000000000        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a(_dvmd_tls.o)
+ .text          0x0000000000000000        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtend.o
+ .data          0x0000000000000000        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtend.o
+ .bss           0x0000000000000000        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtend.o
+ .rodata        0x0000000000000000       0x24 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtend.o
+ .eh_frame      0x0000000000000000        0x4 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtend.o
+ .ARM.attributes
+                0x0000000000000000       0x34 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtend.o
+ .text          0x0000000000000000        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
+ .data          0x0000000000000000        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
+ .bss           0x0000000000000000        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+RAM              0x0000000020000000 0x0000000000010000 xrw
+FLASH            0x0000000008000000 0x0000000000040000 xr
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crti.o
+LOAD /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+LOAD /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
+LOAD build/system_stm32f4xx.o
+LOAD build/stm32f4xx_ll_gpio.o
+LOAD build/stm32f4xx_ll_rcc.o
+LOAD build/stm32f4xx_ll_utils.o
+LOAD build/stm32f4xx_ll_usart.o
+LOAD build/stm32f4xx_ll_exti.o
+LOAD build/Func_0_0_Trans_0_SYS_0_MCU_Configure.o
+LOAD build/Func_0_0_Trans_1_INT_0_MCU_Configure.o
+LOAD build/Func_0_0_Trans_2_CLK_0_MCU_Configure.o
+LOAD build/Func_0_0_Trans_2_CLK_1_HSE_Enable.o
+LOAD build/Func_0_0_Trans_2_CLK_2_HSE_IsReady.o
+LOAD build/Func_0_0_Trans_2_CLK_3_PLL_ConfigDomain_SYS.o
+LOAD build/Func_0_0_Trans_2_CLK_4_PLL_Enable.o
+LOAD build/Func_0_0_Trans_2_CLK_5_PLL_IsReady.o
+LOAD build/Func_0_0_Trans_2_CLK_6_SetPrescaler.o
+LOAD build/Func_0_0_Trans_2_CLK_7_SetSysClkSource.o
+LOAD build/Func_0_0_Trans_2_CLK_8_GetSysClkSource.o
+LOAD build/Func_0_0_Trans_2_CLK_9_Init.o
+LOAD build/Func_0_0_Trans_3_GPIO_0_ClockEnable.o
+LOAD build/Func_0_0_Trans_4_USART_0_Enable.o
+LOAD build/Func_0_0_Trans_5_PWR_0_MCU_Configure.o
+LOAD build/Func_0_0_Trans_6_FLASH_0_FLASH_SetLatency.o
+LOAD build/Func_0_0_Trans_6_FLASH_1_FLASH_GetLatency.o
+LOAD build/Func_0_0_Trans_6_FLASH_2_MCU_Configure.o
+LOAD build/Func_0_Main_0_main.o
+LOAD build/Func_1_BSP_0_CLK_0_Init.o
+LOAD build/startup_stm32f401xc.o
+LOAD /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a
+LOAD /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a
+LOAD /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a
+START GROUP
+LOAD /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a
+LOAD /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a
+END GROUP
+START GROUP
+LOAD /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a
+LOAD /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a
+END GROUP
+LOAD /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtend.o
+LOAD /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
+                0x0000000020010000                _estack = 0x20010000
+                0x0000000000000200                _Min_Heap_Size = 0x200
+                0x0000000000000400                _Min_Stack_Size = 0x400
+
+.isr_vector     0x0000000008000000      0x194
+                0x0000000008000000                . = ALIGN (0x4)
+ *(.isr_vector)
+ .isr_vector    0x0000000008000000      0x194 build/startup_stm32f401xc.o
+                0x0000000008000000                g_pfnVectors
+                0x0000000008000194                . = ALIGN (0x4)
+
+.text           0x0000000008000194      0xa20
+                0x0000000008000194                . = ALIGN (0x4)
+ *(.text)
+ .text          0x0000000008000194       0x40 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .text          0x00000000080001d4       0x30 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
+                0x00000000080001d4                __aeabi_uldivmod
+ .text          0x0000000008000204      0x2d0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+                0x0000000008000204                __udivmoddi4
+ .text          0x00000000080004d4        0x4 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a(_dvmd_tls.o)
+                0x00000000080004d4                __aeabi_ldiv0
+                0x00000000080004d4                __aeabi_idiv0
+ *(.text*)
+ .text.SystemInit
+                0x00000000080004d8       0x14 build/system_stm32f4xx.o
+                0x00000000080004d8                SystemInit
+ .text.LL_GPIO_Init
+                0x00000000080004ec      0x13c build/stm32f4xx_ll_gpio.o
+                0x00000000080004ec                LL_GPIO_Init
+ .text.RCC_GetHCLKClockFreq
+                0x0000000008000628       0x18 build/stm32f4xx_ll_rcc.o
+                0x0000000008000628                RCC_GetHCLKClockFreq
+ .text.RCC_GetPCLK1ClockFreq
+                0x0000000008000640       0x18 build/stm32f4xx_ll_rcc.o
+                0x0000000008000640                RCC_GetPCLK1ClockFreq
+ .text.RCC_GetPCLK2ClockFreq
+                0x0000000008000658       0x18 build/stm32f4xx_ll_rcc.o
+                0x0000000008000658                RCC_GetPCLK2ClockFreq
+ .text.RCC_PLL_GetFreqDomain_SYS
+                0x0000000008000670       0x48 build/stm32f4xx_ll_rcc.o
+                0x0000000008000670                RCC_PLL_GetFreqDomain_SYS
+ .text.RCC_GetSystemClockFreq
+                0x00000000080006b8       0x28 build/stm32f4xx_ll_rcc.o
+                0x00000000080006b8                RCC_GetSystemClockFreq
+ .text.LL_RCC_GetSystemClocksFreq
+                0x00000000080006e0       0x20 build/stm32f4xx_ll_rcc.o
+                0x00000000080006e0                LL_RCC_GetSystemClocksFreq
+ .text.LL_Init1msTick
+                0x0000000008000700       0x1a build/stm32f4xx_ll_utils.o
+                0x0000000008000700                LL_Init1msTick
+ *fill*         0x000000000800071a        0x2 
+ .text.LL_SetSystemCoreClock
+                0x000000000800071c        0xc build/stm32f4xx_ll_utils.o
+                0x000000000800071c                LL_SetSystemCoreClock
+ .text.LL_USART_Init
+                0x0000000008000728       0xe4 build/stm32f4xx_ll_usart.o
+                0x0000000008000728                LL_USART_Init
+ .text.Func_0_0_Trans_0_SYS_0_MCU_Configure_0_Basic
+                0x000000000800080c       0x16 build/Func_0_0_Trans_0_SYS_0_MCU_Configure.o
+                0x000000000800080c                Func_0_0_Trans_0_SYS_0_MCU_Configure_0_Basic
+ *fill*         0x0000000008000822        0x2 
+ .text.Func_0_0_Trans_1_INT_0_MCU_Configure_0_Basic
+                0x0000000008000824       0x4c build/Func_0_0_Trans_1_INT_0_MCU_Configure.o
+                0x0000000008000824                Func_0_0_Trans_1_INT_0_MCU_Configure_0_Basic
+ .text.Func_0_0_Trans_2_CLK_0_MCU_Configure_0_Basic
+                0x0000000008000870       0x30 build/Func_0_0_Trans_2_CLK_0_MCU_Configure.o
+                0x0000000008000870                Func_0_0_Trans_2_CLK_0_MCU_Configure_0_Basic
+ .text.Func_0_0_Trans_2_CLK_0_HSE_Enable_0_Basic
+                0x00000000080008a0       0x10 build/Func_0_0_Trans_2_CLK_1_HSE_Enable.o
+                0x00000000080008a0                Func_0_0_Trans_2_CLK_0_HSE_Enable_0_Basic
+ .text.Func_0_0_Trans_2_CLK_0_HSE_IsReady_0_Basic
+                0x00000000080008b0       0x10 build/Func_0_0_Trans_2_CLK_2_HSE_IsReady.o
+                0x00000000080008b0                Func_0_0_Trans_2_CLK_0_HSE_IsReady_0_Basic
+ .text.Func_0_0_Trans_2_CLK_0_PLL_ConfigDomain_SYS_0_Basic
+                0x00000000080008c0       0x28 build/Func_0_0_Trans_2_CLK_3_PLL_ConfigDomain_SYS.o
+                0x00000000080008c0                Func_0_0_Trans_2_CLK_0_PLL_ConfigDomain_SYS_0_Basic
+ .text.Func_0_0_Trans_2_CLK_4_PLL_Enable_0_Basic
+                0x00000000080008e8       0x10 build/Func_0_0_Trans_2_CLK_4_PLL_Enable.o
+                0x00000000080008e8                Func_0_0_Trans_2_CLK_4_PLL_Enable_0_Basic
+ .text.Func_0_0_Trans_2_CLK_5_PLL_IsReady_0_Basic
+                0x00000000080008f8       0x10 build/Func_0_0_Trans_2_CLK_5_PLL_IsReady.o
+                0x00000000080008f8                Func_0_0_Trans_2_CLK_5_PLL_IsReady_0_Basic
+ .text.Func_0_0_Trans_2_CLK_6_SetPrescaler_0_AHB
+                0x0000000008000908       0x14 build/Func_0_0_Trans_2_CLK_6_SetPrescaler.o
+                0x0000000008000908                Func_0_0_Trans_2_CLK_6_SetPrescaler_0_AHB
+ .text.Func_0_0_Trans_2_CLK_6_SetPrescaler_1_APB1
+                0x000000000800091c       0x14 build/Func_0_0_Trans_2_CLK_6_SetPrescaler.o
+                0x000000000800091c                Func_0_0_Trans_2_CLK_6_SetPrescaler_1_APB1
+ .text.Func_0_0_Trans_2_CLK_6_SetPrescaler_2_APB2
+                0x0000000008000930       0x14 build/Func_0_0_Trans_2_CLK_6_SetPrescaler.o
+                0x0000000008000930                Func_0_0_Trans_2_CLK_6_SetPrescaler_2_APB2
+ .text.Func_0_0_Trans_2_CLK_7_SetSysClkSource_0_Basic
+                0x0000000008000944       0x14 build/Func_0_0_Trans_2_CLK_7_SetSysClkSource.o
+                0x0000000008000944                Func_0_0_Trans_2_CLK_7_SetSysClkSource_0_Basic
+ .text.Func_0_0_Trans_2_CLK_8_GetSysClkSource_0_Basic
+                0x0000000008000958       0x10 build/Func_0_0_Trans_2_CLK_8_GetSysClkSource.o
+                0x0000000008000958                Func_0_0_Trans_2_CLK_8_GetSysClkSource_0_Basic
+ .text.Func_0_0_Trans_2_CLK_9_Init_0_Basic
+                0x0000000008000968       0x80 build/Func_0_0_Trans_2_CLK_9_Init.o
+                0x0000000008000968                Func_0_0_Trans_2_CLK_9_Init_0_Basic
+ .text.Func_0_0_Trans_3_GPIO_0_ClockEnable_0_Basic
+                0x00000000080009e8       0x1c build/Func_0_0_Trans_3_GPIO_0_ClockEnable.o
+                0x00000000080009e8                Func_0_0_Trans_3_GPIO_0_ClockEnable_0_Basic
+ .text.Func_0_0_Trans_4_USART_0_Enable_0_Basic
+                0x0000000008000a04       0x8c build/Func_0_0_Trans_4_USART_0_Enable.o
+                0x0000000008000a04                Func_0_0_Trans_4_USART_0_Enable_0_Basic
+ .text.Func_0_0_Trans_5_PWR_0_MCU_Configure_0_Basic
+                0x0000000008000a90       0x14 build/Func_0_0_Trans_5_PWR_0_MCU_Configure.o
+                0x0000000008000a90                Func_0_0_Trans_5_PWR_0_MCU_Configure_0_Basic
+ .text.Func_0_0_Trans_6_FLASH_0_FLASH_SetLatency_0_Basic
+                0x0000000008000aa4       0x14 build/Func_0_0_Trans_6_FLASH_0_FLASH_SetLatency.o
+                0x0000000008000aa4                Func_0_0_Trans_6_FLASH_0_FLASH_SetLatency_0_Basic
+ .text.Func_0_0_Trans_6_FLASH_2_MCU_Configure_0_Basic
+                0x0000000008000ab8       0x1c build/Func_0_0_Trans_6_FLASH_2_MCU_Configure.o
+                0x0000000008000ab8                Func_0_0_Trans_6_FLASH_2_MCU_Configure_0_Basic
+ .text.startup.main
+                0x0000000008000ad4       0x14 build/Func_0_Main_0_main.o
+                0x0000000008000ad4                main
+ .text.Func_1_BSP_0_CLK_0_Init_0
+                0x0000000008000ae8       0x18 build/Func_1_BSP_0_CLK_0_Init.o
+                0x0000000008000ae8                Func_1_BSP_0_CLK_0_Init_0
+ .text.Reset_Handler
+                0x0000000008000b00       0x50 build/startup_stm32f401xc.o
+                0x0000000008000b00                Reset_Handler
+ .text.Default_Handler
+                0x0000000008000b50        0x2 build/startup_stm32f401xc.o
+                0x0000000008000b50                RTC_Alarm_IRQHandler
+                0x0000000008000b50                EXTI2_IRQHandler
+                0x0000000008000b50                DebugMon_Handler
+                0x0000000008000b50                SPI4_IRQHandler
+                0x0000000008000b50                TIM1_CC_IRQHandler
+                0x0000000008000b50                DMA2_Stream5_IRQHandler
+                0x0000000008000b50                HardFault_Handler
+                0x0000000008000b50                DMA1_Stream5_IRQHandler
+                0x0000000008000b50                SysTick_Handler
+                0x0000000008000b50                PVD_IRQHandler
+                0x0000000008000b50                SDIO_IRQHandler
+                0x0000000008000b50                TAMP_STAMP_IRQHandler
+                0x0000000008000b50                PendSV_Handler
+                0x0000000008000b50                NMI_Handler
+                0x0000000008000b50                EXTI3_IRQHandler
+                0x0000000008000b50                TIM1_UP_TIM10_IRQHandler
+                0x0000000008000b50                I2C3_ER_IRQHandler
+                0x0000000008000b50                EXTI0_IRQHandler
+                0x0000000008000b50                I2C2_EV_IRQHandler
+                0x0000000008000b50                DMA1_Stream2_IRQHandler
+                0x0000000008000b50                FPU_IRQHandler
+                0x0000000008000b50                UsageFault_Handler
+                0x0000000008000b50                DMA2_Stream2_IRQHandler
+                0x0000000008000b50                SPI1_IRQHandler
+                0x0000000008000b50                TIM1_BRK_TIM9_IRQHandler
+                0x0000000008000b50                DMA2_Stream3_IRQHandler
+                0x0000000008000b50                USART6_IRQHandler
+                0x0000000008000b50                DMA2_Stream0_IRQHandler
+                0x0000000008000b50                TIM4_IRQHandler
+                0x0000000008000b50                I2C1_EV_IRQHandler
+                0x0000000008000b50                DMA1_Stream6_IRQHandler
+                0x0000000008000b50                DMA1_Stream1_IRQHandler
+                0x0000000008000b50                TIM3_IRQHandler
+                0x0000000008000b50                RCC_IRQHandler
+                0x0000000008000b50                Default_Handler
+                0x0000000008000b50                EXTI15_10_IRQHandler
+                0x0000000008000b50                ADC_IRQHandler
+                0x0000000008000b50                DMA1_Stream7_IRQHandler
+                0x0000000008000b50                TIM5_IRQHandler
+                0x0000000008000b50                DMA2_Stream7_IRQHandler
+                0x0000000008000b50                I2C3_EV_IRQHandler
+                0x0000000008000b50                EXTI9_5_IRQHandler
+                0x0000000008000b50                RTC_WKUP_IRQHandler
+                0x0000000008000b50                SPI2_IRQHandler
+                0x0000000008000b50                MemManage_Handler
+                0x0000000008000b50                DMA1_Stream0_IRQHandler
+                0x0000000008000b50                SVC_Handler
+                0x0000000008000b50                EXTI4_IRQHandler
+                0x0000000008000b50                WWDG_IRQHandler
+                0x0000000008000b50                TIM2_IRQHandler
+                0x0000000008000b50                OTG_FS_WKUP_IRQHandler
+                0x0000000008000b50                TIM1_TRG_COM_TIM11_IRQHandler
+                0x0000000008000b50                EXTI1_IRQHandler
+                0x0000000008000b50                USART2_IRQHandler
+                0x0000000008000b50                I2C2_ER_IRQHandler
+                0x0000000008000b50                DMA2_Stream1_IRQHandler
+                0x0000000008000b50                FLASH_IRQHandler
+                0x0000000008000b50                DMA2_Stream4_IRQHandler
+                0x0000000008000b50                BusFault_Handler
+                0x0000000008000b50                USART1_IRQHandler
+                0x0000000008000b50                OTG_FS_IRQHandler
+                0x0000000008000b50                SPI3_IRQHandler
+                0x0000000008000b50                DMA1_Stream4_IRQHandler
+                0x0000000008000b50                I2C1_ER_IRQHandler
+                0x0000000008000b50                DMA2_Stream6_IRQHandler
+                0x0000000008000b50                DMA1_Stream3_IRQHandler
+ *fill*         0x0000000008000b52        0x2 
+ .text.__libc_init_array
+                0x0000000008000b54       0x48 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
+                0x0000000008000b54                __libc_init_array
+ *(.glue_7)
+ .glue_7        0x0000000008000b9c        0x0 linker stubs
+ *(.glue_7t)
+ .glue_7t       0x0000000008000b9c        0x0 linker stubs
+ *(.eh_frame)
+ .eh_frame      0x0000000008000b9c        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ *(.init)
+ .init          0x0000000008000b9c        0x4 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x0000000008000b9c                _init
+ .init          0x0000000008000ba0        0x8 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
+ *(.fini)
+ .fini          0x0000000008000ba8        0x4 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x0000000008000ba8                _fini
+ .fini          0x0000000008000bac        0x8 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
+                0x0000000008000bb4                . = ALIGN (0x4)
+                0x0000000008000bb4                _etext = .
+
+.vfp11_veneer   0x0000000008000bb4        0x0
+ .vfp11_veneer  0x0000000008000bb4        0x0 linker stubs
+
+.v4_bx          0x0000000008000bb4        0x0
+ .v4_bx         0x0000000008000bb4        0x0 linker stubs
+
+.iplt           0x0000000008000bb4        0x0
+ .iplt          0x0000000008000bb4        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+
+.rodata         0x0000000008000bb4       0x4c
+                0x0000000008000bb4                . = ALIGN (0x4)
+ *(.rodata)
+ .rodata        0x0000000008000bb4       0x34 build/Func_0_0_Trans_4_USART_0_Enable.o
+ *(.rodata*)
+ .rodata.AHBPrescTable
+                0x0000000008000be8       0x10 build/system_stm32f4xx.o
+                0x0000000008000be8                AHBPrescTable
+ .rodata.APBPrescTable
+                0x0000000008000bf8        0x8 build/system_stm32f4xx.o
+                0x0000000008000bf8                APBPrescTable
+                0x0000000008000c00                . = ALIGN (0x4)
+
+.ARM.extab
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+
+.ARM            0x0000000008000c00        0x8
+                0x0000000008000c00                __exidx_start = .
+ *(.ARM.exidx*)
+ .ARM.exidx     0x0000000008000c00        0x8 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+                0x0000000008000c08                __exidx_end = .
+
+.rel.dyn        0x0000000008000c08        0x0
+ .rel.iplt      0x0000000008000c08        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+
+.preinit_array  0x0000000008000c08        0x0
+                0x0000000008000c08                PROVIDE (__preinit_array_start = .)
+ *(.preinit_array*)
+                0x0000000008000c08                PROVIDE (__preinit_array_end = .)
+
+.init_array     0x0000000008000c08        0x4
+                0x0000000008000c08                PROVIDE (__init_array_start = .)
+ *(SORT_BY_NAME(.init_array.*))
+ *(.init_array*)
+ .init_array    0x0000000008000c08        0x4 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x0000000008000c0c                PROVIDE (__init_array_end = .)
+
+.fini_array     0x0000000008000c0c        0x4
+                [!provide]                        PROVIDE (__fini_array_start = .)
+ *(SORT_BY_NAME(.fini_array.*))
+ *(.fini_array*)
+ .fini_array    0x0000000008000c0c        0x4 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+                [!provide]                        PROVIDE (__fini_array_end = .)
+                0x0000000008000c10                _sidata = LOADADDR (.data)
+
+.data           0x0000000020000000        0x4 load address 0x0000000008000c10
+                0x0000000020000000                . = ALIGN (0x4)
+                0x0000000020000000                _sdata = .
+ *(.data)
+ *(.data*)
+ .data.SystemCoreClock
+                0x0000000020000000        0x4 build/system_stm32f4xx.o
+                0x0000000020000000                SystemCoreClock
+                0x0000000020000004                . = ALIGN (0x4)
+                0x0000000020000004                _edata = .
+
+.igot.plt       0x0000000020000004        0x0 load address 0x0000000008000c14
+ .igot.plt      0x0000000020000004        0x0 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x0000000020000004                . = ALIGN (0x4)
+
+.bss            0x0000000020000004       0x1c load address 0x0000000008000c14
+                0x0000000020000004                _sbss = .
+                0x0000000020000004                __bss_start__ = _sbss
+ *(.bss)
+ .bss           0x0000000020000004       0x1c /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ *(.bss*)
+ *(COMMON)
+                0x0000000020000020                . = ALIGN (0x4)
+                0x0000000020000020                _ebss = .
+                0x0000000020000020                __bss_end__ = _ebss
+
+._user_heap_stack
+                0x0000000020000020      0x600 load address 0x0000000008000c14
+                0x0000000020000020                . = ALIGN (0x8)
+                [!provide]                        PROVIDE (end = .)
+                [!provide]                        PROVIDE (_end = .)
+                0x0000000020000220                . = (. + _Min_Heap_Size)
+ *fill*         0x0000000020000020      0x200 
+                0x0000000020000620                . = (. + _Min_Stack_Size)
+ *fill*         0x0000000020000220      0x400 
+                0x0000000020000620                . = ALIGN (0x8)
+
+/DISCARD/
+ libc.a(*)
+ libm.a(*)
+ libgcc.a(*)
+
+.ARM.attributes
+                0x0000000000000000       0x30
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x0000000000000000       0x1e /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crti.o
+ .ARM.attributes
+                0x000000000000001e       0x34 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .ARM.attributes
+                0x0000000000000052       0x34 build/system_stm32f4xx.o
+ .ARM.attributes
+                0x0000000000000086       0x34 build/stm32f4xx_ll_gpio.o
+ .ARM.attributes
+                0x00000000000000ba       0x34 build/stm32f4xx_ll_rcc.o
+ .ARM.attributes
+                0x00000000000000ee       0x34 build/stm32f4xx_ll_utils.o
+ .ARM.attributes
+                0x0000000000000122       0x34 build/stm32f4xx_ll_usart.o
+ .ARM.attributes
+                0x0000000000000156       0x34 build/Func_0_0_Trans_0_SYS_0_MCU_Configure.o
+ .ARM.attributes
+                0x000000000000018a       0x34 build/Func_0_0_Trans_1_INT_0_MCU_Configure.o
+ .ARM.attributes
+                0x00000000000001be       0x34 build/Func_0_0_Trans_2_CLK_0_MCU_Configure.o
+ .ARM.attributes
+                0x00000000000001f2       0x34 build/Func_0_0_Trans_2_CLK_1_HSE_Enable.o
+ .ARM.attributes
+                0x0000000000000226       0x34 build/Func_0_0_Trans_2_CLK_2_HSE_IsReady.o
+ .ARM.attributes
+                0x000000000000025a       0x34 build/Func_0_0_Trans_2_CLK_3_PLL_ConfigDomain_SYS.o
+ .ARM.attributes
+                0x000000000000028e       0x34 build/Func_0_0_Trans_2_CLK_4_PLL_Enable.o
+ .ARM.attributes
+                0x00000000000002c2       0x34 build/Func_0_0_Trans_2_CLK_5_PLL_IsReady.o
+ .ARM.attributes
+                0x00000000000002f6       0x34 build/Func_0_0_Trans_2_CLK_6_SetPrescaler.o
+ .ARM.attributes
+                0x000000000000032a       0x34 build/Func_0_0_Trans_2_CLK_7_SetSysClkSource.o
+ .ARM.attributes
+                0x000000000000035e       0x34 build/Func_0_0_Trans_2_CLK_8_GetSysClkSource.o
+ .ARM.attributes
+                0x0000000000000392       0x34 build/Func_0_0_Trans_2_CLK_9_Init.o
+ .ARM.attributes
+                0x00000000000003c6       0x34 build/Func_0_0_Trans_3_GPIO_0_ClockEnable.o
+ .ARM.attributes
+                0x00000000000003fa       0x34 build/Func_0_0_Trans_4_USART_0_Enable.o
+ .ARM.attributes
+                0x000000000000042e       0x34 build/Func_0_0_Trans_5_PWR_0_MCU_Configure.o
+ .ARM.attributes
+                0x0000000000000462       0x34 build/Func_0_0_Trans_6_FLASH_0_FLASH_SetLatency.o
+ .ARM.attributes
+                0x0000000000000496       0x34 build/Func_0_0_Trans_6_FLASH_2_MCU_Configure.o
+ .ARM.attributes
+                0x00000000000004ca       0x34 build/Func_0_Main_0_main.o
+ .ARM.attributes
+                0x00000000000004fe       0x34 build/Func_1_BSP_0_CLK_0_Init.o
+ .ARM.attributes
+                0x0000000000000532       0x21 build/startup_stm32f401xc.o
+ .ARM.attributes
+                0x0000000000000553       0x34 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
+ .ARM.attributes
+                0x0000000000000587       0x1e /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
+ .ARM.attributes
+                0x00000000000005a5       0x34 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+ .ARM.attributes
+                0x00000000000005d9       0x1e /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a(_dvmd_tls.o)
+ .ARM.attributes
+                0x00000000000005f7       0x1e /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
+OUTPUT(build/Make_STM32_Test_1.elf elf32-littlearm)
+LOAD linker stubs
+LOAD /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a
+LOAD /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a
+LOAD /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a
+
+.comment        0x0000000000000000       0x49
+ .comment       0x0000000000000000       0x49 build/system_stm32f4xx.o
+                                         0x4a (size before relaxing)
+ .comment       0x0000000000000049       0x4a build/stm32f4xx_ll_gpio.o
+ .comment       0x0000000000000049       0x4a build/stm32f4xx_ll_rcc.o
+ .comment       0x0000000000000049       0x4a build/stm32f4xx_ll_utils.o
+ .comment       0x0000000000000049       0x4a build/stm32f4xx_ll_usart.o
+ .comment       0x0000000000000049       0x4a build/Func_0_0_Trans_0_SYS_0_MCU_Configure.o
+ .comment       0x0000000000000049       0x4a build/Func_0_0_Trans_1_INT_0_MCU_Configure.o
+ .comment       0x0000000000000049       0x4a build/Func_0_0_Trans_2_CLK_0_MCU_Configure.o
+ .comment       0x0000000000000049       0x4a build/Func_0_0_Trans_2_CLK_1_HSE_Enable.o
+ .comment       0x0000000000000049       0x4a build/Func_0_0_Trans_2_CLK_2_HSE_IsReady.o
+ .comment       0x0000000000000049       0x4a build/Func_0_0_Trans_2_CLK_3_PLL_ConfigDomain_SYS.o
+ .comment       0x0000000000000049       0x4a build/Func_0_0_Trans_2_CLK_4_PLL_Enable.o
+ .comment       0x0000000000000049       0x4a build/Func_0_0_Trans_2_CLK_5_PLL_IsReady.o
+ .comment       0x0000000000000049       0x4a build/Func_0_0_Trans_2_CLK_6_SetPrescaler.o
+ .comment       0x0000000000000049       0x4a build/Func_0_0_Trans_2_CLK_7_SetSysClkSource.o
+ .comment       0x0000000000000049       0x4a build/Func_0_0_Trans_2_CLK_8_GetSysClkSource.o
+ .comment       0x0000000000000049       0x4a build/Func_0_0_Trans_2_CLK_9_Init.o
+ .comment       0x0000000000000049       0x4a build/Func_0_0_Trans_3_GPIO_0_ClockEnable.o
+ .comment       0x0000000000000049       0x4a build/Func_0_0_Trans_4_USART_0_Enable.o
+ .comment       0x0000000000000049       0x4a build/Func_0_0_Trans_5_PWR_0_MCU_Configure.o
+ .comment       0x0000000000000049       0x4a build/Func_0_0_Trans_6_FLASH_0_FLASH_SetLatency.o
+ .comment       0x0000000000000049       0x4a build/Func_0_0_Trans_6_FLASH_2_MCU_Configure.o
+ .comment       0x0000000000000049       0x4a build/Func_0_Main_0_main.o
+ .comment       0x0000000000000049       0x4a build/Func_1_BSP_0_CLK_0_Init.o
+
+.debug_frame    0x0000000000000000       0x8c
+ .debug_frame   0x0000000000000000       0x2c /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
+ .debug_frame   0x000000000000002c       0x2c /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
+ .debug_frame   0x0000000000000058       0x34 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+
+Cross Reference Table
+
+Symbol                                            File
+ADC_IRQHandler                                    build/startup_stm32f401xc.o
+AHBPrescTable                                     build/system_stm32f4xx.o
+                                                  build/stm32f4xx_ll_utils.o
+                                                  build/stm32f4xx_ll_rcc.o
+APBPrescTable                                     build/system_stm32f4xx.o
+                                                  build/stm32f4xx_ll_rcc.o
+BusFault_Handler                                  build/startup_stm32f401xc.o
+DMA1_Stream0_IRQHandler                           build/startup_stm32f401xc.o
+DMA1_Stream1_IRQHandler                           build/startup_stm32f401xc.o
+DMA1_Stream2_IRQHandler                           build/startup_stm32f401xc.o
+DMA1_Stream3_IRQHandler                           build/startup_stm32f401xc.o
+DMA1_Stream4_IRQHandler                           build/startup_stm32f401xc.o
+DMA1_Stream5_IRQHandler                           build/startup_stm32f401xc.o
+DMA1_Stream6_IRQHandler                           build/startup_stm32f401xc.o
+DMA1_Stream7_IRQHandler                           build/startup_stm32f401xc.o
+DMA2_Stream0_IRQHandler                           build/startup_stm32f401xc.o
+DMA2_Stream1_IRQHandler                           build/startup_stm32f401xc.o
+DMA2_Stream2_IRQHandler                           build/startup_stm32f401xc.o
+DMA2_Stream3_IRQHandler                           build/startup_stm32f401xc.o
+DMA2_Stream4_IRQHandler                           build/startup_stm32f401xc.o
+DMA2_Stream5_IRQHandler                           build/startup_stm32f401xc.o
+DMA2_Stream6_IRQHandler                           build/startup_stm32f401xc.o
+DMA2_Stream7_IRQHandler                           build/startup_stm32f401xc.o
+DebugMon_Handler                                  build/startup_stm32f401xc.o
+Default_Handler                                   build/startup_stm32f401xc.o
+EXTI0_IRQHandler                                  build/startup_stm32f401xc.o
+EXTI15_10_IRQHandler                              build/startup_stm32f401xc.o
+EXTI1_IRQHandler                                  build/startup_stm32f401xc.o
+EXTI2_IRQHandler                                  build/startup_stm32f401xc.o
+EXTI3_IRQHandler                                  build/startup_stm32f401xc.o
+EXTI4_IRQHandler                                  build/startup_stm32f401xc.o
+EXTI9_5_IRQHandler                                build/startup_stm32f401xc.o
+FLASH_IRQHandler                                  build/startup_stm32f401xc.o
+FPU_IRQHandler                                    build/startup_stm32f401xc.o
+Func_0_0_Trans_0_SYS_0_MCU_Configure_0_Basic      build/Func_0_0_Trans_0_SYS_0_MCU_Configure.o
+                                                  build/Func_0_Main_0_main.o
+Func_0_0_Trans_1_INT_0_MCU_Configure_0_Basic      build/Func_0_0_Trans_1_INT_0_MCU_Configure.o
+                                                  build/Func_0_0_Trans_0_SYS_0_MCU_Configure.o
+Func_0_0_Trans_2_CLK_0_HSE_Enable_0_Basic         build/Func_0_0_Trans_2_CLK_1_HSE_Enable.o
+                                                  build/Func_0_0_Trans_2_CLK_9_Init.o
+Func_0_0_Trans_2_CLK_0_HSE_IsReady_0_Basic        build/Func_0_0_Trans_2_CLK_2_HSE_IsReady.o
+                                                  build/Func_0_0_Trans_2_CLK_9_Init.o
+Func_0_0_Trans_2_CLK_0_MCU_Configure_0_Basic      build/Func_0_0_Trans_2_CLK_0_MCU_Configure.o
+                                                  build/Func_0_0_Trans_0_SYS_0_MCU_Configure.o
+Func_0_0_Trans_2_CLK_0_PLL_ConfigDomain_SYS_0_Basic build/Func_0_0_Trans_2_CLK_3_PLL_ConfigDomain_SYS.o
+                                                  build/Func_0_0_Trans_2_CLK_9_Init.o
+Func_0_0_Trans_2_CLK_4_PLL_Enable_0_Basic         build/Func_0_0_Trans_2_CLK_4_PLL_Enable.o
+                                                  build/Func_0_0_Trans_2_CLK_9_Init.o
+Func_0_0_Trans_2_CLK_5_PLL_IsReady_0_Basic        build/Func_0_0_Trans_2_CLK_5_PLL_IsReady.o
+                                                  build/Func_0_0_Trans_2_CLK_9_Init.o
+Func_0_0_Trans_2_CLK_6_SetPrescaler_0_AHB         build/Func_0_0_Trans_2_CLK_6_SetPrescaler.o
+                                                  build/Func_0_0_Trans_2_CLK_9_Init.o
+Func_0_0_Trans_2_CLK_6_SetPrescaler_1_APB1        build/Func_0_0_Trans_2_CLK_6_SetPrescaler.o
+                                                  build/Func_0_0_Trans_2_CLK_9_Init.o
+Func_0_0_Trans_2_CLK_6_SetPrescaler_2_APB2        build/Func_0_0_Trans_2_CLK_6_SetPrescaler.o
+                                                  build/Func_0_0_Trans_2_CLK_9_Init.o
+Func_0_0_Trans_2_CLK_7_SetSysClkSource_0_Basic    build/Func_0_0_Trans_2_CLK_7_SetSysClkSource.o
+                                                  build/Func_0_0_Trans_2_CLK_9_Init.o
+Func_0_0_Trans_2_CLK_8_GetSysClkSource_0_Basic    build/Func_0_0_Trans_2_CLK_8_GetSysClkSource.o
+                                                  build/Func_0_0_Trans_2_CLK_9_Init.o
+Func_0_0_Trans_2_CLK_9_Init_0_Basic               build/Func_0_0_Trans_2_CLK_9_Init.o
+                                                  build/Func_0_Main_0_main.o
+Func_0_0_Trans_3_GPIO_0_ClockEnable_0_Basic       build/Func_0_0_Trans_3_GPIO_0_ClockEnable.o
+                                                  build/Func_1_BSP_0_CLK_0_Init.o
+Func_0_0_Trans_4_USART_0_Enable_0_Basic           build/Func_0_0_Trans_4_USART_0_Enable.o
+                                                  build/Func_0_Main_0_main.o
+Func_0_0_Trans_5_PWR_0_MCU_Configure_0_Basic      build/Func_0_0_Trans_5_PWR_0_MCU_Configure.o
+                                                  build/Func_0_0_Trans_0_SYS_0_MCU_Configure.o
+Func_0_0_Trans_6_FLASH_0_FLASH_SetLatency_0_Basic build/Func_0_0_Trans_6_FLASH_0_FLASH_SetLatency.o
+                                                  build/Func_0_0_Trans_6_FLASH_2_MCU_Configure.o
+Func_0_0_Trans_6_FLASH_1_FLASH_GetLatency_0_Basic build/Func_0_0_Trans_6_FLASH_1_FLASH_GetLatency.o
+Func_0_0_Trans_6_FLASH_2_MCU_Configure_0_Basic    build/Func_0_0_Trans_6_FLASH_2_MCU_Configure.o
+                                                  build/Func_0_0_Trans_0_SYS_0_MCU_Configure.o
+Func_1_BSP_0_CLK_0_Init_0                         build/Func_1_BSP_0_CLK_0_Init.o
+                                                  build/Func_0_Main_0_main.o
+HardFault_Handler                                 build/startup_stm32f401xc.o
+I2C1_ER_IRQHandler                                build/startup_stm32f401xc.o
+I2C1_EV_IRQHandler                                build/startup_stm32f401xc.o
+I2C2_ER_IRQHandler                                build/startup_stm32f401xc.o
+I2C2_EV_IRQHandler                                build/startup_stm32f401xc.o
+I2C3_ER_IRQHandler                                build/startup_stm32f401xc.o
+I2C3_EV_IRQHandler                                build/startup_stm32f401xc.o
+LL_EXTI_DeInit                                    build/stm32f4xx_ll_exti.o
+LL_EXTI_Init                                      build/stm32f4xx_ll_exti.o
+LL_EXTI_StructInit                                build/stm32f4xx_ll_exti.o
+LL_GPIO_DeInit                                    build/stm32f4xx_ll_gpio.o
+LL_GPIO_Init                                      build/stm32f4xx_ll_gpio.o
+                                                  build/Func_0_0_Trans_4_USART_0_Enable.o
+LL_GPIO_StructInit                                build/stm32f4xx_ll_gpio.o
+LL_Init1msTick                                    build/stm32f4xx_ll_utils.o
+                                                  build/Func_0_0_Trans_2_CLK_9_Init.o
+LL_PLL_ConfigSystemClock_HSE                      build/stm32f4xx_ll_utils.o
+LL_PLL_ConfigSystemClock_HSI                      build/stm32f4xx_ll_utils.o
+LL_RCC_DeInit                                     build/stm32f4xx_ll_rcc.o
+LL_RCC_GetI2SClockFreq                            build/stm32f4xx_ll_rcc.o
+LL_RCC_GetSDIOClockFreq                           build/stm32f4xx_ll_rcc.o
+LL_RCC_GetSystemClocksFreq                        build/stm32f4xx_ll_rcc.o
+                                                  build/stm32f4xx_ll_usart.o
+LL_RCC_GetUSBClockFreq                            build/stm32f4xx_ll_rcc.o
+LL_SetFlashLatency                                build/stm32f4xx_ll_utils.o
+LL_SetSystemCoreClock                             build/stm32f4xx_ll_utils.o
+                                                  build/Func_0_0_Trans_2_CLK_9_Init.o
+LL_USART_ClockInit                                build/stm32f4xx_ll_usart.o
+LL_USART_ClockStructInit                          build/stm32f4xx_ll_usart.o
+LL_USART_DeInit                                   build/stm32f4xx_ll_usart.o
+LL_USART_Init                                     build/stm32f4xx_ll_usart.o
+                                                  build/Func_0_0_Trans_4_USART_0_Enable.o
+LL_USART_StructInit                               build/stm32f4xx_ll_usart.o
+LL_mDelay                                         build/stm32f4xx_ll_utils.o
+MemManage_Handler                                 build/startup_stm32f401xc.o
+NMI_Handler                                       build/startup_stm32f401xc.o
+OTG_FS_IRQHandler                                 build/startup_stm32f401xc.o
+OTG_FS_WKUP_IRQHandler                            build/startup_stm32f401xc.o
+PVD_IRQHandler                                    build/startup_stm32f401xc.o
+PendSV_Handler                                    build/startup_stm32f401xc.o
+RCC_GetHCLKClockFreq                              build/stm32f4xx_ll_rcc.o
+RCC_GetPCLK1ClockFreq                             build/stm32f4xx_ll_rcc.o
+RCC_GetPCLK2ClockFreq                             build/stm32f4xx_ll_rcc.o
+RCC_GetSystemClockFreq                            build/stm32f4xx_ll_rcc.o
+RCC_IRQHandler                                    build/startup_stm32f401xc.o
+RCC_PLLI2S_GetFreqDomain_I2S                      build/stm32f4xx_ll_rcc.o
+RCC_PLL_GetFreqDomain_48M                         build/stm32f4xx_ll_rcc.o
+RCC_PLL_GetFreqDomain_SYS                         build/stm32f4xx_ll_rcc.o
+RTC_Alarm_IRQHandler                              build/startup_stm32f401xc.o
+RTC_WKUP_IRQHandler                               build/startup_stm32f401xc.o
+Reset_Handler                                     build/startup_stm32f401xc.o
+SDIO_IRQHandler                                   build/startup_stm32f401xc.o
+SPI1_IRQHandler                                   build/startup_stm32f401xc.o
+SPI2_IRQHandler                                   build/startup_stm32f401xc.o
+SPI3_IRQHandler                                   build/startup_stm32f401xc.o
+SPI4_IRQHandler                                   build/startup_stm32f401xc.o
+SVC_Handler                                       build/startup_stm32f401xc.o
+SysTick_Handler                                   build/startup_stm32f401xc.o
+SystemCoreClock                                   build/system_stm32f4xx.o
+                                                  build/stm32f4xx_ll_utils.o
+SystemCoreClockUpdate                             build/system_stm32f4xx.o
+SystemInit                                        build/system_stm32f4xx.o
+                                                  build/startup_stm32f401xc.o
+TAMP_STAMP_IRQHandler                             build/startup_stm32f401xc.o
+TIM1_BRK_TIM9_IRQHandler                          build/startup_stm32f401xc.o
+TIM1_CC_IRQHandler                                build/startup_stm32f401xc.o
+TIM1_TRG_COM_TIM11_IRQHandler                     build/startup_stm32f401xc.o
+TIM1_UP_TIM10_IRQHandler                          build/startup_stm32f401xc.o
+TIM2_IRQHandler                                   build/startup_stm32f401xc.o
+TIM3_IRQHandler                                   build/startup_stm32f401xc.o
+TIM4_IRQHandler                                   build/startup_stm32f401xc.o
+TIM5_IRQHandler                                   build/startup_stm32f401xc.o
+USART1_IRQHandler                                 build/startup_stm32f401xc.o
+USART2_IRQHandler                                 build/startup_stm32f401xc.o
+USART6_IRQHandler                                 build/startup_stm32f401xc.o
+UsageFault_Handler                                build/startup_stm32f401xc.o
+WWDG_IRQHandler                                   build/startup_stm32f401xc.o
+__aeabi_idiv0                                     /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a(_dvmd_tls.o)
+__aeabi_ldiv0                                     /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a(_dvmd_tls.o)
+                                                  /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
+                                                  /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_ldivmod.o)
+__aeabi_ldivmod                                   /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_ldivmod.o)
+                                                  build/stm32f4xx_ll_usart.o
+__aeabi_uldivmod                                  /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
+                                                  build/stm32f4xx_ll_usart.o
+__bss_end__                                       /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
+__bss_start__                                     /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
+__call_exitprocs                                  /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-exit.o)
+__deregister_frame_info                           /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+__dso_handle                                      /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+__init_array_end                                  /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
+__init_array_start                                /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
+__libc_fini_array                                 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
+__libc_init_array                                 /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
+                                                  build/startup_stm32f401xc.o
+                                                  /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
+__preinit_array_end                               /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
+__preinit_array_start                             /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
+__register_frame_info                             /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+__sf_fake_stderr                                  /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-impure.o)
+__sf_fake_stdin                                   /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-impure.o)
+__sf_fake_stdout                                  /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-impure.o)
+__stack                                           /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
+__udivmoddi4                                      /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+                                                  /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
+                                                  /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_ldivmod.o)
+_ebss                                             build/startup_stm32f401xc.o
+_edata                                            build/startup_stm32f401xc.o
+_estack                                           build/startup_stm32f401xc.o
+_exit                                             /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(_exit.o)
+                                                  /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-exit.o)
+_fini                                             /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crti.o
+_global_impure_ptr                                /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-impure.o)
+                                                  /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-exit.o)
+_impure_ptr                                       /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-impure.o)
+_init                                             /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crti.o
+                                                  /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
+_mainCRTStartup                                   /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
+_sbss                                             build/startup_stm32f401xc.o
+_sdata                                            build/startup_stm32f401xc.o
+_sidata                                           build/startup_stm32f401xc.o
+_stack_init                                       /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
+_start                                            /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
+atexit                                            /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
+exit                                              /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-exit.o)
+                                                  /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
+g_pfnVectors                                      build/startup_stm32f401xc.o
+hardware_init_hook                                /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
+main                                              build/Func_0_Main_0_main.o
+                                                  build/startup_stm32f401xc.o
+                                                  /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
+memset                                            /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
+                                                  /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
+software_init_hook                                /home/yun/BUGU_Temp/workspace/embedded/test/Make_STM32_Test_1/Tools/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o

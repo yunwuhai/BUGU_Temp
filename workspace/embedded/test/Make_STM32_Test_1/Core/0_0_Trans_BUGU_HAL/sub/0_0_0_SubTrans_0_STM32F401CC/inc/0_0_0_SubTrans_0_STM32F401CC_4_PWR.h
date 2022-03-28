@@ -1,0 +1,19 @@
+#ifndef __0_0_0_SUBTRANS_0_STM32F401CC_4_PWR_H__
+#define __0_0_0_SUBTRANS_0_STM32F401CC_4_PWR_H__
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#include "stm32f4xx_ll_pwr.h"
+
+#define Object_DataEnum_0_0_0_SubTrans_0_STM32F401CC_4_PWR_0_LL_PWR_REGU_VOLTAGE_0_LL_PWR_REGU_VOLTAGE_SCALE1 LL_PWR_REGU_VOLTAGE_SCALE1
+#define Object_DataEnum_0_0_0_SubTrans_0_STM32F401CC_4_PWR_0_LL_PWR_REGU_VOLTAGE_0_LL_PWR_REGU_VOLTAGE_SCALE2 LL_PWR_REGU_VOLTAGE_SCALE2
+
+#define Func_0_0_0_SubTrans_0_STM32F401CC_4_PWR_0_LL_PWR_SetRegulVoltageScaling_0_Extern(IFormParam_DataEnum_0_VoltageScaling) LL_PWR_SetRegulVoltageScaling(IFormParam_DataEnum_0_VoltageScaling)
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif

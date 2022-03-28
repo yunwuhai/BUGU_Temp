@@ -1,0 +1,50 @@
+ARM GAS  /tmp/ccW4dKjm.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 4
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"Func_0_0_Trans_5_PWR_0_MCU_Configure.c"
+  16              		.text
+  17              		.section	.text.Func_0_0_Trans_5_PWR_0_MCU_Configure_0_Basic,"ax",%progbits
+  18              		.align	1
+  19              		.global	Func_0_0_Trans_5_PWR_0_MCU_Configure_0_Basic
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	Func_0_0_Trans_5_PWR_0_MCU_Configure_0_Basic:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28 0000 034A     		ldr	r2, .L2
+  29 0002 1368     		ldr	r3, [r2]
+  30 0004 23F44043 		bic	r3, r3, #49152
+  31 0008 43F40043 		orr	r3, r3, #32768
+  32 000c 1360     		str	r3, [r2]
+  33 000e 7047     		bx	lr
+  34              	.L3:
+  35              		.align	2
+  36              	.L2:
+  37 0010 00700040 		.word	1073770496
+  39              		.ident	"GCC: (GNU Arm Embedded Toolchain 10.3-2021.10) 10.3.1 20210824 (release)"
+ARM GAS  /tmp/ccW4dKjm.s 			page 2
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 Func_0_0_Trans_5_PWR_0_MCU_Configure.c
+     /tmp/ccW4dKjm.s:18     .text.Func_0_0_Trans_5_PWR_0_MCU_Configure_0_Basic:0000000000000000 $t
+     /tmp/ccW4dKjm.s:24     .text.Func_0_0_Trans_5_PWR_0_MCU_Configure_0_Basic:0000000000000000 Func_0_0_Trans_5_PWR_0_MCU_Configure_0_Basic
+     /tmp/ccW4dKjm.s:37     .text.Func_0_0_Trans_5_PWR_0_MCU_Configure_0_Basic:0000000000000010 $d
+
+NO UNDEFINED SYMBOLS

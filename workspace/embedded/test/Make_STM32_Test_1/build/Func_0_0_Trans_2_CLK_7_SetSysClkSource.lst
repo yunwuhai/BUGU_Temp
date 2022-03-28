@@ -1,0 +1,50 @@
+ARM GAS  /tmp/ccqNrAER.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 4
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"Func_0_0_Trans_2_CLK_7_SetSysClkSource.c"
+  16              		.text
+  17              		.section	.text.Func_0_0_Trans_2_CLK_7_SetSysClkSource_0_Basic,"ax",%progbits
+  18              		.align	1
+  19              		.global	Func_0_0_Trans_2_CLK_7_SetSysClkSource_0_Basic
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	Func_0_0_Trans_2_CLK_7_SetSysClkSource_0_Basic:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28 0000 034A     		ldr	r2, .L2
+  29 0002 9368     		ldr	r3, [r2, #8]
+  30 0004 23F00303 		bic	r3, r3, #3
+  31 0008 1843     		orrs	r0, r0, r3
+  32 000a 9060     		str	r0, [r2, #8]
+  33 000c 7047     		bx	lr
+  34              	.L3:
+  35 000e 00BF     		.align	2
+  36              	.L2:
+  37 0010 00380240 		.word	1073887232
+  39              		.ident	"GCC: (GNU Arm Embedded Toolchain 10.3-2021.10) 10.3.1 20210824 (release)"
+ARM GAS  /tmp/ccqNrAER.s 			page 2
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 Func_0_0_Trans_2_CLK_7_SetSysClkSource.c
+     /tmp/ccqNrAER.s:18     .text.Func_0_0_Trans_2_CLK_7_SetSysClkSource_0_Basic:0000000000000000 $t
+     /tmp/ccqNrAER.s:24     .text.Func_0_0_Trans_2_CLK_7_SetSysClkSource_0_Basic:0000000000000000 Func_0_0_Trans_2_CLK_7_SetSysClkSource_0_Basic
+     /tmp/ccqNrAER.s:37     .text.Func_0_0_Trans_2_CLK_7_SetSysClkSource_0_Basic:0000000000000010 $d
+
+NO UNDEFINED SYMBOLS

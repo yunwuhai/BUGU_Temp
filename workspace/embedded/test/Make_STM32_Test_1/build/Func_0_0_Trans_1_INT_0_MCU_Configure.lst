@@ -1,0 +1,75 @@
+ARM GAS  /tmp/cc3TPF1t.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 4
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"Func_0_0_Trans_1_INT_0_MCU_Configure.c"
+  16              		.text
+  17              		.section	.text.Func_0_0_Trans_1_INT_0_MCU_Configure_0_Basic,"ax",%progbits
+  18              		.align	1
+  19              		.global	Func_0_0_Trans_1_INT_0_MCU_Configure_0_Basic
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	Func_0_0_Trans_1_INT_0_MCU_Configure_0_Basic:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28 0000 1049     		ldr	r1, .L4
+  29 0002 114B     		ldr	r3, .L4+4
+  30 0004 CA68     		ldr	r2, [r1, #12]
+  31 0006 22F4E062 		bic	r2, r2, #1792
+  32 000a 1204     		lsls	r2, r2, #16
+  33 000c 120C     		lsrs	r2, r2, #16
+  34 000e 1343     		orrs	r3, r3, r2
+  35 0010 CB60     		str	r3, [r1, #12]
+  36 0012 CA68     		ldr	r2, [r1, #12]
+  37 0014 C2F30222 		ubfx	r2, r2, #8, #3
+  38 0018 C2F10700 		rsb	r0, r2, #7
+  39 001c 131D     		adds	r3, r2, #4
+  40 001e 0428     		cmp	r0, #4
+  41 0020 28BF     		it	cs
+  42 0022 0420     		movcs	r0, #4
+  43 0024 062B     		cmp	r3, #6
+  44 0026 4FF0FF33 		mov	r3, #-1
+  45 002a 03FA00F3 		lsl	r3, r3, r0
+  46 002e 8CBF     		ite	hi
+  47 0030 033A     		subhi	r2, r2, #3
+  48 0032 0022     		movls	r2, #0
+  49 0034 DB43     		mvns	r3, r3
+  50 0036 9340     		lsls	r3, r3, r2
+  51 0038 1B01     		lsls	r3, r3, #4
+  52 003a DBB2     		uxtb	r3, r3
+  53 003c 81F82330 		strb	r3, [r1, #35]
+  54 0040 7047     		bx	lr
+  55              	.L5:
+  56 0042 00BF     		.align	2
+  57              	.L4:
+  58 0044 00ED00E0 		.word	-536810240
+ARM GAS  /tmp/cc3TPF1t.s 			page 2
+
+
+  59 0048 0003FA05 		.word	100270848
+  61              		.ident	"GCC: (GNU Arm Embedded Toolchain 10.3-2021.10) 10.3.1 20210824 (release)"
+ARM GAS  /tmp/cc3TPF1t.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 Func_0_0_Trans_1_INT_0_MCU_Configure.c
+     /tmp/cc3TPF1t.s:18     .text.Func_0_0_Trans_1_INT_0_MCU_Configure_0_Basic:0000000000000000 $t
+     /tmp/cc3TPF1t.s:24     .text.Func_0_0_Trans_1_INT_0_MCU_Configure_0_Basic:0000000000000000 Func_0_0_Trans_1_INT_0_MCU_Configure_0_Basic
+     /tmp/cc3TPF1t.s:58     .text.Func_0_0_Trans_1_INT_0_MCU_Configure_0_Basic:0000000000000044 $d
+
+NO UNDEFINED SYMBOLS

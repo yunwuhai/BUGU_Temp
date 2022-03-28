@@ -1,0 +1,56 @@
+ARM GAS  /tmp/ccoJewjM.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 4
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"Func_0_0_Trans_3_GPIO_0_ClockEnable.c"
+  16              		.text
+  17              		.section	.text.Func_0_0_Trans_3_GPIO_0_ClockEnable_0_Basic,"ax",%progbits
+  18              		.align	1
+  19              		.global	Func_0_0_Trans_3_GPIO_0_ClockEnable_0_Basic
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	Func_0_0_Trans_3_GPIO_0_ClockEnable_0_Basic:
+  25              		@ args = 0, pretend = 0, frame = 8
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28 0000 054B     		ldr	r3, .L2
+  29 0002 1A6B     		ldr	r2, [r3, #48]
+  30 0004 0243     		orrs	r2, r2, r0
+  31 0006 1A63     		str	r2, [r3, #48]
+  32 0008 1B6B     		ldr	r3, [r3, #48]
+  33 000a 82B0     		sub	sp, sp, #8
+  34 000c 1840     		ands	r0, r0, r3
+  35 000e 0190     		str	r0, [sp, #4]
+  36 0010 019B     		ldr	r3, [sp, #4]
+  37 0012 02B0     		add	sp, sp, #8
+  38              		@ sp needed
+  39 0014 7047     		bx	lr
+  40              	.L3:
+  41 0016 00BF     		.align	2
+  42              	.L2:
+  43 0018 00380240 		.word	1073887232
+  45              		.ident	"GCC: (GNU Arm Embedded Toolchain 10.3-2021.10) 10.3.1 20210824 (release)"
+ARM GAS  /tmp/ccoJewjM.s 			page 2
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 Func_0_0_Trans_3_GPIO_0_ClockEnable.c
+     /tmp/ccoJewjM.s:18     .text.Func_0_0_Trans_3_GPIO_0_ClockEnable_0_Basic:0000000000000000 $t
+     /tmp/ccoJewjM.s:24     .text.Func_0_0_Trans_3_GPIO_0_ClockEnable_0_Basic:0000000000000000 Func_0_0_Trans_3_GPIO_0_ClockEnable_0_Basic
+     /tmp/ccoJewjM.s:43     .text.Func_0_0_Trans_3_GPIO_0_ClockEnable_0_Basic:0000000000000018 $d
+
+NO UNDEFINED SYMBOLS
