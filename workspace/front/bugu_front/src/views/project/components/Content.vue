@@ -11,7 +11,7 @@
             type="editable-card"
             @edit="onEdit"
             v-else>
-      <a-tab-pane v-for="pane in panes"
+      <a-tab-pane v-for="pane in $store.state.content.panes"
                   :key="pane.key"
                   :tab="pane.title"
                   :closable="pane.closable">
@@ -59,7 +59,8 @@ export default {
     remove(targetKey) {
       let activeKey = this.$store.state.content.activeKey
       let lastIndex
-      this.panes.forEach((pane, i) => {
+      let panes = this.$store.state.content.panes
+      panes.forEach((pane, i) => {
         if (pane.key === targetKey) {
           lastIndex = i - 1;
         }
@@ -67,12 +68,12 @@ export default {
       this.$store.commit("REMOVE_KEYS", targetKey)
       this.$store.commit("REMOVE_PANES", targetKey)
       //更新当前展示中的选项卡
-      this.panes = this.$store.state.content.panes
-      if (this.panes.length && activeKey === targetKey) {
+      panes = this.$store.state.content.panes
+      if (panes.length && activeKey === targetKey) {
         if (lastIndex >= 0) {
-          activeKey = this.panes[lastIndex].key;
+          activeKey = panes[lastIndex].key;
         } else {
-          activeKey = this.panes[0].key;
+          activeKey = panes[0].key;
         }
       }
       this.$store.commit("SET_ACTIVE", activeKey)

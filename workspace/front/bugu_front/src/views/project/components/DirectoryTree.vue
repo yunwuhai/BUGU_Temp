@@ -293,6 +293,7 @@ export default {
       if (this.$store.state.content.keys.indexOf(this.treeNode.dataRef.key) > -1) {
         this.$store.commit("REMOVE_KEYS", this.treeNode.dataRef.key)
         this.$store.commit("REMOVE_PANES", this.treeNode.dataRef.key)
+        this.$store.commit("SET_ACTIVE", this.$store.state.content.keys[0])
       }
     },
     //删除树形结点

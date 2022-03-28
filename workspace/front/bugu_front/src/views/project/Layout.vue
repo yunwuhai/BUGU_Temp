@@ -1,18 +1,22 @@
 <!-- 项目界面布局 -->
 <template>
-  <div>
-    <Header></Header>
-    <a-row class="row">
-      <a-col :span="sliderSpan">
-        <!-- <Slider :changeSpan="changeSpan"></Slider> -->
-        <Slider></Slider>
-      </a-col>
-      <a-col :span="contentSpan"
-             :class="transObj">
-        <Content></Content>
-      </a-col>
-    </a-row>
-  </div>
+  <transition mode="out-in"
+              appear
+              appear-active-class="animate__animated animate__fadeIn"
+              leave-active-class="animate__animated animate__fadeInLeft">
+    <div>
+      <Header></Header>
+      <a-row class="row">
+        <a-col :span="sliderSpan">
+          <Slider></Slider>
+        </a-col>
+        <a-col :span="contentSpan"
+               :class="transObj">
+          <Content></Content>
+        </a-col>
+      </a-row>
+    </div>
+  </transition>
 </template>
 
 <script>
