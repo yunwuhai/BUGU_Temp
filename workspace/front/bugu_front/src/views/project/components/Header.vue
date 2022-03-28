@@ -3,7 +3,7 @@
   <a-layout-header class="header">
     <a-button type="link"
               style="float:right; margin: 16px 28px 16px 0;">
-      <router-link to="/login">注销</router-link>
+      <router-link to="/entrance">注销</router-link>
     </a-button>
     <div class="logo"></div>
     <div style="margin-left: 13.7vw;">
