@@ -5,13 +5,18 @@
               style="float:right; margin: 16px 28px 16px 0;">
       <router-link to="/entrance">注销</router-link>
     </a-button>
-    <div class="logo"></div>
+    <div class="logo">
+      <img src="@/assets/LOGO.png"
+           alt="logo"
+           width="200px"
+           height="64px" />
+    </div>
     <div style="margin-left: 13.7vw;">
       <a-menu theme="dark"
               mode="horizontal"
               :default-selected-keys="['1']"
               style="lineHeight:64px">
-        <a-menu-item key="1"> 工程界面 </a-menu-item>
+        <a-menu-item key="1"> 项目界面 </a-menu-item>
         <a-menu-item key="2"> 社区界面 </a-menu-item>
         <a-menu-item key="3"> 个人中心 </a-menu-item>
       </a-menu>
@@ -61,10 +66,8 @@ export default {
 </script>
 <style scoped>
 .logo {
-  width: 120px;
-  height: 31px;
-  background: rgba(255, 255, 255, 0.2);
-  margin: 16px 28px 16px 0;
-  float: left;
+  position: absolute;
+  /* height: 53px;
+  width: 2px; */
 }
 </style>

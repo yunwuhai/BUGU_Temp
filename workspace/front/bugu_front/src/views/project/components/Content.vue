@@ -1,7 +1,7 @@
 <!-- 内容组件 -->
 <template>
   <div>
-    <div style="padding:40vh;"
+    <div style="padding:30vh;"
          v-if="panes.length === 0">
       <a-empty description="暂无方法编辑中" />
     </div>
