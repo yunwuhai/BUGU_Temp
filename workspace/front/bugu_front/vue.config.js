@@ -6,8 +6,11 @@ function resolve(dir) {
 module.exports = {
   // 基本路径
   // publicPath: "/",
-  // 输出文件目录
-  outputDir: "dist",
+	publicPath: process.env.NODE_ENV === 'development' ? '/' : '/',
+  outputDir: 'dist',  // 输出文件目录
+  assetsDir: 'static',
+  indexPath: 'index.html',
+
   // webpack-dev-server 相关配置
   // devServer: {
   //   port: 8888,
