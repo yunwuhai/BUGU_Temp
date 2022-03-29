@@ -2,7 +2,7 @@
   <div class="container">
     <header class="header">
       <div class="img-container">
-        <img src="@/assets/logo.png"
+        <img src="@/assets/LOGO.png"
              alt="logo"
              width="210px"
              height="85px" />
@@ -15,7 +15,7 @@
       <a-divider type="vertical"
                  style="height:470px" />
       <div class="login-container">
-        <a-tabs default-active-key="1"
+        <a-tabs v-model="activeKey"
                 style="text-align:center;">
           <a-tab-pane key="1"
                       tab="登录">
@@ -32,8 +32,8 @@
 </template>
 
 <script>
-import Login from './Login'
-import Register from './Register'
+import Login from './components/Login'
+import Register from './components/Register'
 
 export default {
   name: 'Entrance',
@@ -43,6 +43,7 @@ export default {
   },
   data() {
     return {
+      activeKey: "1"
     }
   },
   methods: {
@@ -78,6 +79,12 @@ export default {
     //       }
     //     })
     //   }
+    regSuccess(registerForm) {
+      this.activeKey = registerForm.activeKey
+    }
+  },
+  mounted() {
+    this.$bus.$on('success', this.regSuccess)
   }
 }
 </script>
