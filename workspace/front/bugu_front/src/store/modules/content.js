@@ -1,3 +1,4 @@
+// 用于主体部分的组件通信
 export default {
 	state:{
 		keys:[],//内容部分的key集合

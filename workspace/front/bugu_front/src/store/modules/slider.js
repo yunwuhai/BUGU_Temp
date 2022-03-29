@@ -1,3 +1,4 @@
+// 用于侧边栏的组件通信
 export default {
 	state:{
 		collapsed: false,//收起侧边栏
