@@ -7,6 +7,8 @@ import getters from "./getters"
 import slider from "./modules/slider.js"
 import content from "./modules/content.js"
 import user from "./modules/user.js"
+import router from "./modules/router.js"
+
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -17,6 +19,7 @@ export default new Vuex.Store({
   modules: {
     slider,
     content,
-    user
+    user,
+    router
   },
 });

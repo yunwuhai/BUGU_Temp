@@ -197,7 +197,7 @@ export default {
       } else {
         this.treeData.push(newTreeNode)
       }
-      console.log(this.treeData)
+      // console.log(this.treeData)
       this.$nextTick(() => {
         // 调用refs
         this.$refs.create.focus()
@@ -325,8 +325,8 @@ export default {
       */
       // console.log(this.treeData)
     },
-    cancel(e) {
-      console.log(e);
+    cancel() {
+      // console.log(e);
       this.$message.info('取消删除', 0.5);
     }
   },

@@ -31,6 +31,9 @@ export const setUserInfo = (user) => {
 export const getUserInfo = () => {
   return Cookie.get(userInfo)
 }
+export const removeUserInfo = () => {
+  return Cookie.remove(userInfo)
+}
 
 // export default{
 //   getToken : () => {
