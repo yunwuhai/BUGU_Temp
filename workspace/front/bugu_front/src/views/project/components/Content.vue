@@ -35,7 +35,7 @@ export default {
   components: { Card },
   data() {
     //这里存放数据
-    const panes = this.$store.state.content.panes
+    const panes = this.$store.getters.panes
     return {
       // activeKey: panes[0].key,
       panes,
@@ -57,9 +57,9 @@ export default {
       this[action](targetKey);
     },
     remove(targetKey) {
-      let activeKey = this.$store.state.content.activeKey
+      let activeKey = this.$store.getters.activeKey
       let lastIndex
-      let panes = this.$store.state.content.panes
+      let panes = this.$store.getters.panes
       panes.forEach((pane, i) => {
         if (pane.key === targetKey) {
           lastIndex = i - 1;
@@ -68,7 +68,7 @@ export default {
       this.$store.commit("REMOVE_KEYS", targetKey)
       this.$store.commit("REMOVE_PANES", targetKey)
       //更新当前展示中的选项卡
-      panes = this.$store.state.content.panes
+      panes = this.$store.getters.panes
       if (panes.length && activeKey === targetKey) {
         if (lastIndex >= 0) {
           activeKey = panes[lastIndex].key;

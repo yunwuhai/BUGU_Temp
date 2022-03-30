@@ -149,7 +149,7 @@ export default {
         this.$message.error('不能开启选项卡', 0.5);
       } else {
         //不能重复打开选项卡
-        if (this.$store.state.content.keys.indexOf(node.key) === -1) {
+        if (this.$store.getters.keys.indexOf(node.key) === -1) {
           this.$message.success('成功打开选项卡', 0.5);
           this.$store.commit("SET_KEYS", node.key)
           this.$store.commit("SET_ACTIVE", node.key)
@@ -290,10 +290,10 @@ export default {
     },
     //删除树形结点后若有打开的选项卡也关闭
     removeTabs() {
-      if (this.$store.state.content.keys.indexOf(this.treeNode.dataRef.key) > -1) {
+      if (this.$store.getters.keys.indexOf(this.treeNode.dataRef.key) > -1) {
         this.$store.commit("REMOVE_KEYS", this.treeNode.dataRef.key)
         this.$store.commit("REMOVE_PANES", this.treeNode.dataRef.key)
-        this.$store.commit("SET_ACTIVE", this.$store.state.content.keys[0])
+        this.$store.commit("SET_ACTIVE", this.$store.getters.keys[0])
       }
     },
     //删除树形结点

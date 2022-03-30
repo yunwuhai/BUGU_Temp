@@ -3,11 +3,12 @@ import App from "./App.vue";
 import Antd from "ant-design-vue";
 import "ant-design-vue/dist/antd.css";
 import '@/styles/global.css' // 全局样式
+import 'nprogress/nprogress.css'// 引入进度条样式
 import Animated from 'animate.css'
 import router from "./router";
 import store from "./store";
 import './icons/index.js' //引入svg
-
+import './utils/permission' // 路由守卫
 Vue.config.productionTip = false;
 Vue.use(Antd);
 Vue.use(Animated)

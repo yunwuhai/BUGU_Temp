@@ -40,7 +40,7 @@ export default {
   //监听属性 类似于data概念
   computed: {
     collapsed() {
-      return this.$store.state.slider.collapsed
+      return this.$store.getters.collapsed
     },
     sliderSpan() {
       if (this.collapsed) {

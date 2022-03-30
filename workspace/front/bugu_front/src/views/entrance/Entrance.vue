@@ -1,34 +1,38 @@
 <template>
-  <div class="container">
-    <header class="header">
-      <div class="img-container">
-        <img src="@/assets/LOGO.png"
-             alt="logo"
-             width="210px"
-             height="85px" />
-      </div>
-      <span class="header-title">不咕极简物联云开发平台</span>
-    </header>
-    <div class="content">
-      <svg-icon icon-class="login"
-                className="svg"></svg-icon>
-      <a-divider type="vertical"
-                 style="height:470px" />
-      <div class="login-container">
-        <a-tabs v-model="activeKey"
-                style="text-align:center;">
-          <a-tab-pane key="1"
-                      tab="登录">
-            <Login></Login>
-          </a-tab-pane>
-          <a-tab-pane key="2"
-                      tab="注册">
-            <Register></Register>
-          </a-tab-pane>
-        </a-tabs>
+  <transition mode="out-in"
+              appear
+              appear-active-class="animate__animated animate__fadeIn">
+    <div class="container">
+      <header class="header">
+        <div class="img-container">
+          <img src="@/assets/LOGO.png"
+               alt="logo"
+               width="210px"
+               height="85px" />
+        </div>
+        <span class="header-title">不咕极简物联云开发平台</span>
+      </header>
+      <div class="content">
+        <svg-icon icon-class="login"
+                  className="svg"></svg-icon>
+        <a-divider type="vertical"
+                   style="height:470px" />
+        <div class="login-container">
+          <a-tabs v-model="activeKey"
+                  style="text-align:center;">
+            <a-tab-pane key="1"
+                        tab="登录">
+              <Login></Login>
+            </a-tab-pane>
+            <a-tab-pane key="2"
+                        tab="注册">
+              <Register></Register>
+            </a-tab-pane>
+          </a-tabs>
+        </div>
       </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>

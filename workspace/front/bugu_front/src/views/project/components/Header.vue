@@ -2,8 +2,9 @@
 <template>
   <a-layout-header class="header">
     <a-button type="link"
-              style="float:right; margin: 16px 28px 16px 0;">
-      <router-link to="/entrance">注销</router-link>
+              style="float:right; margin: 16px 28px 16px 0;"
+              @click="logout()">
+      注销
     </a-button>
     <div class="logo">
       <img src="@/assets/LOGO.png"
@@ -28,7 +29,7 @@
 <script>
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
-
+import { removeToken, setLoginStatus } from '@/utils/token'
 export default {
   name: 'Header',
   //import引入的组件需要注入到对象中才能使用
@@ -45,7 +46,19 @@ export default {
   watch: {},
   //方法集合
   methods: {
-
+    logout() {
+      // this.$confirm('此操作将退出登录, 是否继续?', '提示', {
+      //   confirmButtonText: '确定',
+      //   cancelButtonText: '取消',
+      //   type: 'warning'
+      // })
+      removeToken()
+      setLoginStatus(false)
+      this.$router.push({
+        name: "Entrance"
+      })
+      this.$message.success("成功退出")
+    }
   },
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {
