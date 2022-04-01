@@ -3,7 +3,7 @@ export default {
 	state:{
 		keys:[],//内容部分的key集合
 		panes:[],//内容部分的选项卡
-		activeKey:""//当前处于展示状态的选项卡key
+		activeKey:"",//当前处于展示状态的选项卡key
 	},
 	actions:{
 		
