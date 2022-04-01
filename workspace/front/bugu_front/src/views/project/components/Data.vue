@@ -1,40 +1,33 @@
-<!-- 顶栏组件 -->
+<!-- 数据仓库显示 -->
 <template>
-  <a-layout-header class="header">
-    <Logout></Logout>
-    <div class="logo">
-      <!-- <router-link to="/entrance"> -->
-      <img src="@/assets/LOGO.png"
-           alt="logo"
-           width="200px"
-           height="64px" />
-      <!-- </router-link> -->
-    </div>
-    <div style="margin-left: 13.7vw;">
-      <a-menu theme="dark"
-              mode="horizontal"
-              :default-selected-keys="['1']"
-              style="lineHeight:64px">
-        <a-menu-item key="1"> 项目界面 </a-menu-item>
-        <a-menu-item key="2"> 社区界面 </a-menu-item>
-        <a-menu-item key="3"> 个人中心 </a-menu-item>
-      </a-menu>
-    </div>
-  </a-layout-header>
+  <a-drawer :title="$store.getters.title"
+            :width="950"
+            :wrapStyle="$store.getters.wrap"
+            :placement="$store.getters.placement"
+            :maskClosable="false"
+            :mask="false"
+            :closable="true"
+            :visible="$store.getters.visible"
+            @close="onClose">
+    <DataTable :editingKey="editingKey"></DataTable>
+  </a-drawer>
 </template>
 
 <script>
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
-
+import DataTable from './DataTable'
 export default {
-  name: 'Header',
+  name: 'Data',
   //import引入的组件需要注入到对象中才能使用
-  components: {},
+  components: {
+    DataTable
+  },
   data() {
     //这里存放数据
     return {
-
+      visible: false,
+      editingKey: ""
     };
   },
   //监听属性 类似于data概念
@@ -43,6 +36,12 @@ export default {
   watch: {},
   //方法集合
   methods: {
+    //关闭的回调
+    onClose() {
+      this.$store.state.data.visible = false;
+      this.$bus.$emit('closeEdit')
+    },
+
   },
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {
@@ -62,9 +61,4 @@ export default {
 }
 </script>
 <style scoped>
-.logo {
-  position: absolute;
-  /* height: 53px;
-  width: 2px; */
-}
 </style>

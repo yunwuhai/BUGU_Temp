@@ -1,8 +1,15 @@
 <!-- 内容组件 -->
 <template>
   <div>
+    <a-tooltip placement="left"
+               title="数据仓库">
+      <a-button type="link"
+                @click="displayData">
+        <a-icon :type="$store.getters.visible ? 'menu-unfold' : 'menu-fold'" />
+      </a-button>
+    </a-tooltip>
     <div style="padding:30vh;"
-         v-if="panes.length === 0">
+         v-if="$store.getters.panes.length === 0">
       <a-empty description="暂无方法编辑中" />
     </div>
     <a-tabs v-model="$store.state.content.activeKey"
@@ -11,15 +18,15 @@
             type="editable-card"
             @edit="onEdit"
             v-else>
-      <a-tab-pane v-for="pane in $store.state.content.panes"
+      <a-tab-pane v-for="pane in $store.getters.panes"
                   :key="pane.key"
                   :tab="pane.title"
                   :closable="pane.closable">
-        <div class="content">
-          <div v-for="(item,index) in 10"
-               :key="index">
-            <Card></Card>
-          </div>
+        <div class="card">
+          <!-- <div v-for="(item,index) in 10"
+               :key="index"> -->
+          <Card></Card>
+          <!-- </div> -->
         </div>
       </a-tab-pane>
     </a-tabs>
@@ -28,8 +35,7 @@
 
 <script>
 import Card from './Card';
-//这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
-//例如：import 《组件名称》 from '《组件路径》';
+
 export default {
   //import引入的组件需要注入到对象中才能使用
   components: { Card },
@@ -48,6 +54,22 @@ export default {
   watch: {},
   //方法集合
   methods: {
+    displayData() {
+      /*
+      向后端请求 总数据
+      */
+      const data = [{
+        key: 1,
+        name: "wpo",
+        age: 32,
+        address: "swu",
+      }]
+
+      this.$store.commit('SET_VISIBLE', true)
+      this.$store.commit('SET_PLACEMENT', 'right')
+      this.$store.commit('SET_WRAP', { marginTop: '64px' })
+      this.$store.commit('SET_TABLEDATA', data)
+    },
     callback(key) {
       console.log(key);
     },
@@ -97,10 +119,19 @@ export default {
 }
 </script>
 <style scoped>
-.content {
+.card {
   background: #fff;
   padding: 16px;
   height: 83.3vh;
   overflow-y: auto;
+}
+.ant-btn {
+  position: absolute;
+  left: calc(100% - 40px);
+  margin-bottom: 0px;
+  border: 0px;
+  /* background: none; */
+  height: 40px;
+  color: rgb(89, 89, 89);
 }
 </style>

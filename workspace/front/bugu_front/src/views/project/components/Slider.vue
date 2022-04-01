@@ -54,7 +54,7 @@ export default {
     //这里存放数据
     return {
       collapsed: false,
-      openKeys: [],//已展开的侧边栏项
+      openKeys: ['sub1', 'sub2'],//已展开的侧边栏项
 
       //测试
       treeData1: [
@@ -72,9 +72,44 @@ export default {
               level: 2,
               description: "类：xxxx",//简介
               children: [
-                { title: '方法1', key: '0-0-0-0', editStatus: 0, level: 3, description: "方法：xxxx" },
-                { title: '方法2', key: '0-0-0-1', editStatus: 0, level: 3, description: "方法：xxxx" },
-                { title: '方法3', key: '0-0-0-2', editStatus: 0, level: 3, description: "方法：xxxx" },
+                {
+                  title: '创建对象',
+                  key: 'o-0-0-0',
+                  editStatus: 0,
+                  level: 3,
+                  description: "xxx类的对象",
+                },
+                {
+                  title: '方法1',
+                  key: '0-0-0-0',
+                  editStatus: 0,
+                  level: 3,
+                  description: "方法：xxxx",
+                  children: [
+                    { title: '重载1', key: '0-0-0-0-0', editStatus: 0, level: 4, description: "重载：xxxx" },
+                    { title: '重载2', key: '0-0-0-0-1', editStatus: 0, level: 4, description: "重载：xxxx" },
+                    { title: '重载3', key: '0-0-0-0-2', editStatus: 0, level: 4, description: "重载：xxxx" },
+                  ],
+                },
+                {
+                  title: '方法2',
+                  key: '0-0-0-1',
+                  editStatus: 0,
+                  level: 3,
+                  description: "方法：xxxx",
+                  children: [
+                    { title: '重载1', key: '0-0-0-1-0', editStatus: 0, level: 4, description: "重载：xxxx" },
+                    { title: '重载2', key: '0-0-0-1-1', editStatus: 0, level: 4, description: "重载：xxxx" },
+                    { title: '重载3', key: '0-0-0-1-2', editStatus: 0, level: 4, description: "重载：xxxx" },
+                  ],
+                },
+                {
+                  title: '方法3',
+                  key: '0-0-0-2',
+                  editStatus: 0,
+                  level: 3,
+                  description: "方法：xxxx"
+                },
               ],
             },
             {
@@ -84,9 +119,14 @@ export default {
               level: 2,
               description: "类：xxxx",//简介
               children: [
-                { title: '方法1', key: '0-0-1-0', editStatus: 0, level: 3, description: "方法：xxxx" },
-                { title: '方法2', key: '0-0-1-1', editStatus: 0, level: 3, description: "方法：xxxx" },
-                { title: '方法3', key: '0-0-1-2', editStatus: 0, level: 3, description: "方法：xxxx" },
+                {
+                  title: '创建对象',
+                  key: 'o-0-0-1',
+                  editStatus: 0,
+                  level: 3,
+                  description: "xxx类的对象",
+                },
+                { title: '方法1', key: '0-0-1-0', editStatus: 0, level: 3, description: "方法：xxxx" }
               ],
             },
           ],
@@ -95,21 +135,61 @@ export default {
       treeData2: [
         {
           title: '组件xxx',
-          key: '1-0',
+          key: '0-1',
           editStatus: 0,
           level: 1,//所在层数
           description: "组件：xxxx",//简介
           children: [
             {
               title: '类1',
-              key: '1-0-0',
+              key: '0-1-0',
               editStatus: 0,
               level: 2,
               description: "类：xxxx",//简介
               children: [
-                { title: '方法1', key: '1-0-0-0', editStatus: 0, level: 3, description: "方法：xxxx" },
-                { title: '方法2', key: '1-0-0-1', editStatus: 0, level: 3, description: "方法：xxxx" },
-                { title: '方法3', key: '1-0-0-2', editStatus: 0, level: 3, description: "方法：xxxx" },
+                {
+                  title: '创建对象',
+                  key: 'o-0-1-0',
+                  editStatus: 0,
+                  level: 3,
+                  description: "xxx类的对象",
+                },
+                {
+                  title: '方法1',
+                  key: '0-1-0-0',
+                  editStatus: 0,
+                  level: 3,
+                  description: "方法：xxxx",
+                  children: [
+                    { title: '重载1', key: '0-1-0-0-0', editStatus: 0, level: 4, description: "重载：xxxx" },
+                    { title: '重载2', key: '0-1-0-0-1', editStatus: 0, level: 4, description: "重载：xxxx" },
+                    { title: '重载3', key: '0-1-0-0-2', editStatus: 0, level: 4, description: "重载：xxxx" },
+                  ],
+                },
+                {
+                  title: '方法2',
+                  key: '0-1-0-1',
+                  editStatus: 0,
+                  level: 3,
+                  description: "方法：xxxx",
+                  children: [
+                    { title: '重载1', key: '0-1-0-1-0', editStatus: 0, level: 4, description: "重载：xxxx" },
+                    { title: '重载2', key: '0-1-0-1-1', editStatus: 0, level: 4, description: "重载：xxxx" },
+                    { title: '重载3', key: '0-1-0-1-2', editStatus: 0, level: 4, description: "重载：xxxx" },
+                  ],
+                },
+                {
+                  title: '方法3',
+                  key: '0-1-0-2',
+                  editStatus: 0,
+                  level: 3,
+                  description: "方法：xxxx",
+                  children: [
+                    { title: '重载1', key: '0-1-0-2-0', editStatus: 0, level: 4, description: "重载：xxxx" },
+                    { title: '重载2', key: '0-1-0-2-1', editStatus: 0, level: 4, description: "重载：xxxx" },
+                    { title: '重载3', key: '0-1-0-2-2', editStatus: 0, level: 4, description: "重载：xxxx" },
+                  ],
+                },
               ],
             },
           ],

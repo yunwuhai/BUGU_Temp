@@ -14,7 +14,7 @@
       <!-- 下拉菜单被渲染进每一个树节点 -->
       <template #title="nodeData">
         <a-dropdown :trigger="['contextmenu']">
-          <span @dblclick.stop="openTab(nodeData.dataRef)"
+          <span @dblclick.stop="openTab(nodeData)"
                 v-if="!nodeData.dataRef.editStatus">
             <a-tooltip placement="right"
                        :title="nodeData.dataRef.description">
@@ -37,7 +37,7 @@
                    @pressEnter="saveEdit()" />
 
           <template #overlay>
-            <a-menu v-if="!treeUse&&delDis">
+            <a-menu v-if="!treeUse&&delDis&&!object">
               <a-menu-item key="1"
                            @click="addSame()">
                 <a-icon type="plus-circle" />新建同级
@@ -90,7 +90,8 @@ export default {
     // const 
     return {
       editStatus: 0,//0-展示文字 1-新建 2-修改
-      treeUse: false,
+      treeUse: false,//是否禁用整个树形控件
+      object: false,
       title: "",
 
       //后端返回 
@@ -142,25 +143,71 @@ export default {
     clearExpand(clear) {
       this.expandedKeys = clear
     },
+    //根据名字查找父级结点
+    // getParentNode(data, nodeId, arrRes) {
+    //   if (!data) {
+    //     if (!nodeId) {
+    //       arrRes.unshift(nodeId);
+    //     }
+    //     return arrRes;
+    //   }
+    //   for (var i = 0, length = data.length; i < length; i++) {
+    //     let node = data[i];
+    //     if (node.value == nodeId) {
+    //       arrRes.unshift(nodeId);
+    //       // console.log(arrData);
+    //       this.getParentNode(arrData, node.City, arrRes);
+    //       break;
+    //     }
+    //     else {
+    //       if (node.children) {
+    //         this.getParentNode(node.children, nodeId, arrRes);
+    //       }
+    //     }
+    //   }
+    //   return arrRes;
+    // },
     //双击在右侧打开选项卡
     openTab(node) {
+      let nodeData = node.dataRef
       // console.log(node)
-      if (node.level < 3) {
-        this.$message.error('不能开启选项卡', 0.5);
+
+      const data = [{
+        key: 111,
+        name: "wpowww",
+        age: 3,
+        address: "swuswu",
+      }]
+
+      if (nodeData.level < 4) {
+        if (nodeData.key.indexOf('o') !== -1) {
+          // if (!this.$store.getters.visible) {
+          this.$message.success('进入对象编辑', 0.5);
+          this.$store.commit('SET_TITLE', nodeData.title + "数据仓库")
+          this.$store.commit('SET_VISIBLE', true)
+          this.$store.commit('SET_PLACEMENT', 'bottom')
+          this.$store.commit('SET_WRAP', { marginLeft: '17.6%', width: '82.4%' })
+          this.$store.commit('SET_TABLEDATA', data)
+          // } else {
+          //   this.$message.info(nodeData.title + '已打开', 0.5);
+          // }
+        } else {
+          this.$message.error('不能开启选项卡', 0.5);
+        }
       } else {
         //不能重复打开选项卡
-        if (this.$store.getters.keys.indexOf(node.key) === -1) {
+        if (this.$store.getters.keys.indexOf(nodeData.key) === -1) {
           this.$message.success('成功打开选项卡', 0.5);
-          this.$store.commit("SET_KEYS", node.key)
-          this.$store.commit("SET_ACTIVE", node.key)
-          this.$store.commit("SET_PANES", { title: node.title, content: "", key: node.key })
+          this.$store.commit("SET_KEYS", nodeData.key)
+          this.$store.commit("SET_ACTIVE", nodeData.key)
+          this.$store.commit("SET_PANES", { title: nodeData.title, content: "", key: nodeData.key })
         } else {
-          this.$store.commit("SET_ACTIVE", node.key)
-          this.$message.info(node.title + '已打开', 0.5);
+          this.$store.commit("SET_ACTIVE", nodeData.key)
+          this.$message.info(nodeData.title + '已打开', 0.5);
         }
       }
     },
-    // 右键点击选中树形结点时
+    // 右键点击树形结点时
     onEventTreeNode(e) {
       if (this.treeUse) {
         return
@@ -168,6 +215,7 @@ export default {
       //获取当前结点信息
       // console.log("当前的结点信息改变")
       this.treeNode = e.node
+      this.object = (this.treeNode.dataRef.key.indexOf('o') !== -1)
       // console.log(this.treeNode)
 
     },
@@ -205,7 +253,7 @@ export default {
     },
     //新建下一级树形结点
     addNext() {
-      if (this.treeNode.dataRef.level < 3) {
+      if (this.treeNode.dataRef.level < 4) {
         this.treeUse = true
         let dataRef = this.treeNode.dataRef
         this.expandedKeys.push(dataRef.key)
@@ -224,7 +272,7 @@ export default {
         })
         // console.log(this.treeData)
       } else {
-        this.$message.error('方法能再新建下一级', 0.5);
+        this.$message.error('方法不能再新建下一级', 0.5);
       }
     },
     //保存新建的树形结点
@@ -273,7 +321,7 @@ export default {
         delete this.treeNode.dataRef.disabled
         this.treeUse = false
         //修改方法名时更新选项卡名称
-        if (this.treeNode.dataRef.level === 3) {
+        if (this.treeNode.dataRef.level === 4) {
           this.$store.commit("UPDATE_PANES_TITLE", { key: this.treeNode.dataRef.key, title: this.treeNode.dataRef.title })
         }
         this.$message.success('成功修改', 0.5);
@@ -321,7 +369,7 @@ export default {
       /* 
       
       向后端发送
-  
+     
       */
       // console.log(this.treeData)
     },
