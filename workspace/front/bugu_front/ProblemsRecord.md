@@ -33,6 +33,9 @@ axios 接口 拦截器
 关闭选项卡会自动切换到另一个选项卡
 
 登陆注册页面基本完成
+导入 svg 矢量图装饰
 用户信息也用 vuex 管理
 token 生成和发送
 填写完毕后回车提交表单
+解决 Vue-Router 升级导致的 Uncaught(in promise) navigation guard 问题
+根据身份动态添加路由 vuex 管理动态添加的路由 next 详解：https://blog.csdn.net/qq_41912398/article/details/109231418
