@@ -1,26 +1,14 @@
-<!-- 顶栏组件 -->
+<!-- 初始化选择 -->
 <template>
-  <a-layout-header class="header">
-    <Logout></Logout>
-    <div class="logo">
-      <!-- <router-link to="/entrance"> -->
-      <img src="@/assets/LOGO.png"
-           alt="logo"
-           width="200px"
-           height="64px" />
-      <!-- </router-link> -->
-    </div>
-    <div style="margin-left: 13.7vw;">
-      <a-menu theme="dark"
-              mode="horizontal"
-              :default-selected-keys="['1']"
-              style="lineHeight:64px">
-        <a-menu-item key="1"> 项目界面 </a-menu-item>
-        <a-menu-item key="2"> 社区界面 </a-menu-item>
-        <a-menu-item key="3"> 个人中心 </a-menu-item>
-      </a-menu>
-    </div>
-  </a-layout-header>
+  <div class=''>
+    <a-modal v-model="visible"
+             title="Basic Modal"
+             @ok="handleOk">
+      <p>Some contents...</p>
+      <p>Some contents...</p>
+      <p>Some contents...</p>
+    </a-modal>
+  </div>
 </template>
 
 <script>
@@ -28,7 +16,6 @@
 //例如：import 《组件名称》 from '《组件路径》';
 
 export default {
-  name: 'Header',
   //import引入的组件需要注入到对象中才能使用
   components: {},
   data() {
@@ -43,6 +30,7 @@ export default {
   watch: {},
   //方法集合
   methods: {
+
   },
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {
@@ -62,9 +50,4 @@ export default {
 }
 </script>
 <style scoped>
-.logo {
-  position: absolute;
-  /* height: 53px;
-  width: 2px; */
-}
 </style>

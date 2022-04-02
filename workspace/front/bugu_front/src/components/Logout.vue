@@ -1,36 +1,22 @@
-<!-- 顶栏组件 -->
+<!-- 注销按钮 -->
 <template>
-  <a-layout-header class="header">
-    <Logout></Logout>
-    <div class="logo">
-      <!-- <router-link to="/entrance"> -->
-      <img src="@/assets/LOGO.png"
-           alt="logo"
-           width="200px"
-           height="64px" />
-      <!-- </router-link> -->
-    </div>
-    <div style="margin-left: 13.7vw;">
-      <a-menu theme="dark"
-              mode="horizontal"
-              :default-selected-keys="['1']"
-              style="lineHeight:64px">
-        <a-menu-item key="1"> 项目界面 </a-menu-item>
-        <a-menu-item key="2"> 社区界面 </a-menu-item>
-        <a-menu-item key="3"> 个人中心 </a-menu-item>
-      </a-menu>
-    </div>
-  </a-layout-header>
+  <div class=''>
+    <a-button type="link"
+              style="float:right; margin: 16px 28px 16px 0;"
+              @click="logout()">
+      注销
+    </a-button>
+  </div>
 </template>
 
 <script>
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
-
+import { removeToken, setLoginStatus, removeUserInfo } from '@/utils/token'
 export default {
-  name: 'Header',
   //import引入的组件需要注入到对象中才能使用
   components: {},
+  name: 'Logout',
   data() {
     //这里存放数据
     return {
@@ -43,6 +29,33 @@ export default {
   watch: {},
   //方法集合
   methods: {
+    logout() {
+      this.$confirm({
+        title: '确定要退出登录吗？',
+        // content: 'Some descriptions',
+        okText: '确定',
+        okType: 'primary',
+        cancelText: '取消',
+        onOk: () => {
+          removeToken()
+          setLoginStatus(false)
+          removeUserInfo()
+          this.$router.push({
+            name: "Entrance"
+          })
+          this.$message.success("成功退出", 1)
+        },
+        onCancel: () => {
+          this.$message.success("取消退出", 1)
+        },
+      });
+      // this.$confirm('此操作将退出登录, 是否继续?', '提示', {
+      //   confirmButtonText: '确定',
+      //   cancelButtonText: '取消',
+      //   type: 'warning'
+      // })
+
+    }
   },
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {
@@ -62,9 +75,4 @@ export default {
 }
 </script>
 <style scoped>
-.logo {
-  position: absolute;
-  /* height: 53px;
-  width: 2px; */
-}
 </style>

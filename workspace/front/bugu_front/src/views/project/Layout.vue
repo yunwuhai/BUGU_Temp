@@ -1,14 +1,22 @@
-<!-- 编程界面布局 -->
+<!-- 项目界面布局 -->
 <template>
-  <a-layout>
-    <Header></Header>
-    <a-layout style="margin: 10px 20px">
-      <Slider></Slider>
-      <a-layout style="margin-left:10px;">
-        <Content></Content>
-      </a-layout>
-    </a-layout>
-  </a-layout>
+  <transition mode="out-in"
+              appear
+              appear-active-class="animate__animated animate__fadeIn"
+              leave-active-class="animate__animated animate__fadeInLeft">
+    <div>
+      <Header></Header>
+      <a-row class="row">
+        <a-col :span="sliderSpan">
+          <Slider></Slider>
+        </a-col>
+        <a-col :span="contentSpan"
+               :class="transObj">
+          <Content></Content>
+        </a-col>
+      </a-row>
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -27,20 +35,50 @@ export default {
   data() {
     //这里存放数据
     return {
-
-    };
+      visible: false,
+    }
   },
   //监听属性 类似于data概念
-  computed: {},
+  computed: {
+    collapsed() {
+      return this.$store.getters.collapsed
+    },
+    sliderSpan() {
+      if (this.collapsed) {
+        return 2
+      }
+      return 4
+    },
+    contentSpan() {
+      if (this.collapsed) {
+        return 22
+      }
+      return 20
+    },
+    transObj() {
+      if (this.collapsed) {
+        return {
+          'animate__animated animate__fadeInLeft': false,
+          'animate__animated animate__fadeInRight': true
+        }
+      }
+      return {
+        'animate__animated animate__fadeInLeft': true,
+        'animate__animated animate__fadeInRight': false
+      }
+    }
+  },
   //监控data中的数据变化
-  watch: {},
+  watch: {
+
+  },
   //方法集合
   methods: {
 
   },
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {
-
+    this.visible = true
   },
   //生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {
@@ -56,4 +94,16 @@ export default {
 }
 </script>
 <style scoped>
+.row {
+  margin: 10px 20px;
+  background: rgb(240, 242, 245);
+  min-height: 89vh;
+}
+/* 内容栏动画效果 */
+.animate__animated.animate__fadeInRight {
+  --animate-duration: 1s;
+}
+.animate__animated.animate__fadeInRight {
+  --animate-duration: 1s;
+}
 </style>

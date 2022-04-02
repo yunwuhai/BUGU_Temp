@@ -1,41 +1,17 @@
 <template>
   <div>
-    <a-collapse v-model="activeKey">
+    <a-collapse>
       <a-collapse-panel key="1"
-                        header="This is panel header 1">
-        <a-table :columns="columns"
-                 :data-source="data"
-                 bordered>
-          <template v-for="col in ['name', 'age', 'address']"
-                    :slot="col"
-                    slot-scope="text, record">
-            <div :key="col">
-              <a-input v-if="record.editable"
-                       style="margin: -5px 0"
-                       :value="text"
-                       @change="e => handleChange(e.target.value, record.key, col)" />
-              <template v-else>
-                {{ text }}
-              </template>
-            </div>
-          </template>
-          <template slot="operation"
-                    slot-scope="text, record">
-            <div class="editable-row-operations">
-              <span v-if="record.editable">
-                <a @click="() => save(record.key)">Save</a>
-                <a-popconfirm title="Sure to cancel?"
-                              @confirm="() => cancel(record.key)">
-                  <a>Cancel</a>
-                </a-popconfirm>
-              </span>
-              <span v-else>
-                <a :disabled="editingKey !== ''"
-                   @click="() => edit(record.key)">Edit</a>
-              </span>
-            </div>
-          </template>
-        </a-table>
+                        header="输入参数表">
+
+      </a-collapse-panel>
+      <a-collapse-panel key="2"
+                        header="输出参数表">
+
+      </a-collapse-panel>
+      <a-collapse-panel key="3"
+                        header="执行逻辑表">
+
       </a-collapse-panel>
     </a-collapse>
     <br />

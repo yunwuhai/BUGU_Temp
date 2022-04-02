@@ -1,0 +1,15 @@
+html {
+  font-size: 14px;
+}
+body {
+  background: rgb(240, 242, 245);
+}
+/* 选项卡配置 */
+.ant-tabs-bar {
+  margin: 0 0 0 0;
+  border-bottom: 1px solid #e8e8e8;
+}
+/* 表单错误提示字样 */
+.ant-form-explain {
+  text-align: left;
+}
