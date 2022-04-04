@@ -2,9 +2,10 @@
 <template>
   <transition mode="out-in"
               appear
-              appear-active-class="animate__animated animate__fadeIn"
-              leave-active-class="animate__animated animate__fadeInLeft">
+              appear-active-class="animate__animated animate__fadeIn">
     <div>
+      <Init></Init>
+
       <Header></Header>
       <a-row class="row">
         <a-col :span="sliderSpan">
@@ -15,6 +16,8 @@
           <Content></Content>
         </a-col>
       </a-row>
+
+      <Data></Data>
     </div>
   </transition>
 </template>
@@ -22,20 +25,24 @@
 <script>
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
-import Header from './components/Header'
-import Slider from './components/Slider'
-import Content from './components/Content'
+import Header from './components/layout/Header'
+import Slider from './components/layout/Slider'
+import Content from './components/layout/Content'
+import Init from './components/layout/Init'
+import Data from './components/data/Data'
 export default {
   //import引入的组件需要注入到对象中才能使用
   components: {
     Header,
     Slider,
     Content,
+    Data,
+    Init
   },
   data() {
     //这里存放数据
     return {
-      visible: false,
+
     }
   },
   //监听属性 类似于data概念
@@ -78,7 +85,7 @@ export default {
   },
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {
-    this.visible = true
+
   },
   //生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {

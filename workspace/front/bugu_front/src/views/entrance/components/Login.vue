@@ -9,6 +9,7 @@
                          prop="userName">
         <a-input v-model="loginForm.userName"
                  type="text"
+                 :autoFocus="true"
                  allowClear
                  autocomplete="off"
                  @keyup.enter="nextFocus()" />
@@ -85,7 +86,7 @@ export default {
           else if (this.loginForm.userName === 'wpo' && this.loginForm.pass === '123456') {
             Cookie.setToken("BUGU_USER")
             Cookie.setUserInfo(this.loginForm)
-            this.$router.push({ name: 'Project' })
+            this.$router.push({ name: 'UserCenter' })
             this.$message.success('登陆成功', 0.5)
             // console.log("token：" + Cookie.getToken())
             // console.log("user：" + Cookie.getUserInfo().role)

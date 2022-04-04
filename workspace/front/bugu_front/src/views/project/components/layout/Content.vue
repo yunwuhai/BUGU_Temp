@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import Card from './Card';
+import Card from '../overload/Card';
 
 export default {
   //import引入的组件需要注入到对象中才能使用
@@ -66,6 +66,7 @@ export default {
       }]
 
       this.$store.commit('SET_VISIBLE', true)
+      this.$store.commit('SET_TITLE', "数据对象总仓库")
       this.$store.commit('SET_PLACEMENT', 'right')
       this.$store.commit('SET_WRAP', { marginTop: '64px' })
       this.$store.commit('SET_TABLEDATA', data)

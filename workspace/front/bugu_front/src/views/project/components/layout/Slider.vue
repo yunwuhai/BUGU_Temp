@@ -18,7 +18,12 @@
     <div class="slider">
       <a-menu mode="inline"
               :openKeys.sync="openKeys"
+              :default-selected-keys="['1']"
               :inline-collapsed="collapsed">
+        <a-menu-item key="1">
+          <a-icon type="project" />
+          <span>{{projectName}}</span>
+        </a-menu-item>
         <a-sub-menu key="sub1">
           <span slot="title">
             <a-icon type="laptop" />
@@ -53,6 +58,7 @@ export default {
   data() {
     //这里存放数据
     return {
+      projectName: "未定义项目",
       collapsed: false,
       openKeys: ['sub1', 'sub2'],//已展开的侧边栏项
 
@@ -134,60 +140,38 @@ export default {
       ],
       treeData2: [
         {
-          title: '组件xxx',
-          key: '0-1',
-          editStatus: 0,
+          title: '组件xxx',//组件名
+          key: '0-1',//id
           level: 1,//所在层数
           description: "组件：xxxx",//简介
           children: [
             {
               title: '类1',
               key: '0-1-0',
-              editStatus: 0,
               level: 2,
               description: "类：xxxx",//简介
               children: [
                 {
                   title: '创建对象',
                   key: 'o-0-1-0',
-                  editStatus: 0,
                   level: 3,
                   description: "xxx类的对象",
                 },
                 {
+                  title: '构造方法',
+                  key: 'c-0-1-0',
+                  level: 3,
+                  description: "xxx类的构造方法",
+                },
+                {
                   title: '方法1',
                   key: '0-1-0-0',
-                  editStatus: 0,
                   level: 3,
                   description: "方法：xxxx",
                   children: [
-                    { title: '重载1', key: '0-1-0-0-0', editStatus: 0, level: 4, description: "重载：xxxx" },
-                    { title: '重载2', key: '0-1-0-0-1', editStatus: 0, level: 4, description: "重载：xxxx" },
-                    { title: '重载3', key: '0-1-0-0-2', editStatus: 0, level: 4, description: "重载：xxxx" },
-                  ],
-                },
-                {
-                  title: '方法2',
-                  key: '0-1-0-1',
-                  editStatus: 0,
-                  level: 3,
-                  description: "方法：xxxx",
-                  children: [
-                    { title: '重载1', key: '0-1-0-1-0', editStatus: 0, level: 4, description: "重载：xxxx" },
-                    { title: '重载2', key: '0-1-0-1-1', editStatus: 0, level: 4, description: "重载：xxxx" },
-                    { title: '重载3', key: '0-1-0-1-2', editStatus: 0, level: 4, description: "重载：xxxx" },
-                  ],
-                },
-                {
-                  title: '方法3',
-                  key: '0-1-0-2',
-                  editStatus: 0,
-                  level: 3,
-                  description: "方法：xxxx",
-                  children: [
-                    { title: '重载1', key: '0-1-0-2-0', editStatus: 0, level: 4, description: "重载：xxxx" },
-                    { title: '重载2', key: '0-1-0-2-1', editStatus: 0, level: 4, description: "重载：xxxx" },
-                    { title: '重载3', key: '0-1-0-2-2', editStatus: 0, level: 4, description: "重载：xxxx" },
+                    { title: '重载1', key: '0-1-0-0-0', level: 4, description: "重载：xxxx" },
+                    { title: '重载2', key: '0-1-0-0-1', level: 4, description: "重载：xxxx" },
+                    { title: '重载3', key: '0-1-0-0-2', level: 4, description: "重载：xxxx" },
                   ],
                 },
               ],
@@ -203,6 +187,34 @@ export default {
   watch: {},
   //方法集合
   methods: {
+    getProjectName(value) {
+      this.projectName = value
+    },
+    addTree(value) {
+      if (value === 2) {
+        this.treeData2.push({
+          title: 'MAIN',
+          key: 'm-0',
+          editStatus: 0,
+          level: 1,//所在层数
+          description: "MAIN：核心组件",//简介
+          children: [{
+            title: 'main类',
+            key: 'm-0-0',
+            editStatus: 0,
+            level: 2,//所在层数
+            description: "main：核心类",
+            children: [{
+              title: 'main',
+              key: 'm-0-0-0',
+              editStatus: 0,
+              level: 3,//所在层数
+              description: "main：核心方法",//简介
+            }]
+          }]
+        })
+      }
+    },
     //改变侧边栏收缩状态
     sliderCollapsed() {
       this.collapsed = !this.collapsed
@@ -220,7 +232,8 @@ export default {
   },
   //生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {
-
+    this.$bus.$on('projectName', this.getProjectName)
+    this.$bus.$on('projectType', this.addTree)
   },
   beforeCreate() { }, //生命周期 - 创建之前
   beforeMount() { }, //生命周期 - 挂载之前

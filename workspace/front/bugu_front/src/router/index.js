@@ -38,6 +38,15 @@ export const constRoutes = [
 ]
 export const asyncRoutes=[
   {
+    path: '/usercenter',
+    name: 'UserCenter',
+    //路由的懒加载
+    component: () => import('@/views/user/UserCenter'),
+    meta:{
+      role:1
+    }
+  },
+  {
     path: '/project',
     name: 'Project',
     //路由的懒加载

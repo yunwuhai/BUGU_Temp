@@ -10,24 +10,31 @@
                          prop="userName">
         <a-input v-model="registerForm.userName"
                  type="text"
+                 :autoFocus="true"
+                 reg="userName"
                  allowClear
-                 autocomplete="off" />
+                 autocomplete="off"
+                 @keyup.enter="nextFocus('pass')" />
       </a-form-model-item>
       <a-form-model-item has-feedback
                          label="密码："
                          prop="pass">
         <a-input v-model="registerForm.pass"
                  allowClear
+                 ref="pass"
                  type="password"
-                 autocomplete="off" />
+                 autocomplete="off"
+                 @keyup.enter="nextFocus('checkPass')" />
       </a-form-model-item>
       <a-form-model-item has-feedback
                          label="再次输入密码："
                          prop="checkPass">
         <a-input v-model="registerForm.checkPass"
                  allowClear
+                 ref="checkPass"
                  type="password"
-                 autocomplete="off" />
+                 autocomplete="off"
+                 @keyup.enter="nextFocus('tel')" />
       </a-form-model-item>
       <a-form-model-item has-feedback
                          label="手机号码："
@@ -136,6 +143,9 @@ export default {
     },
     resetForm(formName) {
       this.$refs[formName].resetFields();
+    },
+    nextFocus(name) {
+      this.$refs[name].focus()
     },
   },
 };

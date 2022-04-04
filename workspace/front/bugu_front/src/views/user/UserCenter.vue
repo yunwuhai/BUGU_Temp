@@ -1,46 +1,111 @@
-<!--  -->
+<!-- 用户个人界面 -->
 <template>
-<div class=''></div>
+  <transition mode="out-in"
+              appear
+              appear-active-class="animate__animated animate__fadeIn">
+    <a-layout id="components-layout-demo-top-side">
+      <a-layout-header class="header">
+        <Logout></Logout>
+        <div class="logo" />
+        <a-menu theme="dark"
+                mode="horizontal"
+                :default-selected-keys="['2']"
+                :style="{ lineHeight: '64px' }">
+          <a-menu-item key="1">
+            nav 1
+          </a-menu-item>
+          <a-menu-item key="2">
+            nav 2
+          </a-menu-item>
+          <a-menu-item key="3">
+            nav 3
+          </a-menu-item>
+        </a-menu>
+      </a-layout-header>
+      <a-layout-content style="padding: 0 50px">
+        <a-breadcrumb style="margin: 16px 0">
+          <a-breadcrumb-item>Home</a-breadcrumb-item>
+          <a-breadcrumb-item>List</a-breadcrumb-item>
+          <a-breadcrumb-item>App</a-breadcrumb-item>
+        </a-breadcrumb>
+        <a-layout style="padding: 24px 0; background: #fff">
+          <a-layout-sider width="200"
+                          style="background: #fff">
+            <a-menu mode="inline"
+                    :default-selected-keys="['1']"
+                    :default-open-keys="['sub1']"
+                    style="height: 100%">
+              <a-sub-menu key="sub1">
+                <span slot="title">
+                  <a-icon type="user" />subnav 1
+                </span>
+                <a-menu-item key="1">
+                  option1
+                </a-menu-item>
+                <a-menu-item key="2">
+                  option2
+                </a-menu-item>
+                <a-menu-item key="3">
+                  option3
+                </a-menu-item>
+                <a-menu-item key="4">
+                  option4
+                </a-menu-item>
+              </a-sub-menu>
+              <a-sub-menu key="sub2">
+                <span slot="title">
+                  <a-icon type="laptop" />subnav 2
+                </span>
+                <a-menu-item key="5">
+                  option5
+                </a-menu-item>
+                <a-menu-item key="6">
+                  option6
+                </a-menu-item>
+                <a-menu-item key="7">
+                  option7
+                </a-menu-item>
+                <a-menu-item key="8">
+                  option8
+                </a-menu-item>
+              </a-sub-menu>
+              <a-sub-menu key="sub3">
+                <span slot="title">
+                  <a-icon type="notification" />subnav 3
+                </span>
+                <a-menu-item key="9">
+                  option9
+                </a-menu-item>
+                <a-menu-item key="10">
+                  option10
+                </a-menu-item>
+                <a-menu-item key="11">
+                  option11
+                </a-menu-item>
+                <a-menu-item key="12">
+                  option12
+                </a-menu-item>
+              </a-sub-menu>
+            </a-menu>
+          </a-layout-sider>
+          <a-layout-content :style="{ padding: '0 24px', minHeight: '280px' }">
+            <router-link to="/project">新建工程</router-link>
+          </a-layout-content>
+        </a-layout>
+      </a-layout-content>
+      <a-layout-footer style="text-align: center">
+        Ant Design ©2018 Created by Ant UED
+      </a-layout-footer>
+    </a-layout>
+  </transition>
 </template>
 
-<script>
-//这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
-//例如：import 《组件名称》 from '《组件路径》';
-
-export default {
-//import引入的组件需要注入到对象中才能使用
-components: {},
-data() {
-//这里存放数据
-return {
-
-};
-},
-//监听属性 类似于data概念
-computed: {},
-//监控data中的数据变化
-watch: {},
-//方法集合
-methods: {
-
-},
-//生命周期 - 创建完成（可以访问当前this实例）
-created() {
-
-},
-//生命周期 - 挂载完成（可以访问DOM元素）
-mounted() {
-
-},
-beforeCreate() {}, //生命周期 - 创建之前
-beforeMount() {}, //生命周期 - 挂载之前
-beforeUpdate() {}, //生命周期 - 更新之前
-updated() {}, //生命周期 - 更新之后
-beforeDestroy() {}, //生命周期 - 销毁之前
-destroyed() {}, //生命周期 - 销毁完成
-activated() {}, //如果页面有keep-alive缓存功能，这个函数会触发
+<style>
+#components-layout-demo-top-side .logo {
+  width: 120px;
+  height: 31px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px 28px 16px 0;
+  float: left;
 }
-</script>
-<style scoped>
-
 </style>
