@@ -2,6 +2,11 @@
 <template>
   <a-layout-header class="header">
     <Logout></Logout>
+    <div class="user">
+      <a-avatar style="backgroundColor:rgb(24,144,255,0.3);"
+                icon="user" />
+      <span style="margin-left:10px">{{name}},欢迎登陆！</span>
+    </div>
     <div class="logo">
       <!-- <router-link to="/entrance"> -->
       <img src="@/assets/LOGO.png"
@@ -13,11 +18,15 @@
     <div style="margin-left: 13.7vw;">
       <a-menu theme="dark"
               mode="horizontal"
-              :default-selected-keys="['1']"
+              :selectable="false"
               style="lineHeight:64px">
-        <a-menu-item key="1"> 项目界面 </a-menu-item>
-        <a-menu-item key="2"> 社区界面 </a-menu-item>
-        <a-menu-item key="3"> 个人中心 </a-menu-item>
+        <a-menu-item key="1">
+          <router-link to="/project">项目界面</router-link>
+        </a-menu-item>
+        <!-- <a-menu-item key="2"> 社区界面 </a-menu-item> -->
+        <a-menu-item key="3">
+          <router-link to="/usercenter">个人中心</router-link>
+        </a-menu-item>
       </a-menu>
     </div>
   </a-layout-header>
@@ -26,6 +35,7 @@
 <script>
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
+import { getUserInfo } from '@/utils/token'
 
 export default {
   name: 'Header',
@@ -34,7 +44,7 @@ export default {
   data() {
     //这里存放数据
     return {
-
+      name: getUserInfo().name
     };
   },
   //监听属性 类似于data概念
@@ -66,5 +76,10 @@ export default {
   position: absolute;
   /* height: 53px;
   width: 2px; */
+}
+.user {
+  float: right;
+  margin-right: 10px;
+  color: aliceblue;
 }
 </style>

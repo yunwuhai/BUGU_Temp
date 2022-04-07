@@ -6,7 +6,100 @@ export default {
 		activeKey:"",//当前处于展示状态的选项卡key
 	},
 	actions:{
-		
+		getDesData({commit},value){
+			let contentIn = []
+			let contentOut = []
+			let contentLogic = []
+			if(value.key==='wpowpowpo_0_0_0_0'){
+			contentIn =[{
+        key: "222",
+        name: "小数",
+        token: "b",
+        type1: "变量",
+        type2: "浮点型",
+        value: "5.6",
+        description: "普通小数",
+      },
+			{
+        key: "222",
+        name: "小数",
+        token: "b",
+        type1: "变量",
+        type2: "浮点型",
+        value: "5.6",
+        description: "普通小数",
+      },
+			{
+        key: "222",
+        name: "小数",
+        token: "b",
+        type1: "变量",
+        type2: "浮点型",
+        value: "5.6",
+        description: "普通小数",
+      }]
+				contentOut = [{
+					key: "222",
+					name: "小数",
+					token: "b",
+					type1: "变量",
+					type2: "浮点型",
+					value: "5.6",
+					description: "普通小数",
+					},
+					{
+						key: "222",
+						name: "小数",
+						token: "b",
+						type1: "变量",
+						type2: "浮点型",
+						value: "5.6",
+						description: "普通小数",
+					}]
+				contentLogic = [{
+					key: "222",
+					name: "小数",
+					token: "b",
+					type1: "变量",
+					type2: "浮点型",
+					value: "5.6",
+					description: "普通小数",
+				}]
+			}else{
+			contentIn = [{
+        key: "222",
+        name: "小数",
+        token: "b",
+        type1: "变量",
+        type2: "浮点型",
+        value: "5.6",
+        description: "普通小数",
+      }]
+				contentOut = [{
+					key: "222",
+					name: "小数",
+					token: "b",
+					type1: "变量",
+					type2: "浮点型",
+					value: "5.6",
+					description: "普通小数",
+				}]
+				contentLogic = [{
+					key: "222",
+					name: "小数",
+					token: "b",
+					type1: "变量",
+					type2: "浮点型",
+					value: "5.6",
+					description: "普通小数",
+				}]
+			}
+			value.contentIn = contentIn
+			value.contentOut = contentOut
+			value.contentLogic = contentLogic
+			commit('SET_PANES',value)
+		}
+
 	},
 	mutations:{
 		SET_KEYS(state,value){

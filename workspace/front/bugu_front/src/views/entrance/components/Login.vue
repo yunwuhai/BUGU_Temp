@@ -46,6 +46,7 @@ export default {
       loading: false,
       loginForm: {
         userName: "",
+        name: "",
         pass: '',
         role: 1
       },
@@ -75,21 +76,27 @@ export default {
           // this.$store.dispatch('login', { userName: this.loginForm.userName, pass: this.loginForm.pass })
           if (this.loginForm.userName === 'admin' && this.loginForm.pass === '123456') {
             this.loginForm.role = 2
-            Cookie.setUserInfo(this.loginForm)
             Cookie.setToken("BUGU_ADMIN")
+            delete this.loginForm.pass
+            Cookie.setUserInfo(this.loginForm)
+            // console.log(Cookie.getUserInfo())
+            Cookie.setLoginStatus(true)
+            this.$store.commit("SET_USERINFO", this.loginForm)
             this.$router.push({ name: 'Admin' })
             this.$message.success('登陆成功', 0.5)
-            // console.log("token：" + Cookie.getToken())
-            // console.log("user：" + Cookie.getUserInfo().role)
+
             this.loading = false
           }
           else if (this.loginForm.userName === 'wpo' && this.loginForm.pass === '123456') {
+            this.loginForm.name = "wpo"
             Cookie.setToken("BUGU_USER")
+            delete this.loginForm.pass
             Cookie.setUserInfo(this.loginForm)
+            // console.log(Cookie.getUserInfo())
+            Cookie.setLoginStatus(true)
+            this.$store.commit("SET_USERINFO", this.loginForm)
             this.$router.push({ name: 'UserCenter' })
             this.$message.success('登陆成功', 0.5)
-            // console.log("token：" + Cookie.getToken())
-            // console.log("user：" + Cookie.getUserInfo().role)
             this.loading = false
 
           } else {

@@ -6,11 +6,21 @@
                   :rules="rules"
                   v-bind="layout">
       <a-form-model-item has-feedback
+                         label="昵称"
+                         prop="name">
+        <a-input v-model="registerForm.name"
+                 type="text"
+                 :autoFocus="true"
+                 reg="userName"
+                 allowClear
+                 autocomplete="off"
+                 @keyup.enter="nextFocus('userName')" />
+      </a-form-model-item>
+      <a-form-model-item has-feedback
                          label="用户名"
                          prop="userName">
         <a-input v-model="registerForm.userName"
                  type="text"
-                 :autoFocus="true"
                  reg="userName"
                  allowClear
                  autocomplete="off"
@@ -27,7 +37,7 @@
                  @keyup.enter="nextFocus('checkPass')" />
       </a-form-model-item>
       <a-form-model-item has-feedback
-                         label="再次输入密码："
+                         label="重复密码："
                          prop="checkPass">
         <a-input v-model="registerForm.checkPass"
                  allowClear
@@ -93,11 +103,15 @@ export default {
       }
     }
     let validateTel = (rule, value, callback) => {
+      // const reg = /^1([38]\d|5[0-35-9]|7[3678])\d{8}$/;
+      const reg = /^((1[3,5,8][0-9])|(14[5,7])|(17[0,5,6,7,8])|(19[7]))\d{8}$/
       if (value === '') {
         callback(new Error('请输入电话号码'));
-        // } else if (value !== this.registerForm.pass) {
-        //   callback(new Error("两次密码不一致"));
-      } else {
+      }
+      else if (value.length < 11 || !reg.test(value)) {
+        callback(new Error('电话号码错误'));
+      }
+      else {
         callback();
       }
     }
@@ -110,13 +124,14 @@ export default {
         tel: '',
       },
       rules: {
+        name: [{ required: true, message: "请输入昵称", trigger: 'change' }],
         userName: [{ required: true, validator: validateUsername, trigger: 'change' }],
         pass: [{ required: true, validator: validatePass, trigger: 'change' }],
         checkPass: [{ required: true, validator: validatePass2, trigger: 'change' }],
         tel: [{ required: true, validator: validateTel, trigger: 'change' }],
       },
       layout: {
-        labelCol: { span: 7 },
+        labelCol: { span: 6 },
         wrapperCol: { span: 15 },
       },
     };
@@ -154,6 +169,6 @@ export default {
 <style scoped>
 .register {
   margin-left: 8%;
-  margin-top: 10%;
+  margin-top: 4%;
 }
 </style>

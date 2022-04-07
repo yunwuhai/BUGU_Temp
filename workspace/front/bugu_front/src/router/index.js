@@ -40,8 +40,30 @@ export const asyncRoutes=[
   {
     path: '/usercenter',
     name: 'UserCenter',
+    redirect: '/usercenter/userinfo',
     //路由的懒加载
     component: () => import('@/views/user/UserCenter'),
+    meta:{
+      role:1
+    },
+    children: [
+      {
+        path: 'userinfo',
+        name: 'UserInfo',
+        component: () => import('@/views/user/components/UserInfo'),
+      },
+      {
+        path: 'projectinfo',
+        name: 'ProjectInfo',
+        component: () => import('@/views/user/components/ProjectInfo'),
+      }
+    ]
+  },
+  {
+    path: '/init',
+    name: 'Init',
+    //路由的懒加载
+    component: () => import('@/views/project/Init'),
     meta:{
       role:1
     }

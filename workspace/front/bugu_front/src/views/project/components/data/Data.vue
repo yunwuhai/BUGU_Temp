@@ -9,7 +9,7 @@
             :closable="true"
             :visible="$store.getters.visible"
             @close="onClose">
-    <DataTable :editingKey="editingKey"></DataTable>
+    <DataTable></DataTable>
   </a-drawer>
 </template>
 
@@ -27,7 +27,6 @@ export default {
     //这里存放数据
     return {
       visible: false,
-      editingKey: ""
     };
   },
   //监听属性 类似于data概念

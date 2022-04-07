@@ -1,9 +1,9 @@
 <!-- 初始化选择 -->
 <template>
   <div class=''>
-    <a-modal v-model="visible"
+    <a-modal v-model="$store.state.card.createVisible"
              title="新建项目"
-             :closable="false"
+             :closable="true"
              :maskClosable="false"
              @cancel="handleCancel"
              @ok="handleOk('ruleForm')">
@@ -21,17 +21,31 @@
                    allowClear
                    autocomplete="off" />
         </a-form-model-item>
+        <a-form-model-item label="项目英文名："
+                           prop="token">
+          <a-input v-model="initForm.token"
+                   ref="token"
+                   type="text"
+                   allowClear
+                   autocomplete="off" />
+        </a-form-model-item>
         <a-form-model-item label="项目类型："
                            prop="type">
           <a-radio-group name="type"
                          v-model="initForm.type"
                          ref="type">
-            <a-radio value="1">
-              组件
-            </a-radio>
-            <a-radio value="0">
-              工程
-            </a-radio>
+            <a-tooltip placement="top"
+                       title="仅仅编辑一个组件,不能进行后续编译">
+              <a-radio value="1">
+                组件
+              </a-radio>
+            </a-tooltip>
+            <a-tooltip placement="top"
+                       title="有多个组件,包含main核心组件,可进行后续编译">
+              <a-radio value="0">
+                工程
+              </a-radio>
+            </a-tooltip>
           </a-radio-group>
         </a-form-model-item>
         <template v-if="initForm.type==='0'">
@@ -54,26 +68,29 @@
             <a-input v-model="initForm.stack"
                      ref="stack"
                      allowClear
-                     type="password"
+                     type="text"
                      autocomplete="off"
                      @keyup.enter="handleOk('ruleForm')" />
           </a-form-model-item>
         </template>
         <template v-else>
-          <a-form-model-item label="抽象组件："
-                             prop="abstract">
-            <a-radio-group name="abstract"
-                           v-model="initForm.abstract"
-                           ref="abstract"
-                           @keyup.enter="handleOk('ruleForm')">
-              <a-radio value="1">
-                是
-              </a-radio>
-              <a-radio value="0">
-                否
-              </a-radio>
-            </a-radio-group>
-          </a-form-model-item>
+          <a-tooltip placement="bottom"
+                     title="用户通过抽象组件来实现项目在不同平台间的快速移植,其中不用实现方法">
+            <a-form-model-item label="抽象组件："
+                               prop="abstract">
+              <a-radio-group name="abstract"
+                             v-model="initForm.abstract"
+                             ref="abstract"
+                             @keyup.enter="handleOk('ruleForm')">
+                <a-radio value="1">
+                  是
+                </a-radio>
+                <a-radio value="0">
+                  否
+                </a-radio>
+              </a-radio-group>
+            </a-form-model-item>
+          </a-tooltip>
         </template>
       </a-form-model>
     </a-modal>
@@ -83,6 +100,7 @@
 <script>
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
+import { nanoid } from "nanoid"
 
 export default {
   name: "Init",
@@ -91,14 +109,16 @@ export default {
   data() {
     //这里存放数据
     return {
-      visible: false,
       loading: false,
       initForm: {
+        id: nanoid(),//项目id
         type: "0",
         name: '',
+        token: "",
         stack: '',
         chip: '1',
-        abstract: '0'
+        abstract: '0',
+        // componentId:[] //工程项目中所有组件id的集合
       },
       rules: {
         type: [{ required: true, message: "请选择项目类型", trigger: 'change' }],
@@ -123,17 +143,17 @@ export default {
       this.$refs[name].focus()
     },
     handleOk(formName) {
-      this.loading = true
       this.$refs[formName].validate(valid => {
         if (valid) {
           //在vuex中进行后端验证 返回promise
           // this.$store.dispatch('register', registerForm)
-
+          if (this.initForm.type === "0") {
+            this.initForm.componentId = []//工程项目才有多个组件集合
+          }
+          this.$store.commit("SET_PROJECT", this.initForm)
+          this.$store.commit("SET_CREATEVISIBLE", false)
           this.$message.success('新建成功', 0.5)
-          this.$bus.$emit('projectName', this.initForm.name)
-          this.$bus.$emit('projectType', this.initForm.type)
-          this.loading = false
-          this.visible = false
+          this.$router.push({ name: 'Project' })
           // alert('submit!');
         } else {
           this.$message.error('新建失败', 0.5)
@@ -143,8 +163,8 @@ export default {
       });
     },
     handleCancel() {
-      // this.visible = true
-      this.$router.push({ name: 'UserCenter' })
+      this.$store.commit("SET_CREATEVISIBLE", false)
+      this.$router.push({ name: "UserCenter" })
       this.$message.info('取消新建', 0.5)
     },
     resetForm(formName) {
@@ -153,7 +173,7 @@ export default {
   },
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {
-    this.visible = true
+    // this.visible = true
   },
   //生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {

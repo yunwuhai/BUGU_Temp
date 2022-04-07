@@ -11,6 +11,7 @@ import './icons/index.js' //引入svg
 import './utils/permission' // 路由守卫
 import Components from '@/components/index'//全局组件
 
+
 Vue.config.productionTip = false;
 Vue.use(Antd);
 Vue.use(Animated)

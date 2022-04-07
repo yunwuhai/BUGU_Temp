@@ -2,6 +2,7 @@
 export default{
 	state:{
 		tableData:[],//总数据
+		cacheData:[],//保存源数据
 		placement:'right',
 		visible:false,
 		wrap:{},
@@ -29,6 +30,14 @@ export default{
 		SET_TABLEDATA(state,value){
 			state.tableData = value
 			console.log("SET_TABLEDATA被调用了")
+		},
+		SET_CACHEDATA(state,value){
+			state.cacheData = value
+			console.log("SET_CACHEDATA被调用了")
+		},
+		ADD_TABLEDATA(state,value){
+			state.tableData.push(value)
+			console.log("ADD_TABLEDATA被调用了")
 		}
 	}
 }

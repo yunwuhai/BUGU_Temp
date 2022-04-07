@@ -11,7 +11,7 @@ export default{
 			// console.log(asyncRoutes)
       return new Promise((resolve) => {
         const add = asyncRoutes.filter(item => item.meta.role === value)
-				// console.log(add)
+				console.log(add)
 				add.push({path: '*', redirect: '/404'})
         commit('SET_ROUTES', add)
         resolve(add)

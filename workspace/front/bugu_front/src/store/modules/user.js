@@ -3,6 +3,7 @@ export default{
 	state:{
 		userInfo:{
 			userName:"",
+			name:"",
 			pass:"",
 			tel:"",
 			role:""

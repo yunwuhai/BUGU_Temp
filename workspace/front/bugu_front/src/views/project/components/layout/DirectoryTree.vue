@@ -16,15 +16,45 @@
         <a-dropdown :trigger="['contextmenu']">
           <span @dblclick.stop="openTab(nodeData)"
                 v-if="!nodeData.dataRef.editStatus">
-            <a-tooltip placement="right"
-                       :title="nodeData.dataRef.description">
+            <a-popover trigger="hover"
+                       placement="right">
+              <template slot="title">
+                <a-tag color="orange"
+                       v-if="nodeData.dataRef.level===1">
+                  组件
+                </a-tag>
+                <a-tag color="green"
+                       v-if="nodeData.dataRef.level===2">
+                  类
+                </a-tag>
+                <a-tag color="cyan"
+                       v-if="nodeData.dataRef.level===3 && nodeData.dataRef.type !== '4'">
+                  方法
+                </a-tag>
+                <a-tag color="pink"
+                       v-else-if="nodeData.dataRef.level===3 && nodeData.dataRef.type ==='4'">
+                  属性
+                </a-tag>
+                <a-tag color="blue"
+                       v-if="nodeData.dataRef.level===4">
+                  重载
+                </a-tag>
+                <a-tag color="red">
+                  作者:{{nodeData.dataRef.author}}
+                </a-tag>
+              </template>
+              <template slot="content">
+                {{nodeData.dataRef.description}}
+              </template>
               {{ nodeData.dataRef.title }}
-            </a-tooltip>
+            </a-popover>
           </span>
           <!-- 右键点击菜单 -->
           <template #overlay>
-            <a-menu v-if="delDis&&!object&&(nodeData.dataRef.level < 4)">
+            <a-menu v-if="delDis && (nodeData.dataRef.type !== '4' ) && (nodeData.dataRef.level < 4)">
               <a-menu-item key="1"
+                           :disabled="(nodeData.dataRef.type === '0')&&(nodeData.dataRef.level>1) "
+                           v-if="$store.getters.project.type !=='1'"
                            @click="addSame(nodeData.dataRef.level)">
                 <a-icon type="plus-circle" />
                 <span v-if="nodeData.dataRef.level===1">新建组件</span>
@@ -33,18 +63,20 @@
                 <!-- <span v-else-if="nodeData.dataRef.level===4">新建重载</span> -->
               </a-menu-item>
               <a-menu-item key="2"
-                           v-if="nodeData.dataRef.level!==4"
+                           v-if="(nodeData.dataRef.type !== '0') &&(nodeData.dataRef.level !== 4)"
                            @click="addNext(nodeData.dataRef.level)">
                 <a-icon type="plus" />
                 <span v-if="nodeData.dataRef.level===1">新建类</span>
                 <span v-else-if="nodeData.dataRef.level===2">新建方法</span>
-                <span v-else-if="nodeData.dataRef.level===3">新建重载</span>
+                <span v-else-if="nodeData.dataRef.level===3 && nodeData.dataRef.type !== '2'">新建重载</span>
               </a-menu-item>
               <a-menu-item key="3"
+                           v-if="nodeData.dataRef.type !== '0'"
                            @click="editTreeNode(nodeData.dataRef.level)">
                 <a-icon type="edit" />编辑信息
               </a-menu-item>
-              <a-menu-item key="4">
+              <a-menu-item key="4"
+                           v-if="nodeData.dataRef.type !== '0'">
                 <a-popconfirm title="确定删除吗？"
                               placement="topLeft"
                               @cancel="cancel"
@@ -75,6 +107,14 @@
           <a-input v-model="componentForm.name"
                    :autoFocus="true"
                    ref="name"
+                   type="text"
+                   allowClear
+                   autocomplete="off" />
+        </a-form-model-item>
+        <a-form-model-item label="组件英文名："
+                           prop="token">
+          <a-input v-model="componentForm.token"
+                   ref="token"
                    type="text"
                    allowClear
                    autocomplete="off" />
@@ -124,6 +164,14 @@
                    allowClear
                    autocomplete="off" />
         </a-form-model-item>
+        <a-form-model-item label="组件英文名："
+                           prop="token">
+          <a-input v-model="componentForm.token"
+                   ref="token"
+                   type="text"
+                   allowClear
+                   autocomplete="off" />
+        </a-form-model-item>
         <a-form-model-item label="抽象组件："
                            prop="abstract">
           <a-radio-group name="abstract"
@@ -166,6 +214,14 @@
           <a-input v-model="classForm.name"
                    ref="name"
                    :autoFocus="true"
+                   type="text"
+                   allowClear
+                   autocomplete="off" />
+        </a-form-model-item>
+        <a-form-model-item label="类英文名："
+                           prop="token">
+          <a-input v-model="classForm.token"
+                   ref="token"
                    type="text"
                    allowClear
                    autocomplete="off" />
@@ -245,6 +301,14 @@
                    allowClear
                    autocomplete="off" />
         </a-form-model-item>
+        <a-form-model-item label="类英文名："
+                           prop="token">
+          <a-input v-model="classForm.token"
+                   ref="token"
+                   type="text"
+                   allowClear
+                   autocomplete="off" />
+        </a-form-model-item>
         <a-form-model-item label="是否可继承："
                            prop="extend">
           <a-radio-group name="extend"
@@ -320,6 +384,14 @@
                    allowClear
                    autocomplete="off" />
         </a-form-model-item>
+        <a-form-model-item label="方法英文名："
+                           prop="token">
+          <a-input v-model="methodForm.token"
+                   ref="token"
+                   type="text"
+                   allowClear
+                   autocomplete="off" />
+        </a-form-model-item>
         <a-form-model-item has-feedback
                            label="简介："
                            prop="description">
@@ -353,6 +425,14 @@
                    allowClear
                    autocomplete="off" />
         </a-form-model-item>
+        <a-form-model-item label="方法英文名："
+                           prop="token">
+          <a-input v-model="methodForm.token"
+                   ref="token"
+                   type="text"
+                   allowClear
+                   autocomplete="off" />
+        </a-form-model-item>
         <a-form-model-item has-feedback
                            label="简介："
                            prop="description">
@@ -382,6 +462,14 @@
           <a-input v-model="overloadForm.name"
                    ref="name"
                    :autoFocus="true"
+                   type="text"
+                   allowClear
+                   autocomplete="off" />
+        </a-form-model-item>
+        <a-form-model-item label="重载英文名："
+                           prop="token">
+          <a-input v-model="overloadForm.token"
+                   ref="token"
                    type="text"
                    allowClear
                    autocomplete="off" />
@@ -432,6 +520,14 @@
                    allowClear
                    autocomplete="off" />
         </a-form-model-item>
+        <a-form-model-item label="重载英文名："
+                           prop="token">
+          <a-input v-model="overloadForm.token"
+                   ref="token"
+                   type="text"
+                   allowClear
+                   autocomplete="off" />
+        </a-form-model-item>
         <a-form-model-item label="是否公开："
                            prop="auth">
           <a-radio-group name="auth"
@@ -462,6 +558,7 @@
 <script>
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
+import { getUserInfo } from "@/utils/token"
 
 export default {
   //import引入的组件需要注入到对象中才能使用
@@ -481,7 +578,9 @@ export default {
   data() {
     //这里存放数据
     return {
+      author: getUserInfo().name,
       object: false,//是否是属性编辑选项
+      main: false,//是否是核心
       layout: {
         labelCol: { span: 5 },
         wrapperCol: { span: 19 },
@@ -494,6 +593,7 @@ export default {
       componentForm: {
         id: "",//组件id
         name: "",//组件名
+        token: "",//英文名
         abstract: "0",//是否为抽象组件
         description: ""//组件介绍
       },
@@ -508,6 +608,7 @@ export default {
       classForm: {
         id: "",//类id
         name: "",//类名
+        token: "",//英文名
         extend: "0",//是否可继承
         parent: "0",//父类 可设置默认值
         chip: "0",//移植芯片
@@ -528,6 +629,7 @@ export default {
       methodForm: {
         id: "",
         name: "",
+        token: "",//英文名
         description: "",//简介
       },
       methodRules: {
@@ -540,6 +642,7 @@ export default {
       overloadForm: {
         id: "",
         name: "",
+        token: "",//英文名
         description: "",//简介
         auth: "1",//权限 公开1或者私有0
         inAttrsId: "",//输入参数表id
@@ -585,7 +688,40 @@ export default {
   computed: {
   },
   //监控data中的数据变化
-  watch: {},
+  watch: {
+    'componentForm.token': {
+      handler(newValue) {
+        if (newValue) {
+          this.componentForm.token = newValue.replace(/[^a-zA-Z]/g, '')
+        }
+
+      }
+    },
+    'classForm.token': {
+      handler(newValue) {
+        if (newValue) {
+          this.classForm.token = newValue.replace(/[^a-zA-Z]/g, '')
+        }
+
+      }
+    },
+    'methodForm.token': {
+      handler(newValue) {
+        if (newValue) {
+          this.methodForm.token = newValue.replace(/[^a-zA-Z]/g, '')
+        }
+
+      }
+    },
+    'overloadForm.token': {
+      handler(newValue) {
+        if (newValue) {
+          this.overloadForm.token = newValue.replace(/[^a-zA-Z]/g, '')
+        }
+
+      }
+    }
+  },
   //方法集合
   methods: {
     nextFocus(name) {
@@ -601,20 +737,23 @@ export default {
       // console.log(node)
 
       const data = [{
-        key: 111,
-        name: "wpowww",
-        age: 3,
-        address: "swuswu",
+        key: "111",
+        name: "整数",
+        token: "a",
+        type1: "常量",
+        type2: "整型",
+        value: "5",
+        description: "普通整数",
       }]
 
       if (nodeData.level < 4) {
-        if (nodeData.key.indexOf('o') !== -1) {
+        if (nodeData.type === "4") {
           // if (!this.$store.getters.visible) {
           this.$message.success('进入对象编辑', 0.5);
           this.$store.commit('SET_TITLE', nodeData.title + "数据仓库")
           this.$store.commit('SET_VISIBLE', true)
           this.$store.commit('SET_PLACEMENT', 'bottom')
-          this.$store.commit('SET_WRAP', { marginLeft: '17.6%', width: '80.4%' })
+          this.$store.commit('SET_WRAP', { marginLeft: '17.6%', width: '81%' })
           this.$store.commit('SET_TABLEDATA', data)
           // } else {
           //   this.$message.info(nodeData.title + '已打开', 0.5);
@@ -625,10 +764,11 @@ export default {
       } else {
         //不能重复打开选项卡
         if (this.$store.getters.keys.indexOf(nodeData.key) === -1) {
+          console.log(nodeData.key)
           this.$message.success('成功打开选项卡', 0.5);
           this.$store.commit("SET_KEYS", nodeData.key)
           this.$store.commit("SET_ACTIVE", nodeData.key)
-          this.$store.commit("SET_PANES", { title: nodeData.title, content: "", key: nodeData.key })
+          this.$store.dispatch("getDesData", { title: nodeData.title, key: nodeData.key })
         } else {
           this.$store.commit("SET_ACTIVE", nodeData.key)
           this.$message.info(nodeData.title + '已打开', 0.5);
@@ -641,9 +781,7 @@ export default {
       // console.log("当前的结点信息改变")
       this.treeNode = e.node
       this.parentData = this.treeNode.$parent.dataRef
-      this.object = (this.treeNode.dataRef.key.indexOf('o') !== -1)
-      // console.log(typeof this.treeNode.dataRef.key)
-
+      // console.log(this.treeNode.dataRef.key[0])
     },
 
     //新建同级还是下一级
@@ -763,6 +901,8 @@ export default {
           this.newTreeNode = {
             title: this.componentForm.name,
             key: new Date().getTime() + '1',
+            type: "2",
+            author: this.author,
             level: this.editStatus == 'same' ? this.treeNode.dataRef.level : this.treeNode.dataRef.level + 1,
             description: this.componentForm.description
           }
@@ -787,6 +927,8 @@ export default {
           this.newTreeNode = {
             title: this.classForm.name,
             key: new Date().getTime() + '1',
+            type: "2",
+            author: this.author,
             level: this.editStatus == 'same' ? this.treeNode.dataRef.level : this.treeNode.dataRef.level + 1,
             description: this.classForm.description,
             children: this.editStatus == 'same' ? [] : [
@@ -794,11 +936,15 @@ export default {
                 title: '创建对象',
                 key: 'o' + new Date().getTime() + '1',
                 level: 3,
+                type: "4",
+                author: this.author,
                 description: "xxx类的对象",
               },
               {
                 title: '构造方法',
                 key: 'c' + new Date().getTime() + '1',
+                type: "3",
+                author: this.author,
                 level: 3,
                 description: "xxx类的构造方法",
               },
@@ -826,6 +972,8 @@ export default {
           this.newTreeNode = {
             title: this.methodForm.name,
             key: new Date().getTime() + '1',
+            type: "2",
+            author: this.author,
             level: this.editStatus == 'same' ? this.treeNode.dataRef.level : this.treeNode.dataRef.level + 1,
             description: this.methodForm.description,
             // children: [{
@@ -856,6 +1004,8 @@ export default {
           this.newTreeNode = {
             title: this.overloadForm.name,
             key: new Date().getTime() + '1',
+            type: "2",
+            author: this.author,
             level: this.editStatus == 'same' ? this.treeNode.dataRef.level : this.treeNode.dataRef.level + 1,
             description: this.overloadForm.description
           }

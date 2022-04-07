@@ -5,7 +5,7 @@
                title="数据仓库">
       <a-button type="link"
                 @click="displayData">
-        <a-icon :type="$store.getters.visible ? 'menu-unfold' : 'menu-fold'" />
+        <a-icon type="database" />
       </a-button>
     </a-tooltip>
     <div style="padding:30vh;"
@@ -25,7 +25,63 @@
         <div class="card">
           <!-- <div v-for="(item,index) in 10"
                :key="index"> -->
-          <Card></Card>
+          <!-- <a-collapse :bordered="trues">
+            <a-collapse-panel key="1"
+                              header="输入参数表">
+              <PropTable :data="pane.contentIn"></PropTable>
+            </a-collapse-panel>
+
+            <a-collapse-panel key="3"
+                              header="执行逻辑表">
+              <PropTable :data="pane.contentLogic"></PropTable>
+            </a-collapse-panel>
+          </a-collapse> -->
+          <a-collapse :bordered="true"
+                      :style="customStyle">
+            <template #expandIcon="props">
+              <a-icon type="caret-right"
+                      :rotate="props.isActive ? 90 : 0" />
+            </template>
+            <a-collapse-panel key="1">
+              <template slot="header">
+                <a-icon type="import"
+                        style="margin-right:10px" />
+                <span>输入参数表</span>
+              </template>
+
+              <PropTable :data="pane.contentIn"></PropTable>
+            </a-collapse-panel>
+          </a-collapse>
+          <a-collapse :bordered="true"
+                      :style="customStyle">
+            <template #expandIcon="props">
+              <a-icon type="caret-right"
+                      :rotate="props.isActive ? 90 : 0" />
+            </template>
+            <a-collapse-panel key="2">
+              <template slot="header">
+                <a-icon type="export"
+                        style="margin-right:10px" />
+                <span>输出参数表 </span>
+              </template>
+              <PropTable :data="pane.contentOut"></PropTable>
+            </a-collapse-panel>
+          </a-collapse>
+          <a-collapse :bordered="true"
+                      :style="customStyle">
+            <template #expandIcon="props">
+              <a-icon type="caret-right"
+                      :rotate="props.isActive ? 90 : 0" />
+            </template>
+            <a-collapse-panel key="3">
+              <template slot="header">
+                <a-icon type="ordered-list"
+                        style="margin-right:10px" />
+                <span>执行逻辑表 </span>
+              </template>
+              <PropTable :data="pane.contentLogic"></PropTable>
+            </a-collapse-panel>
+          </a-collapse>
           <!-- </div> -->
         </div>
       </a-tab-pane>
@@ -34,11 +90,11 @@
 </template>
 
 <script>
-import Card from '../overload/Card';
+import PropTable from '../overload/PropTable'
 
 export default {
   //import引入的组件需要注入到对象中才能使用
-  components: { Card },
+  components: { PropTable },
   data() {
     //这里存放数据
     const panes = this.$store.getters.panes
@@ -46,6 +102,8 @@ export default {
       // activeKey: panes[0].key,
       panes,
       newTabIndex: 0,
+      customStyle:
+        'border-radius: 4px; margin-bottom: 20px;overflow: hidden',
     };
   },
   //监听属性 类似于data概念
@@ -59,17 +117,21 @@ export default {
       向后端请求 总数据
       */
       const data = [{
-        key: 1,
-        name: "wpo",
-        age: 32,
-        address: "swu",
+        key: "222",
+        name: "小数",
+        token: "b",
+        type1: "变量",
+        type2: "浮点型",
+        value: "5.6",
+        description: "普通小数",
       }]
 
+      this.$store.commit('SET_TABLEDATA', data)
       this.$store.commit('SET_VISIBLE', true)
       this.$store.commit('SET_TITLE', "数据对象总仓库")
       this.$store.commit('SET_PLACEMENT', 'right')
       this.$store.commit('SET_WRAP', { marginTop: '64px' })
-      this.$store.commit('SET_TABLEDATA', data)
+
     },
     callback(key) {
       console.log(key);
@@ -129,6 +191,7 @@ export default {
 .ant-btn {
   position: absolute;
   left: calc(100% - 40px);
+  z-index: 50;
   margin-bottom: 0px;
   border: 0px;
   /* background: none; */

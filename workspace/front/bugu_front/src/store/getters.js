@@ -15,7 +15,10 @@ const getters ={
 	wrap: state => state.data.wrap,//抽屉外层样式
 	title:state => state.data.title,//抽屉的标题
 	tableData: state => state.data.tableData, //抽屉表格展示的数据
+	cacheData: state => state.data.cacheData,//保存源数据
 
-	desData: state => state.card.desData//描述文件 
+	desData: state => state.card.desData,//描述文件
+	project: state => state.card.project,//项目信息 
+	createVisible: state => state.card.createVisible,//新建弹窗的显示
 }
 export default getters

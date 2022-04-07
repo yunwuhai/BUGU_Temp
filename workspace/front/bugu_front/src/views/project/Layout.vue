@@ -28,8 +28,8 @@
 import Header from './components/layout/Header'
 import Slider from './components/layout/Slider'
 import Content from './components/layout/Content'
-import Init from './components/layout/Init'
 import Data from './components/data/Data'
+import Init from './Init'
 export default {
   //import引入的组件需要注入到对象中才能使用
   components: {
@@ -85,7 +85,6 @@ export default {
   },
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {
-
   },
   //生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {

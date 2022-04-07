@@ -2,11 +2,11 @@
 import router from '../router'
 import store from '../store'
 import NProgress from 'nprogress' // 进度条
-import { getToken, removeToken, getUserInfo,removeUserInfo,setLoginStatus } from './token'
+import { getToken, removeToken, removeUserInfo,setLoginStatus, getUserInfo } from './token'
 import { message } from 'ant-design-vue';
 
 
-const whiteList = ['/entrance', '/page401'] // no redirect whitelist
+const whiteList = ['/entrance', '/404'] // no redirect whitelist
 NProgress.configure({ showSpinner: true }) // showSpinner进度环显示隐藏
 
 /**
@@ -36,9 +36,15 @@ router.beforeEach(async (to, from, next) => {
     // 登录过就不能访问登录界面，需要中断这一次路由守卫，执行下一次路由守卫，并且下一次守卫的to是主页
     if (to.path === '/entrance') {
 			message.warning('用户已登录，返回主页',1)
-      next({ path: '/project' })
+      next({ path: '/usercenter' })
       NProgress.done()
-    } else {
+    } 
+		//没有项目信息 跳转到新建界面
+		else if(to.path === '/project' && Object.keys(store.getters.project).length === 0){
+			await store.commit("SET_CREATEVISIBLE",true)
+			next({ path: '/init' })
+		}
+		else {
 			if(hasRoute(to)){
 				next()
 			}else{
