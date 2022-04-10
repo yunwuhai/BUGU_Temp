@@ -44,7 +44,7 @@ export default {
   data() {
     //这里存放数据
     return {
-      name: getUserInfo().name
+      name: getUserInfo().nickName
     };
   },
   //监听属性 类似于data概念

@@ -40,13 +40,15 @@
 
 <script>
 import * as Cookie from '@/utils/token.js'
+import entranceApi from '@/api/entrance'
+
 export default {
   data() {
     return {
       loading: false,
       loginForm: {
         userName: "",
-        name: "",
+        nickName: "",
         pass: '',
         role: 1
       },
@@ -69,46 +71,37 @@ export default {
       this.$refs.pass.focus()
     },
     submitForm(formName) {
+      this.loading = true
       this.$refs[formName].validate(valid => {
         if (valid) {
-          this.loading = true
-          //  在vuex中进行后端验证 返回promise
-          // this.$store.dispatch('login', { userName: this.loginForm.userName, pass: this.loginForm.pass })
-          if (this.loginForm.userName === 'admin' && this.loginForm.pass === '123456') {
-            this.loginForm.role = 2
-            Cookie.setToken("BUGU_ADMIN")
-            delete this.loginForm.pass
-            Cookie.setUserInfo(this.loginForm)
-            // console.log(Cookie.getUserInfo())
-            Cookie.setLoginStatus(true)
-            this.$store.commit("SET_USERINFO", this.loginForm)
-            this.$router.push({ name: 'Admin' })
-            this.$message.success('登陆成功', 0.5)
-
-            this.loading = false
-          }
-          else if (this.loginForm.userName === 'wpo' && this.loginForm.pass === '123456') {
-            this.loginForm.name = "wpo"
-            Cookie.setToken("BUGU_USER")
-            delete this.loginForm.pass
-            Cookie.setUserInfo(this.loginForm)
-            // console.log(Cookie.getUserInfo())
-            Cookie.setLoginStatus(true)
-            this.$store.commit("SET_USERINFO", this.loginForm)
-            this.$router.push({ name: 'UserCenter' })
-            this.$message.success('登陆成功', 0.5)
-            this.loading = false
-
-          } else {
-            this.$message.error('账号或密码错误', 0.5)
-            // this.$nextTick(() => {
-            //   this.$refs['ruleForm'].resetFields();
-            // })
-            this.loading = false
-          }
-        } else {
-          this.$message.error('登陆失败', 0.5)
-          return false
+          entranceApi.login({
+            userName: this.loginForm.userName,
+            pass: this.loginForm.pass
+          })
+            .then((res) => {
+              // console.log(res.data.userInfo)
+              if (res.code === 200) {
+                this.$message.success(res.msg, 0.5)
+                Cookie.setLoginStatus(true)
+                Cookie.setToken(res.data.token)
+                delete res.data.userInfo[0].pass
+                Cookie.setUserInfo(res.data.userInfo[0])
+                // console.log(Cookie.getUserInfo())
+                this.loading = false
+                this.$router.push({
+                  path: '/usercenter'
+                })
+              } else {
+                this.$message.error(res.msg, 0.7)
+                Cookie.setLoginStatus(false)
+                this.loading = false
+              }
+            })
+            .catch((err) => {
+              this.$message.error("登录失败", 0.5)
+              console.log(err)
+              this.loading = false
+            })
         }
       })
     },

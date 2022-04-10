@@ -578,7 +578,7 @@ export default {
   data() {
     //这里存放数据
     return {
-      author: getUserInfo().name,
+      author: getUserInfo().nickName,
       object: false,//是否是属性编辑选项
       main: false,//是否是核心
       layout: {

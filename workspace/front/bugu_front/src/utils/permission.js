@@ -1,4 +1,12 @@
-// 路由守卫 检测全局所有的路由变化
+/*
+ * @Description: 路由守卫 检测全局所有的路由变化
+ * @version: 1.0.0
+ * @Author: WPO
+ * @Date: 2022-03-25 22:18:30
+ * @LastEditors: WPO
+ * @LastEditTime: 2022-04-09 14:21:49
+ */
+
 import router from '../router'
 import store from '../store'
 import NProgress from 'nprogress' // 进度条

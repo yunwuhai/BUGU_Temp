@@ -1,4 +1,12 @@
-// 动态添加路由使用
+/*
+ * @Description: 动态添加路由使用
+ * @version: 1.0.0
+ * @Author: WPO
+ * @Date: 2022-03-30 11:58:23
+ * @LastEditors: WPO
+ * @LastEditTime: 2022-04-09 14:24:21
+ */
+
 import {asyncRoutes} from '@/router'
 // constRoutes,
 export default{
@@ -11,7 +19,6 @@ export default{
 			// console.log(asyncRoutes)
       return new Promise((resolve) => {
         const add = asyncRoutes.filter(item => item.meta.role === value)
-				console.log(add)
 				add.push({path: '*', redirect: '/404'})
         commit('SET_ROUTES', add)
         resolve(add)

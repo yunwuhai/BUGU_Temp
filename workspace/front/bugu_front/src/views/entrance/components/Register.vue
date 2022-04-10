@@ -7,8 +7,8 @@
                   v-bind="layout">
       <a-form-model-item has-feedback
                          label="昵称"
-                         prop="name">
-        <a-input v-model="registerForm.name"
+                         prop="nickName">
+        <a-input v-model="registerForm.nickName"
                  type="text"
                  :autoFocus="true"
                  reg="userName"
@@ -22,6 +22,7 @@
         <a-input v-model="registerForm.userName"
                  type="text"
                  reg="userName"
+                 placeholder="用于登录的账号"
                  allowClear
                  autocomplete="off"
                  @keyup.enter="nextFocus('pass')" />
@@ -71,6 +72,8 @@
 </template>
 
 <script>
+import entranceApi from '@/api/entrance'
+
 export default {
   data() {
     let validateUsername = (rule, value, callback) => {
@@ -119,12 +122,13 @@ export default {
       loading: false,
       registerForm: {
         userName: '',
+        nickName: '',
         pass: '',
         checkPass: '',
         tel: '',
       },
       rules: {
-        name: [{ required: true, message: "请输入昵称", trigger: 'change' }],
+        nickName: [{ required: true, message: "请输入昵称", trigger: 'change' }],
         userName: [{ required: true, validator: validateUsername, trigger: 'change' }],
         pass: [{ required: true, validator: validatePass, trigger: 'change' }],
         checkPass: [{ required: true, validator: validatePass2, trigger: 'change' }],
@@ -141,18 +145,31 @@ export default {
       this.loading = true
       this.$refs[formName].validate(valid => {
         if (valid) {
-          //在vuex中进行后端验证 返回promise
-          // this.$store.dispatch('register', registerForm)
-
-          this.$message.success('注册成功', 0.5)
-          this.loading = false
-          this.$bus.$emit('success', { userName: this.registerForm.userName, pass: this.registerForm.pass, activeKey: "1" })
-          this.$refs[formName].resetFields();
-          // alert('submit!');
-        } else {
-          this.$message.error('注册失败', 0.5)
-          // alert('submit!');
-          return false;
+          let register = {
+            userName: this.registerForm.userName,
+            nickName: this.registerForm.nickName,
+            pass: this.registerForm.pass,
+            tel: this.registerForm.tel,
+            role: "1",
+            // createTime: new Date().
+          }
+          entranceApi.register(register)
+            .then((res) => {
+              if (res.code === 200) {
+                console.log(res)
+                this.$message.success('注册成功', 0.5)
+                this.loading = false
+                this.$bus.$emit('success', { userName: this.registerForm.userName, pass: this.registerForm.pass, activeKey: "1" })
+                this.$refs[formName].resetFields();
+              } else {
+                this.$message.error('注册失败1', 0.5)
+              }
+            })
+            .catch((err) => {
+              this.$message.error('注册失败2', 0.5)
+              console.err(err)
+              this.loading = false
+            })
         }
       });
     },

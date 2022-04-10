@@ -65,12 +65,11 @@
           <a-form-model-item has-feedback
                              label="堆栈大小："
                              prop="stack">
-            <a-input v-model="initForm.stack"
-                     ref="stack"
-                     allowClear
-                     type="text"
-                     autocomplete="off"
-                     @keyup.enter="handleOk('ruleForm')" />
+            <a-input-number v-model="initForm.stack"
+                            ref="stack"
+                            allowClear
+                            type="text"
+                            autocomplete="off" />
           </a-form-model-item>
         </template>
         <template v-else>
@@ -80,8 +79,7 @@
                                prop="abstract">
               <a-radio-group name="abstract"
                              v-model="initForm.abstract"
-                             ref="abstract"
-                             @keyup.enter="handleOk('ruleForm')">
+                             ref="abstract">
                 <a-radio value="1">
                   是
                 </a-radio>
@@ -92,6 +90,15 @@
             </a-form-model-item>
           </a-tooltip>
         </template>
+        <a-form-model-item has-feedback
+                           label="简介："
+                           prop="description">
+          <a-textarea placeholder="项目简单介绍"
+                      v-model="initForm.description"
+                      @keyup.enter="handleOk('ruleForm')"
+                      allowClear
+                      :rows="3" />
+        </a-form-model-item>
       </a-form-model>
     </a-modal>
   </div>
@@ -101,6 +108,9 @@
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
 import { nanoid } from "nanoid"
+import engineeringsApi from '@/api/engineerings'
+import componentsApi from '@/api/components'
+import { getUserInfo } from '@/utils/token'
 
 export default {
   name: "Init",
@@ -118,6 +128,7 @@ export default {
         stack: '',
         chip: '1',
         abstract: '0',
+        description: ""
         // componentId:[] //工程项目中所有组件id的集合
       },
       rules: {
@@ -143,21 +154,64 @@ export default {
       this.$refs[name].focus()
     },
     handleOk(formName) {
+      let req = {}
       this.$refs[formName].validate(valid => {
         if (valid) {
-          //在vuex中进行后端验证 返回promise
-          // this.$store.dispatch('register', registerForm)
+          // 工程项目
           if (this.initForm.type === "0") {
-            this.initForm.componentId = []//工程项目才有多个组件集合
+            req.userId = getUserInfo().id
+            req.author = getUserInfo().name
+            req.name = this.initForm.name
+            req.token = this.initForm.token
+            req.type = "2"
+            req.description = this.initForm.description
+            req.chipId = this.initForm.chip
+            req.stack = this.initForm.stack
+            req.componentsId = ""
+            engineeringsApi.add(req)
+              .then((res) => {
+                console.log("工程", res.data)
+                if (res.code === 200) {
+                  this.$message.success('新建工程项目成功', 0.5)
+                  // this.$store.commit("SET_PROJECT", res.data)
+                  this.$store.commit("SET_CREATEVISIBLE", false)
+                  this.$router.push({ name: 'Project' })
+                } else {
+                  this.$message.error('新建工程项目失败', 0.5)
+                  this.resetForm('ruleForm')
+                }
+              })
+              .catch(() => {
+                this.$message.error('新建失败', 0.5)
+                this.resetForm('ruleForm')
+              })
+          } else {
+            req.name = this.initForm.name
+            req.token = this.initForm.token
+            req.userId = getUserInfo().id
+            req.author = getUserInfo().name
+            req.type = "2"
+            req.description = this.initForm.description
+            componentsApi.add(req)
+              .then((res) => {
+                console.log("组件", res.data)
+                if (res.code === 200) {
+                  this.$message.success('新建工程项目成功', 0.5)
+                  // this.$store.commit("SET_PROJECT", res.data)
+                  this.$store.commit("SET_CREATEVISIBLE", false)
+                  this.$router.push({ name: 'Project' })
+                } else {
+                  this.$message.error('新建工程项目失败', 0.5)
+                  this.resetForm('ruleForm')
+                }
+              })
+              .catch(() => {
+                this.$message.error('新建失败', 0.5)
+                this.resetForm('ruleForm')
+              })
           }
-          this.$store.commit("SET_PROJECT", this.initForm)
-          this.$store.commit("SET_CREATEVISIBLE", false)
-          this.$message.success('新建成功', 0.5)
-          this.$router.push({ name: 'Project' })
-          // alert('submit!');
         } else {
           this.$message.error('新建失败', 0.5)
-          // alert('submit!');
           return false;
         }
       });

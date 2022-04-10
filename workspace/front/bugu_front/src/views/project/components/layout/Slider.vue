@@ -151,7 +151,7 @@ export default {
         向后端请求系统已有的组件目录树
       */
       this.systemTree = this.treeData1
-      let author = getUserInfo().name
+      let author = getUserInfo().nickName
       // 工程项目
       if (this.$store.getters.project.type === "0") {
         let componentKey = `${this.$store.getters.project.id}_` + this.$store.getters.project.componentId.length
