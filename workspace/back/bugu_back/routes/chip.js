@@ -1,25 +1,25 @@
 /*
- * @Description: 用户信息操作的相关接口
+ * @Description: 芯片操作的路由
  * @version: 1.0.0
  * @Author: WPO
- * @Date: 2022-04-08 21:15:41
+ * @Date: 2022-04-11 10:47:52
  * @LastEditors: WPO
- * @LastEditTime: 2022-04-11 10:47:35
+ * @LastEditTime: 2022-04-11 10:48:59
  */
 
 const express = require('express');
 const router = express.Router();
-const userApi = require('../dao/api/userInfo')
+const chipApi = require('../dao/api/components')
 
 router.get('/', (req, res) => {
-  userApi.queryAll()
+  chipApi.queryAll()
 	.then((result) => {
 		// 返回对象数组
 		if(result){
 			let data = result.map(item => item.dataValues) 
 			res.json({
 				code : 200,
-				msg : "已找到所有用户信息",
+				msg : "已找到所有芯片信息",
 				data:data
 			})
 		}else{
@@ -39,13 +39,13 @@ router.get('/', (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
-  userApi.queryById(req.params.id)
+  chipApi.queryById(req.params.id)
 	.then((result) => {
 		// 返回对象数组
 		if(result[0].dataValues){
 			res.json({
 				code:200,
-				msg:"已找到该用户",
+				msg:"已找到该芯片",
 				data:result[0].dataValues
 			})
 		}else{
@@ -65,19 +65,19 @@ router.get('/:id', (req, res) => {
 })
 
 router.post('/',(req, res) => {
-  userApi.add(req.body)
+  chipApi.add(req.body)
 	.then((result) => {
 		// 返回对象
 		if(result.dataValues){
 			res.json({
 				code : 200,
-				msg : "新建用户信息成功",
+				msg : "新建芯片信息成功",
 				data : result.dataValues
 			})
 		}else{
 			res.json({
 				code : 488,
-				msg : "新建用户信息失败"
+				msg : "新建芯片信息失败"
 			})
 		}
 	})
@@ -90,14 +90,14 @@ router.post('/',(req, res) => {
 })
 
 router.put('/', (req, res) => {
-  userApi.update(req.body)
+  chipApi.update(req.body)
 	.then((result) => {
 		console.log(result)
 		// 返回对象数组
 		if(result){
 			res.json({
 				code : 200,
-				msg : "已更新该用户",
+				msg : "已更新该芯片",
 				data : result
 			})
 		}else{
@@ -117,13 +117,13 @@ router.put('/', (req, res) => {
 })
 
 router.delete('/:id', (req, res) => {
-  userApi.del(req.params.id)
+  chipApi.del(req.params.id)
 	.then((result) => {
 		// 返回对象数组
 		if(result){
 			res.json({
 				code : 200,
-				msg : "已删除该用户",
+				msg : "已删除该芯片",
 			})
 		}else{
 			res.json({

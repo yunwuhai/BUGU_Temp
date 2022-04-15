@@ -4,7 +4,7 @@
  * @Author: WPO
  * @Date: 2022-04-08 15:12:03
  * @LastEditors: WPO
- * @LastEditTime: 2022-04-10 01:30:01
+ * @LastEditTime: 2022-04-13 02:08:22
  */
 
 const express = require('express');
@@ -14,8 +14,15 @@ router.get('/', function(req, res, next) {
   res.send('Hello World!');
 });
 
-router.use('/user',require('./userInfo'))
+router.use('/tree',require('./tree'))
+
+router.use('/userInfo',require('./userInfo'))
 router.use('/entrance',require('./entrance'))
-router.use('/project',require('./projects'))
+router.use('/component',require('./component'))
+router.use('/engineering',require('./engineering'))
+router.use('/class',require('./class'))
+router.use('/method',require('./method'))
+router.use('/chip',require('./chip'))
+router.use('/data',require('./data'))
 
 module.exports = router;

@@ -4,7 +4,7 @@
  * @Author: WPO
  * @Date: 2022-04-08 09:42:46
  * @LastEditors: WPO
- * @LastEditTime: 2022-04-09 15:14:04
+ * @LastEditTime: 2022-04-12 20:03:06
  */
 
 let createError = require('http-errors');
@@ -40,6 +40,7 @@ app.use(jwt({
 
 // 验证token是否过期,是否有效, 将token解析成用户信息放到req.data里, 每次请求接口都可以获取到
 app.use((req, res, next) => {
+  // console.log(res)
   let token = req.headers['authorization'];
   if (token == undefined){
     // res.status(403).send({ code: -1, msg: '无效的token' })

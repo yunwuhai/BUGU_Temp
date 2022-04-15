@@ -1,25 +1,50 @@
 /*
- * @Description: 用户信息操作的相关接口
+ * @Description: 工程项目信息路由
  * @version: 1.0.0
  * @Author: WPO
- * @Date: 2022-04-08 21:15:41
+ * @Date: 2022-04-10 23:08:49
  * @LastEditors: WPO
- * @LastEditTime: 2022-04-11 10:47:35
+ * @LastEditTime: 2022-04-11 18:37:59
  */
 
 const express = require('express');
 const router = express.Router();
-const userApi = require('../dao/api/userInfo')
+const enginApi = require('../dao/api/engineerings')
+const init = require('../service/init')
+
+router.post('/init', (req, res) => {
+	init.creatEngin(req.body)
+	.then((result) => {
+		if(result !== {}){
+			res.json({
+				code : 200,
+				msg : "新建工程信息成功",
+				data: result
+			})
+		}else{
+			res.json({
+				code : 489,
+				msg : '新建失败' + err
+			})
+		}
+	})
+	.catch((err) => {
+		res.json({
+			code : 587,
+			msg : '错误信息' + err
+		})
+	})
+})
 
 router.get('/', (req, res) => {
-  userApi.queryAll()
+  enginApi.queryAll()
 	.then((result) => {
 		// 返回对象数组
 		if(result){
 			let data = result.map(item => item.dataValues) 
 			res.json({
 				code : 200,
-				msg : "已找到所有用户信息",
+				msg : "已找到所有工程信息",
 				data:data
 			})
 		}else{
@@ -39,13 +64,13 @@ router.get('/', (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
-  userApi.queryById(req.params.id)
+  enginApi.queryById(req.params.id)
 	.then((result) => {
 		// 返回对象数组
 		if(result[0].dataValues){
 			res.json({
 				code:200,
-				msg:"已找到该用户",
+				msg:"已找到该工程",
 				data:result[0].dataValues
 			})
 		}else{
@@ -65,19 +90,19 @@ router.get('/:id', (req, res) => {
 })
 
 router.post('/',(req, res) => {
-  userApi.add(req.body)
+  enginApi.add(req.body)
 	.then((result) => {
 		// 返回对象
 		if(result.dataValues){
 			res.json({
 				code : 200,
-				msg : "新建用户信息成功",
+				msg : "新建工程信息成功",
 				data : result.dataValues
 			})
 		}else{
 			res.json({
 				code : 488,
-				msg : "新建用户信息失败"
+				msg : "新建工程信息失败"
 			})
 		}
 	})
@@ -90,14 +115,14 @@ router.post('/',(req, res) => {
 })
 
 router.put('/', (req, res) => {
-  userApi.update(req.body)
+  enginApi.update(req.body)
 	.then((result) => {
 		console.log(result)
 		// 返回对象数组
 		if(result){
 			res.json({
 				code : 200,
-				msg : "已更新该用户",
+				msg : "已更新该工程",
 				data : result
 			})
 		}else{
@@ -117,13 +142,13 @@ router.put('/', (req, res) => {
 })
 
 router.delete('/:id', (req, res) => {
-  userApi.del(req.params.id)
+  enginApi.del(req.params.id)
 	.then((result) => {
 		// 返回对象数组
 		if(result){
 			res.json({
 				code : 200,
-				msg : "已删除该用户",
+				msg : "已删除该工程",
 			})
 		}else{
 			res.json({
