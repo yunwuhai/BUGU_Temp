@@ -1,10 +1,30 @@
 <!-- 项目界面 -->
 <template>
   <div class=''>
-    <a-button @click="createProject">新建工程</a-button>
+    <a-button @click="createProject"
+              style="margin-top:10px;margin-bottom:20px;">新建项目</a-button>
     <Init></Init>
+    <a-table :columns="columns"
+             :data-source="tableData"
+             :scroll="{y:250}"
+             :loading="$store.getters.loading">
+      <a slot="name"
+         slot-scope="text,record"
+         @click="open(record.id)">{{ text }}</a>
+      <template slot="operation"
+                slot-scope="text, record">
+        <div class="editable-row-operations">
+          <a @click="()=> edit(record)">编辑</a>
+          <a-popconfirm title="确定删除吗？"
+                        @confirm="() => del(record.id)">
+            <a>删除</a>
+          </a-popconfirm>
+        </div>
+      </template>
+    </a-table>
+
     <a-list class="comment-list"
-            :header="`${data.length} replies`"
+            :header="`${data.length} 评论`"
             item-layout="horizontal"
             :data-source="data">
       <a-list-item slot="renderItem"
@@ -16,6 +36,9 @@
                   :key="index">{{ action }}</span>
           </template>
           <p slot="content">
+            <a-rate :default-value="4"
+                    disabled />
+            <br>
             {{ item.content }}
           </p>
           <a-tooltip slot="datetime"
@@ -25,6 +48,67 @@
         </a-comment>
       </a-list-item>
     </a-list>
+    <a-modal v-model="visible"
+             title="修改项目"
+             :closable="true"
+             :maskClosable="false"
+             @cancel="handleCancel"
+             @ok="save('ruleForm')">
+      <a-form-model ref="ruleForm"
+                    :model="initForm"
+                    :rules="rules"
+                    v-bind="layout">
+        <a-form-model-item has-feedback
+                           label="项目名称："
+                           prop="name">
+          <a-input v-model="initForm.name"
+                   :autoFocus="true"
+                   ref="name"
+                   type="text"
+                   allowClear
+                   autocomplete="off" />
+        </a-form-model-item>
+        <a-form-model-item label="项目英文名："
+                           prop="token">
+          <a-input v-model="initForm.token"
+                   ref="token"
+                   type="text"
+                   allowClear
+                   autocomplete="off" />
+        </a-form-model-item>
+        <a-form-model-item has-feedback
+                           label="芯片类型："
+                           prop="chip">
+          <a-select v-model="initForm.chipId"
+                    ref="chip"
+                    allowClear
+                    autocomplete="off">
+            <a-select-option value="1">
+              芯片1
+            </a-select-option>
+          </a-select>
+        </a-form-model-item>
+        <a-form-model-item has-feedback
+                           label="堆栈大小："
+                           prop="stack">
+          <a-input-number v-model="initForm.stack"
+                          :min="1"
+                          ref="stack"
+                          allowClear
+                          type="text"
+                          autocomplete="off" />
+        </a-form-model-item>
+        <a-form-model-item has-feedback
+                           label="简介："
+                           prop="description">
+          <a-textarea placeholder="项目简单介绍"
+                      v-model="initForm.description"
+                      @keyup.enter="save('ruleForm')"
+                      allowClear
+                      :rows="3" />
+        </a-form-model-item>
+      </a-form-model>
+    </a-modal>
   </div>
 </template>
 
@@ -33,23 +117,96 @@
 //例如：import 《组件名称》 from '《组件路径》';
 import moment from 'moment';
 import Init from '@/views/project/Init'
+
+const columns = [
+  {
+    title: '项目名',
+    dataIndex: 'name',
+    key: 'name',
+    align: "center",
+    width: '17%',
+    scopedSlots: { customRender: 'name' },
+  },
+  {
+    title: '英语名',
+    dataIndex: 'token',
+    width: '17%',
+    key: 'token',
+    align: "center",
+  },
+  {
+    title: '芯片',
+    dataIndex: 'chipId',
+    width: '15%',
+    key: 'chipId',
+    align: "center",
+  },
+  {
+    title: '堆栈大小',
+    dataIndex: 'stack',
+    width: '10%',
+    key: 'stack',
+  },
+  {
+    title: '简介',
+    dataIndex: 'description',
+    key: 'description',
+    width: '20%',
+    align: "center",
+    ellipsis: true,
+  },
+  {
+    title: '操作',
+    dataIndex: 'operation',
+    key: 'operation',
+    align: "center",
+    ellipsis: true,
+    scopedSlots: { customRender: 'operation' },
+  },
+];
+
+import engineeringApi from '@/api/engineering'
+import treeApi from '@/api/tree'
+import { getUserInfo } from '@/utils/token'
+
 export default {
   //import引入的组件需要注入到对象中才能使用
   components: { Init },
   data() {
     //这里存放数据
     return {
+      // loading:false,
+      initForm: {
+        id: "",//项目id
+        type: "0",
+        name: '',
+        token: "",
+        stack: '',
+        chipId: '1',
+        description: ""
+      },
+      rules: {
+        type: [{ required: true, message: "请选择项目类型", trigger: 'change' }],
+        name: [{ required: true, message: "请输入项目名称", trigger: 'change' }],
+        stack: [{ required: true, message: "请输入堆栈大小", trigger: 'change' }],
+        chipId: [{ required: true, message: "请选择芯片类型", trigger: 'change' }],
+      },
+      layout: {
+        labelCol: { span: 7 },
+        wrapperCol: { span: 15 },
+      },
+      visible: false,
       data: [
         {
-          actions: ['Reply to'],
-          author: 'Han Solo',
+          actions: ['回复'],
+          author: 'HSY',
           avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
           content:
-            'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
+            '工程很棒！想借用一下',
           datetime: moment().subtract(1, 'days'),
         },
         {
-          actions: ['Reply to'],
+          actions: ['回复'],
           author: 'Han Solo',
           avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
           content:
@@ -57,6 +214,8 @@ export default {
           datetime: moment().subtract(2, 'days'),
         },
       ],
+      tableData: [],
+      columns,
       moment,
     }
   },
@@ -69,10 +228,93 @@ export default {
     createProject() {
       this.$store.commit("SET_CREATEVISIBLE", true)
     },
+    getAllEngineerings() {
+      engineeringApi.queryAll()
+        .then((res) => {
+          // console.log(res)
+          res.data.map((item) => item.key = item.id)
+          this.tableData = res.data
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+
+    },
+    open(id) {
+      // console.log(id)
+      /* 
+        向后端请求系统已有的组件目录树
+      */
+      treeApi.getTree(1, 0)
+        .then((res) => {
+          // this.systemTree = res.data
+          this.$store.commit('SET_SYSTEMTREE', res.data)
+        })
+        .catch((err) => {
+          this.$message.error("系统组件获取失败", 0.7)
+          console.error(err)
+        })
+
+      treeApi.getTree(getUserInfo().id, id)
+        .then((res) => {
+          // this.userTree = res.data
+          this.$store.commit('SET_USERTREE', res.data)
+        })
+        .catch((err) => {
+          this.$message.error("用户组件获取失败", 0.7)
+          console.error(err)
+        })
+
+      engineeringApi.queryById(id)
+        .then((res) => {
+          if (res.code === 200) {
+            this.$message.success(res.msg, 0.5)
+            this.$store.commit("SET_PROJECT", res.data)
+            sessionStorage.setItem('projectId', res.data.id)
+            this.$router.push({ name: 'Project' })
+          }
+        })
+    },
+    edit(record) {
+      // console.log(record)
+      this.visible = true
+      let data = {
+
+      }
+      Object.assign(data, record)
+      this.initForm = data
+    },
+    save(formName) {
+      this.$refs[formName].validate(valid => {
+        if (valid) {
+          engineeringApi.update(this.initForm)
+            .then((res) => {
+              this.$message.success(res.msg, 0.5)
+              this.visible = false
+              this.getAllEngineerings()
+            })
+        }
+      })
+
+    },
+    del(id) {
+      engineeringApi.del(id)
+        .then((res) => {
+          this.$message.success(res.msg, 0.5)
+          this.getAllEngineerings()
+        })
+
+    },
+    handleCancel() {
+      this.$store.commit("SET_CREATEVISIBLE", false)
+      this.visible = false
+      this.initForm = {}
+      this.$message.info('取消修改', 0.5)
+    },
   },
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {
-
+    this.getAllEngineerings()
   },
   //生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {
@@ -88,4 +330,7 @@ export default {
 }
 </script>
 <style scoped>
+.editable-row-operations a {
+  margin-right: 8px;
+}
 </style>

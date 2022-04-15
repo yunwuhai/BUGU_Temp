@@ -1,16 +1,16 @@
 <template>
   <div>
     <a-button class="editable-add-btn"
-              :disabled="addStatus"
+              v-if="$store.state.data.addStatus"
               @click="add">
       新建
     </a-button>
     <a-table :columns="columns"
              :data-source="$store.getters.tableData"
-             :scroll="{y:400,x:1000}"
+             :scroll="{y:400,x:900}"
              :bordered="true">
 
-      <template v-for="col in ['name', 'token','type','value','description']"
+      <template v-for="col in ['name', 'token','type','defaultV','description']"
                 :slot="col"
                 slot-scope="text, record">
         <!--  text:该单元格内容
@@ -18,127 +18,250 @@
               index:索引      -->
 
         <div :key="col">
-          <template v-if="record.editable">
-            <a-input v-if="col === 'name'"
-                     v-model="row.name" />
-            <a-input v-if="col === 'token'"
-                     v-model="row.token" />
-            <a-select v-if="col === 'type'"
-                      style="width:30%"
-                      v-model="row.type1">
-              <a-select-option v-for="item in typeList1"
-                               :key="item.value"
-                               :value="item.title">
-                {{item.title}}
-              </a-select-option>
-            </a-select>
-            <a-select v-if="col === 'type'"
-                      style="width:40%"
-                      v-model="row.type2">
-              <a-select-option v-for="item in typeList2"
-                               :key="item.value"
-                               :value="item.title">
-                {{item.title}}
-              </a-select-option>
-            </a-select>
-            <template v-if="col === 'value'">
-              <a-input-number v-model="row.value"
-                              :precision="0"
-                              :formatter="limitNumber"
-                              :parser="limitNumber"
-                              :min="-2147483648"
-                              :max="2147483647"
-                              v-if="record.type2 ==='整型'" />
-              <a-input-number v-model="row.value"
-                              :min="-Infinity"
-                              :max="Infinity"
-                              :step="0.1"
-                              v-if="record.type2 ==='浮点型'" />
-              <!-- v-model值为true or false  -->
-              <a-switch v-model="row.value"
-                        checked-children="true"
-                        un-checked-children="false"
-                        default-checked
-                        v-if="record.type2 ==='布尔型'" />
-              <a-input v-model="row.value"
-                       v-if="record.type2 ==='字符型'"
-                       :maxLength="1" />
-              <a-input v-model="row.value"
-                       v-if="record.type2 ==='字符串'" />
-              <a-tooltip title="输入数组成员，用逗号隔开">
-                <a-input v-model="row.value"
-                         v-if="record.type2 ==='数组'" />
-              </a-tooltip>
-              <a-input v-model="row.value"
-                       v-if="record.type2 ===''" />
+          <template v-if="col === 'type'">
+            <a-tag color="blue"
+                   v-if="record.varType==='1'">
+              常量
+            </a-tag>
+            <a-tag color="red"
+                   v-else-if="record.varType==='0'">
+              变量
+            </a-tag>
 
-            </template>
-
-            <a-input v-if="col === 'description'"
-                     v-model="row.description" />
+            <a-tag color="green"
+                   v-if="record.dataType==='0'">
+              整型
+            </a-tag>
+            <a-tag color="cyan"
+                   v-else-if="record.dataType==='1'">
+              浮点型
+            </a-tag>
+            <a-tag color="grey"
+                   v-else-if="record.dataType==='2'">
+              布尔型
+            </a-tag>
+            <a-tag color="orange"
+                   v-else-if="record.dataType==='3'">
+              字符型
+            </a-tag>
+            <a-tag color="yellow"
+                   v-else-if="record.dataType==='4'">
+              字符串
+            </a-tag>
+            <a-tag color="pink"
+                   v-else-if="record.dataType==='5'">
+              数组
+            </a-tag>
           </template>
-          <template v-else>
-            <template v-if="col === 'type'">
-              <a-tag color="blue"
-                     v-if="record.type1==='变量'">
-                {{ record.type1 }}
-              </a-tag>
-              <a-tag color="red"
-                     v-else-if="record.type1==='常量'">
-                {{ record.type1 }}
-              </a-tag>
-              <!-- type2 -->
-              <a-tag color="green"
-                     v-if="record.type2==='整型'">
-                {{record.type2}}
-              </a-tag>
-              <a-tag color="cyan"
-                     v-else-if="record.type2==='浮点型'">
-                {{record.type2}}
-              </a-tag>
-              <a-tag color="grey"
-                     v-else-if="record.type2==='布尔型'">
-                {{record.type2}}
-              </a-tag>
-              <a-tag color="orange"
-                     v-else-if="record.type2==='字符型'">
-                {{record.type2}}
-              </a-tag>
-              <a-tag color="yellow"
-                     v-else-if="record.type2==='字符串'">
-                {{record.type2}}
-              </a-tag>
-              <a-tag color="pink"
-                     v-else-if="record.type2==='数组'">
-                {{record.type2}}
-              </a-tag>
-            </template>
-            <span v-else> {{ text }}</span>
-
-          </template>
-
+          <span v-else> {{ text }}</span>
         </div>
       </template>
 
       <template slot="operation"
                 slot-scope="text, record">
-        <div class="editable-row-operations">
-          <span v-if="record.editable">
-            <a @click="() => save(record.key)"
-               :disabled="saveStatus">保存</a>
-            <a @click="()=> cancel(record.key)">取消</a>
-          </span>
-          <span v-else>
-            <a :disabled="editingKey!==''"
-               @click="()=> edit(record.key)">编辑</a>
+        <div class="editable-dataForm-operations">
+          <span>
+            <a @click="()=> edit(record.id)">编辑</a>
             <a-popconfirm title="确定删除吗？"
-                          @confirm="() => del(record.key)">
-              <a :disabled="editingKey!==''">删除</a>
+                          @confirm="() => del(record.id)">
+              <a>删除</a>
             </a-popconfirm>
           </span>
         </div>
       </template>
+
     </a-table>
+    <!-- 增加 -->
+    <a-modal v-model="visible"
+             :title="title"
+             :closable="true"
+             :maskClosable="true"
+             @ok="saveAdd('dataForm')"
+             @cancel="close">
+      <a-form-model ref="dataForm"
+                    :model="dataForm"
+                    :rules="dataRules"
+                    v-bind="layout">
+        <a-form-model-item has-feedback
+                           label="名称："
+                           prop="name">
+          <a-input v-model="dataForm.name"
+                   :autoFocus="true"
+                   ref="name"
+                   type="text"
+                   allowClear
+                   autocomplete="off" />
+        </a-form-model-item>
+        <a-form-model-item label="英文名："
+                           prop="token">
+          <a-input v-model="dataForm.token"
+                   ref="token"
+                   type="text"
+                   allowClear
+                   autocomplete="off" />
+        </a-form-model-item>
+        <a-form-model-item label="类型："
+                           prop="varType">
+          <a-radio-group name="varType"
+                         v-model="dataForm.varType"
+                         ref="varType">
+            <a-radio value="0">
+              变量
+            </a-radio>
+            <a-radio value="1">
+              常量
+            </a-radio>
+          </a-radio-group>
+        </a-form-model-item>
+        <a-form-model-item label="数据类型："
+                           prop="dataType">
+          <a-select style="width:30%"
+                    v-model="dataForm.dataType">
+            <a-select-option v-for="item in typeList"
+                             :key="item.value"
+                             :value="item.value">
+              {{item.title}}
+            </a-select-option>
+          </a-select>
+        </a-form-model-item>
+        <a-form-model-item label="默认值："
+                           prop="defaultV">
+          <a-input-number v-model="dataForm.defaultV"
+                          :precision="0"
+                          :formatter="limitNumber"
+                          :parser="limitNumber"
+                          :min="-2147483648"
+                          :max="2147483647"
+                          v-if="dataForm.dataType ==='0'" />
+          <a-input-number v-model="dataForm.defaultV"
+                          :min="-Infinity"
+                          :max="Infinity"
+                          :step="0.1"
+                          v-if="dataForm.dataType ==='1'" />
+          <a-switch v-model="dataForm.defaultV"
+                    checked-children="'1'"
+                    un-checked-children="'0'"
+                    default-checked
+                    v-if="dataForm.dataType ==='2'" />
+          <a-input v-model="dataForm.defaultV"
+                   v-if="dataForm.dataType ==='3'"
+                   :maxLength="1" />
+          <a-input v-model="dataForm.defaultV"
+                   v-if="dataForm.dataType ==='4'" />
+          <a-tooltip title="输入数组成员，用逗号隔开">
+            <a-input v-model="dataForm.defaultV"
+                     v-if="dataForm.dataType ==='5'" />
+          </a-tooltip>
+          <a-input v-model="dataForm.defaultV"
+                   :disabled="true"
+                   v-if="!dataForm.dataType" />
+        </a-form-model-item>
+        <a-form-model-item has-feedback
+                           label="简介："
+                           prop="description">
+          <a-textarea placeholder="填写数据介绍"
+                      v-model="dataForm.description"
+                      @keyup.enter="saveAdd('dataForm')"
+                      allowClear
+                      :dataForms="3" />
+        </a-form-model-item>
+      </a-form-model>
+    </a-modal>
+    <!-- 更新 -->
+    <a-modal v-model="visible1"
+             :title="title"
+             :closable="true"
+             :maskClosable="true"
+             @ok="saveEdit('dataForm')"
+             @cancel="close">
+      <a-form-model ref="dataForm"
+                    :model="dataForm"
+                    :rules="dataRules"
+                    v-bind="layout">
+        <a-form-model-item has-feedback
+                           label="名称："
+                           prop="name">
+          <a-input v-model="dataForm.name"
+                   :autoFocus="true"
+                   ref="name"
+                   type="text"
+                   allowClear
+                   autocomplete="off" />
+        </a-form-model-item>
+        <a-form-model-item label="英文名："
+                           prop="token">
+          <a-input v-model="dataForm.token"
+                   ref="token"
+                   type="text"
+                   allowClear
+                   autocomplete="off" />
+        </a-form-model-item>
+        <a-form-model-item label="数据类型："
+                           prop="varType">
+          <a-radio-group name="varType"
+                         v-model="dataForm.varType"
+                         ref="varType">
+            <a-radio value="0">
+              变量
+            </a-radio>
+            <a-radio value="1">
+              常量
+            </a-radio>
+          </a-radio-group>
+        </a-form-model-item>
+        <a-form-model-item label="数据类型："
+                           prop="dataType">
+          <a-select style="width:30%"
+                    v-model="dataForm.dataType">
+            <a-select-option v-for="item in typeList"
+                             :key="item.value"
+                             :value="item.value">
+              {{item.title}}
+            </a-select-option>
+          </a-select>
+        </a-form-model-item>
+        <a-form-model-item label="默认值："
+                           prop="defaultV">
+          <a-input-number v-model="dataForm.defaultV"
+                          :precision="0"
+                          :formatter="limitNumber"
+                          :parser="limitNumber"
+                          :min="-2147483648"
+                          :max="2147483647"
+                          v-if="dataForm.dataType ==='0'" />
+          <a-input-number v-model="dataForm.defaultV"
+                          :min="-Infinity"
+                          :max="Infinity"
+                          :step="0.1"
+                          v-if="dataForm.dataType ==='1'" />
+          <a-switch v-model="dataForm.defaultV"
+                    checked-children="true"
+                    un-checked-children="false"
+                    default-checked
+                    v-if="dataForm.dataType ==='2'" />
+          <a-input v-model="dataForm.defaultV"
+                   v-if="dataForm.dataType ==='3'"
+                   :maxLength="1" />
+          <a-input v-model="dataForm.defaultV"
+                   v-if="dataForm.dataType ==='4'" />
+          <a-tooltip title="输入数组成员，用逗号隔开">
+            <a-input v-model="dataForm.defaultV"
+                     v-if="dataForm.dataType ==='5'" />
+          </a-tooltip>
+          <a-input v-model="dataForm.defaultV"
+                   v-if="dataForm.dataType ===''" />
+        </a-form-model-item>
+        <a-form-model-item has-feedback
+                           label="简介："
+                           prop="description">
+          <a-textarea placeholder="填写数据介绍"
+                      v-model="dataForm.description"
+                      @keyup.enter="save('dataForm')"
+                      allowClear
+                      :dataForms="3" />
+        </a-form-model-item>
+      </a-form-model>
+    </a-modal>
   </div>
 </template>
 <script>
@@ -166,14 +289,14 @@ const columns = [
     dataIndex: 'type',
     key: 'type',
     align: "center",
-    width: '30%',
+    width: '18%',
     ellipsis: true,
     scopedSlots: { customRender: 'type' },
   },
   {
-    title: '值',
-    dataIndex: 'value',
-    key: 'value',
+    title: '默认值',
+    dataIndex: 'defaultV',
+    key: 'defaultV',
     align: "center",
     width: '15%',
     ellipsis: true,
@@ -181,7 +304,7 @@ const columns = [
   },
   {
     title: '简介',
-    width: "20%",
+    width: "22%",
     dataIndex: 'description',
     key: 'description',
     align: "center",
@@ -191,7 +314,7 @@ const columns = [
   {
     title: '操作',
     dataIndex: 'operation',
-    width: 150,
+    width: 200,
     key: 'operation',
     align: "center",
     fixed: 'right',
@@ -200,24 +323,22 @@ const columns = [
   },
 ];
 
+import { nanoid } from 'nanoid'
+import dataApi from '@/api/data'
+import { getUserInfo } from '@/utils/token'
 export default {
   data() {
-    // this.
     return {
-      cacheData: [],
-      saveStatus: false,
-      addStatus: false,
-      typeList1: [
-        {
-          title: "常量",
-          value: "0",
-        },
-        {
-          title: "变量",
-          value: "1"
-        },
-      ],
-      typeList2: [
+      dataId: "",
+      enginId: sessionStorage.getItem('projectId'),
+      visible: false,
+      visible1: false,
+      title: "",
+      layout: {
+        labelCol: { span: 5 },
+        wrapperCol: { span: 17 },
+      },//对话框布局
+      typeList: [
         {
           title: "整型",
           value: "0",
@@ -243,28 +364,55 @@ export default {
           value: "5",
         },
       ],
-      row: {
+      dataForm: {
+        key: "",
         name: "",
         token: "",
-        type1: "",//变量or常量
-        type2: "",//数据类型
-        value: "",
+        type: "",// 普通成员变量 输入输出
+        varType: "",//变量or常量
+        dataType: "",//数据类型
+        defaultV: "",
         description: ""
       },
-      rules: {
-        name: [{ required: true, message: '请填写名称', trigger: 'change' }],
-        token: [{ required: true, message: '请填写名称', trigger: 'change' }],
-        type: [{ required: true, message: '请选择类别', trigger: 'change' }],
-        value: [{ required: true, message: '请填写取值', trigger: 'change' }]
+      dataRules: {
+        name: [{ required: true, message: '请输入数据名', trigger: 'change' }],
+        varType: [{ required: true, message: '请选择常量/变量', trigger: 'change' }],
+        dataType: [{ required: true, message: '请选择数据类型', trigger: 'change' }],
+        defaultV: [{ required: true, message: '请输入默认值', trigger: 'change' }],
       },
       // data,
       columns,
-      editingKey: '',
-      editing: "",
-      count: 0,
     };
   },
   methods: {
+    getData(addStatus) {
+      if (addStatus) {
+        // console.log(this.enginId)
+        dataApi.queryByClass(getUserInfo().id, this.$store.getters.classId)
+          .then((res) => {
+            // console.log(res)
+            if (res.code === 200) {
+              this.$store.commit('SET_TABLEDATA', res.data)
+            } else {
+              this.$store.commit('CLEAR_TABLEDATA')
+            }
+          })
+      } else {
+        // console.log(this.enginId)
+        dataApi.queryByEngin(getUserInfo().id, this.enginId)
+          .then((res) => {
+            if (res.code === 200) {
+              this.$store.commit('SET_TABLEDATA', res.data)
+            } else {
+              this.$message.error('数据获取失败')
+            }
+          })
+          .catch((err) => {
+            console.error(err)
+          })
+      }
+
+    },
     // 只允许输入整数
     limitNumber(value) {
       if (typeof value === 'string') {
@@ -276,133 +424,129 @@ export default {
       }
     },
     add() {
-      console.log("add被调用了")
-      this.addStatus = true
-      this.saveStatus = true
-      this.count++
-      this.editingKey = "add";
-      this.row = {}
-      this.$store.getters.tableData.push({
-        key: this.count,
-        name: "",
-        token: "",
-        type1: "",
-        type2: "",
-        value: "",
-        description: "",
-        editable: 1
+      // console.log("add被调用了")
+      this.title = "增加数据"
+      this.visible = true
+      this.dataForm = {}
+    },
+    edit(id) {
+      this.title = "编辑数据"
+      this.dataId = id
+      this.visible1 = true
+      dataApi.queryById(id)
+        .then((res) => {
+          if (res.code === 200) {
+            this.dataForm = res.data
+          } else {
+            this.$message.error("获取信息失败", 0.7)
+          }
+        })
+        .catch((err) => {
+          console.error(err)
+        })
+    },
+    saveAdd(formName) {
+      this.$refs[formName].validate(valid => {
+        if (valid) {
+          let data = {
+            key: nanoid(),
+            userId: getUserInfo().id,
+            classId: this.$store.getters.classId,
+            engineeringIds: this.$store.getters.project.id,
+            author: getUserInfo().nickName,
+            name: this.dataForm.name,
+            token: this.dataForm.token ? this.dataForm.token : 'data',
+            type: this.dataForm.type,
+            defaultV: this.dataForm.defaultV,
+            dataType: this.dataForm.dataType,
+            varType: this.dataForm.varType,
+            description: this.dataForm.description
+          }
+          dataApi.add(data)
+            .then((res) => {
+              if (res.code === 200) {
+                this.$message.success("添加成功", 0.7)
+                this.visible = false
+                this.getData(this.$store.state.data.addStatus)
+              } else {
+                this.$message.error("添加失败", 0.7)
+              }
+            })
+            .catch((err) => {
+              console.log(err)
+            })
+        } else {
+          this.$message.error("请填写完整", 0.7)
+        }
+      })
+      this.visible = false
+    },
+    saveEdit(formName) {
+      this.$refs[formName].validate(valid => {
+        if (valid) {
+          let data = {
+            id: this.dataId,
+            name: this.dataForm.name,
+            token: this.dataForm.token ? this.dataForm.token : 'data',
+            defaultV: this.dataForm.defaultV,
+            dataType: this.dataForm.dataType,
+            varType: this.dataForm.varType,
+            description: this.dataForm.description
+          }
+          // console.log(data)
+          dataApi.update(data)
+            .then((res) => {
+              if (res.code === 200) {
+                this.$message.success("更新成功", 0.7)
+                this.visible1 = false
+                this.getData(this.$store.state.data.addStatus)
+              } else {
+                this.$message.error("更新失败", 0.7)
+              }
+            })
+            .catch((err) => {
+              console.log(err)
+            })
+        } else {
+          this.$message.error("请填写完整", 0.7)
+        }
       })
     },
-    edit(key) {
-      console.log("edit被调用了")
-      this.addStatus = true
-      const newData = [...this.$store.getters.tableData];
-      //获取当前编辑的行
-      console.log("cache", this.cacheData)
-      const target = newData.find(item => key === item.key);
-      this.editingKey = key;
-      if (target) {
-        target.editable = 1;//添加可编辑属性
-        this.row = target
-        this.$store.commit('SET_TABLEDATA', newData)
-      }
+    del(id) {
+      dataApi.del(id)
+        .then((res) => {
+          if (res.code === 200) {
+            this.$message.success("删除成功", 0.7)
+          } else {
+            this.$message.error("删除失败", 0.7)
+          }
+        })
+        .catch((err) => {
+          console.log(err)
+        })
     },
-    save(key) {
-      console.log("save被调用了")
-      this.addStatus = false
-      const newData = [...this.$store.getters.tableData]
-      const newCacheData = [...this.cacheData];
-      // console.log(newData)
-      const target = newData.find(item => key === item.key)
-      const targetCache = newCacheData.find(item => key === item.key);
-      // console.log(targetCache)
-      if (target && targetCache) {
-        delete target.editable;//删除之前添加的可编辑属性
-        this.$store.commit('SET_TABLEDATA', newData)
-        Object.assign(targetCache, target);
-        this.cacheData = newCacheData;
-      }
-      this.editingKey = ''
-    },
-    cancel(key) {
-      console.log("cancel被调用了")
-      this.addStatus = false
-      const newData = [...this.$store.getters.tableData]
-      // const newCacheData = [...this.cacheData];
-      const target = newData.find(item => key === item.key)
-      // const targetCache = newCacheData.find(item => key === item.key);
-      this.editingKey = '';
-      if (target) {
-        // console.log(this.cache)
-        // console.log(targetCache)
-        Object.assign(target, this.cacheData.find(item => key === item.key));
-        console.log(target)
-        delete target.editable;
-        this.$store.commit('SET_TABLEDATA', newData)
-      }
-    },
-    // cancel(key) {
-    //   const newData = [...this.data];
-    //   const target = newData.find(item => key === item.key);
-    //   this.editingKey = '';
-    //   if (target) {
-    //     Object.assign(target, this.cacheData.find(item => key === item.key));
-    //     delete target.editable;
-    //     this.data = newData;
-    //   }
-    // },
-    del(key) {
-      const newData = [...this.$store.getters.tableData].filter(item => item.key !== key);
-      this.$store.commit('SET_TABLEDATA', newData)
-      // this.tableData = this.$store.getters.tableData
-    },
-    closeEdit() {
-      this.cancel(this.editing)
+    close() {
+      this.visible = false
+      this.visible1 = false
+      this.$refs['dataForm'].resetFields()
     }
   },
   computed: {
-    // cacheData: {
-    //   get() {
-    //     return this.$store.getters.tableData
-    //   },
-    //   set(value) {
-    //     console.log("cacheData", this.cacheData)
-    //     return value
-    //   }
-    // }
   },
   mounted() {
-    this.$bus.$on("closeEdit", this.closeEdit)
+    // this.$bus.$on("closeEdit", this.close)
   },
   created() {
-    this.cacheData = this.$store.getters.tableData.map(item => ({ ...item }))
   },
   watch: {
-    row: {
-      // immediate: true,
-      deep: true,
+    'dataForm.token': {
       handler(newValue) {
-        for (let i in newValue) {
-          // console.log(newValue[i])
-          if (newValue[i] === "") {
-            if (i === "description") {
-              this.saveStatus = false
-            } else {
-              this.$notification['warning']({
-                key: "1",
-                message: '请填写完整',
-                duration: 3
-              });
-              this.saveStatus = true
-            }
-            break
-          }
-          else {
-            this.saveStatus = false
-          }
+        if (newValue) {
+          this.dataForm.token = newValue.replace(/[^a-zA-Z]/g, '')
         }
+
       }
-    }
+    },
   }
 };
 </script>
@@ -410,7 +554,7 @@ export default {
 .editable-add-btn {
   margin-bottom: 8px;
 }
-.editable-row-operations a {
+.editable-dataForm-operations a {
   margin-right: 8px;
 }
 </style>

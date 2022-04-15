@@ -1,3 +1,11 @@
+<!--
+ * @Description: 
+ * @version: 1.0.0
+ * @Author: WPO
+ * @Date: 2022-03-29 11:43:01
+ * @LastEditors: WPO
+ * @LastEditTime: 2022-04-11 23:05:07
+-->
 <!-- 用户个人界面 -->
 <template>
   <transition mode="out-in"
@@ -24,10 +32,10 @@
                   <span>项目信息</span>
                 </router-link>
               </a-menu-item>
-              <a-menu-item key="3">
+              <!-- <a-menu-item key="3">
                 <a-icon type="notification" />
                 <span>xxx</span>
-              </a-menu-item>
+              </a-menu-item> -->
             </a-menu>
           </a-layout-sider>
           <transition mode="out-in"

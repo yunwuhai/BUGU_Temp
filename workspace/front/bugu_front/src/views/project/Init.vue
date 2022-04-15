@@ -66,6 +66,7 @@
                              label="堆栈大小："
                              prop="stack">
             <a-input-number v-model="initForm.stack"
+                            :min="1"
                             ref="stack"
                             allowClear
                             type="text"
@@ -83,7 +84,7 @@
                 <a-radio value="1">
                   是
                 </a-radio>
-                <a-radio value="0">
+                <a-radio value="2">
                   否
                 </a-radio>
               </a-radio-group>
@@ -108,8 +109,8 @@
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
 import { nanoid } from "nanoid"
-import engineeringsApi from '@/api/engineerings'
-import componentsApi from '@/api/components'
+import engineeringApi from '@/api/engineering'
+import componentApi from '@/api/component'
 import { getUserInfo } from '@/utils/token'
 
 export default {
@@ -160,24 +161,26 @@ export default {
           // 工程项目
           if (this.initForm.type === "0") {
             req.userId = getUserInfo().id
-            req.author = getUserInfo().name
+            req.author = getUserInfo().nickName
             req.name = this.initForm.name
-            req.token = this.initForm.token
+            req.token = this.initForm.token ? this.initForm.token : 'engineering'
             req.type = "2"
             req.description = this.initForm.description
             req.chipId = this.initForm.chip
             req.stack = this.initForm.stack
             req.componentsId = ""
-            engineeringsApi.add(req)
+            engineeringApi.init(req)
               .then((res) => {
-                console.log("工程", res.data)
+                // console.log("工程", res.data)
                 if (res.code === 200) {
-                  this.$message.success('新建工程项目成功', 0.5)
-                  // this.$store.commit("SET_PROJECT", res.data)
+                  this.$message.success(res.msg, 0.5)
+                  this.$store.commit("SET_PROJECT", res.data)
+                  sessionStorage.setItem('projectId', res.data.id)
                   this.$store.commit("SET_CREATEVISIBLE", false)
                   this.$router.push({ name: 'Project' })
                 } else {
-                  this.$message.error('新建工程项目失败', 0.5)
+                  this.$message.error(res.msg, 0.5)
+                  console.log(res.msg)
                   this.resetForm('ruleForm')
                 }
               })
@@ -187,21 +190,21 @@ export default {
               })
           } else {
             req.name = this.initForm.name
-            req.token = this.initForm.token
+            req.token = this.initForm.token ? this.initForm.token : 'component'
             req.userId = getUserInfo().id
-            req.author = getUserInfo().name
-            req.type = "2"
+            req.author = getUserInfo().nickName
+            req.type = this.initForm.abstract
             req.description = this.initForm.description
-            componentsApi.add(req)
+            componentApi.add(req)
               .then((res) => {
                 console.log("组件", res.data)
                 if (res.code === 200) {
-                  this.$message.success('新建工程项目成功', 0.5)
-                  // this.$store.commit("SET_PROJECT", res.data)
+                  this.$message.success(res.msg, 0.5)
+                  this.$store.commit("SET_PROJECT", res.data)
                   this.$store.commit("SET_CREATEVISIBLE", false)
                   this.$router.push({ name: 'Project' })
                 } else {
-                  this.$message.error('新建工程项目失败', 0.5)
+                  this.$message.error(res.msg, 0.5)
                   this.resetForm('ruleForm')
                 }
               })
@@ -218,28 +221,29 @@ export default {
     },
     handleCancel() {
       this.$store.commit("SET_CREATEVISIBLE", false)
-      this.$router.push({ name: "UserCenter" })
+      this.$router.push({ path: '/usercenter/projectinfo' })
       this.$message.info('取消新建', 0.5)
     },
     resetForm(formName) {
       this.$refs[formName].resetFields();
     },
+    beforeUnloadHandler(e) {
+      e.returnValue = "" // 此处返回任意字符串，不返回null即可，不能修改默认提示内容
+    },
   },
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {
-    // this.visible = true
+    // this.$store.commit("SET_CREATEVISIBLE", true)
   },
   //生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {
-
+    //全局事件总线
+    this.$bus.$on('clear', this.clearExpand)
+    // window.addEventListener("beforeunload", this.beforeUnloadHandler, false)
   },
-  beforeCreate() { }, //生命周期 - 创建之前
-  beforeMount() { }, //生命周期 - 挂载之前
-  beforeUpdate() { }, //生命周期 - 更新之前
-  updated() { }, //生命周期 - 更新之后
-  beforeDestroy() { }, //生命周期 - 销毁之前
-  destroyed() { }, //生命周期 - 销毁完成
-  activated() { }, //如果页面有keep-alive缓存功能，这个函数会触发
+  destroyed() {
+    // window.removeEventListener("beforeunload", this.beforeUnloadHandler, false)
+  },
 }
 </script>
 <style scoped>

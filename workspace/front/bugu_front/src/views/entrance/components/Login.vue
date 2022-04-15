@@ -84,8 +84,8 @@ export default {
                 this.$message.success(res.msg, 0.5)
                 Cookie.setLoginStatus(true)
                 Cookie.setToken(res.data.token)
-                delete res.data.userInfo[0].pass
-                Cookie.setUserInfo(res.data.userInfo[0])
+                delete res.data.userInfo.pass
+                Cookie.setUserInfo(res.data.userInfo)
                 // console.log(Cookie.getUserInfo())
                 this.loading = false
                 this.$router.push({

@@ -38,7 +38,8 @@ export default {
     //关闭的回调
     onClose() {
       this.$store.state.data.visible = false;
-      this.$bus.$emit('closeEdit')
+      this.$store.commit('CLEAR_TABLEDATA')
+      // this.$bus.$emit('closeEdit')
     },
 
   },

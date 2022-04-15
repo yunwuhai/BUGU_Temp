@@ -29,7 +29,7 @@
             <a-icon type="laptop" />
             <span>系统组件</span>
           </span>
-          <DirectoryTree :treeData="systemTree"></DirectoryTree>
+          <DirectoryTree :treeData="$store.getters.systemTree"></DirectoryTree>
         </a-sub-menu>
         <a-sub-menu key="sub2">
           <span slot="title">
@@ -37,7 +37,7 @@
             <span>用户组件</span>
           </span>
           <DirectoryTree :delDis="true"
-                         :treeData="userTree"></DirectoryTree>
+                         :treeData="$store.getters.userTree"></DirectoryTree>
         </a-sub-menu>
       </a-menu>
     </div>
@@ -49,6 +49,8 @@
 //例如：import 《组件名称》 from '《组件路径》';
 import DirectoryTree from "./DirectoryTree"
 import { getUserInfo } from "@/utils/token"
+import treeApi from '@/api/tree'
+
 export default {
   name: 'Slider',
   //import引入的组件需要注入到对象中才能使用
@@ -58,84 +60,12 @@ export default {
   data() {
     //这里存放数据
     return {
+      id: sessionStorage.getItem('projectId'),
       // projectName: "未定义项目",
       collapsed: false,
       openKeys: ['sub1', 'sub2'],//已展开的侧边栏项
-
-      //测试
-      treeData1: [
-        {
-          title: '组件xxx',
-          key: '0-0',
-          type: "2",
-          author: "BUGU",
-          level: 1,//所在层数
-          description: "组件：xxxx",//简介
-          children: [
-            {
-              title: '类1',
-              key: '0-0-0',
-              author: "BUGU",
-              type: "2",
-              level: 2,
-              description: "类：xxxx",//简介
-              children: [
-                {
-                  title: '数据对象',
-                  key: 'o-0-0-0',
-                  type: "4",
-                  author: "BUGU",
-                  level: 3,
-                  description: "xxx类的数据对象",
-                },
-                {
-                  title: '构造函数',
-                  author: "BUGU",
-                  key: 'c-0-0-0',
-                  type: "3",
-                  level: 3,
-                  description: "xxx类的构造函数",
-                },
-                {
-                  title: '方法1',
-                  key: '0-0-0-0',
-                  author: "BUGU",
-                  type: "2",
-                  level: 3,
-                  description: "方法：xxxx",
-                  children: [
-                    { title: '重载1', key: '0-0-0-0-0', author: "BUGU", level: 4, type: "2", description: "重载：xxxx" },
-                    { title: '重载2', key: '0-0-0-0-1', author: "BUGU", level: 4, type: "2", description: "重载：xxxx" },
-                    { title: '重载3', key: '0-0-0-0-2', author: "BUGU", level: 4, type: "2", description: "重载：xxxx" },
-                  ],
-                },
-                {
-                  title: '方法2',
-                  key: '0-0-0-1',
-                  author: "BUGU",
-                  type: "2",
-                  level: 3,
-                  description: "方法：xxxx",
-                  children: [
-                    { title: '重载1', key: '0-0-0-1-0', author: "BUGU", level: 4, type: "2", description: "重载：xxxx" },
-                    { title: '重载2', key: '0-0-0-1-1', author: "BUGU", level: 4, type: "2", description: "重载：xxxx" },
-                    { title: '重载3', key: '0-0-0-1-2', author: "BUGU", level: 4, type: "2", description: "重载：xxxx" },
-                  ],
-                },
-                {
-                  title: '方法3',
-                  key: '0-0-0-2',
-                  type: "2",
-                  author: "BUGU",
-                  level: 3,
-                  description: "方法：xxxx"
-                },
-              ],
-            },
-          ],
-        },
-      ],
-
+      // project: {},
+      // projectName: "",
       userTree: [],//用户组件
       systemTree: []//系统组件
     };
@@ -150,105 +80,27 @@ export default {
       /* 
         向后端请求系统已有的组件目录树
       */
-      this.systemTree = this.treeData1
-      let author = getUserInfo().nickName
-      // 工程项目
-      if (this.$store.getters.project.type === "0") {
-        let componentKey = `${this.$store.getters.project.id}_` + this.$store.getters.project.componentId.length
-        this.$store.getters.project.componentId.push(componentKey)
+      treeApi.getTree(1, 0)
+        .then((res) => {
+          // this.systemTree = res.data
+          this.$store.commit('SET_SYSTEMTREE', res.data)
+        })
+        .catch((err) => {
+          this.$message.error("系统组件获取失败", 0.7)
+          console.error(err)
+        })
 
-        this.userTree.push({
-          title: '核心组件',
-          key: componentKey,
-          author: author,
-          type: "0",
-          level: 1,//所在层数
-          description: "MAIN：核心组件",//简介
-          children: [{
-            title: '核心类',
-            key: componentKey + "_0",
-            author: author,
-            type: "0",
-            level: 2,//所在层数
-            description: "main：核心类",
-            children: [
-              {
-                title: '核心数据',
-                key: componentKey + '0',
-                type: "4",
-                author: author,
-                level: 3,
-                description: "核心类的属性",
-              },
-              {
-                title: '核心方法',
-                key: componentKey + "_0_0",
-                author: author,
-                type: "0",
-                level: 3,//所在层数
-                description: "main方法：核心方法",//简介
-                children: [{
-                  title: 'main',
-                  key: componentKey + "_0_0_0",
-                  type: "0",
-                  author: author,
-                  level: 4,//所在层数
-                  description: "执行入口",//简介
-                }]
-              }]
-          }]
+      treeApi.getTree(getUserInfo().id, +this.id)
+        .then((res) => {
+          // this.userTree = res.data
+          this.$store.commit('SET_USERTREE', res.data)
         })
-      } else {
-        let componentKey = "u" + this.$store.getters.project.id
-        this.userTree.push({
-          title: this.$store.getters.project.name,//组件名
-          key: componentKey,//id
-          author: author,
-          level: 1,//所在层数
-          description: "组件：xxxx",//简介
-          children: [
-            {
-              title: this.$store.getters.project.name + "类",
-              key: componentKey + "_1",
-              author: author,
-              level: 2,
-              description: "类：xxxx",//简介
-              children: [
-                {
-                  title: '创建对象',
-                  key: 'o' + componentKey,
-                  author: author,
-                  level: 3,
-                  description: "xxx类的对象",
-                },
-                {
-                  title: '构造方法',
-                  key: 'c' + componentKey,
-                  author: author,
-                  level: 3,
-                  description: "xxx类的构造方法",
-                  children: [
-                    { title: '构造方法1', key: 'c' + componentKey + '_1', level: 4, description: "构造函数1" },
-                  ],
-                },
-                {
-                  title: this.$store.getters.project.name + '方法',
-                  key: componentKey + '_1_1',
-                  author: author,
-                  level: 3,
-                  description: "方法：xxxx",
-                  children: [
-                    { title: '重载1', key: componentKey + '_1_1', author: author, level: 4, description: "重载：xxxx" },
-                    { title: '重载2', key: componentKey + '_1_2', author: author, level: 4, description: "重载：xxxx" },
-                    { title: '重载3', key: componentKey + '_1_3', author: author, level: 4, description: "重载：xxxx" },
-                  ],
-                },
-              ],
-            },
-          ],
+        .catch((err) => {
+          this.$message.error("用户组件获取失败", 0.7)
+          console.error(err)
         })
-      }
     },
+
     //改变侧边栏收缩状态
     sliderCollapsed() {
       this.collapsed = !this.collapsed
@@ -258,14 +110,17 @@ export default {
     allCollapsed() {
       this.openKeys = []
       this.$bus.$emit('clear', [])
-    }
+    },
+
   },
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {
-    this.getTree()
+    // console.log(this.$store.getters.userTree)
+    // console.log(this.$store.getters.systemTree)
   },
   //生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {
+    this.getTree()
   },
   beforeCreate() { }, //生命周期 - 创建之前
   beforeMount() { }, //生命周期 - 挂载之前

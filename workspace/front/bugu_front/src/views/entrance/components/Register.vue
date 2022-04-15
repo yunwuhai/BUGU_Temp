@@ -151,13 +151,12 @@ export default {
             pass: this.registerForm.pass,
             tel: this.registerForm.tel,
             role: "1",
-            // createTime: new Date().
           }
           entranceApi.register(register)
             .then((res) => {
               if (res.code === 200) {
                 console.log(res)
-                this.$message.success('注册成功', 0.5)
+                this.$message.success(res.msg, 0.5)
                 this.loading = false
                 this.$bus.$emit('success', { userName: this.registerForm.userName, pass: this.registerForm.pass, activeKey: "1" })
                 this.$refs[formName].resetFields();

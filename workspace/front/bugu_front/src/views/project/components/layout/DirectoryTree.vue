@@ -51,16 +51,16 @@
           </span>
           <!-- 右键点击菜单 -->
           <template #overlay>
-            <a-menu v-if="delDis && (nodeData.dataRef.type !== '4' ) && (nodeData.dataRef.level < 4)">
+            <a-menu v-if="delDis && (nodeData.dataRef.type !== '4') &&(nodeData.dataRef.type !== '6')">
               <a-menu-item key="1"
-                           :disabled="(nodeData.dataRef.type === '0')&&(nodeData.dataRef.level>1) "
-                           v-if="$store.getters.project.type !=='1'"
+                           :disabled="(nodeData.dataRef.type === '0')&&(nodeData.dataRef.level > 1) "
+                           v-if="project.type !=='1'"
                            @click="addSame(nodeData.dataRef.level)">
                 <a-icon type="plus-circle" />
                 <span v-if="nodeData.dataRef.level===1">新建组件</span>
                 <span v-else-if="nodeData.dataRef.level===2">新建类</span>
                 <span v-else-if="nodeData.dataRef.level===3">新建方法</span>
-                <!-- <span v-else-if="nodeData.dataRef.level===4">新建重载</span> -->
+                <span v-else-if="nodeData.dataRef.level===4">新建重载</span>
               </a-menu-item>
               <a-menu-item key="2"
                            v-if="(nodeData.dataRef.type !== '0') &&(nodeData.dataRef.level !== 4)"
@@ -68,7 +68,7 @@
                 <a-icon type="plus" />
                 <span v-if="nodeData.dataRef.level===1">新建类</span>
                 <span v-else-if="nodeData.dataRef.level===2">新建方法</span>
-                <span v-else-if="nodeData.dataRef.level===3 && nodeData.dataRef.type !== '2'">新建重载</span>
+                <span v-else-if="nodeData.dataRef.level===3">新建重载</span>
               </a-menu-item>
               <a-menu-item key="3"
                            v-if="nodeData.dataRef.type !== '0'"
@@ -232,31 +232,33 @@
                          v-model="classForm.extend"
                          ref="extend">
             <a-radio value="0">
-              是
+              否
             </a-radio>
             <a-radio value="1">
-              否
+              是
             </a-radio>
           </a-radio-group>
         </a-form-model-item>
         <a-form-model-item has-feedback
                            label="选择父类："
-                           prop="parent">
-          <a-select v-model="classForm.parent"
-                    ref="parent"
+                           prop="parentId">
+          <a-select v-model="classForm.parentId"
+                    ref="parentId"
                     allowClear
                     autocomplete="off">
             <!-- v-for -->
-            <a-select-option value="0">
-              基类
+            <a-select-option v-for="item in parentList"
+                             :key="item.id"
+                             :value="item.id">
+              {{item.name}}
             </a-select-option>
           </a-select>
         </a-form-model-item>
         <a-form-model-item has-feedback
                            label="选择芯片："
-                           prop="chip">
-          <a-select v-model="classForm.chip"
-                    ref="chip"
+                           prop="chipId">
+          <a-select v-model="classForm.chipId"
+                    ref="chipId"
                     allowClear
                     autocomplete="off">
             <!-- v-for -->
@@ -315,31 +317,33 @@
                          v-model="classForm.extend"
                          ref="extend">
             <a-radio value="0">
-              是
+              否
             </a-radio>
             <a-radio value="1">
-              否
+              是
             </a-radio>
           </a-radio-group>
         </a-form-model-item>
         <a-form-model-item has-feedback
                            label="选择父类："
-                           prop="parent">
-          <a-select v-model="classForm.parent"
-                    ref="parent"
+                           prop="parentId">
+          <a-select v-model="classForm.parentId"
+                    ref="parentId"
                     allowClear
                     autocomplete="off">
             <!-- v-for -->
-            <a-select-option value="0">
-              基类
+            <a-select-option v-for="item in parentList"
+                             :key="item.id"
+                             :value="item.id">
+              {{item.name}}
             </a-select-option>
           </a-select>
         </a-form-model-item>
         <a-form-model-item has-feedback
                            label="选择芯片："
-                           prop="chip">
-          <a-select v-model="classForm.chip"
-                    ref="chip"
+                           prop="chipId">
+          <a-select v-model="classForm.chipId"
+                    ref="chipId"
                     allowClear
                     autocomplete="off">
             <!-- v-for -->
@@ -460,6 +464,7 @@
                            label="重载名称："
                            prop="name">
           <a-input v-model="overloadForm.name"
+                   :disabled="true"
                    ref="name"
                    :autoFocus="true"
                    type="text"
@@ -469,6 +474,7 @@
         <a-form-model-item label="重载英文名："
                            prop="token">
           <a-input v-model="overloadForm.token"
+                   :disabled="true"
                    ref="token"
                    type="text"
                    allowClear
@@ -514,6 +520,7 @@
                            label="重载名称："
                            prop="name">
           <a-input v-model="overloadForm.name"
+                   :disabled="true"
                    ref="name"
                    :autoFocus="true"
                    type="text"
@@ -523,6 +530,7 @@
         <a-form-model-item label="重载英文名："
                            prop="token">
           <a-input v-model="overloadForm.token"
+                   :disabled="true"
                    ref="token"
                    type="text"
                    allowClear
@@ -544,7 +552,7 @@
         <a-form-model-item has-feedback
                            label="简介："
                            prop="description">
-          <a-textarea placeholder="填写方法介绍"
+          <a-textarea placeholder="填写重载介绍"
                       v-model="overloadForm.description"
                       @keyup.enter="saveOverloadEdit('overloadForm')"
                       allowClear
@@ -559,6 +567,11 @@
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
 import { getUserInfo } from "@/utils/token"
+import treeApi from '@/api/tree'
+import componentApi from '@/api/component'
+import classApi from '@/api/class'
+import methodApi from '@/api/method'
+import dataApi from '@/api/data'
 
 export default {
   //import引入的组件需要注入到对象中才能使用
@@ -578,12 +591,14 @@ export default {
   data() {
     //这里存放数据
     return {
+      id: sessionStorage.getItem('projectId'),
+      project: this.$store.getters.project,
       author: getUserInfo().nickName,
       object: false,//是否是属性编辑选项
       main: false,//是否是核心
       layout: {
         labelCol: { span: 5 },
-        wrapperCol: { span: 19 },
+        wrapperCol: { span: 17 },
       },//对话框布局
       editStatus: "",
 
@@ -610,17 +625,17 @@ export default {
         name: "",//类名
         token: "",//英文名
         extend: "0",//是否可继承
-        parent: "0",//父类 可设置默认值
-        chip: "0",//移植芯片
+        parentId: "0",//父类 可设置默认值
+        chipId: "0",//移植芯片
         description: "",//简介
         attrsId: [],//属性库的ID
         methodsId: []//方法库的ID
       },
       classRules: {
         name: [{ required: true, message: '请输入类名', trigger: 'change' }],
-        parent: [{ required: true, message: '请选择父类', trigger: 'change' }],
+        parentId: [{ required: true, message: '请选择父类', trigger: 'change' }],
         extend: [{ required: true, message: '请选择是否可继承', trigger: 'change' }],
-        chip: [{ required: true, message: '请选择移植芯片', trigger: 'change' }],
+        chipId: [{ required: true, message: '请选择移植芯片', trigger: 'change' }],
       },
 
       methodVisible: false,
@@ -653,34 +668,12 @@ export default {
         name: [{ required: true, message: '请输入方法名', trigger: 'change' }],
         auth: [{ required: true, message: '请选择权限', trigger: 'change' }],
       },
-
-      //后端返回
-      classes: [{
-        id: "0-1-0",
-        name: "类1",
-        extend: false,
-        chip: "mumu",
-        description: "类：xxxx",//简介
-        attrsId: ["o-0-1-0"],//属性库的ID
-        methodsId: ["c-0-1-0"]//方法库的ID
-      },
-      {
-        id: "0-1-1",
-        name: "类2",
-        extend: false,
-        chip: "mumu",
-        description: "类：xxxx",//简介
-        attrsId: ["o-0-1-1"],//属性库的ID
-        methodsId: ["c-0-1-1"]//方法库的ID
-      },],
-      methods: [{
-        id: "c-0-1-0",
-      }],
       treeNode: {},
       // 查找父级数据
       parentData: {},
       newTreeNode: {},
       expandedKeys: [],
+      parentList: []
     };
   },
   components: {},
@@ -724,6 +717,40 @@ export default {
   },
   //方法集合
   methods: {
+    getParentList(classId) {
+      // console.log(this.treeNode.dataRef.classId)
+      classApi.getParentList(classId)
+        .then((res) => {
+          console.log(res)
+          if (res.code === 200) {
+            this.parentList = res.data
+          }
+        })
+    },
+    getTree() {
+      /* 
+        向后端请求系统已有的组件目录树
+      */
+      // treeApi.getTree(1, 0)
+      //   .then((res) => {
+      //     // this.systemTree = res.data
+      //     this.$store.commit('SET_SYSTEMTREE', res.data)
+      //   })
+      //   .catch((err) => {
+      //     this.$message.error("系统组件获取失败", 0.7)
+      //     console.error(err)
+      //   })
+
+      treeApi.getTree(getUserInfo().id, +this.id)
+        .then((res) => {
+          // this.userTree = res.data
+          this.$store.commit('SET_USERTREE', res.data)
+        })
+        .catch((err) => {
+          this.$message.error("用户组件获取失败", 0.7)
+          console.error(err)
+        })
+    },
     nextFocus(name) {
       this.$refs[name].focus()
     },
@@ -736,25 +763,26 @@ export default {
       let nodeData = node.dataRef
       // console.log(node)
 
-      const data = [{
-        key: "111",
-        name: "整数",
-        token: "a",
-        type1: "常量",
-        type2: "整型",
-        value: "5",
-        description: "普通整数",
-      }]
-
       if (nodeData.level < 4) {
         if (nodeData.type === "4") {
           // if (!this.$store.getters.visible) {
-          this.$message.success('进入对象编辑', 0.5);
-          this.$store.commit('SET_TITLE', nodeData.title + "数据仓库")
+          this.$message.success('进入数据对象编辑', 0.5);
+          this.$store.commit('SET_ADDSTATUS', true)
+          this.$store.commit('SET_CLASSID', node.classId)
+          dataApi.queryByClass(getUserInfo().id, node.classId)
+            .then((res) => {
+              // console.log(res)
+              if (res.code === 200) {
+                this.$store.commit('SET_TABLEDATA', res.data)
+              } else {
+                this.$store.commit('CLEAR_TABLEDATA')
+              }
+            })
+          this.$store.commit('SET_TITLE', nodeData.title)
           this.$store.commit('SET_VISIBLE', true)
           this.$store.commit('SET_PLACEMENT', 'bottom')
           this.$store.commit('SET_WRAP', { marginLeft: '17.6%', width: '81%' })
-          this.$store.commit('SET_TABLEDATA', data)
+
           // } else {
           //   this.$message.info(nodeData.title + '已打开', 0.5);
           // }
@@ -763,14 +791,51 @@ export default {
         }
       } else {
         //不能重复打开选项卡
-        if (this.$store.getters.keys.indexOf(nodeData.key) === -1) {
-          console.log(nodeData.key)
+        if (this.$store.getters.keys.indexOf(nodeData.id) === -1) {
+          console.log(nodeData.id)
+
+          this.$store.commit("SET_KEYS", nodeData.id)
+          this.$store.commit("SET_ACTIVE", nodeData.id)
+          // key为方法id
+          let contentIn = []
+          let contentOut = []
+          this.$store.commit('SET_PANES', { title: nodeData.title, key: nodeData.id, contentIn: [], contentOut: [] })
           this.$message.success('成功打开选项卡', 0.5);
-          this.$store.commit("SET_KEYS", nodeData.key)
-          this.$store.commit("SET_ACTIVE", nodeData.key)
-          this.$store.dispatch("getDesData", { title: nodeData.title, key: nodeData.key })
+          // 输入参数
+          this.$store.commit('SET_LOADING', true)
+          dataApi.getInOrOut(nodeData.id, '1')
+            .then((res) => {
+              console.log(res)
+              if (res.code === 200) {
+                contentIn = res.data
+                dataApi.getInOrOut(nodeData.id, '2')
+                  .then((res) => {
+                    console.log(res)
+                    if (res.code === 200) {
+                      contentOut = res.data
+                      this.$store.commit({
+                        type: 'UPDATE_PANES',
+                        contentIn: contentIn,
+                        contentOut: contentOut
+                      })
+                      //this.$message.success('成功加载了contentIn和contentOut', 0.5);
+                    } else {
+                      contentOut = []
+                      this.$message.error('加载失败', 0.5);
+                    }
+                    this.$store.commit('SET_LOADING', false)
+                  })
+              } else {
+                contentIn = []
+                this.$message.error('加载失败', 0.5);
+              }
+            })
+          // 输出参数
+
+
+
         } else {
-          this.$store.commit("SET_ACTIVE", nodeData.key)
+          this.$store.commit("SET_ACTIVE", nodeData.id)
           this.$message.info(nodeData.title + '已打开', 0.5);
         }
       }
@@ -783,46 +848,6 @@ export default {
       this.parentData = this.treeNode.$parent.dataRef
       // console.log(this.treeNode.dataRef.key[0])
     },
-
-    //新建同级还是下一级
-    addTree(edit) {
-      switch (edit) {
-        case 'same': this.addSameTree()
-          break
-        case 'next': this.addNextTree()
-          break
-      }
-    },
-    //树形控件-新建同级结点
-    addSameTree() {
-      if (this.parentData) {
-        if (!this.parentData.children) {
-          this.$set(this.parentData, 'children', [])
-        }
-        this.parentData.children.push(this.newTreeNode)
-      } else {
-        this.treeData.push(this.newTreeNode)
-      }
-      /* 
-        向后端发送更新树形控件的请求 
-      */
-      this.$message.success('成功创建', 0.5);
-    },
-    //树形控件-新建下一级结点
-    addNextTree() {
-      let dataRef = this.treeNode.dataRef
-      this.expandedKeys.push(dataRef.key)
-
-      if (!dataRef.children) {
-        this.$set(dataRef, 'children', [])
-      }
-      dataRef.children.push(this.newTreeNode);
-      /* 
-        向后端发送更新树形控件的请求 
-      */
-      this.$message.success('成功创建', 0.5);
-    },
-
     //判断添加的是类还是方法
     addSame(level) {
       this.editStatus = "same"
@@ -834,6 +859,7 @@ export default {
           break
         case 2:
           this.classForm = {}
+          this.getParentList()
           this.classVisible = true
           this.classTitle = "添加新类"
           break
@@ -850,6 +876,7 @@ export default {
       switch (level) {
         case 1:
           this.classForm = {}
+          this.getParentList()
           this.classVisible = true
           this.classTitle = "添加新类"
           break
@@ -861,218 +888,333 @@ export default {
         case 3:
           this.overloadVisible = true
           this.overloadTitle = "新建方法重载"
-          this.overloadForm = {}
+          this.overloadForm.name = this.treeNode.dataRef.name,
+            this.overloadForm.token = this.treeNode.dataRef.token
           break
       }
     },
     //判断编辑的是哪一级
     editTreeNode(level) {
+      let data = this.treeNode.dataRef
+      // console.log(data)
       switch (level) {
         case 1:
           //根据id从后端获取数据
-          // this.componentForm = {}
+          this.componentForm = {
+            name: data.name,
+            token: data.token,
+            abstract: data.type === '1' ? '1' : '0',
+            description: data.description
+          }
           this.componentVisible1 = true
           this.componentTitle = "修改组件信息"
           break
         case 2:
-          // this.classForm = this.classes.filter(item => item.id === this.treeNode.dataRef.key)
-          this.classVisible1 = true
-          this.classTitle = "修改类信息"
+          classApi.queryById(data.id)
+            .then((res) => {
+              if (res.code === 200) {
+                this.getParentList(data.id)
+                this.classVisible1 = true
+                this.classForm = res.data
+                this.classTitle = "修改类信息"
+              }
+            })
+            .catch((err) => {
+              console.error(err)
+              this.classVisible1 = false
+            })
           break
         case 3:
-          // this.methodForm = {}
+          this.methodForm = {
+            name: data.name,
+            token: data.token,
+            description: data.description
+          }
           this.methodVisible1 = true
           this.methodTitle = "修改方法信息"
           break
         case 4:
-          // this.overloadForm = {}
-          this.overloadVisible1 = true
-          this.overloadTitle = "修改重载信息"
+          methodApi.queryById(data.id)
+            .then((res) => {
+              if (res.code === 200) {
+                this.overloadVisible1 = true
+                this.overloadForm = res.data
+                this.overloadTitle = "修改重载信息"
+              }
+            })
+            .catch((err) => {
+              console.error(err)
+              this.overloadVisible1 = false
+            })
           break
       }
     },
 
     // 保存新建
     saveComponentAddSame(formName) {
-      // this.treeNode.dataRef.disabled = false
+      this.expandedKeys.push(this.treeNode.dataRef.key)
       this.$refs[formName].validate(valid => {
         if (valid) {
           // 从对话框中获取 
           this.newTreeNode = {
-            title: this.componentForm.name,
-            key: new Date().getTime() + '1',
-            type: "2",
+            userId: getUserInfo().id,
             author: this.author,
-            level: this.editStatus == 'same' ? this.treeNode.dataRef.level : this.treeNode.dataRef.level + 1,
-            description: this.componentForm.description
+            name: this.componentForm.name,
+            token: this.componentForm.token ? this.componentForm.token : "component",
+            type: this.componentForm.abstract === '1' ? "1" : "2",
+            description: this.componentForm.description,
+            engineeringIds: this.treeNode.dataRef.engineeringIds
           }
           /*
             后端接口 提交componentForm
           */
-
-          // 修改树形结构 新建结点
-          this.addTree(this.editStatus)
-          this.$message.success('新建成功', 0.5)
-          this.componentVisible = false
-        } else {
-          this.$message.error('新建失败', 0.5)
+          componentApi.add(this.newTreeNode)
+            .then((res) => {
+              if (res.code === 200) {
+                this.$message.success(res.msg, 0.5)
+                this.$nextTick(this.getTree())
+                this.componentVisible = false
+                this.$refs[formName].resetFields()
+              } else {
+                this.$message.error(res.msg, 0.5)
+              }
+            })
+            .catch((err) => {
+              console.error(err)
+              this.$message.error('新建组件失败', 0.5)
+            })
         }
+        this.newTreeNode = {}
       })
     },
     saveClassAddSame(formName) {
-      // this.treeNode.dataRef.disabled = false
       this.$refs[formName].validate(valid => {
         if (valid) {
-          // 从对话框中获取 
           this.newTreeNode = {
-            title: this.classForm.name,
-            key: new Date().getTime() + '1',
-            type: "2",
+            userId: getUserInfo().id,
+            componentId: this.editStatus === "same" ? this.parentData.id : this.treeNode.dataRef.id,
             author: this.author,
-            level: this.editStatus == 'same' ? this.treeNode.dataRef.level : this.treeNode.dataRef.level + 1,
+            name: this.classForm.name,
+            token: this.classForm.token ? this.classForm.token : "class",
+            type: "2",
+            extend: this.classForm.extend,
+            parentId: this.classForm.parentId,
             description: this.classForm.description,
-            children: this.editStatus == 'same' ? [] : [
-              {
-                title: '创建对象',
-                key: 'o' + new Date().getTime() + '1',
-                level: 3,
-                type: "4",
-                author: this.author,
-                description: "xxx类的对象",
-              },
-              {
-                title: '构造方法',
-                key: 'c' + new Date().getTime() + '1',
-                type: "3",
-                author: this.author,
-                level: 3,
-                description: "xxx类的构造方法",
-              },
-            ]
+            engineeringIds: this.treeNode.dataRef.engineeringIds
           }
+          // console.log(this.newTreeNode)
           /*
-            后端接口 提交classForm
+            后端接口 提交componentForm
           */
-
-          // 修改树形结构
-          this.addTree(this.editStatus)
-          this.$message.success('新建成功', 0.5)
-          this.classVisible = false
-        } else {
-          this.$message.error('新建失败', 0.5)
+          classApi.add(this.newTreeNode)
+            .then((res) => {
+              if (res.code === 200) {
+                this.$message.success(res.msg, 0.5)
+                this.$nextTick(this.getTree())
+                this.classVisible = false
+                this.$refs[formName].resetFields()
+              } else {
+                this.$message.error(res.msg, 0.5)
+              }
+            })
+            .catch((err) => {
+              console.error(err)
+              this.$message.error('新建类失败', 0.5)
+            })
         }
       })
     },
     saveMethodAddSame(formName) {
-      console.log("method")
+      this.expandedKeys.push(this.treeNode.dataRef.key)
       this.$refs[formName].validate(valid => {
-
         if (valid) {
           // 从对话框中获取 
           this.newTreeNode = {
-            title: this.methodForm.name,
-            key: new Date().getTime() + '1',
-            type: "2",
+            userId: getUserInfo().id,
+            classId: this.editStatus === "same" ? this.parentData.id : this.treeNode.dataRef.id,
             author: this.author,
-            level: this.editStatus == 'same' ? this.treeNode.dataRef.level : this.treeNode.dataRef.level + 1,
+            name: this.methodForm.name,
+            token: this.methodForm.token ? this.methodForm.token : "method",
             description: this.methodForm.description,
-            // children: [{
-            //   title: this.methodForm.name,
-            //   key: new Date().getTime(),
-            //   level: this.treeNode.dataRef.level + 1,
-            //   description: this.methodForm.description + "的实现",
-            // }]
-          }
-          /*
-            后端接口 提交methodForm
-          */
-
-          // 修改树形结构
-          this.addTree(this.editStatus)
-          this.$message.success('新建成功', 0.5)
-          this.methodVisible = false
-        } else {
-          this.$message.error('新建失败', 0.5)
-        }
-      })
-    },
-    saveOverloadAddSame(formName) {
-      // this.treeNode.dataRef.disabled = false
-      this.$refs[formName].validate(valid => {
-        if (valid) {
-          // 从对话框中获取 
-          this.newTreeNode = {
-            title: this.overloadForm.name,
-            key: new Date().getTime() + '1',
             type: "2",
-            author: this.author,
-            level: this.editStatus == 'same' ? this.treeNode.dataRef.level : this.treeNode.dataRef.level + 1,
-            description: this.overloadForm.description
+            auth: '1',// 公开
+            engineeringIds: this.treeNode.dataRef.engineeringIds
           }
           /*
             后端接口 提交componentForm
           */
+          methodApi.add(this.newTreeNode)
+            .then((res) => {
+              if (res.code === 200) {
+                this.$message.success(res.msg, 0.5)
+                this.$nextTick(this.getTree())
+                this.methodVisible = false
+                this.$refs[formName].resetFields()
+              } else {
+                this.$message.error(res.msg, 0.5)
+              }
+            })
+            .catch((err) => {
+              console.error(err)
+              this.$message.error('新建方法失败', 0.5)
+            })
+        }
+      })
+    },
+    saveOverloadAddSame(formName) {
+      this.$refs[formName].validate(valid => {
+        if (valid) {
+          // 从对话框中获取 
+          this.newTreeNode = {
+            userId: getUserInfo().id,
+            classId: this.treeNode.dataRef.classId,
+            author: this.author,
+            name: this.overloadForm.name,
+            token: this.overloadForm.token ? this.overloadForm.token : "overload",
+            type: "5",
+            description: this.overloadForm.description,
+            auth: "1",
+            engineeringIds: this.treeNode.dataRef.engineeringIds
+          }
+          console.log(this.newTreeNode)
+          /*
+            后端接口 提交componentForm
+          */
+          methodApi.add(this.newTreeNode)
+            .then((res) => {
+              if (res.code === 200) {
+                this.$message.success("新建重载成功", 0.5)
+                this.$nextTick(this.getTree())
+                this.overloadVisible = false
+                this.$refs[formName].resetFields()
 
-          // 修改树形结构
-          this.addTree(this.editStatus)
-          this.$message.success('新建成功', 0.5)
-          this.overloadVisible = false
-        } else {
-          this.$message.error('新建失败', 0.5)
+              } else {
+                this.$message.error('新建重载失败', 0.5)
+              }
+            })
+            .catch((err) => {
+              console.error(err)
+              this.$message.error('新建重载失败', 0.5)
+            })
         }
       })
     },
 
     //保存修改
     saveComponentEdit(formName) {
+      let data = this.treeNode.dataRef
       this.$refs[formName].validate(valid => {
         if (valid) {
-          /*
-            根据id更新后端数据 更新treeData
-          */
-          this.$message.success('成功修改', 0.5);
-          this.componentVisible = false
+          data.name = this.componentForm.name
+          data.token = this.componentForm.token ? this.componentForm.token : "component"
+          data.type = this.componentForm.abstract === '1' ? "1" : "2",
+            data.description = this.componentForm.description
+          componentApi.update(data)
+            .then((res) => {
+              if (res.code === 200) {
+                this.$message.success(res.msg, 1);
+                this.$nextTick(this.getTree())
+                this.componentVisible1 = false
+              } else {
+                this.$message.error(res.msg, 1);
+                console.log(res.msg)
+              }
+            })
+            .catch((err) => {
+              console.error(err)
+            })
         } else {
           this.$message.success('请填写完整', 0.5);
         }
       })
     },
     saveClassEdit(formName) {
+      this.getParentList()
+      let data = this.treeNode.dataRef
       this.$refs[formName].validate(valid => {
         if (valid) {
-          /*
-            根据id更新后端数据 更新treeData
-          */
-          this.$message.success('成功修改', 0.5);
-          this.classVisible = false
+          data.name = this.classForm.name
+          data.token = this.classForm.token ? this.componentForm.token : "component"
+          data.extend = this.classForm.extend
+          data.parentId = this.classForm.parentId
+          data.chipId = this.classForm.chipId
+          data.description = this.classForm.description
+          classApi.update(data)
+            .then((res) => {
+              if (res.code === 200) {
+                this.$message.success(res.msg, 1);
+                this.$nextTick(this.getTree())
+                this.classVisible1 = false
+              } else {
+                this.$message.error(res.msg, 1);
+                console.log(res.msg)
+              }
+            })
+            .catch((err) => {
+              console.error(err)
+            })
         } else {
           this.$message.success('请填写完整', 0.5);
         }
       })
     },
     saveMethodEdit(formName) {
+      let data = this.treeNode.dataRef
+      let oldName = data.name
       this.$refs[formName].validate(valid => {
         if (valid) {
-          /*
-            根据id更新后端数据 更新treeData
-          */
-          this.$message.success('成功修改', 0.5);
-          this.methodVisible = false
+          data.name = this.methodForm.name
+          data.token = this.methodForm.token ? this.methodForm.token : "component"
+          data.description = this.methodForm.description
+          // 先更新重载
+          methodApi.updateOverload({ name: data.name, token: data.token, oldName: oldName })
+            .then((res) => {
+              if (res.code === 200) {
+                this.$message.success(res.msg, 1);
+                console.log(res.data)
+                // this.$nextTick(this.getTree())
+              }
+            })
+          methodApi.update(data)
+            .then((res) => {
+              if (res.code === 200) {
+                this.$message.success(res.msg, 1);
+                this.$nextTick(this.getTree())
+                this.expandedKeys.push(res.data.key)
+                this.methodVisible1 = false
+              } else {
+                this.$message.error(res.msg, 1);
+                console.log(res.msg)
+              }
+            })
+            .catch((err) => {
+              console.error(err)
+            })
         } else {
           this.$message.success('请填写完整', 0.5);
         }
       })
     },
     saveOverloadEdit(formName) {
+      let data = this.treeNode.dataRef
       this.$refs[formName].validate(valid => {
         if (valid) {
-          /*
-            根据id更新后端数据 更新treeData
-          */
-          //修改方法名时更新选项卡名称
-          this.$store.commit("UPDATE_PANES_TITLE", { key: this.treeNode.dataRef.key, title: this.treeNode.dataRef.title })
-          this.$message.success('成功修改', 0.5);
-          this.overloadVisible = false
+          data.auth = this.overloadForm.auth
+          data.description = this.overloadForm.description
+          methodApi.update(data)
+            .then((res) => {
+              if (res.code === 200) {
+                this.$message.success(res.msg, 1);
+                this.$nextTick(this.getTree())
+                this.overloadVisible1 = false
+              } else {
+                this.$message.error(res.msg, 1);
+                console.log(res.msg)
+              }
+            })
+            .catch((err) => {
+              console.error(err)
+            })
         } else {
           this.$message.success('请填写完整', 0.5);
         }
@@ -1089,30 +1231,69 @@ export default {
     },
     //删除树形结点
     delTreeNode() {
-      const currentDataRef = this.treeNode.dataRef
-      // 判断是否是顶层
-      //有父节点数据-不是顶层
-      if (this.parentData) {
-        const children = this.parentData.children
-        const index = children.indexOf(currentDataRef)
-        children.splice(index, 1)
-        this.$message.success('成功删除', 0.5);
-        this.removeTabs()
-      } else {
-        if (this.treeData.length > 1) {
-          const index = this.treeData.indexOf(currentDataRef)
-          this.treeData.splice(index, 1)
-          this.$message.success('成功删除', 0.5)
-          this.removeTabs()
-        } else {
-          this.$message.error('不可全部删除', 0.5)
-        }
+      const current = this.treeNode.dataRef
+      switch (current.level) {
+        case 1:
+          componentApi.del(current.id)
+            .then((res) => {
+              if (res.code === 200) {
+                this.$message.success(res.msg, 0.7)
+                this.getTree()
+              }
+              else {
+                this.$message.error("删除失败", 0.7)
+              }
+            })
+            .catch((err) => {
+              console.error(err)
+            })
+          break
+        case 2:
+          classApi.del(current.id)
+            .then((res) => {
+              if (res.code === 200) {
+                this.$message.success(res.msg, 0.7)
+                this.getTree()
+              }
+              else {
+                this.$message.error("删除失败", 0.7)
+              }
+            })
+            .catch((err) => {
+              console.error(err)
+            })
+          break
+        case 3:
+          methodApi.del({ id: current.id, name: current.name })
+            .then((res) => {
+              if (res.code === 200) {
+                this.$message.success(res.msg, 0.7)
+                this.getTree()
+              }
+              else {
+                this.$message.error("删除失败", 0.7)
+              }
+            })
+            .catch((err) => {
+              console.error(err)
+            })
+          break
+        case 4:
+          methodApi.delOverload(current.id)
+            .then((res) => {
+              if (res) {
+                this.$message.success(res.msg, 0.7)
+                this.getTree()
+              }
+              else {
+                this.$message.error(res.msg, 0.7)
+              }
+            })
+            .catch((err) => {
+              console.error(err)
+            })
+          break
       }
-      /* 
-      
-      向后端发送
-     
-      */
     },
 
     // 取消操作
@@ -1140,14 +1321,22 @@ export default {
       this.overloadVisible1 = false
       this.$refs['overloadForm'].resetFields()
     },
+    beforeUnloadHandler(e) {
+      e.returnValue = "" // 此处返回任意字符串，不返回null即可，不能修改默认提示内容
+    },
   },
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {
+    // console.log("TreeData", this.treeData)
   },
   //生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {
     //全局事件总线
     this.$bus.$on('clear', this.clearExpand)
+    // window.addEventListener("beforeunload", this.beforeUnloadHandler, false)
+  },
+  destroyed() {
+    // window.removeEventListener("beforeunload", this.beforeUnloadHandler, false)
   },
 }
 </script>

@@ -48,8 +48,10 @@
                         style="margin-right:10px" />
                 <span>输入参数表</span>
               </template>
-
-              <PropTable :data="pane.contentIn"></PropTable>
+              <!-- {{pane}} -->
+              <PropTable :tableData="pane.contentIn"
+                         :methodId="pane.key"
+                         :tableType="'1'"></PropTable>
             </a-collapse-panel>
           </a-collapse>
           <a-collapse :bordered="true"
@@ -64,7 +66,9 @@
                         style="margin-right:10px" />
                 <span>输出参数表 </span>
               </template>
-              <PropTable :data="pane.contentOut"></PropTable>
+              <PropTable :tableData="pane.contentOut"
+                         :methodId="pane.key"
+                         :tableType="'2'"></PropTable>
             </a-collapse-panel>
           </a-collapse>
           <a-collapse :bordered="true"
@@ -79,7 +83,7 @@
                         style="margin-right:10px" />
                 <span>执行逻辑表 </span>
               </template>
-              <PropTable :data="pane.contentLogic"></PropTable>
+              <PropTable :tableData="pane.contentLogic"></PropTable>
             </a-collapse-panel>
           </a-collapse>
           <!-- </div> -->
@@ -91,16 +95,19 @@
 
 <script>
 import PropTable from '../overload/PropTable'
-
+import dataApi from '@/api/data'
+import { getUserInfo } from '@/utils/token'
 export default {
   //import引入的组件需要注入到对象中才能使用
   components: { PropTable },
   data() {
+
     //这里存放数据
-    const panes = this.$store.getters.panes
+    // const panes = this.$store.getters.panes
     return {
+      id: sessionStorage.getItem('projectId'),
       // activeKey: panes[0].key,
-      panes,
+      // panes,
       newTabIndex: 0,
       customStyle:
         'border-radius: 4px; margin-bottom: 20px;overflow: hidden',
@@ -116,22 +123,22 @@ export default {
       /*
       向后端请求 总数据
       */
-      const data = [{
-        key: "222",
-        name: "小数",
-        token: "b",
-        type1: "变量",
-        type2: "浮点型",
-        value: "5.6",
-        description: "普通小数",
-      }]
-
-      this.$store.commit('SET_TABLEDATA', data)
       this.$store.commit('SET_VISIBLE', true)
       this.$store.commit('SET_TITLE', "数据对象总仓库")
       this.$store.commit('SET_PLACEMENT', 'right')
       this.$store.commit('SET_WRAP', { marginTop: '64px' })
-
+      this.$store.commit('SET_ADDSTATUS', false)
+      dataApi.queryByEngin(getUserInfo().id, this.id)
+        .then((res) => {
+          if (res.code === 200) {
+            this.$store.commit('SET_TABLEDATA', res.data)
+          } else {
+            this.$store.commit('CLEAR_TABLEDATA')
+          }
+        })
+        .catch((err) => {
+          console.error(err)
+        })
     },
     callback(key) {
       console.log(key);
@@ -166,7 +173,7 @@ export default {
   },
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {
-
+    // console.log('2', this.$store.getters.panes)
   },
   //生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {
