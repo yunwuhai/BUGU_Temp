@@ -4,7 +4,7 @@
  * @Author: WPO
  * @Date: 2022-04-09 08:54:31
  * @LastEditors: WPO
- * @LastEditTime: 2022-04-10 21:04:02
+ * @LastEditTime: 2022-05-02 01:49:52
  */
 
 const express = require('express');
@@ -17,17 +17,20 @@ router.post('/login', (req, res) => {
   userApi.login(req.body)
 	.then((result) => {
 		// 返回对象数组
-		if(result[0].dataValues){
-			setToken(result[0].dataValues.id).then((token) => {
-				res.json({
-					code : 200,
-					msg : "登陆成功",
-					data : {
-						token:token,
-						userInfo:result[0].dataValues
-					}
+		// console.log(result)
+		if(result.length){
+			if(result[0].dataValues){
+				setToken(result[0].dataValues.id).then((token) => {
+					res.json({
+						code : 200,
+						msg : "登陆成功",
+						data : {
+							token:token,
+							userInfo:result[0].dataValues
+						}
+					})
 				})
-			})
+		}
 		}else{
 			res.json({
 				code : 488,

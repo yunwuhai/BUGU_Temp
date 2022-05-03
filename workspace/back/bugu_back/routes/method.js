@@ -4,12 +4,14 @@
  * @Author: WPO
  * @Date: 2022-04-11 10:43:43
  * @LastEditors: WPO
- * @LastEditTime: 2022-04-12 18:47:02
+ * @LastEditTime: 2022-05-03 03:24:47
  */
 
 const express = require('express');
 const router = express.Router();
 const methodApi = require('../dao/api/methods')
+const desApi = require('../service/desFile')
+const dataApi = require('../dao/api/data')
 
 router.get('/', (req, res) => {
   methodApi.queryAll()
@@ -36,6 +38,21 @@ router.get('/', (req, res) => {
 			msg : '错误信息' + err
 		})
 	})
+})
+
+router.post('/des', (req, res) => {
+	// console.log(req.body)
+	desApi.addMethod(req.body,res)
+})
+
+router.delete('/des', (req, res) => {
+	// console.log(req.body)
+	desApi.delMethod(req.body,res)
+})
+
+router.delete('/desall', (req, res) => {
+	// console.log(req.body)
+	desApi.delMethodAll(req.body,res)
 })
 
 router.get('/:id', (req, res) => {
@@ -144,7 +161,7 @@ router.put('/overload', (req, res) => {
 })
 
 router.delete('/', (req, res) => {
-	console.log(req.body)
+	// console.log(req.body)
   methodApi.del(req.body)
 	.then((result) => {
 		// 返回删除条数
@@ -171,6 +188,12 @@ router.delete('/', (req, res) => {
 
 router.delete('/overload/:id', (req, res) => {
 	// console.log(req.body)
+	dataApi.delByMid(req.params.id)
+	.catch(err => {
+		if(err){
+			console.error(err)
+		}
+	})
   methodApi.delOverload(req.params.id)
 	.then((result) => {
 		// 返回对象数组

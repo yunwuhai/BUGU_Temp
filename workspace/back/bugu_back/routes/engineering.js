@@ -4,15 +4,21 @@
  * @Author: WPO
  * @Date: 2022-04-10 23:08:49
  * @LastEditors: WPO
- * @LastEditTime: 2022-04-11 18:37:59
+ * @LastEditTime: 2022-05-03 02:47:51
  */
 
 const express = require('express');
 const router = express.Router();
 const enginApi = require('../dao/api/engineerings')
+const dataApi = require('../dao/api/data')
+const methodApi = require('../dao/api/methods')
+const classApi = require('../dao/api/classes')
+const compApi = require('../dao/api/components')
 const init = require('../service/init')
+const desApi = require('../service/desFile')
 
 router.post('/init', (req, res) => {
+	// init.createDes(req.body)
 	init.creatEngin(req.body)
 	.then((result) => {
 		if(result !== {}){
@@ -89,6 +95,33 @@ router.get('/:id', (req, res) => {
 	})
 })
 
+router.get('/user/:uid', (req, res) => {
+  enginApi.queryByUid(req.params.uid)
+	.then((result) => {
+		// 返回对象数组
+		if(result.length){
+			let data = result.map(item => item.dataValues) 
+			res.json({
+				code:200,
+				msg:"已找到该工程",
+				data:data
+			})
+		}else{
+			res.json({
+				code:489,
+				msg : "未找到信息"
+			})
+		}
+	})
+	.catch((err) => {
+		console.log(err)
+		res.json({
+			code : 587,
+			msg : '错误信息' + err
+		})
+	})
+})
+
 router.post('/',(req, res) => {
   enginApi.add(req.body)
 	.then((result) => {
@@ -141,7 +174,22 @@ router.put('/', (req, res) => {
 	})
 })
 
+const delAll = async(eid) =>{
+	await dataApi.delByEid(eid)
+	await methodApi.delByEid(eid)
+	await classApi.delByEid(eid)
+	await compApi.delByEid(eid)
+}
 router.delete('/:id', (req, res) => {
+	delAll(req.params.id)
+	.catch(err => {
+		if(err){
+			console.error(err)
+		}else{
+			console.log("删除成功");
+		}
+	})
+	desApi.delDes(req.params.id)
   enginApi.del(req.params.id)
 	.then((result) => {
 		// 返回对象数组

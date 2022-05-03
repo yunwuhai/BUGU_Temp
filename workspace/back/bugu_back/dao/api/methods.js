@@ -4,7 +4,7 @@
  * @Author: WPO
  * @Date: 2022-04-11 10:40:54
  * @LastEditors: WPO
- * @LastEditTime: 2022-04-12 18:50:56
+ * @LastEditTime: 2022-05-03 02:29:24
  */
 
 const model = require('../dbModel');
@@ -36,6 +36,7 @@ const del = (req) =>{
 
 // 删除指定重载
 const delOverload = (req) => dao.del(req,model.method)
+const delByEid = (req) => dao.delByEid(req,model.method)
 
 // 找到方法对应的重载
 const updateOverload = async (req) => {
@@ -63,6 +64,7 @@ module.exports = {
 	queryAll,
 	update,
 	del,
+	delByEid,
 	getByType,
 	updateOverload,
 	delOverload,

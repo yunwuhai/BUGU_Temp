@@ -4,12 +4,15 @@
  * @Author: WPO
  * @Date: 2022-04-11 10:42:01
  * @LastEditors: WPO
- * @LastEditTime: 2022-04-14 16:17:52
+ * @LastEditTime: 2022-05-03 03:07:41
  */
 
 const express = require('express');
 const router = express.Router();
 const classApi = require('../dao/api/classes')
+const desApi = require('../service/desFile')
+const dataApi = require('../dao/api/data')
+const methodApi = require('../dao/api/methods')
 
 router.get('/', (req, res) => {
   classApi.queryAll()
@@ -36,6 +39,16 @@ router.get('/', (req, res) => {
 			msg : '错误信息' + err
 		})
 	})
+})
+
+router.post('/des', (req, res) => {
+	// console.log(req.body)
+	desApi.addClass(req.body,res)
+})
+
+router.delete('/des', (req, res) => {
+	// console.log(req.body)
+	desApi.delClass(req.body,res)
 })
 
 router.get('/parent/:id', (req, res) => {
@@ -144,7 +157,20 @@ router.put('/', (req, res) => {
 	})
 })
 
+const delAll = async(eid) =>{
+	await dataApi.delByEid(eid)
+	await methodApi.delByEid(eid)
+}
+
 router.delete('/:id', (req, res) => {
+	delAll(req.params.id)
+	.catch(err => {
+		if(err){
+			console.error(err)
+		}else{
+			console.log("删除成功");
+		}
+	})
   classApi.del(req.params.id)
 	.then((result) => {
 		// 返回对象数组

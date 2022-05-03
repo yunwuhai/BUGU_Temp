@@ -4,27 +4,40 @@
  * @Author: WPO
  * @Date: 2022-04-09 00:45:09
  * @LastEditors: WPO
- * @LastEditTime: 2022-04-10 02:40:59
+ * @LastEditTime: 2022-04-22 15:01:43
  */
 
-const jwt = require('jsonwebtoken');
-const signkey = 'BUGU_TOKEN';
+const jwtSet = require('jsonwebtoken');// json -> jwt
+const jwtVer = require('express-jwt')// jwt解密 jwt-> json 用于验证token
+const signkey = 'BUGU_KEY';
 
 // 生成token
-let setToken = (uid) => {
+const setToken = (uid) => {
  return new Promise((resolve, reject) => {
-  const token = jwt.sign({
+  const token = 'Bearer ' + jwtSet.sign({
    id: uid,
-	 expiresIn: 60,
-  }, signkey);
+  }, signkey, {
+    expiresIn: 60 * 60 * 3, // 过期时间
+  });
   resolve(token);
  })
 }
 
-// 解析token
-let verToken = (token) => {
+// express-jwt方法解析token 会将token中的信息保存在req.user中
+const vertifyToken = () => {
+  return jwtVer({
+    secret: signkey, //密钥
+    algorithms:['HS256'] // 加密方式
+  }).unless({
+    path: ['/entrance/login','/entrance/register'] // 不需要验证的路由
+  })
+}
+
+// jwt方法解析token
+const jwtVerToken = (token) => {
  return new Promise((resolve, reject) => {
-  jwt.verify(token.split(' ')[1], signkey,(err, decoded) => {
+   // 去掉Bearer
+  jwtSet.verify(token.split(' ')[1], signkey,(err, decoded) => {
     if (err) {
       reject(err)
     } else {
@@ -34,7 +47,25 @@ let verToken = (token) => {
  })
 }
 
+// 错误处理
+const errorToken = (err,req,res,next) => {
+  console.log('token',err)
+  // token验证失败
+  if(err.name === 'UnauthorizedError'){
+    // token过期
+    if(err.inner.name === 'TokenExpiredError'){
+      res.json({ code:499,msg:"Token过期"})
+    }
+    // token无效
+    else if(err.inner.name === 'JsonWebTokenError'){
+      res.json({ code:480,msg:"无效的token"})
+    }
+  }
+}
+
 module.exports ={
 	setToken,
-	verToken
+	jwtVerToken,
+  vertifyToken,
+  errorToken
 }

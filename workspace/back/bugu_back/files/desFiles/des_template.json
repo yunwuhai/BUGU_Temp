@@ -1,0 +1,18 @@
+{
+  "userId": -1,
+  "projectId": -1,
+  "projectToken": "project",
+  "classes": [
+    {
+      "classId": -1,
+      "classToken": "main",
+      "methods": [
+        {
+          "methodId": -1,
+          "methodToken": "main",
+          "logic": []
+        }
+      ]
+    }
+  ]
+}

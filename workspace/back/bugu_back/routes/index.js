@@ -4,7 +4,7 @@
  * @Author: WPO
  * @Date: 2022-04-08 15:12:03
  * @LastEditors: WPO
- * @LastEditTime: 2022-04-13 02:08:22
+ * @LastEditTime: 2022-04-28 11:10:56
  */
 
 const express = require('express');
@@ -24,5 +24,7 @@ router.use('/class',require('./class'))
 router.use('/method',require('./method'))
 router.use('/chip',require('./chip'))
 router.use('/data',require('./data'))
+router.use('/logic',require('./logic'))
+router.use('/download',require('./download'))
 
 module.exports = router;

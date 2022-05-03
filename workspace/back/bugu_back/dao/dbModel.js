@@ -4,7 +4,7 @@
  * @Author: WPO
  * @Date: 2022-04-10 14:24:39
  * @LastEditors: WPO
- * @LastEditTime: 2022-04-14 19:35:25
+ * @LastEditTime: 2022-04-25 17:26:24
  */
 
 const { DataTypes } = require('sequelize');
@@ -149,6 +149,11 @@ const engineering = sequelize.define('engineering',{
 		allowNull : false,
 		defaultValue : "2"
 	},
+	heap : {
+		type : DataTypes.STRING,
+		allowNull : false,
+		defaultValue: ""
+	},
 	stack : {
 		type : DataTypes.STRING,
 		allowNull : false,
@@ -165,7 +170,7 @@ const engineering = sequelize.define('engineering',{
 		defaultValue: "这是一个工程项目"
 	}
 });
-
+// engineering.sync({ alter: true })
 // 组件项目信息
 const component = sequelize.define('component',{
 	id : {

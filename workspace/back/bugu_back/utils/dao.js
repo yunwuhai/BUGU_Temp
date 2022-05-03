@@ -4,7 +4,7 @@
  * @Author: WPO
  * @Date: 2022-04-10 20:44:53
  * @LastEditors: WPO
- * @LastEditTime: 2022-04-14 14:45:42
+ * @LastEditTime: 2022-05-03 02:39:29
  */
 
 const queryById = (req,model) => {
@@ -52,10 +52,20 @@ const update = (req,model) => {
 	})
 	return queryById(req.id,model);
 }
+
 const del = (req,model) => {
 	return model.destroy({
 		where:{
 			id : req
+		}
+	});
+}
+
+const delByEid = (req,model) => {
+	req = req.toString()
+	return model.destroy({
+		where:{
+			engineeringIds : req
 		}
 	});
 }
@@ -67,5 +77,6 @@ module.exports = {
 	queryCols,
 	add,
 	update,
-	del
+	del,
+	delByEid
 }

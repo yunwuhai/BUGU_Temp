@@ -4,12 +4,15 @@
  * @Author: WPO
  * @Date: 2022-04-10 01:27:33
  * @LastEditors: WPO
- * @LastEditTime: 2022-04-12 18:25:09
+ * @LastEditTime: 2022-05-03 03:03:47
  */
 
 const express = require('express');
 const router = express.Router();
 const compApi = require('../dao/api/components')
+const dataApi = require('../dao/api/data')
+const methodApi = require('../dao/api/methods')
+const classApi = require('../dao/api/classes')
 
 router.get('/', (req, res) => {
   compApi.queryAll()
@@ -116,7 +119,21 @@ router.put('/', (req, res) => {
 	})
 })
 
+const delAll = async(eid) =>{
+	await dataApi.delByEid(eid)
+	await methodApi.delByEid(eid)
+	await classApi.delByEid(eid)
+}
+
 router.delete('/:id', (req, res) => {
+	delAll(req.params.id)
+	.catch(err => {
+		if(err){
+			console.error(err)
+		}else{
+			console.log("删除成功");
+		}
+	})
   compApi.del(req.params.id)
 	.then((result) => {
 		// 返回删除的条数

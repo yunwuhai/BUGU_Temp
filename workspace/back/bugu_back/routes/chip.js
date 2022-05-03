@@ -4,12 +4,12 @@
  * @Author: WPO
  * @Date: 2022-04-11 10:47:52
  * @LastEditors: WPO
- * @LastEditTime: 2022-04-11 10:48:59
+ * @LastEditTime: 2022-04-27 02:07:12
  */
 
 const express = require('express');
 const router = express.Router();
-const chipApi = require('../dao/api/components')
+const chipApi = require('../dao/api/chips')
 
 router.get('/', (req, res) => {
   chipApi.queryAll()
