@@ -1,72 +1,77 @@
 <template>
   <div>
-    <a-table :columns="columns"
-             :data-source="data"
-             :scroll="{y:400,x:900}"
-             :bordered="true">
+    <a-config-provider>
+      <template #renderEmpty>
+        <a-empty description="暂无参数" />
+        <a-button @click="add(classId)">新建</a-button>
+      </template>
+      <a-table :columns="columns"
+               :data-source="data"
+               :scroll="{y:400,x:900}"
+               :bordered="false">
 
-      <template v-for="col in ['name', 'token','type','defaultV','description']"
-                :slot="col"
-                slot-scope="text, record">
-        <!--  text:该单元格内容
+        <template v-for="col in ['name', 'token','type','defaultV','description']"
+                  :slot="col"
+                  slot-scope="text, record">
+          <!--  text:该单元格内容
               record:该行的数据
               index:索引      -->
 
-        <div :key="col">
-          <template v-if="col === 'type'">
-            <a-tag color="blue"
-                   v-if="record.varType==='1'">
-              常量
-            </a-tag>
-            <a-tag color="red"
-                   v-else-if="record.varType==='0'">
-              变量
-            </a-tag>
+          <div :key="col">
+            <template v-if="col === 'type'">
+              <a-tag color="blue"
+                     v-if="record.varType==='1'">
+                常量
+              </a-tag>
+              <a-tag color="red"
+                     v-else-if="record.varType==='0'">
+                变量
+              </a-tag>
 
-            <a-tag color="green"
-                   v-if="record.dataType==='0'">
-              整型
-            </a-tag>
-            <a-tag color="cyan"
-                   v-else-if="record.dataType==='1'">
-              浮点型
-            </a-tag>
-            <a-tag color="grey"
-                   v-else-if="record.dataType==='2'">
-              布尔型
-            </a-tag>
-            <a-tag color="orange"
-                   v-else-if="record.dataType==='3'">
-              字符型
-            </a-tag>
-            <a-tag color="yellow"
-                   v-else-if="record.dataType==='4'">
-              字符串
-            </a-tag>
-            <a-tag color="pink"
-                   v-else-if="record.dataType==='5'">
-              数组
-            </a-tag>
-          </template>
-          <span v-else> {{ text }}</span>
-        </div>
-      </template>
+              <a-tag color="green"
+                     v-if="record.dataType==='0'">
+                整型
+              </a-tag>
+              <a-tag color="cyan"
+                     v-else-if="record.dataType==='1'">
+                浮点型
+              </a-tag>
+              <a-tag color="grey"
+                     v-else-if="record.dataType==='2'">
+                布尔型
+              </a-tag>
+              <a-tag color="orange"
+                     v-else-if="record.dataType==='3'">
+                字符型
+              </a-tag>
+              <a-tag color="yellow"
+                     v-else-if="record.dataType==='4'">
+                字符串
+              </a-tag>
+              <a-tag color="pink"
+                     v-else-if="record.dataType==='5'">
+                数组
+              </a-tag>
+            </template>
+            <span v-else> {{ text }}</span>
+          </div>
+        </template>
 
-      <template slot="operation"
-                slot-scope="text, record">
-        <div class="editable-dataForm-operations">
-          <span>
-            <a @click="add(record.classId)">新建</a>
-            <a @click="()=> edit(record.id)">编辑</a>
-            <a-popconfirm title="确定删除吗？"
-                          @confirm="() => del(record.id)">
-              <a>删除</a>
-            </a-popconfirm>
-          </span>
-        </div>
-      </template>
-
-    </a-table>
+        <template slot="operation"
+                  slot-scope="text, record">
+          <div class="editable-dataForm-operations">
+            <span>
+              <a @click="add(record.classId)">新建</a>
+              <a @click="()=> edit(record.id)">编辑</a>
+              <a-popconfirm title="确定删除吗？"
+                            @confirm="() => del(record.id)">
+                <a>删除</a>
+              </a-popconfirm>
+            </span>
+          </div>
+        </template>
+      </a-table>
+    </a-config-provider>
     <!-- 增加 -->
     <a-modal v-model="visible"
              :title="title"
@@ -100,6 +105,7 @@
                            prop="type">
           <a-radio-group name="type"
                          v-model="dataForm.type"
+                         :defaultValue="tableType"
                          ref="type">
             <a-radio value="1"
                      :disabled="tableType==='2'">
@@ -211,12 +217,13 @@
                            prop="type">
           <a-radio-group name="type"
                          v-model="dataForm.type"
+                         :defaultValue="tableType"
                          ref="type">
-            <a-radio value="0"
+            <a-radio value="1"
                      :disabled="tableType==='2'">
               输入
             </a-radio>
-            <a-radio value="1"
+            <a-radio value="2"
                      :disabled="tableType==='1'">
               输出
             </a-radio>
@@ -365,12 +372,15 @@ export default {
     methodId: {
       type: Number
     },
+    classId: {
+      type: Number
+    },
   },
   data() {
     return {
       data: this.tableData,
       dataId: "",
-      classId: "",
+      // classId: "",
       enginId: sessionStorage.getItem('projectId'),
       visible: false,
       visible1: false,
@@ -409,7 +419,7 @@ export default {
         key: "",
         name: "",
         token: "",
-        type: "",// 普通成员变量 输入输出
+        type: this.tableType,// 普通成员变量 输入输出
         varType: "",//变量or常量
         dataType: "",//数据类型
         defaultV: "",
@@ -497,13 +507,14 @@ export default {
             author: getUserInfo().nickName,
             name: this.dataForm.name,
             token: this.dataForm.token ? this.dataForm.token : 'data',
-            type: this.dataForm.type,
+            type: this.tableType,
             defaultV: this.dataForm.defaultV,
             dataType: this.dataForm.dataType,
             varType: this.dataForm.varType,
             methodId: this.methodId,
             description: this.dataForm.description
           }
+          console.log(data);
           dataApi.add(data)
             .then((res) => {
               if (res.code === 200) {
@@ -559,6 +570,7 @@ export default {
         .then((res) => {
           if (res.code === 200) {
             this.$message.success("删除成功", 0.7)
+            this.getData()
           } else {
             this.$message.error("删除失败", 0.7)
           }
@@ -594,7 +606,7 @@ export default {
 </script>
 <style scoped>
 .editable-add-btn {
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 .editable-dataForm-operations a {
   margin-right: 8px;

@@ -7,8 +7,7 @@ import { message } from 'ant-design-vue';
 // 使用 cancel token 取消请求
 const CancelToken = axios.CancelToken
 let source = CancelToken.source()
-let filename = ''
-
+let fileName = ""
 //可区分用户/管理员的url 在请求的url前加入user/admin
 const baseURL = '/'
 // const baseURL = process.env.NODE_ENV === 'development' ? '/bugu' : '/bugu'
@@ -22,9 +21,10 @@ const service = axios.create({
 // 拦截器：在请求或响应被 then 或 catch 处理前拦截它们。
 // 请求拦截器
 service.interceptors.request.use((config) => {
+  // console.log(config)
   // 判断是否存在token，如果存在的话，则每个http header都加上token
   if (getToken()) {
-    config.headers.Authorization = 'Bearer'+ getToken()
+    config.headers.Authorization = getToken()
   }
     return config;
   }, (error) => {
@@ -34,16 +34,20 @@ service.interceptors.request.use((config) => {
 
 // 响应拦截器
 service.interceptors.response.use((response) => {
+  
     // 对响应数据做点什么
-    // console.log(response)
+    if(response.headers['content-disposition']!==undefined){
+      console.log(response)
+      fileName = response.headers['content-disposition'].split('=')[1]
+    }
     if(response.data.code === 499 || response.data.code === 480){
+      setLoginStatus(false)
+      removeToken()
+      removeUserInfo()
       message.error(response.data.msg+",请重新登陆")
       router.push({
         path:'/entrance'
       })
-      setLoginStatus(false)
-      removeToken()
-      removeUserInfo()
     }
     return response.data;
   }, (error) => {
@@ -100,39 +104,72 @@ function requestByDelete (url, body) {
   })
 }
 
-function requestBydownload (url, params) {
+function requestByDownload (url, params) {
   return service({
     method: 'get',
     url,
     headers: {
-      token: getToken()
+      token: getToken(),
+      // Accept: 'application/zip',
     },
     params: { ...params },
-    responseType: 'arraybuffer'
+    responseType: 'blob' 
   }).then((res) => {
-    debugger
-    console.log(filename)
-    const blob = new Blob([res], {
-      type: 'application/vnd.ms-excel;charset=utf-8'
-    })
-    if ('msSaveOrOpenBlob' in navigator) {
-      window.navigator.msSaveOrOpenBlob(blob, filename)
-    } else {
-      const downloadElement = document.createElement('a')
-      const downloadUrl = window.URL.createObjectURL(blob)
-      filename = decodeURIComponent(filename)
-      downloadElement.href = downloadUrl
-      downloadElement.download = filename
-      document.body.appendChild(downloadElement)
-      downloadElement.click()
-      setTimeout(() => {
-        window.URL.revokeObjectURL(url)
-      }, 0)
+    console.log(res)
+    if(!res.size){
+      message.error("下载失败！")
+    }else{
+      // console.log(fileName);
+      // const blob = new Blob([res], {
+      //   type: 'application/zip;charset=utf-8'
+      // })
+      if ('msSaveOrOpenBlob' in navigator) {
+        window.navigator.msSaveOrOpenBlob(res, fileName)
+      } else {
+        // 创建下载链接
+        const downloadElement = document.createElement('a')
+        // 浏览器默认文件保存路径
+        const downloadUrl = window.URL.createObjectURL(res)
+        downloadElement.href = downloadUrl
+        // String.prototype.splice = function(start, newStr) {
+        //   return this.slice(0, start) + newStr + this.slice(start);
+        // };
+        fileName = fileName.replace(new RegExp('"', 'g'), '')
+        let date = showtime()
+        // let index = fileName.indexOf('.zip')
+        let downloadName = fileName + ' ' + date
+        // console.log(downloadName);
+        downloadElement.download = downloadName
+        // 在浏览器中生成下载链接
+        document.body.appendChild(downloadElement)
+        downloadElement.click()
+        // setTimeout(() => {
+        //   // 释放blob对象
+        //   window.URL.revokeObjectURL(downloadUrl)
+        // }, 0)
+      }
     }
   })
+}
+const checkTime = function (i) {
+  if (i < 10) {
+      i = "0" + i;
+  }
+  return i;
+}
+const showtime = function () {
+  let nowdate = new Date();
+  let year = nowdate.getFullYear(),
+      month = nowdate.getMonth() + 1,
+      day = nowdate.getDay() + 1,
+      h = checkTime(nowdate.getHours()),
+      m = checkTime(nowdate.getMinutes()),
+      s = checkTime(nowdate.getSeconds())
+
+  return year + "-" + month + "-" + day + " " + h +"-" + m + "-" + s;
 }
 const cancelRequest = () => {
   source.cancel('')
   source = CancelToken.source()
 }
-export { cancelRequest, requestByGet, requestByPost, baseURL, requestByPut, requestByDelete, requestBydownload }
+export { cancelRequest, requestByGet, requestByPost, baseURL, requestByPut, requestByDelete, requestByDownload }

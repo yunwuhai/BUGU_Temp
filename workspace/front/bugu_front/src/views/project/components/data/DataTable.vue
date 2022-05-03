@@ -196,7 +196,7 @@
                    allowClear
                    autocomplete="off" />
         </a-form-model-item>
-        <a-form-model-item label="数据类型："
+        <a-form-model-item label="类型："
                            prop="varType">
           <a-radio-group name="varType"
                          v-model="dataForm.varType"

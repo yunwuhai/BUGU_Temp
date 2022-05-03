@@ -79,21 +79,27 @@ export default {
     let validateUsername = (rule, value, callback) => {
       if (value === '') {
         callback(new Error('请输入用户名'));
-      } else {
+      }
+      else if (value.length < 6 || value.length > 12) {
         // if (this.registerForm.userName !== '') {
         //   this.$refs.registerForm.validateField('userName');
         // }
-        callback();
+        callback(new Error('请输入6-12位用户名'));
+      } else {
+        callback()
       }
     }
     let validatePass = (rule, value, callback) => {
       if (value === '') {
         callback(new Error('请输入密码'));
-      } else {
-        // if (this.registerForm.checkPass !== '') {
-        //   this.$refs.registerForm.validateField('checkPass');
+      }
+      else if (value.length < 6 || value.length > 12) {
+        // if (this.registerForm.userName !== '') {
+        //   this.$refs.registerForm.validateField('userName');
         // }
-        callback();
+        callback(new Error('请输入6-12位密码'));
+      } else {
+        callback()
       }
     }
     let validatePass2 = (rule, value, callback) => {

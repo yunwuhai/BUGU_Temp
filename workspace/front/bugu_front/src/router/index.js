@@ -4,7 +4,7 @@
  * @Author: WPO
  * @Date: 2022-03-25 22:18:30
  * @LastEditors: WPO
- * @LastEditTime: 2022-04-09 14:20:46
+ * @LastEditTime: 2022-04-22 13:54:11
  */
 import Vue from "vue";
 import VueRouter from "vue-router";
@@ -46,7 +46,7 @@ export const asyncRoutes=[
   {
     path: '/usercenter',
     name: 'UserCenter',
-    redirect: '/usercenter/userinfo',
+    redirect: '/usercenter/projectinfo',
     //路由的懒加载
     component: () => import('@/views/user/UserCenter'),
     meta:{
@@ -88,15 +88,21 @@ export const asyncRoutes=[
     name:'Admin',
     component:() => import('@/views/admin/Admin'),
     meta:{
-      role:"2"
+      role:"0"
     }
   }
 ];
 
-const router = new VueRouter({
+export const createRouter = () => new VueRouter({
   mode: "history",
   // base: process.env.BASE_URL,
   routes:constRoutes,
 });
+const router = createRouter()
+
+export const resetRouter = () =>  {
+  const newRouter = createRouter()
+  router.matcher = newRouter.matcher // the relevant part
+}
 
 export default router;

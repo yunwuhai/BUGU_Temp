@@ -4,7 +4,7 @@
  * @Author: WPO
  * @Date: 2022-03-24 14:58:39
  * @LastEditors: WPO
- * @LastEditTime: 2022-04-14 23:11:31
+ * @LastEditTime: 2022-04-27 01:37:18
  */
 // 用于主体部分的组件通信
 // import dataApi from '@/api/data'
@@ -49,8 +49,12 @@ export default {
 			let pane = state.panes.pop()
 			pane.contentIn = payload.contentIn
 			pane.contentOut = payload.contentOut
+			pane.logic = payload.logic
 			state.panes.push(pane)
 			console.log('UPDATE_PANES被调用了');
+		},
+		CLEAR_PANES(state){
+			state.panes=[]
 		},
 		SET_ACTIVE(state,value){
 			state.activeKey = value

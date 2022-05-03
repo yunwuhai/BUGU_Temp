@@ -1,13 +1,14 @@
 <!-- 内容组件 -->
 <template>
   <div>
-    <a-tooltip placement="left"
+    <!-- <a-tooltip placement="left"
                title="数据仓库">
       <a-button type="link"
+                class="data-ant-btn"
                 @click="displayData">
         <a-icon type="database" />
       </a-button>
-    </a-tooltip>
+    </a-tooltip> -->
     <div style="padding:30vh;"
          v-if="$store.getters.panes.length === 0">
       <a-empty description="暂无方法编辑中" />
@@ -23,19 +24,21 @@
                   :tab="pane.title"
                   :closable="pane.closable">
         <div class="card">
-          <!-- <div v-for="(item,index) in 10"
-               :key="index"> -->
-          <!-- <a-collapse :bordered="trues">
-            <a-collapse-panel key="1"
-                              header="输入参数表">
-              <PropTable :data="pane.contentIn"></PropTable>
-            </a-collapse-panel>
-
-            <a-collapse-panel key="3"
-                              header="执行逻辑表">
-              <PropTable :data="pane.contentLogic"></PropTable>
-            </a-collapse-panel>
-          </a-collapse> -->
+          <!-- <a-tooltip placement="bottom"
+                     title="保存当前方法">
+            <a-button type="link"
+                      class="file-ant-btn"
+                      @click="sliderCollapsed">
+              <a-icon type="file-done" />
+            </a-button>
+          </a-tooltip>
+          <a-tooltip placement="bottom"
+                     title="全部保存">
+            <a-button type="link"
+                      @click="allCollapsed">
+              <a-icon type="save" />
+            </a-button>
+          </a-tooltip> -->
           <a-collapse :bordered="true"
                       :style="customStyle">
             <template #expandIcon="props">
@@ -48,9 +51,9 @@
                         style="margin-right:10px" />
                 <span>输入参数表</span>
               </template>
-              <!-- {{pane}} -->
               <PropTable :tableData="pane.contentIn"
                          :methodId="pane.key"
+                         :classId="pane.parentId"
                          :tableType="'1'"></PropTable>
             </a-collapse-panel>
           </a-collapse>
@@ -68,6 +71,7 @@
               </template>
               <PropTable :tableData="pane.contentOut"
                          :methodId="pane.key"
+                         :classId="pane.parentId"
                          :tableType="'2'"></PropTable>
             </a-collapse-panel>
           </a-collapse>
@@ -81,9 +85,11 @@
               <template slot="header">
                 <a-icon type="ordered-list"
                         style="margin-right:10px" />
-                <span>执行逻辑表 </span>
+                <span>具体逻辑表 </span>
               </template>
-              <PropTable :tableData="pane.contentLogic"></PropTable>
+              <LogicTable :tableData="pane.logic"
+                          :methodId="pane.key"
+                          :classId="pane.parentId"></LogicTable>
             </a-collapse-panel>
           </a-collapse>
           <!-- </div> -->
@@ -95,11 +101,15 @@
 
 <script>
 import PropTable from '../overload/PropTable'
-import dataApi from '@/api/data'
-import { getUserInfo } from '@/utils/token'
+import LogicTable from '../overload/LogicTable'
+// import dataApi from '@/api/data'
+// import { getUserInfo } from '@/utils/token'
 export default {
   //import引入的组件需要注入到对象中才能使用
-  components: { PropTable },
+  components: {
+    PropTable,
+    LogicTable
+  },
   data() {
 
     //这里存放数据
@@ -110,7 +120,7 @@ export default {
       // panes,
       newTabIndex: 0,
       customStyle:
-        'border-radius: 4px; margin-bottom: 20px;overflow: hidden',
+        'border-radius: 4px; margin-bottom: 20px; overflow: hidden',
     };
   },
   //监听属性 类似于data概念
@@ -119,27 +129,27 @@ export default {
   watch: {},
   //方法集合
   methods: {
-    displayData() {
-      /*
-      向后端请求 总数据
-      */
-      this.$store.commit('SET_VISIBLE', true)
-      this.$store.commit('SET_TITLE', "数据对象总仓库")
-      this.$store.commit('SET_PLACEMENT', 'right')
-      this.$store.commit('SET_WRAP', { marginTop: '64px' })
-      this.$store.commit('SET_ADDSTATUS', false)
-      dataApi.queryByEngin(getUserInfo().id, this.id)
-        .then((res) => {
-          if (res.code === 200) {
-            this.$store.commit('SET_TABLEDATA', res.data)
-          } else {
-            this.$store.commit('CLEAR_TABLEDATA')
-          }
-        })
-        .catch((err) => {
-          console.error(err)
-        })
-    },
+    // displayData() {
+    //   /*
+    //   向后端请求 总数据
+    //   */
+    //   this.$store.commit('SET_VISIBLE', true)
+    //   this.$store.commit('SET_TITLE', "数据对象总仓库")
+    //   this.$store.commit('SET_PLACEMENT', 'right')
+    //   this.$store.commit('SET_WRAP', { marginTop: '64px' })
+    //   this.$store.commit('SET_ADDSTATUS', false)
+    //   dataApi.queryByEngin(getUserInfo().id, this.id)
+    //     .then((res) => {
+    //       if (res.code === 200) {
+    //         this.$store.commit('SET_TABLEDATA', res.data)
+    //       } else {
+    //         this.$store.commit('CLEAR_TABLEDATA')
+    //       }
+    //     })
+    //     .catch((err) => {
+    //       console.error(err)
+    //     })
+    // },
     callback(key) {
       console.log(key);
     },
@@ -173,7 +183,7 @@ export default {
   },
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {
-    // console.log('2', this.$store.getters.panes)
+    // console.log(this.$store.getters.panes)
   },
   //生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {
@@ -195,14 +205,18 @@ export default {
   height: 83.3vh;
   overflow-y: auto;
 }
-.ant-btn {
+/* .data-ant-btn {
   position: absolute;
   left: calc(100% - 40px);
   z-index: 50;
   margin-bottom: 0px;
   border: 0px;
-  /* background: none; */
+
   height: 40px;
   color: rgb(89, 89, 89);
 }
+.file-ant-btn {
+  margin-left: 5px;
+  color: rgb(89, 89, 89);
+} */
 </style>

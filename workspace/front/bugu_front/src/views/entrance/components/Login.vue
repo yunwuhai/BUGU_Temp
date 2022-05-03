@@ -79,18 +79,27 @@ export default {
             pass: this.loginForm.pass
           })
             .then((res) => {
-              // console.log(res.data.userInfo)
+              // console.log(res.data)
               if (res.code === 200) {
                 this.$message.success(res.msg, 0.5)
                 Cookie.setLoginStatus(true)
                 Cookie.setToken(res.data.token)
                 delete res.data.userInfo.pass
                 Cookie.setUserInfo(res.data.userInfo)
-                // console.log(Cookie.getUserInfo())
+                // console.log(Cookie.getUserInfo().role)
                 this.loading = false
-                this.$router.push({
-                  path: '/usercenter'
-                })
+                if (res.data.userInfo.role === '1') {
+                  this.$router.push({
+                    path: '/usercenter'
+                  })
+                }
+                else if (res.data.userInfo.role === '0') {
+                  // console.log(111)
+                  this.$router.push({
+                    path: '/admin'
+                  })
+                }
+
               } else {
                 this.$message.error(res.msg, 0.7)
                 Cookie.setLoginStatus(false)
@@ -102,6 +111,8 @@ export default {
               console.log(err)
               this.loading = false
             })
+        } else {
+          this.loading = false
         }
       })
     },

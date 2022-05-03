@@ -399,7 +399,7 @@
         <a-form-model-item has-feedback
                            label="简介："
                            prop="description">
-          <a-textarea placeholder="填写组件介绍"
+          <a-textarea placeholder="填写方法介绍"
                       v-model="methodForm.description"
                       @keyup.enter="saveMethodAddSame('methodForm')"
                       allowClear
@@ -496,7 +496,7 @@
         <a-form-model-item has-feedback
                            label="简介："
                            prop="description">
-          <a-textarea placeholder="填写方法介绍"
+          <a-textarea placeholder="填写重载介绍"
                       v-model="overloadForm.description"
                       @keyup.enter="saveOverloadAddSame('overloadForm')"
                       allowClear
@@ -572,6 +572,7 @@ import componentApi from '@/api/component'
 import classApi from '@/api/class'
 import methodApi from '@/api/method'
 import dataApi from '@/api/data'
+import logicApi from '@/api/logic'
 
 export default {
   //import引入的组件需要注入到对象中才能使用
@@ -792,48 +793,64 @@ export default {
       } else {
         //不能重复打开选项卡
         if (this.$store.getters.keys.indexOf(nodeData.id) === -1) {
-          console.log(nodeData.id)
+          // console.log(nodeData.id)
 
           this.$store.commit("SET_KEYS", nodeData.id)
           this.$store.commit("SET_ACTIVE", nodeData.id)
           // key为方法id
           let contentIn = []
           let contentOut = []
-          this.$store.commit('SET_PANES', { title: nodeData.title, key: nodeData.id, contentIn: [], contentOut: [] })
+          let logic = []
+          this.$store.commit('SET_PANES', { title: nodeData.title, key: nodeData.id, parentId: nodeData.classId, contentIn: [], contentOut: [], logic: [] })
           this.$message.success('成功打开选项卡', 0.5);
           // 输入参数
           this.$store.commit('SET_LOADING', true)
           dataApi.getInOrOut(nodeData.id, '1')
             .then((res) => {
-              console.log(res)
+              // console.log(res)
               if (res.code === 200) {
                 contentIn = res.data
-                dataApi.getInOrOut(nodeData.id, '2')
-                  .then((res) => {
-                    console.log(res)
-                    if (res.code === 200) {
-                      contentOut = res.data
-                      this.$store.commit({
-                        type: 'UPDATE_PANES',
-                        contentIn: contentIn,
-                        contentOut: contentOut
-                      })
-                      //this.$message.success('成功加载了contentIn和contentOut', 0.5);
-                    } else {
-                      contentOut = []
-                      this.$message.error('加载失败', 0.5);
-                    }
-                    this.$store.commit('SET_LOADING', false)
-                  })
               } else {
                 contentIn = []
-                this.$message.error('加载失败', 0.5);
+                // this.$message.error('加载失败', 0.5);
               }
+              this.$store.commit('UPDATE_PARAMIN', contentIn)
+              dataApi.getInOrOut(nodeData.id, '2')
+                .then((res) => {
+                  // console.log(res)
+                  if (res.code === 200) {
+                    contentOut = res.data
+                    //this.$message.success('成功加载了contentIn和contentOut', 0.5);
+                  } else {
+                    contentOut = []
+                    // this.$message.error('', 0.5);
+                  }
+                  this.$store.commit('UPDATE_PARAMOUT', contentOut)
+                  classApi.queryById(nodeData.classId)
+                  let logicInfo = {
+                    eid: this.id,
+                    cid: nodeData.classId,
+                    mid: nodeData.id,
+                  }
+                  logicApi.getLogic(logicInfo)
+                    .then((res) => {
+                      if (res.code === 200) {
+                        logic = res.data
+                        this.$store.commit({
+                          type: 'UPDATE_PANES',
+                          parentId: nodeData.classId,
+                          contentIn: contentIn,
+                          contentOut: contentOut,
+                          logic: logic
+                        })
+                      } else {
+                        logic = []
+                      }
+                    })
+                  this.$store.commit('UPDATE_LOGIC', logic)
+                  this.$store.commit('SET_LOADING', false)
+                })
             })
-          // 输出参数
-
-
-
         } else {
           this.$store.commit("SET_ACTIVE", nodeData.id)
           this.$message.info(nodeData.title + '已打开', 0.5);
@@ -867,6 +884,13 @@ export default {
           this.methodForm = {}
           this.methodVisible = true
           this.methodTitle = "添加新方法"
+          break
+        case 4:
+          // this.overloadForm = {}
+          this.overloadForm.name = this.treeNode.dataRef.name,
+            this.overloadForm.token = this.treeNode.dataRef.token
+          this.overloadVisible = true
+          this.overloadTitle = "添加新重载"
           break
       }
     },
@@ -1013,6 +1037,13 @@ export default {
                 this.$nextTick(this.getTree())
                 this.classVisible = false
                 this.$refs[formName].resetFields()
+                // 描述信息中添加
+                let req = {
+                  eid: this.id,
+                  cid: res.data.id,
+                  cToken: res.data.token
+                }
+                classApi.addDesClass(req)
               } else {
                 this.$message.error(res.msg, 0.5)
               }
@@ -1076,7 +1107,7 @@ export default {
             auth: "1",
             engineeringIds: this.treeNode.dataRef.engineeringIds
           }
-          console.log(this.newTreeNode)
+          // console.log(this.newTreeNode)
           /*
             后端接口 提交componentForm
           */
@@ -1087,7 +1118,14 @@ export default {
                 this.$nextTick(this.getTree())
                 this.overloadVisible = false
                 this.$refs[formName].resetFields()
-
+                //改变描述文件
+                let req = {
+                  eid: this.id,
+                  cid: res.data.classId,
+                  mid: res.data.id,
+                  mToken: res.data.token
+                }
+                methodApi.addDesMethod(req)
               } else {
                 this.$message.error('新建重载失败', 0.5)
               }
@@ -1171,7 +1209,7 @@ export default {
             .then((res) => {
               if (res.code === 200) {
                 this.$message.success(res.msg, 1);
-                console.log(res.data)
+                // console.log(res.data)
                 // this.$nextTick(this.getTree())
               }
             })
@@ -1254,6 +1292,15 @@ export default {
               if (res.code === 200) {
                 this.$message.success(res.msg, 0.7)
                 this.getTree()
+                // 描述信息中添加
+                let req = {
+                  eid: this.id,
+                  cid: res.data.id,
+                }
+                classApi.delDesClass(req)
+                  .then(res => {
+                    console.log(res);
+                  })
               }
               else {
                 this.$message.error("删除失败", 0.7)
@@ -1269,6 +1316,16 @@ export default {
               if (res.code === 200) {
                 this.$message.success(res.msg, 0.7)
                 this.getTree()
+                // 描述信息中删除
+                let req = {
+                  eid: this.id,
+                  cid: current.classId,
+                  mToken: current.token
+                }
+                methodApi.delDesMethodAll(req)
+                  .then(res => {
+                    console.log(res);
+                  })
               }
               else {
                 this.$message.error("删除失败", 0.7)
@@ -1284,6 +1341,16 @@ export default {
               if (res) {
                 this.$message.success(res.msg, 0.7)
                 this.getTree()
+                // 描述信息中删除
+                let req = {
+                  eid: this.id,
+                  cid: current.classId,
+                  mid: current.id
+                }
+                methodApi.delDesMethod(req)
+                  .then(res => {
+                    console.log(res);
+                  })
               }
               else {
                 this.$message.error(res.msg, 0.7)
@@ -1332,7 +1399,7 @@ export default {
   //生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {
     //全局事件总线
-    this.$bus.$on('clear', this.clearExpand)
+    this.$bus.$on('close', this.clearExpand)
     // window.addEventListener("beforeunload", this.beforeUnloadHandler, false)
   },
   destroyed() {

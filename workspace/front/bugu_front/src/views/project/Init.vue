@@ -56,14 +56,25 @@
                       ref="chip"
                       allowClear
                       autocomplete="off">
-              <a-select-option value="1">
-                芯片1
+              <a-select-option v-for="item in chipList"
+                               :value="item.name"
+                               :key="item.id">
+                {{item.name}}
               </a-select-option>
             </a-select>
           </a-form-model-item>
-
           <a-form-model-item has-feedback
-                             label="堆栈大小："
+                             label="堆大小："
+                             prop="heap">
+            <a-input-number v-model="initForm.heap"
+                            :min="1"
+                            ref="heap"
+                            allowClear
+                            type="text"
+                            autocomplete="off" />
+          </a-form-model-item>
+          <a-form-model-item has-feedback
+                             label="栈大小："
                              prop="stack">
             <a-input-number v-model="initForm.stack"
                             :min="1"
@@ -112,6 +123,7 @@ import { nanoid } from "nanoid"
 import engineeringApi from '@/api/engineering'
 import componentApi from '@/api/component'
 import { getUserInfo } from '@/utils/token'
+import chipApi from '@/api/chip'
 
 export default {
   name: "Init",
@@ -121,13 +133,15 @@ export default {
     //这里存放数据
     return {
       loading: false,
+      chipList: [],
       initForm: {
         id: nanoid(),//项目id
         type: "0",
         name: '',
         token: "",
+        heap: '',
         stack: '',
-        chip: '1',
+        chip: '芯片1',
         abstract: '0',
         description: ""
         // componentId:[] //工程项目中所有组件id的集合
@@ -135,7 +149,8 @@ export default {
       rules: {
         type: [{ required: true, message: "请选择项目类型", trigger: 'change' }],
         name: [{ required: true, message: "请输入项目名称", trigger: 'change' }],
-        stack: [{ required: true, message: "请输入堆栈大小", trigger: 'change' }],
+        stack: [{ required: true, message: "请输入栈大小", trigger: 'change' }],
+        heap: [{ required: true, message: "请输入堆大小", trigger: 'change' }],
         chip: [{ required: true, message: "请选择芯片类型", trigger: 'change' }],
         abstract: [{ required: true, message: "请选择是否为抽象组件", trigger: 'change' }]
       },
@@ -151,6 +166,24 @@ export default {
   watch: {},
   //方法集合
   methods: {
+    getChipList() {
+      chipApi.queryAll()
+        .then((res) => {
+          if (res.code === 200) {
+            this.chipList = res.data
+          }
+          else {
+            this.chipList = []
+          }
+        })
+    },
+    findChipId(name) {
+      for (let i = 0; i < this.chipList.length; i++) {
+        if (this.chipList[i].name === name) {
+          return this.chipList[i].id
+        }
+      }
+    },
     nextFocus(name) {
       this.$refs[name].focus()
     },
@@ -166,8 +199,9 @@ export default {
             req.token = this.initForm.token ? this.initForm.token : 'engineering'
             req.type = "2"
             req.description = this.initForm.description
-            req.chipId = this.initForm.chip
+            req.chipId = this.findChipId(this.initForm.chip)
             req.stack = this.initForm.stack
+            req.heap = this.initForm.heap
             req.componentsId = ""
             engineeringApi.init(req)
               .then((res) => {
@@ -217,7 +251,7 @@ export default {
           this.$message.error('新建失败', 0.5)
           return false;
         }
-      });
+      })
     },
     handleCancel() {
       this.$store.commit("SET_CREATEVISIBLE", false)
@@ -233,6 +267,7 @@ export default {
   },
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {
+    this.getChipList()
     // this.$store.commit("SET_CREATEVISIBLE", true)
   },
   //生命周期 - 挂载完成（可以访问DOM元素）

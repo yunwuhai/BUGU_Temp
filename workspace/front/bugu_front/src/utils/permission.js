@@ -4,7 +4,7 @@
  * @Author: WPO
  * @Date: 2022-03-25 22:18:30
  * @LastEditors: WPO
- * @LastEditTime: 2022-04-11 19:20:41
+ * @LastEditTime: 2022-04-29 00:42:44
  */
 
 import router from '../router'
@@ -43,16 +43,18 @@ router.beforeEach(async (to, from, next) => {
 		// const projectInfo = JSON.parse(sessionStorage.getItem('projectInfo')) ? JSON.parse(sessionStorage.getItem('projectInfo')) : {}
     // 登录过就不能访问登录界面，需要中断这一次路由守卫，执行下一次路由守卫，并且下一次守卫的to是主页
     if (to.path === '/entrance') {
+			// console.log('login')
 			message.warning('用户已登录，返回主页',1)
       next({ path: '/usercenter' })
       NProgress.done()
     } 
-		//没有项目信息 跳转到新建界面
-		else if(to.path === '/project' &&  Object.keys(store.getters.project).length === 0){
-			// console.log(projectInfo)
-			await store.commit("SET_CREATEVISIBLE",true)
-			next({ path: '/init' })
-		}
+		
+		// //没有项目信息 跳转到新建界面
+		// else if(to.path === '/project' &&  Object.keys(store.getters.project).length === 0){
+		// 	// console.log(projectInfo)
+		// 	await store.commit("SET_CREATEVISIBLE",true)
+		// 	next({ path: '/init' })
+		// }
 
 		else {
 			if(hasRoute(to)){
@@ -61,7 +63,7 @@ router.beforeEach(async (to, from, next) => {
 				// 根据身份动态加载路由
 				try{
 					const addRoutes = await store.dispatch('addRoutes',role)
-					// console.log("动态增加的路由为",addRoutes)
+					// console.log("动态增加的路由为",addRoutes) 
 					router.addRoutes(addRoutes)
 					// 如果 addRoutes 并未完成，路由守卫会一层一层的执行执行，直到 addRoutes 完成，找到对应的路由
 					next({ ...to, replace: true })
