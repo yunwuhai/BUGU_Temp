@@ -4,7 +4,7 @@
  * @Author: WPO
  * @Date: 2022-04-10 23:08:49
  * @LastEditors: WPO
- * @LastEditTime: 2022-05-03 02:47:51
+ * @LastEditTime: 2022-05-12 01:04:13
  */
 
 const express = require('express');
@@ -148,9 +148,10 @@ router.post('/',(req, res) => {
 })
 
 router.put('/', (req, res) => {
+	desApi.updateDesPro(req.body)
   enginApi.update(req.body)
 	.then((result) => {
-		console.log(result)
+		// console.log(result)
 		// 返回对象数组
 		if(result){
 			res.json({

@@ -4,20 +4,33 @@
  * @Author: WPO
  * @Date: 2022-04-26 17:18:04
  * @LastEditors: WPO
- * @LastEditTime: 2022-05-04 00:31:43
+ * @LastEditTime: 2022-05-12 00:05:15
  */
 
-const fs = require("fs")
+const fs = require("fs-extra")
+const path = require('path')
+const filePath = path.join(__dirname,'../files/desFiles')
 
 // 读取整个描述文件的json对象
 const getDesFile = (eid) => {
-	let fileName = '../files/desFiles/des_' + eid + '.json'
+	let fileName = path.join(filePath,'des_'+ eid + '.json')
 	return JSON.parse(fs.readFileSync(fileName))
+}
+
+// 修改项目信息
+const updateDesPro = async(data) => {
+	let desFile = await getDesFile(data.id)
+	desFile.projectToken = data.token
+	desFile.chipId = data.chipId
+	desFile.heap = data.heap
+	desFile.stack = data.stack
+	let content = JSON.stringify(desFile, null, 2)
+	fs.writeFileSync(path.join(filePath,'des_'+ data.id + '.json'),content)
 }
 
 // 添加类
 const addClass = (info,res) => {
-	let fileName = './files/desFiles/des_' + info.eid + '.json'
+	let fileName = path.join(filePath,'des_'+ info.eid + '.json')
 	fs.readFile(fileName,(err,data) => {
 		if(err){
 			console.error(err)
@@ -33,6 +46,11 @@ const addClass = (info,res) => {
 			fs.writeFile(fileName, Data,(err) => {
 				if (err){
 					console.error(err)
+				}else{
+					res.json({
+						code:200,
+						msg:'描述文件修改成功'
+					})
 				}
 			});
 		}
@@ -41,7 +59,7 @@ const addClass = (info,res) => {
 
 // 删除类
 const delClass = (info,res) => {
-	let fileName = './files/desFiles/des_' + info.eid + '.json'
+	let fileName = path.join(filePath,'des_'+ info.eid + '.json')
 	fs.readFile(fileName,(err,data) => {
 		if(err){
 			console.error(err)
@@ -71,7 +89,7 @@ const delClass = (info,res) => {
 
 // 添加方法
 const addMethod = (info,res) => {
-	let fileName = './files/desFiles/des_' + info.eid + '.json'
+	let fileName = path.join(filePath,'des_'+ info.eid + '.json')
 	fs.readFile(fileName,(err,data) => {
 		if(err){
 			console.error(err)
@@ -106,7 +124,7 @@ const addMethod = (info,res) => {
 
 // 删除方法
 const delMethod = (info,res) => {
-	let fileName = './files/desFiles/des_' + info.eid + '.json'
+	let fileName = path.join(filePath,'des_'+ info.eid + '.json')
 	fs.readFile(fileName,(err,data) => {
 		if(err){
 			console.error(err)
@@ -143,7 +161,7 @@ const delMethod = (info,res) => {
 
 // 删除所有方法
 const delMethodAll = (info,res) => {
-	let fileName = './files/desFiles/des_' + info.eid + '.json'
+	let fileName = path.join(filePath,'des_'+ info.eid + '.json')
 	fs.readFile(fileName,(err,data) => {
 		if(err){
 			console.error(err)
@@ -179,8 +197,9 @@ const delMethodAll = (info,res) => {
 
 // 读取逻辑
 const readLogic = (info,res) => {
-	console.log(info)
-	fs.readFile('./files/desFiles/des_' + info.eid + '.json', (err, data) => {
+	// console.log(info)
+	let fileName = path.join(filePath,'des_'+ info.eid + '.json')
+	fs.readFile(fileName, (err, data) => {
   	if (err){
 			res.json({
 				code : 587,
@@ -225,7 +244,8 @@ const readLogic = (info,res) => {
 
 // 写入逻辑 新建、删除、修改逻辑时
 const writeLogic = (info,res) => {
-	let fileName = './files/desFiles/des_' + info.eid + '.json'
+	// console.log(info);
+	let fileName = path.join(filePath,'des_'+ info.eid + '.json')
 	fs.readFile(fileName,(err,data) => {
 		if(err){
 			console.error(err)
@@ -288,6 +308,7 @@ const delDes = (eid,res) => {
 	 delMethodAll,
 	 addClass,
 	 delClass,
-	 delDes
+	 delDes,
+	 updateDesPro
  }
 

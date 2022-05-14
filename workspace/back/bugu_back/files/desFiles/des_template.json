@@ -2,6 +2,9 @@
   "userId": -1,
   "projectId": -1,
   "projectToken": "project",
+  "chipId": -1,
+  "heap": "0x200",
+  "stack": "0x400",
   "classes": [
     {
       "classId": -1,

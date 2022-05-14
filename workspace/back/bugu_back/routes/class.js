@@ -4,7 +4,7 @@
  * @Author: WPO
  * @Date: 2022-04-11 10:42:01
  * @LastEditors: WPO
- * @LastEditTime: 2022-05-03 03:07:41
+ * @LastEditTime: 2022-05-12 01:27:42
  */
 
 const express = require('express');
@@ -157,12 +157,12 @@ router.put('/', (req, res) => {
 	})
 })
 
-const delAll = async(eid) =>{
-	await dataApi.delByEid(eid)
-	await methodApi.delByEid(eid)
+const delAll = async(cid) =>{
+	await methodApi.delByCid(cid)
+	await dataApi.delByCid(cid)
 }
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id/:eid', (req, res) => {
 	delAll(req.params.id)
 	.catch(err => {
 		if(err){

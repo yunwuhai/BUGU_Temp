@@ -4,7 +4,7 @@
  * @Author: WPO
  * @Date: 2022-04-10 20:28:46
  * @LastEditors: WPO
- * @LastEditTime: 2022-05-03 20:06:30
+ * @LastEditTime: 2022-05-12 00:30:37
  */
 
 const model = require('../dbModel');
@@ -30,6 +30,7 @@ const getByEid = (eid,cols) => {
 		}
 	})
 }
+
 // 通过类别找到相关组件
 const getByType = (type) =>dao.queryByType(type,model.component)
 

@@ -4,12 +4,13 @@
  * @Author: WPO
  * @Date: 2022-04-12 23:37:21
  * @LastEditors: WPO
- * @LastEditTime: 2022-05-04 00:35:15
+ * @LastEditTime: 2022-05-12 00:17:45
  */
 
 const model = require('../dbModel');
 // model.data.sync({alter:true})
 const dao = require('../../utils/dao') 
+const classApi = require('../api/classes')
 
 const queryById = (req) => dao.queryById(req,model.data)
 const queryAll = () => dao.queryByAll(model.data)
@@ -23,6 +24,13 @@ const delByMid = (req) => {
 			methodId : req
 		}
 	});
+}
+const delByCid = (req) => {
+	return model.data.destroy({
+		where:{
+			classId : req
+		}
+	})
 }
 // 获取输入参数
 const getInOrOut = (req) => {
@@ -38,7 +46,8 @@ const queryByEngin = (req) => {
 	return model.data.findAll({
 		where:{
 			userId:req.userId,
-			engineeringIds: req.engineeringIds
+			engineeringIds: req.engineeringIds,
+			type:'0'
 		}
 	})
 }
@@ -47,10 +56,24 @@ const queryByClass = (req) => {
 	return model.data.findAll({
 		where:{
 			userId:req.userId,
-			classId: req.classId
+			classId: req.classId,
+			type:'0'
 		}
 	})
 }
+
+// 获取父类参数
+const getParentDatas = async(req) => {
+	let result = await classApi.queryById(req)
+	// console.log(result);
+	let classInfo = result[0].dataValues
+	return model.data.findAll({
+		where:{
+			classId:classInfo.parentId,
+			type:'0'
+		}
+	})
+ }
 
 module.exports = {
 	add,
@@ -62,5 +85,7 @@ module.exports = {
 	del,
 	delByMid,
 	delByEid,
-	getInOrOut
+	delByCid,
+	getInOrOut,
+	getParentDatas
 }

@@ -4,7 +4,7 @@
  * @Author: WPO
  * @Date: 2022-04-11 10:55:11
  * @LastEditors: WPO
- * @LastEditTime: 2022-04-13 15:58:06
+ * @LastEditTime: 2022-05-11 20:59:43
  */
 
 const treeKey = require('nanoid')
@@ -14,6 +14,17 @@ const methodApi = require('../dao/api/methods')
 const cols = ['id','name','engineeringIds', 'author', 'type', 'description','token']
 const cols1 = ['id','componentId', 'engineeringIds', 'name', 'author', 'type', 'description','token']
 const cols2 = ['id', 'classId', 'name', 'engineeringIds', 'author', 'type', 'description','token']
+
+const findDataObj = (obj) => {
+	for(let i = 0; i < obj.length; i++){
+		if(obj[i].type === '4'){
+			return true
+		}else{
+			continue
+		}
+	}
+}
+
 /**
  * @description:    通过查询用户id得到树形菜单需要的对象数组
  * @param {*} uid		用户id
@@ -33,12 +44,14 @@ const getTree = async (uid,eid) => {
 	// let contruct = 0
 	let e = eid.toString()
 
+	// 组件
 	firstNode.map(i => { 
 		if(i.engineeringIds.indexOf(e) > -1){
 			i.key = treeKey.nanoid()
 			i.title = i.name
 			i.level = 1
 			i.children = []
+			// 类
 			secondNode.map(j => {
 				if(j.engineeringIds.indexOf(e) > -1){
 					j.key = treeKey.nanoid()
@@ -46,6 +59,7 @@ const getTree = async (uid,eid) => {
 					j.level = 2
 					j.children = []
 					
+					// 方法 属性
 					thirdNode.map(k =>{
 						if(k.engineeringIds.indexOf(e) > -1){
 							k.key = treeKey.nanoid()
@@ -72,7 +86,8 @@ const getTree = async (uid,eid) => {
 										k.level = 3
 										k.children = []
 										last = k
-										if(j.type !== "1"){
+										// console.log(findDataObj(j.children));
+										if(j.type !== "1" && (j.type === '2' || j.type === "0") && !findDataObj(j.children)){
 											j.children.push({
 												title: '数据对象',
 												key: treeKey.nanoid(),

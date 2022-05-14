@@ -1,9 +1,0 @@
-#include "../inc/1_BSP_0_CLK.h"
-
-void Func_1_BSP_0_CLK_0_Init_0()
-{
-    Func_0_0_Trans_3_GPIO_0_ClockEnable_0_Basic(Object_DataEnum_0_0_0_SubTrans_0_STM32F401CC_1_CLK_11_LL_AHB1_GRP1_PERIPH_2_LL_AHB1_GRP1_PERIPH_GPIOC);
-    Func_0_0_Trans_3_GPIO_0_ClockEnable_0_Basic(Object_DataEnum_0_0_0_SubTrans_0_STM32F401CC_1_CLK_11_LL_AHB1_GRP1_PERIPH_7_LL_AHB1_GRP1_PERIPH_GPIOH);
-    Func_0_0_Trans_3_GPIO_0_ClockEnable_0_Basic(Object_DataEnum_0_0_0_SubTrans_0_STM32F401CC_1_CLK_11_LL_AHB1_GRP1_PERIPH_0_LL_AHB1_GRP1_PERIPH_GPIOA);
-    return;
-}

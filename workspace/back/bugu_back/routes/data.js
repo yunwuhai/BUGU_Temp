@@ -4,7 +4,7 @@
  * @Author: WPO
  * @Date: 2022-04-13 01:57:22
  * @LastEditors: WPO
- * @LastEditTime: 2022-04-14 22:02:49
+ * @LastEditTime: 2022-05-11 02:41:50
  */
 
 const express = require('express');
@@ -87,6 +87,34 @@ router.get('/class/:uid/:cid',(req,res) => {
 		res.json({
 		code : 587,
 		msg : '错误信息' + err
+		})
+	})
+})
+
+router.get('/parent/:id', (req, res) => {
+	// console.log(req.params.id);
+  dataApi.getParentDatas(req.params.id)
+	.then((result) => {
+		// 返回对象数组
+		if(result){
+			let data = result.map(item => item.dataValues) 
+			res.json({
+				code : 200,
+				msg : "已找到所有数据信息",
+				data : data
+			})
+		}else{
+			res.json({
+				code : 489,
+				msg : "未找到信息"
+			})
+		}
+	})
+	.catch((err) => {
+		console.log(err)
+		res.json({
+			code : 587,
+			msg : '错误信息' + err
 		})
 	})
 })

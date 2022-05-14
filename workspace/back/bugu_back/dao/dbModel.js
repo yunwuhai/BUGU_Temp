@@ -4,7 +4,7 @@
  * @Author: WPO
  * @Date: 2022-04-10 14:24:39
  * @LastEditors: WPO
- * @LastEditTime: 2022-04-25 17:26:24
+ * @LastEditTime: 2022-05-06 23:33:45
  */
 
 const { DataTypes } = require('sequelize');
@@ -99,13 +99,28 @@ const chip= sequelize.define('chip',{
 		allowNull : false,
 		defaultValue : "2"
 	},
+	CPU : {
+		type : DataTypes.STRING,
+		allowNull : false,
+		defaultValue : "cortex-m4"
+	},
+	FPU : {
+		type : DataTypes.STRING,
+		allowNull : false,
+		defaultValue : "fpv4-sp-d16"
+	},
+	FLOAT_ABI : {
+		type : DataTypes.STRING,
+		allowNull : false,
+		defaultValue : "hard"
+	},
 	description:{
 		type : DataTypes.STRING,
 		allowNull : false,
 		defaultValue: "这是一个芯片"
 	}
 });
-
+// chip.sync({ alter: true })
 // 工程项目信息
 const engineering = sequelize.define('engineering',{
 	id : {
@@ -152,12 +167,12 @@ const engineering = sequelize.define('engineering',{
 	heap : {
 		type : DataTypes.STRING,
 		allowNull : false,
-		defaultValue: ""
+		defaultValue: "0x200"
 	},
 	stack : {
 		type : DataTypes.STRING,
 		allowNull : false,
-		defaultValue: ""
+		defaultValue: "0x400"
 	},
 	componentsId:{
 		type : DataTypes.STRING,
@@ -285,17 +300,13 @@ const type = sequelize.define('type',{
 		allowNull : false,
 		defaultValue : "0"
 	},
-	chipId : {
-		type : DataTypes.STRING,
-		allowNull : false,
-		defaultValue : "0"
-	},
 	description:{
 		type : DataTypes.STRING,
 		allowNull : false,
 		defaultValue: "这是一个类"
 	}
 });
+// type.sync({ alter: true })
 
 // 方法信息 包括重载
 const method = sequelize.define('method',{

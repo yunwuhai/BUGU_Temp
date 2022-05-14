@@ -4,7 +4,7 @@
  * @Author: WPO
  * @Date: 2022-04-10 20:44:53
  * @LastEditors: WPO
- * @LastEditTime: 2022-05-03 02:39:29
+ * @LastEditTime: 2022-05-06 17:35:56
  */
 
 const queryById = (req,model) => {
@@ -43,8 +43,8 @@ const add = (req,model) => {
 	return model.create(req);
 }
 
-const update = (req,model) => {
-	model.update(req,
+const update = async(req,model) => {
+	await model.update(req,
 		{
 		where:{
 			id : req.id,

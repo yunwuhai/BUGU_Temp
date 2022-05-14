@@ -4,7 +4,7 @@
  * @Author: WPO
  * @Date: 2022-04-10 01:27:33
  * @LastEditors: WPO
- * @LastEditTime: 2022-05-03 03:03:47
+ * @LastEditTime: 2022-05-12 01:34:01
  */
 
 const express = require('express');
@@ -119,13 +119,19 @@ router.put('/', (req, res) => {
 	})
 })
 
-const delAll = async(eid) =>{
-	await dataApi.delByEid(eid)
-	await methodApi.delByEid(eid)
-	await classApi.delByEid(eid)
+const delAll = async(id) =>{
+	let result = await classApi.getByCid(id,['id'])
+	let classIds = result.map(item => item.dataValues)
+	// 删除组件下所有类对应的方法和属性信息
+	// console.log(classIds);
+	classIds.forEach(async(item) => {
+		await methodApi.delByCid(item.id)
+		await dataApi.delByCid(item.id)
+	});
+	await classApi.delByCom(id)
 }
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id/:eid', (req, res) => {
 	delAll(req.params.id)
 	.catch(err => {
 		if(err){

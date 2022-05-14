@@ -4,7 +4,7 @@
  * @Author: WPO
  * @Date: 2022-04-11 15:55:32
  * @LastEditors: WPO
- * @LastEditTime: 2022-05-03 20:14:55
+ * @LastEditTime: 2022-05-05 18:32:25
  */
 
 const enginApi = require('../dao/api/engineerings')
@@ -14,16 +14,22 @@ const methodApi = require('../dao/api/methods')
 const fs = require('fs')
 
 const createDes = async(req,engin,ids) => {
-	// let engin = await enginApi.add(req)
 	let eid = engin.dataValues.id + ""
 	let eToken = engin.dataValues.token
 	let uid = req.userId
+	let chipId = engin.dataValues.chipId
+	let stack = engin.dataValues.stack
+	let heap = engin.dataValues.heap
 	const newFile = './files/desFiles/des_'+eid+'.json'
 	fs.copyFileSync('./files/desFiles/des_template.json', newFile)
 	const fileResult =JSON.parse(fs.readFileSync(newFile,'utf8'));
 	fileResult.userId = uid
+	fileResult.chipId = chipId
+	fileResult.stack = stack
+	fileResult.heap = heap
 	fileResult.projectId = +eid
 	fileResult.projectToken = eToken
+	// 核心类
 	fileResult.classes[0].classId = ids[0]
 	fileResult.classes[0].methods[0].methodId = ids[1]
 	fs.writeFileSync(newFile, JSON.stringify(fileResult, null, 2))

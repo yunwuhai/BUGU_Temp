@@ -4,7 +4,7 @@
  * @Author: WPO
  * @Date: 2022-04-11 10:43:43
  * @LastEditors: WPO
- * @LastEditTime: 2022-05-03 03:24:47
+ * @LastEditTime: 2022-05-11 19:53:49
  */
 
 const express = require('express');
@@ -15,6 +15,60 @@ const dataApi = require('../dao/api/data')
 
 router.get('/', (req, res) => {
   methodApi.queryAll()
+	.then((result) => {
+		// 返回对象数组
+		if(result){
+			let data = result.map(item => item.dataValues) 
+			res.json({
+				code : 200,
+				msg : "已找到所有方法信息",
+				data:data
+			})
+		}else{
+			res.json({
+				code : 489,
+				msg : "未找到信息"
+			})
+		}
+	})
+	.catch((err) => {
+		console.log(err)
+		res.json({
+			code : 587,
+			msg : '错误信息' + err
+		})
+	})
+})
+
+router.get('/class', (req, res) => {
+  methodApi.getClassMethod(req.query)
+	.then((result) => {
+		// 返回对象数组
+		if(result){
+			let data = result.map(item => item.dataValues) 
+			res.json({
+				code : 200,
+				msg : "已找到所有方法信息",
+				data:data
+			})
+		}else{
+			res.json({
+				code : 489,
+				msg : "未找到信息"
+			})
+		}
+	})
+	.catch((err) => {
+		console.log(err)
+		res.json({
+			code : 587,
+			msg : '错误信息' + err
+		})
+	})
+})
+
+router.get('/parent/:cid', (req, res) => {
+  methodApi.getParentMethods(req.params.cid)
 	.then((result) => {
 		// 返回对象数组
 		if(result){

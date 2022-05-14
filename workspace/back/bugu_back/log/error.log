@@ -1297,3 +1297,37 @@ Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the cli
     at SendStream.emit (events.js:315:20)
     at ReadStream.onend (E:\BUGU_Temp\workspace\back\bugu_back\node_modules\send\index.js:822:10)
     at ReadStream.emit (events.js:327:22)
+2022-05-04T08:02:18.559Z-error- uncaughtException: ENOENT: no such file or directory, mkdir './files/zipFile/Project_2_pro_50_Source/Core'
+Error: ENOENT: no such file or directory, mkdir './files/zipFile/Project_2_pro_50_Source/Core'
+    at Object.mkdirSync (fs.js:987:3)
+    at E:\BUGU_Temp\workspace\back\bugu_back\service\compile.js:18:10
+    at FSReqCallback.oncomplete (fs.js:171:23)
+2022-05-04T08:02:18.564Z-error- uncaughtException: ENOENT: no such file or directory, mkdir './files/zipFile/Project_2_pro_50_Source/User'
+Error: ENOENT: no such file or directory, mkdir './files/zipFile/Project_2_pro_50_Source/User'
+    at Object.mkdirSync (fs.js:987:3)
+    at E:\BUGU_Temp\workspace\back\bugu_back\service\compile.js:18:10
+    at FSReqCallback.oncomplete (fs.js:171:23)
+2022-05-11T11:17:19.168Z-error- 404 - Not Found - /method/class/39 -GET - ::ffff:127.0.0.1
+2022-05-11T11:20:09.396Z-error- 404 - Not Found - /method/class/39 -GET - ::ffff:127.0.0.1
+2022-05-11T11:43:47.932Z-error- 404 - Not Found - /method/class/39 -GET - ::ffff:127.0.0.1
+2022-05-11T11:48:08.967Z-error- 404 - Not Found - /method/class/39 -GET - ::ffff:127.0.0.1
+2022-05-13T10:55:23.684Z-error- uncaughtException: downloadPath is not defined
+ReferenceError: downloadPath is not defined
+    at E:\BUGU_Temp\workspace\back\bugu_back\routes\download.js:58:19
+    at E:\BUGU_Temp\workspace\back\bugu_back\node_modules\express\lib\response.js:430:22
+    at SendStream.onend (E:\BUGU_Temp\workspace\back\bugu_back\node_modules\express\lib\response.js:1047:5)
+    at SendStream.emit (events.js:315:20)
+    at ReadStream.onend (E:\BUGU_Temp\workspace\back\bugu_back\node_modules\send\index.js:822:10)
+    at ReadStream.emit (events.js:327:22)
+    at endReadableNT (internal/streams/readable.js:1327:12)
+    at processTicksAndRejections (internal/process/task_queues.js:80:21)
+2022-05-13T12:52:15.600Z-error- uncaughtException: downloadPath is not defined
+ReferenceError: downloadPath is not defined
+    at E:\BUGU_Temp\workspace\back\bugu_back\routes\download.js:58:19
+    at E:\BUGU_Temp\workspace\back\bugu_back\node_modules\express\lib\response.js:430:22
+    at SendStream.onend (E:\BUGU_Temp\workspace\back\bugu_back\node_modules\express\lib\response.js:1047:5)
+    at SendStream.emit (events.js:315:20)
+    at ReadStream.onend (E:\BUGU_Temp\workspace\back\bugu_back\node_modules\send\index.js:822:10)
+    at ReadStream.emit (events.js:327:22)
+    at endReadableNT (internal/streams/readable.js:1327:12)
+    at processTicksAndRejections (internal/process/task_queues.js:80:21)
