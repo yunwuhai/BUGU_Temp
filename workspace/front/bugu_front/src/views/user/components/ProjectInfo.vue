@@ -190,7 +190,7 @@ const columns = [
 
 import engineeringApi from '@/api/engineering'
 import treeApi from '@/api/tree'
-import { getUserInfo } from '@/utils/token'
+import { getUserInfo, setProjectInfo, getProjectInfo, removeProjectInfo } from '@/utils/token'
 import chipApi from '@/api/chip'
 
 export default {
@@ -284,10 +284,16 @@ export default {
       engineeringApi.queryByUid(getUserInfo().id)
         .then((res) => {
           // console.log(res)
-          if (res.data.length) {
-            res.data.map((item) => item.key = item.id)
+          if (res.code === 200) {
+            if (res.data.length) {
+              res.data.map((item) => item.key = item.id)
+              this.tableData = res.data
+            } else {
+              this.tableData = []
+            }
+          } else {
+            this.tableData = []
           }
-          this.tableData = res.data
         })
         .catch((err) => {
           console.log(err)
@@ -306,7 +312,7 @@ export default {
           this.$store.commit('SET_SYSTEMTREE', res.data)
         })
         .catch((err) => {
-          this.$message.error("系统组件获取失败", 0.7)
+          this.$message.error("外部组件获取失败", 0.7)
           console.error(err)
         })
 
@@ -316,7 +322,7 @@ export default {
           this.$store.commit('SET_USERTREE', res.data)
         })
         .catch((err) => {
-          this.$message.error("用户组件获取失败", 0.7)
+          this.$message.error("内部组件获取失败", 0.7)
           console.error(err)
         })
 
@@ -326,6 +332,11 @@ export default {
             this.$message.success(res.msg, 0.5)
             this.$store.commit("SET_PROJECT", res.data)
             sessionStorage.setItem('projectId', res.data.id)
+            if (getProjectInfo()) {
+              removeProjectInfo()
+            }
+            setProjectInfo(res.data)
+            // sessionStorage.setItem('projectName', res.data.name)
             this.$router.push({ name: 'Project' })
           }
         })
@@ -336,8 +347,9 @@ export default {
       let data = {
       }
       Object.assign(data, record)
-      // console.log(data)
       data.chip = this.findChipName(data.chipId)
+      data.stack = eval(data.stack).toString(10)
+      data.heap = eval(data.heap).toString(10)
       delete data.chipId
       // console.log(data)
       this.initForm = data
@@ -346,6 +358,8 @@ export default {
       this.$refs[formName].validate(valid => {
         if (valid) {
           this.initForm.chipId = this.findChipId(this.initForm.chip)
+          this.initForm.stack = "0x" + parseInt(this.initForm.stack).toString(16)
+          this.initForm.heap = "0x" + parseInt(this.initForm.heap).toString(16)
           delete this.initForm.chip
           engineeringApi.update(this.initForm)
             .then((res) => {

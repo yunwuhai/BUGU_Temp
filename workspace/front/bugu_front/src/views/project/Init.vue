@@ -122,7 +122,7 @@
 import { nanoid } from "nanoid"
 import engineeringApi from '@/api/engineering'
 import componentApi from '@/api/component'
-import { getUserInfo } from '@/utils/token'
+import { getUserInfo, setProjectInfo, getProjectInfo, removeProjectInfo } from '@/utils/token'
 import chipApi from '@/api/chip'
 
 export default {
@@ -141,7 +141,7 @@ export default {
         token: "",
         heap: '',
         stack: '',
-        chip: '芯片1',
+        chip: '',
         abstract: '0',
         description: ""
         // componentId:[] //工程项目中所有组件id的集合
@@ -200,8 +200,8 @@ export default {
             req.type = "2"
             req.description = this.initForm.description
             req.chipId = this.findChipId(this.initForm.chip)
-            req.stack = this.initForm.stack
-            req.heap = this.initForm.heap
+            req.stack = "0x" + parseInt(this.initForm.stack).toString(16)
+            req.heap = "0x" + parseInt(this.initForm.heap).toString(16)
             req.componentsId = ""
             engineeringApi.init(req)
               .then((res) => {
@@ -210,6 +210,11 @@ export default {
                   this.$message.success(res.msg, 0.5)
                   this.$store.commit("SET_PROJECT", res.data)
                   sessionStorage.setItem('projectId', res.data.id)
+                  // sessionStorage.setItem('projectName', res.data.name)
+                  if (getProjectInfo()) {
+                    removeProjectInfo()
+                  }
+                  setProjectInfo(res.data)
                   this.$store.commit("SET_CREATEVISIBLE", false)
                   this.$router.push({ name: 'Project' })
                 } else {

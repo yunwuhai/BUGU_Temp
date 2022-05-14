@@ -119,7 +119,7 @@
                    allowClear
                    autocomplete="off" />
         </a-form-model-item>
-        <a-form-model-item label="抽象组件："
+        <!-- <a-form-model-item label="抽象组件："
                            prop="abstract">
           <a-radio-group name="abstract"
                          v-model="componentForm.abstract"
@@ -131,7 +131,7 @@
               否
             </a-radio>
           </a-radio-group>
-        </a-form-model-item>
+        </a-form-model-item> -->
         <a-form-model-item has-feedback
                            label="简介："
                            prop="description">
@@ -172,7 +172,7 @@
                    allowClear
                    autocomplete="off" />
         </a-form-model-item>
-        <a-form-model-item label="抽象组件："
+        <!-- <a-form-model-item label="抽象组件："
                            prop="abstract">
           <a-radio-group name="abstract"
                          v-model="componentForm.abstract"
@@ -184,7 +184,7 @@
               否
             </a-radio>
           </a-radio-group>
-        </a-form-model-item>
+        </a-form-model-item> -->
         <a-form-model-item has-feedback
                            label="简介："
                            prop="description">
@@ -255,22 +255,6 @@
           </a-select>
         </a-form-model-item>
         <a-form-model-item has-feedback
-                           label="选择芯片："
-                           prop="chipId">
-          <a-select v-model="classForm.chipId"
-                    ref="chipId"
-                    allowClear
-                    autocomplete="off">
-            <!-- v-for -->
-            <a-select-option value="0">
-              芯片1
-            </a-select-option>
-            <a-select-option value="1">
-              芯片2
-            </a-select-option>
-          </a-select>
-        </a-form-model-item>
-        <a-form-model-item has-feedback
                            label="简介："
                            prop="description">
           <a-textarea placeholder="填写类介绍"
@@ -336,22 +320,6 @@
                              :key="item.id"
                              :value="item.id">
               {{item.name}}
-            </a-select-option>
-          </a-select>
-        </a-form-model-item>
-        <a-form-model-item has-feedback
-                           label="选择芯片："
-                           prop="chipId">
-          <a-select v-model="classForm.chipId"
-                    ref="chipId"
-                    allowClear
-                    autocomplete="off">
-            <!-- v-for -->
-            <a-select-option value="0">
-              芯片1
-            </a-select-option>
-            <a-select-option value="1">
-              芯片2
             </a-select-option>
           </a-select>
         </a-form-model-item>
@@ -566,7 +534,7 @@
 <script>
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
-import { getUserInfo } from "@/utils/token"
+import { getUserInfo, getProjectInfo } from "@/utils/token"
 import treeApi from '@/api/tree'
 import componentApi from '@/api/component'
 import classApi from '@/api/class'
@@ -593,7 +561,7 @@ export default {
     //这里存放数据
     return {
       id: sessionStorage.getItem('projectId'),
-      project: this.$store.getters.project,
+      project: getProjectInfo(),
       author: getUserInfo().nickName,
       object: false,//是否是属性编辑选项
       main: false,//是否是核心
@@ -627,7 +595,6 @@ export default {
         token: "",//英文名
         extend: "0",//是否可继承
         parentId: "0",//父类 可设置默认值
-        chipId: "0",//移植芯片
         description: "",//简介
         attrsId: [],//属性库的ID
         methodsId: []//方法库的ID
@@ -636,7 +603,6 @@ export default {
         name: [{ required: true, message: '请输入类名', trigger: 'change' }],
         parentId: [{ required: true, message: '请选择父类', trigger: 'change' }],
         extend: [{ required: true, message: '请选择是否可继承', trigger: 'change' }],
-        chipId: [{ required: true, message: '请选择移植芯片', trigger: 'change' }],
       },
 
       methodVisible: false,
@@ -674,7 +640,7 @@ export default {
       parentData: {},
       newTreeNode: {},
       expandedKeys: [],
-      parentList: []
+      parentList: [{ id: 0, name: "基类" }]
     };
   },
   components: {},
@@ -686,7 +652,7 @@ export default {
     'componentForm.token': {
       handler(newValue) {
         if (newValue) {
-          this.componentForm.token = newValue.replace(/[^a-zA-Z]/g, '')
+          this.componentForm.token = newValue.replace(/[^0-9a-zA-Z_]{1,}$/g, '')
         }
 
       }
@@ -694,7 +660,7 @@ export default {
     'classForm.token': {
       handler(newValue) {
         if (newValue) {
-          this.classForm.token = newValue.replace(/[^a-zA-Z]/g, '')
+          this.classForm.token = newValue.replace(/[^0-9a-zA-Z_]{1,}$/g, '')
         }
 
       }
@@ -702,7 +668,7 @@ export default {
     'methodForm.token': {
       handler(newValue) {
         if (newValue) {
-          this.methodForm.token = newValue.replace(/[^a-zA-Z]/g, '')
+          this.methodForm.token = newValue.replace(/[^0-9a-zA-Z_]{1,}$/g, '')
         }
 
       }
@@ -710,7 +676,7 @@ export default {
     'overloadForm.token': {
       handler(newValue) {
         if (newValue) {
-          this.overloadForm.token = newValue.replace(/[^a-zA-Z]/g, '')
+          this.overloadForm.token = newValue.replace(/[^0-9a-zA-Z_]{1,}$/g, '')
         }
 
       }
@@ -718,13 +684,28 @@ export default {
   },
   //方法集合
   methods: {
+    getClassName(classId) {
+      for (let i = 0; i < this.parentList.length; i++) {
+        if (+this.parentList[i].id === +classId) {
+          return this.parentList[i].name
+        }
+      }
+    },
+    getClassId(className) {
+      for (let i = 0; i < this.parentList.length; i++) {
+        if (this.parentList[i].name === className) {
+          return this.parentList[i].id
+        }
+      }
+    },
     getParentList(classId) {
       // console.log(this.treeNode.dataRef.classId)
       classApi.getParentList(classId)
         .then((res) => {
           console.log(res)
           if (res.code === 200) {
-            this.parentList = res.data
+            this.parentList = [{ id: 0, name: "基类" }]
+            this.parentList = this.parentList.concat(res.data)
           }
         })
     },
@@ -748,7 +729,7 @@ export default {
           this.$store.commit('SET_USERTREE', res.data)
         })
         .catch((err) => {
-          this.$message.error("用户组件获取失败", 0.7)
+          this.$message.error("内部组件获取失败", 0.7)
           console.error(err)
         })
     },
@@ -807,7 +788,7 @@ export default {
           this.$store.commit('SET_LOADING', true)
           dataApi.getInOrOut(nodeData.id, '1')
             .then((res) => {
-              // console.log(res)
+              // console.log("in", res)
               if (res.code === 200) {
                 contentIn = res.data
               } else {
@@ -817,7 +798,7 @@ export default {
               this.$store.commit('UPDATE_PARAMIN', contentIn)
               dataApi.getInOrOut(nodeData.id, '2')
                 .then((res) => {
-                  // console.log(res)
+                  // console.log("out", res)
                   if (res.code === 200) {
                     contentOut = res.data
                     //this.$message.success('成功加载了contentIn和contentOut', 0.5);
@@ -834,19 +815,21 @@ export default {
                   }
                   logicApi.getLogic(logicInfo)
                     .then((res) => {
+                      // console.log("logic", res)
                       if (res.code === 200) {
                         logic = res.data
-                        this.$store.commit({
-                          type: 'UPDATE_PANES',
-                          parentId: nodeData.classId,
-                          contentIn: contentIn,
-                          contentOut: contentOut,
-                          logic: logic
-                        })
                       } else {
                         logic = []
                       }
+                      this.$store.commit({
+                        type: 'UPDATE_PANES',
+                        parentId: nodeData.classId,
+                        contentIn: contentIn,
+                        contentOut: contentOut,
+                        logic: logic
+                      })
                     })
+
                   this.$store.commit('UPDATE_LOGIC', logic)
                   this.$store.commit('SET_LOADING', false)
                 })
@@ -939,6 +922,8 @@ export default {
               if (res.code === 200) {
                 this.getParentList(data.id)
                 this.classVisible1 = true
+                res.data.parentId = this.getClassName(res.data.parentId)
+                console.log(res.data.parentId);
                 this.classForm = res.data
                 this.classTitle = "修改类信息"
               }
@@ -976,7 +961,7 @@ export default {
 
     // 保存新建
     saveComponentAddSame(formName) {
-      this.expandedKeys.push(this.treeNode.dataRef.key)
+
       this.$refs[formName].validate(valid => {
         if (valid) {
           // 从对话框中获取 
@@ -985,7 +970,8 @@ export default {
             author: this.author,
             name: this.componentForm.name,
             token: this.componentForm.token ? this.componentForm.token : "component",
-            type: this.componentForm.abstract === '1' ? "1" : "2",
+            type: "2",
+            // this.componentForm.abstract === '1' ? "1" : "2",
             description: this.componentForm.description,
             engineeringIds: this.treeNode.dataRef.engineeringIds
           }
@@ -998,6 +984,7 @@ export default {
                 this.$message.success(res.msg, 0.5)
                 this.$nextTick(this.getTree())
                 this.componentVisible = false
+                this.expandedKeys.push(this.treeNode.dataRef.key)
                 this.$refs[formName].resetFields()
               } else {
                 this.$message.error(res.msg, 0.5)
@@ -1036,6 +1023,7 @@ export default {
                 this.$message.success(res.msg, 0.5)
                 this.$nextTick(this.getTree())
                 this.classVisible = false
+                this.expandedKeys.push(this.treeNode.dataRef.key)
                 this.$refs[formName].resetFields()
                 // 描述信息中添加
                 let req = {
@@ -1056,7 +1044,6 @@ export default {
       })
     },
     saveMethodAddSame(formName) {
-      this.expandedKeys.push(this.treeNode.dataRef.key)
       this.$refs[formName].validate(valid => {
         if (valid) {
           // 从对话框中获取 
@@ -1080,6 +1067,7 @@ export default {
                 this.$message.success(res.msg, 0.5)
                 this.$nextTick(this.getTree())
                 this.methodVisible = false
+                this.expandedKeys.push(this.treeNode.dataRef.key)
                 this.$refs[formName].resetFields()
               } else {
                 this.$message.error(res.msg, 0.5)
@@ -1145,8 +1133,8 @@ export default {
         if (valid) {
           data.name = this.componentForm.name
           data.token = this.componentForm.token ? this.componentForm.token : "component"
-          data.type = this.componentForm.abstract === '1' ? "1" : "2",
-            data.description = this.componentForm.description
+          // data.type = this.componentForm.abstract === '1' ? "1" : "2",
+          data.description = this.componentForm.description
           componentApi.update(data)
             .then((res) => {
               if (res.code === 200) {
@@ -1172,10 +1160,9 @@ export default {
       this.$refs[formName].validate(valid => {
         if (valid) {
           data.name = this.classForm.name
-          data.token = this.classForm.token ? this.componentForm.token : "component"
+          data.token = this.classForm.token ? this.classForm.token : "class"
           data.extend = this.classForm.extend
           data.parentId = this.classForm.parentId
-          data.chipId = this.classForm.chipId
           data.description = this.classForm.description
           classApi.update(data)
             .then((res) => {
@@ -1202,7 +1189,7 @@ export default {
       this.$refs[formName].validate(valid => {
         if (valid) {
           data.name = this.methodForm.name
-          data.token = this.methodForm.token ? this.methodForm.token : "component"
+          data.token = this.methodForm.token ? this.methodForm.token : "method"
           data.description = this.methodForm.description
           // 先更新重载
           methodApi.updateOverload({ name: data.name, token: data.token, oldName: oldName })
@@ -1272,7 +1259,7 @@ export default {
       const current = this.treeNode.dataRef
       switch (current.level) {
         case 1:
-          componentApi.del(current.id)
+          componentApi.del(current.id, this.id)
             .then((res) => {
               if (res.code === 200) {
                 this.$message.success(res.msg, 0.7)
@@ -1287,7 +1274,7 @@ export default {
             })
           break
         case 2:
-          classApi.del(current.id)
+          classApi.del(current.id, this.id)
             .then((res) => {
               if (res.code === 200) {
                 this.$message.success(res.msg, 0.7)
@@ -1295,7 +1282,7 @@ export default {
                 // 描述信息中添加
                 let req = {
                   eid: this.id,
-                  cid: res.data.id,
+                  cid: current.id,
                 }
                 classApi.delDesClass(req)
                   .then(res => {

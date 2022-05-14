@@ -452,7 +452,7 @@ export default {
             key: nanoid(),
             userId: getUserInfo().id,
             classId: this.$store.getters.classId,
-            engineeringIds: this.$store.getters.project.id,
+            engineeringIds: this.enginId,
             author: getUserInfo().nickName,
             name: this.dataForm.name,
             token: this.dataForm.token ? this.dataForm.token : 'data',

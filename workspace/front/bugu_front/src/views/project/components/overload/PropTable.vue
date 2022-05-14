@@ -514,7 +514,7 @@ export default {
             methodId: this.methodId,
             description: this.dataForm.description
           }
-          console.log(data);
+          // console.log(data);
           dataApi.add(data)
             .then((res) => {
               if (res.code === 200) {

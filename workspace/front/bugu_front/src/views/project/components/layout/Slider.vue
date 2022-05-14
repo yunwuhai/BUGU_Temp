@@ -38,11 +38,13 @@
              title="编译项目"
              :footer="null">
       <p>请选择需要下载的文件类型</p>
-      <a-button @click="downloadEXE">
+      <a-button @click="downloadEXE"
+                :loading="downloadingE">
         <a-icon type="download" />
         <span>可执行文件</span>
       </a-button>
       <a-button @click="downloadSource"
+                :loading="downloadingS"
                 style="marginLeft:20px">
         <a-icon type="download" />
         <span>源码文件</span>
@@ -55,19 +57,25 @@
               :inline-collapsed="collapsed">
         <a-menu-item key="1">
           <a-icon type="project" />
-          <span>{{$store.getters.project.name}}</span>
+          <span>{{projectName}}</span>
         </a-menu-item>
         <a-sub-menu key="sub1">
           <span slot="title">
             <a-icon type="laptop" />
-            <span>系统组件</span>
+            <a-tooltip placement="right"
+                       title="供用户使用的系统已有组件">
+              <span>外部组件</span>
+            </a-tooltip>
           </span>
           <DirectoryTree :treeData="$store.getters.systemTree"></DirectoryTree>
         </a-sub-menu>
         <a-sub-menu key="sub2">
           <span slot="title">
-            <a-icon type="user" />
-            <span>用户组件</span>
+            <a-tooltip placement="right"
+                       title="用户自定义的组件">
+              <a-icon type="user" />
+              <span>内部组件</span>
+            </a-tooltip>
           </span>
           <DirectoryTree :delDis="true"
                          :treeData="$store.getters.userTree"></DirectoryTree>
@@ -82,7 +90,7 @@
 //例如：import 《组件名称》 from '《组件路径》';
 import DirectoryTree from "./DirectoryTree"
 import dataApi from '@/api/data'
-import { getUserInfo } from "@/utils/token"
+import { getUserInfo, getProjectInfo } from "@/utils/token"
 import treeApi from '@/api/tree'
 import downloadApi from '@/api/download'
 
@@ -96,14 +104,17 @@ export default {
     //这里存放数据
     return {
       id: sessionStorage.getItem('projectId'),
+      projectName: getProjectInfo().name,
       visible: false,
       // projectName: "未定义项目",
       collapsed: false,
       openKeys: ['sub1', 'sub2'],//已展开的侧边栏项
       // project: {},
       // projectName: "",
-      userTree: [],//用户组件
-      systemTree: []//系统组件
+      userTree: [],//内部组件
+      systemTree: [],//外部组件
+      downloadingE: false,
+      downloadingS: false
     };
   },
   //监听属性 类似于data概念
@@ -143,17 +154,17 @@ export default {
           this.$store.commit('SET_SYSTEMTREE', res.data)
         })
         .catch((err) => {
-          this.$message.error("系统组件获取失败", 0.7)
+          this.$message.error("外部组件获取失败", 0.7)
           console.error(err)
         })
 
-      treeApi.getTree(getUserInfo().id, +this.id)
+      treeApi.getTree(+getUserInfo().id, +this.id)
         .then((res) => {
           // this.userTree = res.data
           this.$store.commit('SET_USERTREE', res.data)
         })
         .catch((err) => {
-          this.$message.error("用户组件获取失败", 0.7)
+          this.$message.error("内部组件获取失败", 0.7)
           console.error(err)
         })
     },
@@ -172,20 +183,29 @@ export default {
       this.visible = true
     },
     downloadEXE() {
+      this.downloadingE = true
       downloadApi.downloadEXE(this.id)
+      setTimeout(() => {
+        this.downloadingE = false
+      }, 5000)
     },
     downloadSource() {
+      this.downloadingS = true
       downloadApi.downloadSource(this.id)
+      setTimeout(() => {
+        this.downloadingS = false
+      }, 15000)
     }
   },
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {
+    this.getTree()
     // console.log(this.$store.getters.userTree)
     // console.log(this.$store.getters.systemTree)
   },
   //生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {
-    this.getTree()
+
   },
   beforeCreate() { }, //生命周期 - 创建之前
   beforeMount() { }, //生命周期 - 挂载之前

@@ -30,22 +30,22 @@
       <a-form-model-item has-feedback
                          label="密码："
                          prop="pass">
-        <a-input v-model="registerForm.pass"
-                 allowClear
-                 ref="pass"
-                 type="password"
-                 autocomplete="off"
-                 @keyup.enter="nextFocus('checkPass')" />
+        <a-input-password v-model="registerForm.pass"
+                          allowClear
+                          ref="pass"
+                          type="password"
+                          autocomplete="off"
+                          @keyup.enter="nextFocus('checkPass')" />
       </a-form-model-item>
       <a-form-model-item has-feedback
                          label="重复密码："
                          prop="checkPass">
-        <a-input v-model="registerForm.checkPass"
-                 allowClear
-                 ref="checkPass"
-                 type="password"
-                 autocomplete="off"
-                 @keyup.enter="nextFocus('tel')" />
+        <a-input-password v-model="registerForm.checkPass"
+                          allowClear
+                          ref="checkPass"
+                          type="password"
+                          autocomplete="off"
+                          @keyup.enter="nextFocus('tel')" />
       </a-form-model-item>
       <a-form-model-item has-feedback
                          label="手机号码："

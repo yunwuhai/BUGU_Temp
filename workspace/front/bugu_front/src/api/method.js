@@ -4,7 +4,7 @@
  * @Author: WPO
  * @Date: 2022-04-12 01:12:54
  * @LastEditors: WPO
- * @LastEditTime: 2022-05-02 03:43:48
+ * @LastEditTime: 2022-05-11 19:51:32
  */
 
 import { requestByPost,requestByPut,requestByDelete,requestByGet } from '@/utils/request'
@@ -20,5 +20,7 @@ const methodApi = {
   addDesMethod: (params) => requestByPost('/method/des',params),
   delDesMethod: (params) => requestByDelete('/method/des',params),
   delDesMethodAll: (params) => requestByDelete('/method/desall',params),
+  getClassMethod: (params) => requestByGet('/method/class',params),
+  getParentMethod: (cid) => requestByGet('/method/parent/'+cid),
 }
 export default methodApi

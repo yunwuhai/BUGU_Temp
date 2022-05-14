@@ -4,18 +4,20 @@
  * @Author: WPO
  * @Date: 2022-03-21 10:27:22
  * @LastEditors: WPO
- * @LastEditTime: 2022-04-11 19:16:23
+ * @LastEditTime: 2022-05-05 21:35:04
  */
 //本地cookie操作
 import Cookie from 'vue-cookies'
 const TokenKey = 'BUGU_TOKEN'
 const isLogin = 'LOGIN_STATUS'
 const userInfo = 'USER'
+const projectInfo = 'PROJECT_INFO'
 
 //默认cookie过期时间为1d
 // export const setCookieConfig = (expireTime) =>{
 //   return Cookie.config(expireTime)
 // }
+
 export const getToken = () => {
   return Cookie.get(TokenKey)
 }
@@ -42,6 +44,16 @@ export const getUserInfo = () => {
 }
 export const removeUserInfo = () => {
   return Cookie.remove(userInfo)
+}
+
+export const setProjectInfo = (project) => {
+  return Cookie.set(projectInfo, project)
+}
+export const getProjectInfo = () => {
+  return Cookie.get(projectInfo)
+}
+export const removeProjectInfo = () => {
+  return Cookie.remove(projectInfo)
 }
 
 // export default{

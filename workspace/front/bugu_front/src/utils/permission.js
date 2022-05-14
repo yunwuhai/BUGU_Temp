@@ -4,13 +4,13 @@
  * @Author: WPO
  * @Date: 2022-03-25 22:18:30
  * @LastEditors: WPO
- * @LastEditTime: 2022-04-29 00:42:44
+ * @LastEditTime: 2022-05-05 21:37:12
  */
 
 import router from '../router'
 import store from '../store'
 import NProgress from 'nprogress' // 进度条
-import { getToken, removeToken, removeUserInfo,setLoginStatus, getUserInfo } from './token'
+import { getToken, removeToken, removeUserInfo,setLoginStatus, getUserInfo, getProjectInfo } from './token'
 import { message } from 'ant-design-vue';
 
 
@@ -49,12 +49,12 @@ router.beforeEach(async (to, from, next) => {
       NProgress.done()
     } 
 		
-		// //没有项目信息 跳转到新建界面
-		// else if(to.path === '/project' &&  Object.keys(store.getters.project).length === 0){
-		// 	// console.log(projectInfo)
-		// 	await store.commit("SET_CREATEVISIBLE",true)
-		// 	next({ path: '/init' })
-		// }
+		//没有项目信息 跳转到新建界面
+		else if(to.path === '/project' &&  !getProjectInfo()){
+			// console.log(projectInfo)
+			await store.commit("SET_CREATEVISIBLE",true)
+			next({ path: '/init' })
+		}
 
 		else {
 			if(hasRoute(to)){

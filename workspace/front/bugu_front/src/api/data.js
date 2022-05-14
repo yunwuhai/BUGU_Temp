@@ -4,7 +4,7 @@
  * @Author: WPO
  * @Date: 2022-04-13 02:33:53
  * @LastEditors: WPO
- * @LastEditTime: 2022-04-14 17:27:18
+ * @LastEditTime: 2022-05-11 02:34:29
  */
 import { requestByPost,requestByPut,requestByDelete,requestByGet } from '@/utils/request'
 
@@ -16,6 +16,7 @@ const dataApi = {
   del: (id) => requestByDelete('/data/'+id),
 	queryByEngin: (uid,eid) => requestByGet('/data/engin/'+ uid +'/'+ eid),
 	queryByClass: (uid,cid) => requestByGet('/data/class/'+ uid +'/'+ cid),
-  getInOrOut: (id,type) => requestByGet('/data/type/'+ id + '/' + type)
+  getInOrOut: (id,type) => requestByGet('/data/type/'+ id + '/' + type),
+  getParentDatas: (id) => requestByGet('/data/parent/' + id)
 }
 export default dataApi

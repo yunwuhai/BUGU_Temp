@@ -15,7 +15,7 @@ const baseURL = '/'
 // 创建实例
 const service = axios.create({
   baseURL,
-  timeout: 25000
+  timeout: 250000
 })
 
 // 拦截器：在请求或响应被 then 或 catch 处理前拦截它们。
@@ -37,7 +37,7 @@ service.interceptors.response.use((response) => {
   
     // 对响应数据做点什么
     if(response.headers['content-disposition']!==undefined){
-      console.log(response)
+      // console.log(response)
       fileName = response.headers['content-disposition'].split('=')[1]
     }
     if(response.data.code === 499 || response.data.code === 480){
@@ -115,14 +115,9 @@ function requestByDownload (url, params) {
     params: { ...params },
     responseType: 'blob' 
   }).then((res) => {
-    console.log(res)
     if(!res.size){
       message.error("下载失败！")
     }else{
-      // console.log(fileName);
-      // const blob = new Blob([res], {
-      //   type: 'application/zip;charset=utf-8'
-      // })
       if ('msSaveOrOpenBlob' in navigator) {
         window.navigator.msSaveOrOpenBlob(res, fileName)
       } else {
@@ -131,18 +126,14 @@ function requestByDownload (url, params) {
         // 浏览器默认文件保存路径
         const downloadUrl = window.URL.createObjectURL(res)
         downloadElement.href = downloadUrl
-        // String.prototype.splice = function(start, newStr) {
-        //   return this.slice(0, start) + newStr + this.slice(start);
-        // };
         fileName = fileName.replace(new RegExp('"', 'g'), '')
         let date = showtime()
-        // let index = fileName.indexOf('.zip')
         let downloadName = fileName + ' ' + date
-        // console.log(downloadName);
         downloadElement.download = downloadName
         // 在浏览器中生成下载链接
         document.body.appendChild(downloadElement)
         downloadElement.click()
+        message.success("下载成功", 0.7)
         // setTimeout(() => {
         //   // 释放blob对象
         //   window.URL.revokeObjectURL(downloadUrl)

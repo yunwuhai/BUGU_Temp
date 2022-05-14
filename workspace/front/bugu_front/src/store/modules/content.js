@@ -4,7 +4,7 @@
  * @Author: WPO
  * @Date: 2022-03-24 14:58:39
  * @LastEditors: WPO
- * @LastEditTime: 2022-04-27 01:37:18
+ * @LastEditTime: 2022-05-11 21:49:51
  */
 // 用于主体部分的组件通信
 // import dataApi from '@/api/data'
@@ -46,10 +46,12 @@ export default {
 			console.log("REMOVE_PANES被调用了")
 		},
 		UPDATE_PANES(state,payload){
+			// console.log(payload);
 			let pane = state.panes.pop()
 			pane.contentIn = payload.contentIn
 			pane.contentOut = payload.contentOut
 			pane.logic = payload.logic
+			pane.parentId = payload.parentId
 			state.panes.push(pane)
 			console.log('UPDATE_PANES被调用了');
 		},

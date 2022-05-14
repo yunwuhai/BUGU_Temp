@@ -4,7 +4,7 @@
  * @Author: WPO
  * @Date: 2022-01-29 22:43:55
  * @LastEditors: WPO
- * @LastEditTime: 2022-04-08 20:28:46
+ * @LastEditTime: 2022-05-14 22:12:03
  */
 const path = require('path')
 function resolve(dir) {
@@ -21,7 +21,7 @@ module.exports = {
 
   // webpack-dev-server 相关配置
   devServer: {
-		proxy:"http://localhost:3000",
+		proxy:"http://120.79.90.129:8081",
 		//关闭用于 DNS 重绑定的 HTTP 请求的 HOST 检查。 DevServer 默认只接受来自本地的请求，关闭后可以接受来自任何 HOST 的请求。 
 		disableHostCheck: true 
   },

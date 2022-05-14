@@ -48,9 +48,14 @@ export default {
     };
   },
   //监听属性 类似于data概念
-  computed: {},
+  computed: {
+  },
   //监控data中的数据变化
-  watch: {},
+  watch: {
+    name(oldV, newV) {
+      console.log(oldV, newV)
+    }
+  },
   //方法集合
   methods: {
   },
