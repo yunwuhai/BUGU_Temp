@@ -15,7 +15,7 @@ const baseURL = '/'
 // 创建实例
 const service = axios.create({
   baseURL,
-  timeout: 250000
+  timeout: 2500
 })
 
 // 拦截器：在请求或响应被 then 或 catch 处理前拦截它们。
