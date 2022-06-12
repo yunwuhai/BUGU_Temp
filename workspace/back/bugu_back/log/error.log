@@ -1,0 +1,1333 @@
+2022-04-08T09:02:59.893Z-error- uncaughtException: 数据库的相关信息 is not defined
+ReferenceError: 数据库的相关信息 is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:23:1)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-08T09:03:05.488Z-error- uncaughtException: 数据库的相关信息 is not defined
+ReferenceError: 数据库的相关信息 is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:23:1)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-08T09:03:10.255Z-error- uncaughtException: 数据库的相关信息 is not defined
+ReferenceError: 数据库的相关信息 is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:23:1)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-08T09:03:12.184Z-error- uncaughtException: 数据库的相关信息 is not defined
+ReferenceError: 数据库的相关信息 is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:23:1)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-08T09:03:20.661Z-error- uncaughtException: 数据库的相关信息 is not defined
+ReferenceError: 数据库的相关信息 is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:23:1)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-08T09:03:25.085Z-error- uncaughtException: 数据库的相关信息 is not defined
+ReferenceError: 数据库的相关信息 is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:23:1)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-08T09:03:33.078Z-error- uncaughtException: 测试连接 is not defined
+ReferenceError: 测试连接 is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:30:1)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-08T12:25:50.778Z-error- 404 - Not Found - /static/css/chunk-ff7c7e1e.1a269f17.css -GET - ::1
+2022-04-08T12:25:50.971Z-error- 404 - Not Found - /static/js/chunk-ff7c7e1e.009c73b3.js -GET - ::1
+2022-04-09T04:11:09.671Z-error- uncaughtException: Jwt is not defined
+ReferenceError: Jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:34:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-09T04:11:40.452Z-error- 401 - No authorization token was found - /favicon.ico -GET - ::1
+2022-04-09T04:50:03.172Z-error- 401 - No authorization token was found - /favicon.ico -GET - ::1
+2022-04-09T04:50:11.651Z-error- 404 - Not Found - /entrance/login -GET - ::1
+2022-04-09T04:50:11.674Z-error- 401 - No authorization token was found - /favicon.ico -GET - ::1
+2022-04-09T04:50:23.824Z-error- 401 - No authorization token was found - /entrance/login/username -GET - ::1
+2022-04-09T04:50:23.850Z-error- 401 - No authorization token was found - /favicon.ico -GET - ::1
+2022-04-09T04:50:27.573Z-error- 404 - Not Found - /entrance/login -GET - ::1
+2022-04-09T04:50:27.586Z-error- 401 - No authorization token was found - /favicon.ico -GET - ::1
+2022-04-09T05:02:55.242Z-error- 401 - No authorization token was found - /entrance/login/wpo/123456 -GET - ::1
+2022-04-09T05:02:55.263Z-error- 401 - No authorization token was found - /favicon.ico -GET - ::1
+2022-04-09T05:05:51.334Z-error- 401 - No authorization token was found - /entrance/login/username -GET - ::1
+2022-04-09T05:05:51.373Z-error- 401 - No authorization token was found - /favicon.ico -GET - ::1
+2022-04-09T05:05:51.756Z-error- 401 - No authorization token was found - /favicon.ico -GET - ::1
+2022-04-09T05:05:52.157Z-error- 401 - No authorization token was found - /favicon.ico -GET - ::1
+2022-04-09T07:41:24.655Z-error- 401 - No authorization token was found - /favicon.ico -GET - ::1
+2022-04-10T06:18:23.086Z-error- 401 - No authorization token was found - /favicon.ico -GET - ::1
+2022-04-10T06:18:41.519Z-error- 401 - No authorization token was found - /entrance -GET - ::1
+2022-04-10T06:18:41.562Z-error- 401 - No authorization token was found - /favicon.ico -GET - ::1
+2022-04-10T06:18:48.877Z-error- 401 - No authorization token was found - /member/login -GET - ::1
+2022-04-10T06:18:48.892Z-error- 401 - No authorization token was found - /favicon.ico -GET - ::1
+2022-04-10T06:18:52.446Z-error- 401 - No authorization token was found - /favicon.ico -GET - ::1
+2022-04-10T06:19:29.876Z-error- 500 - sqlParam is not defined - /user/userInfo -GET - ::1
+2022-04-10T06:19:29.897Z-error- 401 - No authorization token was found - /favicon.ico -GET - ::1
+2022-04-10T06:20:00.602Z-error- 401 - No authorization token was found - /favicon.ico -GET - ::1
+2022-04-10T06:20:41.064Z-error- 401 - No authorization token was found - /favicon.ico -GET - ::1
+2022-04-10T06:20:48.319Z-error- 401 - No authorization token was found - /entrance -GET - ::1
+2022-04-10T06:20:48.338Z-error- 401 - No authorization token was found - /favicon.ico -GET - ::1
+2022-04-10T06:20:52.194Z-error- 404 - Not Found - /entrance/login -GET - ::1
+2022-04-10T06:20:52.209Z-error- 401 - No authorization token was found - /favicon.ico -GET - ::1
+2022-04-10T06:21:53.460Z-error- 401 - No authorization token was found - /entrance -GET - ::1
+2022-04-10T06:21:53.482Z-error- 401 - No authorization token was found - /favicon.ico -GET - ::1
+2022-04-10T06:22:04.216Z-error- 404 - Not Found - /entrance/register -GET - ::1
+2022-04-10T06:22:04.231Z-error- 401 - No authorization token was found - /favicon.ico -GET - ::1
+2022-04-10T06:22:20.374Z-error- 401 - No authorization token was found - /entrance/login -GET - ::1
+2022-04-10T06:22:20.399Z-error- 401 - No authorization token was found - /favicon.ico -GET - ::1
+2022-04-10T06:22:50.224Z-error- 401 - No authorization token was found - /favicon.ico -GET - ::1
+2022-04-10T06:22:59.973Z-error- 401 - No authorization token was found - /favicon.ico -GET - ::1
+2022-04-10T06:23:02.812Z-error- 401 - No authorization token was found - /favicon.ico -GET - ::1
+2022-04-10T06:23:11.778Z-error- 401 - No authorization token was found - /favicon.ico -GET - ::1
+2022-04-10T06:23:13.658Z-error- 401 - No authorization token was found - /favicon.ico -GET - ::1
+2022-04-10T06:23:44.040Z-error- 401 - No authorization token was found - /favicon.ico -GET - ::1
+2022-04-10T12:13:51.940Z-error- 500 - Cannot read property 'then' of undefined - /entrance/register -POST - ::1
+2022-04-10T12:56:27.357Z-error- 500 - dao.queryById is not a function - /userInfo/1 -GET - ::1
+2022-04-10T14:54:59.374Z-error- 400 - Unexpected token } in JSON at position 250 - /userInfo -PUT - ::1
+2022-04-10T15:00:33.374Z-error- 500 - Cannot read property 'then' of undefined - /userInfo -PUT - ::1
+2022-04-10T15:02:13.206Z-error- 500 - Cannot read property 'then' of undefined - /userInfo -PUT - ::1
+2022-04-11T01:14:49.298Z-error- 401 - No authorization token was found - /engineering -GET - ::1
+2022-04-11T01:16:05.713Z-error- 401 - No authorization token was found - /engineering -GET - ::1
+2022-04-11T02:29:21.486Z-error- 401 - No authorization token was found - /engineerings -GET - ::1
+2022-04-11T04:24:30.260Z-error- 401 - No authorization token was found - /tree -GET - ::1
+2022-04-11T09:30:15.904Z-error- 401 - No authorization token was found - /tree/2 -GET - ::1
+2022-04-11T10:25:30.264Z-error- 500 - data is not defined - /engineering/init -POST - ::ffff:127.0.0.1
+2022-04-11T10:26:10.570Z-error- 500 - data is not defined - /engineering/init -POST - ::ffff:127.0.0.1
+2022-04-11T10:28:13.588Z-error- 500 - data is not defined - /engineering/init -POST - ::ffff:127.0.0.1
+2022-04-12T08:24:54.688Z-error- 401 - No authorization token was found - /27888a4793e197b2f06b.hot-update.json -GET - ::ffff:127.0.0.1
+2022-04-12T10:49:10.047Z-error- 500 - Op is not defined - /method -DELETE - ::ffff:127.0.0.1
+2022-04-12T10:49:53.408Z-error- 401 - No authorization token was found - /method/60 -DELETE - ::1
+2022-04-12T18:08:30.667Z-error- 401 - No authorization token was found - /entrance/data -GET - ::1
+2022-04-13T08:30:11.558Z-error- 401 - No authorization token was found - /class/2/38 -GET - ::1
+2022-04-13T08:32:04.177Z-error- 401 - No authorization token was found - /data/2/38 -GET - ::1
+2022-04-13T09:31:01.670Z-error- 401 - Format is Authorization: Bearer [token] - /data/[object%20Object]/undefined -GET - ::ffff:127.0.0.1
+2022-04-13T09:41:00.528Z-error- 401 - No authorization token was found - /engin/2/38 -GET - ::1
+2022-04-13T09:47:30.099Z-error- 401 - Format is Authorization: Bearer [token] - /data/[object%20Object]/undefined -GET - ::ffff:127.0.0.1
+2022-04-13T09:47:34.862Z-error- 401 - Format is Authorization: Bearer [token] - /data/[object%20Object]/undefined -GET - ::ffff:127.0.0.1
+2022-04-13T09:47:57.288Z-error- 401 - Format is Authorization: Bearer [token] - /data/[object%20Object]/undefined -GET - ::ffff:127.0.0.1
+2022-04-13T09:48:38.118Z-error- 401 - Format is Authorization: Bearer [token] - /data/[object%20Object]/undefined -GET - ::ffff:127.0.0.1
+2022-04-13T09:48:39.347Z-error- 401 - Format is Authorization: Bearer [token] - /data/[object%20Object]/undefined -GET - ::ffff:127.0.0.1
+2022-04-13T09:48:49.203Z-error- 401 - Format is Authorization: Bearer [token] - /data/[object%20Object]/undefined -GET - ::ffff:127.0.0.1
+2022-04-13T09:49:33.803Z-error- 401 - Format is Authorization: Bearer [token] - /data/[object%20Object]/undefined -GET - ::ffff:127.0.0.1
+2022-04-13T09:50:36.616Z-error- 401 - Format is Authorization: Bearer [token] - /data/[object%20Object]/undefined -GET - ::ffff:127.0.0.1
+2022-04-13T09:52:03.564Z-error- 401 - Format is Authorization: Bearer [token] - /data/[object%20Object]/undefined -GET - ::ffff:127.0.0.1
+2022-04-13T13:12:41.039Z-error- 401 - Format is Authorization: Bearer [token] - /data/2/50 -GET - ::ffff:127.0.0.1
+2022-04-13T13:13:08.622Z-error- 401 - Format is Authorization: Bearer [token] - /data/[object%20Object]/undefined -GET - ::ffff:127.0.0.1
+2022-04-13T13:14:15.147Z-error- 401 - Format is Authorization: Bearer [token] - /data/2/22 -GET - ::ffff:127.0.0.1
+2022-04-14T07:58:53.998Z-error- 500 - result.map is not a function - /class/parent/1 -GET - ::1
+2022-04-14T07:59:46.142Z-error- 500 - result.map is not a function - /class/parent/2 -GET - ::1
+2022-04-14T07:59:50.150Z-error- 500 - result.map is not a function - /class/parent/0 -GET - ::1
+2022-04-14T07:59:53.876Z-error- 500 - result.map is not a function - /class/parent/1 -GET - ::1
+2022-04-14T08:04:01.879Z-error- 500 - result.map is not a function - /class/parent/1 -GET - ::1
+2022-04-14T08:04:08.399Z-error- 500 - result.map is not a function - /class/parent/1 -GET - ::1
+2022-04-14T08:13:32.979Z-error- 500 - result.map is not a function - /class/parent/1 -GET - ::1
+2022-04-14T13:56:47.250Z-error- 401 - No authorization token was found - /data/38/1 -GET - ::1
+2022-04-14T13:59:06.394Z-error- 401 - No authorization token was found - /data/type/68/2 -GET - ::1
+2022-04-14T14:02:36.689Z-error- 500 - dataApi.queryByType is not a function - /data/type/68/2 -GET - ::1
+2022-04-14T15:01:14.589Z-error- 401 - No authorization token was found - /66432f03062b3e1ce716.hot-update.json -GET - ::ffff:127.0.0.1
+2022-04-14T15:17:00.357Z-error- 401 - Format is Authorization: Bearer [token] - /data/class/2/ -GET - ::ffff:127.0.0.1
+2022-04-21T13:46:57.242Z-error- 401 - Format is Authorization: Bearer [token] - /engineering -GET - ::ffff:127.0.0.1
+2022-04-21T13:47:14.486Z-error- 401 - Format is Authorization: Bearer [token] - /engineering -GET - ::ffff:127.0.0.1
+2022-04-21T13:47:17.424Z-error- 401 - Format is Authorization: Bearer [token] - /engineering -GET - ::ffff:127.0.0.1
+2022-04-21T13:47:22.277Z-error- 401 - Format is Authorization: Bearer [token] - /engineering -GET - ::ffff:127.0.0.1
+2022-04-21T13:51:52.690Z-error- 401 - No authorization token was found - /entrance/login -POST - ::ffff:127.0.0.1
+2022-04-21T13:53:56.252Z-error- 500 - Cannot read property 'userName' of undefined - /entrance/login -POST - ::ffff:127.0.0.1
+2022-04-21T13:54:25.949Z-error- 500 - Cannot read property 'userName' of undefined - /entrance/login -POST - ::ffff:127.0.0.1
+2022-04-21T13:56:52.659Z-error- 500 - Cannot read property 'userName' of undefined - /entrance/login -POST - ::ffff:127.0.0.1
+2022-04-21T13:57:08.781Z-error- 500 - Cannot read property 'userName' of undefined - /entrance/login -POST - ::ffff:127.0.0.1
+2022-04-21T13:58:58.538Z-error- 500 - Cannot read property 'userName' of undefined - /entrance/login -POST - ::ffff:127.0.0.1
+2022-04-21T13:59:42.440Z-error- 500 - Cannot read property 'userName' of undefined - /entrance/login -POST - ::ffff:127.0.0.1
+2022-04-21T14:00:05.292Z-error- 500 - Cannot read property 'userName' of undefined - /entrance/login -POST - ::ffff:127.0.0.1
+2022-04-21T14:00:39.599Z-error- 401 - No authorization token was found - /entrance/login -POST - ::ffff:127.0.0.1
+2022-04-21T14:04:53.412Z-error- 500 - Cannot read property 'userName' of undefined - /entrance/login -POST - ::ffff:127.0.0.1
+2022-04-21T14:07:47.936Z-error- 500 - Cannot read property 'userName' of undefined - /entrance/login -POST - ::ffff:127.0.0.1
+2022-04-21T14:08:14.036Z-error- 500 - Cannot read property 'userName' of undefined - /entrance/login -POST - ::ffff:127.0.0.1
+2022-04-21T14:08:40.039Z-error- 500 - Cannot read property 'userName' of undefined - /entrance/login -POST - ::ffff:127.0.0.1
+2022-04-21T14:10:59.647Z-error- 500 - Cannot read property 'userName' of undefined - /entrance/login -POST - ::ffff:127.0.0.1
+2022-04-21T14:12:03.804Z-error- 500 - Cannot read property 'userName' of undefined - /entrance/login -POST - ::ffff:127.0.0.1
+2022-04-21T14:13:07.565Z-error- 500 - Cannot read property 'userName' of undefined - /entrance/login -POST - ::ffff:127.0.0.1
+2022-04-21T14:13:56.727Z-error- 500 - Cannot read property 'userName' of undefined - /entrance/login -POST - ::ffff:127.0.0.1
+2022-04-21T14:14:37.244Z-error- 500 - Cannot read property 'userName' of undefined - /entrance/login -POST - ::ffff:127.0.0.1
+2022-04-21T14:35:01.217Z-error- 401 - jwt expired - /engineering -GET - ::ffff:127.0.0.1
+2022-04-21T14:35:12.359Z-error- 401 - jwt expired - /engineering -GET - ::ffff:127.0.0.1
+2022-04-21T14:37:22.292Z-error- 401 - jwt expired - /engineering -GET - ::ffff:127.0.0.1
+2022-04-21T14:39:04.027Z-error- 401 - jwt expired - /engineering -GET - ::ffff:127.0.0.1
+2022-04-21T16:25:16.058Z-error- 401 - jwt expired - /engineering -GET - ::ffff:127.0.0.1
+2022-04-21T16:34:08.408Z-error- 401 - jwt expired - /engineering -GET - ::ffff:127.0.0.1
+2022-04-21T16:38:15.795Z-error- 401 - jwt expired - /engineering -GET - ::ffff:127.0.0.1
+2022-04-21T16:38:18.046Z-error- 401 - jwt expired - /engineering -GET - ::ffff:127.0.0.1
+2022-04-21T17:07:21.725Z-error- uncaughtException: app is not defined
+ReferenceError: app is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:23:1)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-21T17:25:39.485Z-error- 500 - next is not a function - /entrance/login -POST - ::ffff:127.0.0.1
+2022-04-22T00:09:35.079Z-error- 401 - No authorization token was found - /engineering -GET - ::1
+2022-04-22T00:17:51.662Z-error- 401 - No authorization token was found - /engineering/user/2 -GET - ::1
+2022-04-22T00:19:21.959Z-error- 401 - Format is Authorization: Bearer [token] - /engineering/user/2 -GET - ::1
+2022-04-22T00:19:36.853Z-error- 401 - invalid token - /engineering/user/2 -GET - ::1
+2022-04-22T00:20:19.838Z-error- 401 - No authorization token was found - /class/1 -GET - ::1
+2022-04-22T00:20:29.866Z-error- 404 - Not Found - /entrance/login -GET - ::1
+2022-04-22T00:21:12.055Z-error- 404 - Not Found - /entrance/login -GET - ::1
+2022-04-22T00:23:05.623Z-error- 404 - Not Found - /entrance/login -GET - ::1
+2022-04-22T00:23:53.202Z-error- 404 - Not Found - /entrance/login -GET - ::1
+2022-04-22T00:25:12.692Z-error- 500 - req is not defined - /entrance/login -GET - ::1
+2022-04-22T00:25:33.725Z-error- 404 - Not Found - /entrance/login -GET - ::1
+2022-04-22T00:25:42.728Z-error- 404 - Not Found - /entrance/login -GET - ::1
+2022-04-22T00:40:16.252Z-error- uncaughtException: 每次请求接口都可以获取到 is not defined
+ReferenceError: 每次请求接口都可以获取到 is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:42:1)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:08:44.818Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:25:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:09:54.569Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:25:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:09:59.636Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:25:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:10:01.060Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:25:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:10:07.467Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:25:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:10:18.100Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:25:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:10:22.055Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:25:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:10:27.030Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:25:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:10:32.451Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:25:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:10:33.716Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:25:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:10:46.918Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:25:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:10:52.276Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:25:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:11:00.000Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:25:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:11:15.888Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:25:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:11:17.016Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:25:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:11:19.502Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:25:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:11:30.191Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:24:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:11:35.100Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:24:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:11:49.897Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:24:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:11:54.713Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:24:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:11:55.668Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:24:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:12:02.649Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:24:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:12:15.986Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:24:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:12:19.572Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:24:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:12:23.262Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:24:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:12:26.817Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:24:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:12:33.182Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:24:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:12:36.283Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:24:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:12:52.466Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:24:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:12:59.791Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:24:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:13:19.083Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:24:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:13:23.006Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:24:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:13:29.373Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:24:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:13:34.217Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:24:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:13:57.773Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:24:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:14:07.566Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:24:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:14:25.667Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:24:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:15:00.687Z-error- uncaughtException: let is not defined
+ReferenceError: let is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:20:1)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:15:04.324Z-error- uncaughtException: le is not defined
+ReferenceError: le is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:20:1)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:15:42.389Z-error- uncaughtException: requ is not defined
+ReferenceError: requ is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:20:36)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:15:49.764Z-error- uncaughtException: Cannot find module './'
+Require stack:
+- E:\BUGU_Temp\workspace\back\bugu_back\app.js
+- E:\BUGU_Temp\workspace\back\bugu_back\bin\www
+Error: Cannot find module './'
+Require stack:
+- E:\BUGU_Temp\workspace\back\bugu_back\app.js
+- E:\BUGU_Temp\workspace\back\bugu_back\bin\www
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:880:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:725:27)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:20:36)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+2022-04-22T01:16:00.983Z-error- uncaughtException: jwt is not defined
+ReferenceError: jwt is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:24:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:16:08.816Z-error- uncaughtException: app.use() requires a middleware function
+TypeError: app.use() requires a middleware function
+    at Function.use (E:\BUGU_Temp\workspace\back\bugu_back\node_modules\express\lib\application.js:210:11)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:24:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+2022-04-22T01:16:12.524Z-error- uncaughtException: v is not defined
+ReferenceError: v is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:24:9)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:16:14.774Z-error- uncaughtException: jwtVer is not a function
+TypeError: jwtVer is not a function
+    at vertifyToken (E:\BUGU_Temp\workspace\back\bugu_back\utils\token.js:28:10)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:24:9)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+2022-04-22T01:17:00.331Z-error- uncaughtException: jwtVer is not a function
+TypeError: jwtVer is not a function
+    at vertifyToken (E:\BUGU_Temp\workspace\back\bugu_back\utils\token.js:28:10)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:24:9)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+2022-04-22T01:17:08.697Z-error- uncaughtException: jwtVer is not a function
+TypeError: jwtVer is not a function
+    at vertifyToken (E:\BUGU_Temp\workspace\back\bugu_back\utils\token.js:28:10)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:24:9)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+2022-04-22T01:17:34.477Z-error- uncaughtException: jwtVer is not a function
+TypeError: jwtVer is not a function
+    at vertifyToken (E:\BUGU_Temp\workspace\back\bugu_back\utils\token.js:28:10)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:24:9)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+2022-04-22T01:23:12.776Z-error- uncaughtException: jwtVer is not a function
+TypeError: jwtVer is not a function
+    at vertifyToken (E:\BUGU_Temp\workspace\back\bugu_back\utils\token.js:28:10)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:24:9)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+2022-04-22T01:23:54.889Z-error- uncaughtException: jwtVer is not a function
+TypeError: jwtVer is not a function
+    at vertifyToken (E:\BUGU_Temp\workspace\back\bugu_back\utils\token.js:28:10)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:24:9)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+2022-04-22T01:24:04.518Z-error- uncaughtException: jwtVer is not a function
+TypeError: jwtVer is not a function
+    at vertifyToken (E:\BUGU_Temp\workspace\back\bugu_back\utils\token.js:28:10)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:24:9)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+2022-04-22T01:24:05.855Z-error- uncaughtException: jwtVer is not a function
+TypeError: jwtVer is not a function
+    at vertifyToken (E:\BUGU_Temp\workspace\back\bugu_back\utils\token.js:28:10)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:24:9)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+2022-04-22T01:24:26.322Z-error- uncaughtException: jwtVer is not a function
+TypeError: jwtVer is not a function
+    at vertifyToken (E:\BUGU_Temp\workspace\back\bugu_back\utils\token.js:28:10)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:24:9)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+2022-04-22T01:24:28.073Z-error- uncaughtException: jwtVer is not a function
+TypeError: jwtVer is not a function
+    at vertifyToken (E:\BUGU_Temp\workspace\back\bugu_back\utils\token.js:28:10)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:27:9)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+2022-04-22T01:24:29.985Z-error- uncaughtException: jwtVer is not a function
+TypeError: jwtVer is not a function
+    at vertifyToken (E:\BUGU_Temp\workspace\back\bugu_back\utils\token.js:28:10)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:28:9)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+2022-04-22T01:24:32.727Z-error- uncaughtException: jwtVer is not a function
+TypeError: jwtVer is not a function
+    at vertifyToken (E:\BUGU_Temp\workspace\back\bugu_back\utils\token.js:28:10)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:28:9)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+2022-04-22T01:26:03.402Z-error- uncaughtException: jwtVer is not a function
+TypeError: jwtVer is not a function
+    at vertifyToken (E:\BUGU_Temp\workspace\back\bugu_back\utils\token.js:28:10)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:28:9)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+2022-04-22T01:26:34.267Z-error- uncaughtException: jwtVer is not a function
+TypeError: jwtVer is not a function
+    at vertifyToken (E:\BUGU_Temp\workspace\back\bugu_back\utils\token.js:28:10)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:28:9)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+2022-04-22T01:26:49.482Z-error- uncaughtException: jwtVer is not a function
+TypeError: jwtVer is not a function
+    at vertifyToken (E:\BUGU_Temp\workspace\back\bugu_back\utils\token.js:28:10)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:28:9)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+2022-04-22T01:26:53.216Z-error- uncaughtException: jwtVer is not a function
+TypeError: jwtVer is not a function
+    at vertifyToken (E:\BUGU_Temp\workspace\back\bugu_back\utils\token.js:28:10)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:28:9)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+2022-04-22T01:27:41.555Z-error- uncaughtException: jwtVer is not defined
+ReferenceError: jwtVer is not defined
+    at vertifyToken (E:\BUGU_Temp\workspace\back\bugu_back\utils\token.js:28:3)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:28:9)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+2022-04-22T01:27:45.227Z-error- uncaughtException: jwtVer is not a function
+TypeError: jwtVer is not a function
+    at vertifyToken (E:\BUGU_Temp\workspace\back\bugu_back\utils\token.js:28:10)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:28:9)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+2022-04-22T01:27:53.634Z-error- uncaughtException: jwtVer is not defined
+ReferenceError: jwtVer is not defined
+    at vertifyToken (E:\BUGU_Temp\workspace\back\bugu_back\utils\token.js:28:3)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:28:9)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+2022-04-22T01:27:58.183Z-error- uncaughtException: Cannot read property 'headers' of undefined
+TypeError: Cannot read property 'headers' of undefined
+    at errorToken (E:\BUGU_Temp\workspace\back\bugu_back\utils\token.js:52:19)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:37:9)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+2022-04-22T01:28:18.317Z-error- uncaughtException: Cannot read property 'headers' of undefined
+TypeError: Cannot read property 'headers' of undefined
+    at errorToken (E:\BUGU_Temp\workspace\back\bugu_back\utils\token.js:52:19)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:37:9)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+2022-04-22T01:28:32.623Z-error- uncaughtException: Cannot read property 'headers' of undefined
+TypeError: Cannot read property 'headers' of undefined
+    at errorToken (E:\BUGU_Temp\workspace\back\bugu_back\utils\token.js:52:19)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:37:9)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+2022-04-22T01:29:13.447Z-error- uncaughtException: token is not defined
+ReferenceError: token is not defined
+    at errorToken (E:\BUGU_Temp\workspace\back\bugu_back\utils\token.js:53:26)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:37:9)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+2022-04-22T01:29:22.399Z-error- uncaughtException: Cannot read property 'name' of undefined
+TypeError: Cannot read property 'name' of undefined
+    at errorToken (E:\BUGU_Temp\workspace\back\bugu_back\utils\token.js:60:10)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:37:9)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+2022-04-22T01:33:18.064Z-error- uncaughtException: Cannot read property 'name' of undefined
+TypeError: Cannot read property 'name' of undefined
+    at errorToken (E:\BUGU_Temp\workspace\back\bugu_back\utils\token.js:60:10)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:37:9)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+2022-04-22T01:33:29.947Z-error- uncaughtException: app.use() requires a middleware function
+TypeError: app.use() requires a middleware function
+    at Function.use (E:\BUGU_Temp\workspace\back\bugu_back\node_modules\express\lib\application.js:210:11)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:37:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+2022-04-22T01:33:31.078Z-error- uncaughtException: app.use() requires a middleware function
+TypeError: app.use() requires a middleware function
+    at Function.use (E:\BUGU_Temp\workspace\back\bugu_back\node_modules\express\lib\application.js:210:11)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:37:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+2022-04-22T01:35:14.901Z-error- uncaughtException: token is not defined
+ReferenceError: token is not defined
+    at errorToken (E:\BUGU_Temp\workspace\back\bugu_back\utils\token.js:53:26)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:37:9)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+2022-04-22T01:35:57.616Z-error- uncaughtException: token is not defined
+ReferenceError: token is not defined
+    at errorToken (E:\BUGU_Temp\workspace\back\bugu_back\utils\token.js:53:26)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:37:9)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+2022-04-22T01:36:02.791Z-error- uncaughtException: res is not defined
+ReferenceError: res is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:37:20)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:36:06.642Z-error- uncaughtException: err is not defined
+ReferenceError: err is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:37:20)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:36:12.150Z-error- uncaughtException: err is not defined
+ReferenceError: err is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:37:20)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:36:22.638Z-error- uncaughtException: err is not defined
+ReferenceError: err is not defined
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:37:20)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2022-04-22T01:36:58.679Z-error- uncaughtException: Cannot read property 'headers' of undefined
+TypeError: Cannot read property 'headers' of undefined
+    at errorToken (E:\BUGU_Temp\workspace\back\bugu_back\utils\token.js:52:19)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\app.js:37:9)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (E:\BUGU_Temp\workspace\back\bugu_back\bin\www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+2022-04-22T01:37:43.708Z-error- 404 - Not Found - /engineering/user/2 -GET - ::1
+2022-04-22T01:38:03.986Z-error- 404 - Not Found - /engineering/user/2 -GET - ::1
+2022-04-22T01:42:41.607Z-error- 404 - Not Found - /engineering/user/2 -GET - undefined
+2022-04-22T01:45:29.351Z-error- 404 - Not Found - /engineering/user/2 -GET - undefined
+2022-04-22T01:47:42.381Z-error- 404 - Not Found - /engineering/user/2 -GET - undefined
+2022-04-22T02:28:01.764Z-error- 404 - Not Found - /engineering/user/2 -GET - undefined
+2022-04-22T05:24:25.376Z-error- 404 - Not Found - /engineering/user/2 -GET - undefined
+2022-04-22T05:55:12.557Z-error- 404 - Not Found - /engineering/user/2 -GET - undefined
+2022-04-22T06:01:32.736Z-error- 404 - Not Found - /engineering/user/2 -GET - undefined
+2022-04-22T06:06:13.095Z-error- 404 - Not Found - /engineering/user/2 -GET - undefined
+2022-04-23T09:20:14.009Z-error- uncaughtException: ENOENT: no such file or directory, open 'E:\BUGU_Temp\workspace\back\bugu_back\des_68'
+Error: ENOENT: no such file or directory, open 'E:\BUGU_Temp\workspace\back\bugu_back\des_68'
+2022-04-23T09:21:06.968Z-error- uncaughtException: ENOENT: no such file or directory, open 'E:\BUGU_Temp\workspace\back\bugu_back\des_68'
+Error: ENOENT: no such file or directory, open 'E:\BUGU_Temp\workspace\back\bugu_back\des_68'
+2022-04-23T09:22:33.592Z-error- uncaughtException: ENOENT: no such file or directory, open 'E:\BUGU_Temp\workspace\back\bugu_back\des_68.json'
+Error: ENOENT: no such file or directory, open 'E:\BUGU_Temp\workspace\back\bugu_back\des_68.json'
+2022-04-23T09:23:31.718Z-error- uncaughtException: ENOENT: no such file or directory, open 'E:\BUGU_Temp\workspace\back\filesdes_68.json'
+Error: ENOENT: no such file or directory, open 'E:\BUGU_Temp\workspace\back\filesdes_68.json'
+2022-04-23T09:23:49.410Z-error- uncaughtException: ENOENT: no such file or directory, open 'E:\BUGU_Temp\workspace\back\files\des_68.json'
+Error: ENOENT: no such file or directory, open 'E:\BUGU_Temp\workspace\back\files\des_68.json'
+2022-04-23T16:30:31.759Z-error- 404 - Not Found - /compile/logic68 -GET - ::ffff:127.0.0.1
+2022-04-23T16:40:50.578Z-error- 404 - Not Found - /compile/logic -PUT - ::ffff:127.0.0.1
+2022-04-23T16:41:22.162Z-error- 404 - Not Found - /compile/logic -PUT - ::ffff:127.0.0.1
+2022-04-24T14:48:17.323Z-error- uncaughtException: Cannot read property 'length' of undefined
+TypeError: Cannot read property 'length' of undefined
+    at E:\BUGU_Temp\workspace\back\bugu_back\utils\file.js:24:13
+    at FSReqCallback.readFileAfterClose [as oncomplete] (internal/fs/read_file_context.js:63:3)
+2022-04-24T14:51:34.471Z-error- uncaughtException: Cannot read property 'logic' of undefined
+TypeError: Cannot read property 'logic' of undefined
+    at E:\BUGU_Temp\workspace\back\bugu_back\utils\file.js:22:48
+    at FSReqCallback.readFileAfterClose [as oncomplete] (internal/fs/read_file_context.js:63:3)
+2022-04-24T14:52:17.423Z-error- uncaughtException: Cannot read property '0' of undefined
+TypeError: Cannot read property '0' of undefined
+    at E:\BUGU_Temp\workspace\back\bugu_back\utils\file.js:22:48
+    at FSReqCallback.readFileAfterClose [as oncomplete] (internal/fs/read_file_context.js:63:3)
+2022-04-24T14:53:02.718Z-error- uncaughtException: Cannot read property '0' of undefined
+TypeError: Cannot read property '0' of undefined
+    at E:\BUGU_Temp\workspace\back\bugu_back\utils\file.js:22:48
+    at FSReqCallback.readFileAfterClose [as oncomplete] (internal/fs/read_file_context.js:63:3)
+2022-04-26T09:36:35.417Z-error- 404 - Not Found - /logic50 -GET - ::ffff:127.0.0.1
+2022-04-26T13:39:18.837Z-error- 404 - Not Found - /logic[object%20Object] -GET - ::ffff:127.0.0.1
+2022-04-26T13:57:16.138Z-error- uncaughtException: Cannot read property 'length' of undefined
+TypeError: Cannot read property 'length' of undefined
+    at E:\BUGU_Temp\workspace\back\bugu_back\service\logic.js:39:13
+    at FSReqCallback.readFileAfterClose [as oncomplete] (internal/fs/read_file_context.js:63:3)
+2022-04-26T13:57:45.885Z-error- uncaughtException: Cannot read property 'length' of undefined
+TypeError: Cannot read property 'length' of undefined
+    at E:\BUGU_Temp\workspace\back\bugu_back\service\logic.js:39:13
+    at FSReqCallback.readFileAfterClose [as oncomplete] (internal/fs/read_file_context.js:63:3)
+2022-04-26T14:18:45.234Z-error- uncaughtException: logicData is not defined
+ReferenceError: logicData is not defined
+    at E:\BUGU_Temp\workspace\back\bugu_back\service\logic.js:83:26
+    at FSReqCallback.oncomplete (fs.js:171:23)
+2022-04-26T14:19:46.586Z-error- uncaughtException: Cannot read property 'length' of undefined
+TypeError: Cannot read property 'length' of undefined
+    at E:\BUGU_Temp\workspace\back\bugu_back\service\logic.js:42:13
+    at FSReqCallback.readFileAfterClose [as oncomplete] (internal/fs/read_file_context.js:63:3)
+2022-04-26T14:23:24.519Z-error- 404 - Not Found - /logic -PUT - ::ffff:127.0.0.1
+2022-04-26T14:25:41.003Z-error- 404 - Not Found - /logic -PUT - ::ffff:127.0.0.1
+2022-04-26T14:25:47.163Z-error- 404 - Not Found - /logic -PUT - ::ffff:127.0.0.1
+2022-04-26T14:41:54.909Z-error- uncaughtException: Unexpected token u in JSON at position 0
+SyntaxError: Unexpected token u in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at E:\BUGU_Temp\workspace\back\bugu_back\service\logic.js:88:21
+    at FSReqCallback.oncomplete (fs.js:171:23)
+2022-04-26T14:44:29.756Z-error- uncaughtException: Unexpected token u in JSON at position 0
+SyntaxError: Unexpected token u in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at E:\BUGU_Temp\workspace\back\bugu_back\service\logic.js:88:21
+    at FSReqCallback.oncomplete (fs.js:171:23)
+2022-04-26T14:44:41.501Z-error- uncaughtException: Unexpected token u in JSON at position 0
+SyntaxError: Unexpected token u in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at E:\BUGU_Temp\workspace\back\bugu_back\service\logic.js:88:21
+    at FSReqCallback.oncomplete (fs.js:171:23)
+2022-04-26T14:45:15.729Z-error- uncaughtException: Unexpected token o in JSON at position 1
+SyntaxError: Unexpected token o in JSON at position 1
+    at JSON.parse (<anonymous>)
+    at E:\BUGU_Temp\workspace\back\bugu_back\service\logic.js:88:21
+    at FSReqCallback.oncomplete (fs.js:171:23)
+2022-04-26T14:52:04.999Z-error- uncaughtException: Unexpected token o in JSON at position 1
+SyntaxError: Unexpected token o in JSON at position 1
+    at JSON.parse (<anonymous>)
+    at E:\BUGU_Temp\workspace\back\bugu_back\service\logic.js:88:21
+    at FSReqCallback.oncomplete (fs.js:171:23)
+2022-04-28T03:26:43.751Z-error- uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:558:11)
+    at ServerResponse.header (E:\BUGU_Temp\workspace\back\bugu_back\node_modules\express\lib\response.js:767:10)
+    at ServerResponse.json (E:\BUGU_Temp\workspace\back\bugu_back\node_modules\express\lib\response.js:264:10)
+    at E:\BUGU_Temp\workspace\back\bugu_back\routes\download.js:21:8
+    at E:\BUGU_Temp\workspace\back\bugu_back\node_modules\express\lib\response.js:430:22
+    at Immediate._onImmediate (E:\BUGU_Temp\workspace\back\bugu_back\node_modules\express\lib\response.js:1069:7)
+    at processImmediate (internal/timers.js:461:21)
+2022-04-28T15:32:44.704Z-error- uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:558:11)
+    at ServerResponse.header (E:\BUGU_Temp\workspace\back\bugu_back\node_modules\express\lib\response.js:767:10)
+    at ServerResponse.send (E:\BUGU_Temp\workspace\back\bugu_back\node_modules\express\lib\response.js:170:12)
+    at ServerResponse.json (E:\BUGU_Temp\workspace\back\bugu_back\node_modules\express\lib\response.js:267:15)
+    at E:\BUGU_Temp\workspace\back\bugu_back\routes\download.js:21:8
+    at E:\BUGU_Temp\workspace\back\bugu_back\node_modules\express\lib\response.js:430:22
+    at SendStream.onend (E:\BUGU_Temp\workspace\back\bugu_back\node_modules\express\lib\response.js:1047:5)
+    at SendStream.emit (events.js:315:20)
+    at ReadStream.onend (E:\BUGU_Temp\workspace\back\bugu_back\node_modules\send\index.js:822:10)
+    at ReadStream.emit (events.js:327:22)
+2022-05-04T08:02:18.559Z-error- uncaughtException: ENOENT: no such file or directory, mkdir './files/zipFile/Project_2_pro_50_Source/Core'
+Error: ENOENT: no such file or directory, mkdir './files/zipFile/Project_2_pro_50_Source/Core'
+    at Object.mkdirSync (fs.js:987:3)
+    at E:\BUGU_Temp\workspace\back\bugu_back\service\compile.js:18:10
+    at FSReqCallback.oncomplete (fs.js:171:23)
+2022-05-04T08:02:18.564Z-error- uncaughtException: ENOENT: no such file or directory, mkdir './files/zipFile/Project_2_pro_50_Source/User'
+Error: ENOENT: no such file or directory, mkdir './files/zipFile/Project_2_pro_50_Source/User'
+    at Object.mkdirSync (fs.js:987:3)
+    at E:\BUGU_Temp\workspace\back\bugu_back\service\compile.js:18:10
+    at FSReqCallback.oncomplete (fs.js:171:23)
+2022-05-11T11:17:19.168Z-error- 404 - Not Found - /method/class/39 -GET - ::ffff:127.0.0.1
+2022-05-11T11:20:09.396Z-error- 404 - Not Found - /method/class/39 -GET - ::ffff:127.0.0.1
+2022-05-11T11:43:47.932Z-error- 404 - Not Found - /method/class/39 -GET - ::ffff:127.0.0.1
+2022-05-11T11:48:08.967Z-error- 404 - Not Found - /method/class/39 -GET - ::ffff:127.0.0.1
+2022-05-13T10:55:23.684Z-error- uncaughtException: downloadPath is not defined
+ReferenceError: downloadPath is not defined
+    at E:\BUGU_Temp\workspace\back\bugu_back\routes\download.js:58:19
+    at E:\BUGU_Temp\workspace\back\bugu_back\node_modules\express\lib\response.js:430:22
+    at SendStream.onend (E:\BUGU_Temp\workspace\back\bugu_back\node_modules\express\lib\response.js:1047:5)
+    at SendStream.emit (events.js:315:20)
+    at ReadStream.onend (E:\BUGU_Temp\workspace\back\bugu_back\node_modules\send\index.js:822:10)
+    at ReadStream.emit (events.js:327:22)
+    at endReadableNT (internal/streams/readable.js:1327:12)
+    at processTicksAndRejections (internal/process/task_queues.js:80:21)
+2022-05-13T12:52:15.600Z-error- uncaughtException: downloadPath is not defined
+ReferenceError: downloadPath is not defined
+    at E:\BUGU_Temp\workspace\back\bugu_back\routes\download.js:58:19
+    at E:\BUGU_Temp\workspace\back\bugu_back\node_modules\express\lib\response.js:430:22
+    at SendStream.onend (E:\BUGU_Temp\workspace\back\bugu_back\node_modules\express\lib\response.js:1047:5)
+    at SendStream.emit (events.js:315:20)
+    at ReadStream.onend (E:\BUGU_Temp\workspace\back\bugu_back\node_modules\send\index.js:822:10)
+    at ReadStream.emit (events.js:327:22)
+    at endReadableNT (internal/streams/readable.js:1327:12)
+    at processTicksAndRejections (internal/process/task_queues.js:80:21)

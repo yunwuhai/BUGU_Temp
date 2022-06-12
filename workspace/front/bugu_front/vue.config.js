@@ -1,3 +1,11 @@
+/*
+ * @Description: 
+ * @version: 1.0.0
+ * @Author: WPO
+ * @Date: 2022-01-29 22:43:55
+ * @LastEditors: WPO
+ * @LastEditTime: 2022-05-22 18:13:32
+ */
 const path = require('path')
 function resolve(dir) {
 	return path.join(__dirname, '.', dir)
@@ -5,16 +13,18 @@ function resolve(dir) {
 
 module.exports = {
   // 基本路径
-  // publicPath: "/",
-	publicPath: process.env.NODE_ENV === 'development' ? '/' : '/',
+  publicPath: "/",
+	// publicPath: process.env.NODE_ENV === 'development' ? '/' : '/',
   outputDir: 'dist',  // 输出文件目录
   assetsDir: 'static',
   indexPath: 'index.html',
 
   // webpack-dev-server 相关配置
-  // devServer: {
-  //   port: 8888,
-  // },
+  devServer: {
+		proxy:"http://localhost:3000",
+		//关闭用于 DNS 重绑定的 HTTP 请求的 HOST 检查。 DevServer 默认只接受来自本地的请求，关闭后可以接受来自任何 HOST 的请求。 
+		disableHostCheck: true 
+  },
   // 取消生产环境的souceMap，加速生产构建
   productionSourceMap: false,
   lintOnSave: false, //配置关闭eslint

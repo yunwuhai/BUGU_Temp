@@ -51,38 +51,6 @@ export default {
     }
   },
   methods: {
-    //   submitForm(formName) {
-    //     this.$refs[formName].validate(valid => {
-    //       if (valid) {
-    //         loginApi
-    //           .login({
-    //             username: this.loginForm.userName,
-    //             password: this.loginForm.password
-    //           })
-    //           .then(res => {
-    //             // console.log(res)
-    //             if (res.code === 500) {
-    //               Message.error('账户密码错误')
-    //               setLoginStatus(false)
-    //             } else {
-    //               setLoginStatus(true)
-    //               setToken(res.token)
-    //               setUserInfo(res.user)
-    //               // console.log(getToken())
-    //               this.$message({
-    //                 type: 'success',
-    //                 message: '登录成功!'
-    //               })
-    //               this.$router.push({
-    //                 path: '/'
-    //               })
-    //             }
-    //           })
-    //       } else {
-    //         return false
-    //       }
-    //     })
-    //   }
     regSuccess(registerForm) {
       this.activeKey = registerForm.activeKey
     }
@@ -149,13 +117,4 @@ export default {
 .ant-tabs-nav .ant-tabs-tab {
   margin: 10px 50px 0 0;
 }
-// css穿透
-// /deep/.el-input {
-//   display: inline-block;
-//   height: 47px;
-//   input {
-//     height: 47px;
-//     line-height: 47px;
-//   }
-// }
 </style>

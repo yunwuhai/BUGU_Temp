@@ -9,6 +9,7 @@
                          prop="userName">
         <a-input v-model="loginForm.userName"
                  type="text"
+                 :autoFocus="true"
                  allowClear
                  autocomplete="off"
                  @keyup.enter="nextFocus()" />
@@ -39,12 +40,15 @@
 
 <script>
 import * as Cookie from '@/utils/token.js'
+import entranceApi from '@/api/entrance'
+
 export default {
   data() {
     return {
       loading: false,
       loginForm: {
         userName: "",
+        nickName: "",
         pass: '',
         role: 1
       },
@@ -67,40 +71,48 @@ export default {
       this.$refs.pass.focus()
     },
     submitForm(formName) {
+      this.loading = true
       this.$refs[formName].validate(valid => {
         if (valid) {
-          this.loading = true
-          //  在vuex中进行后端验证 返回promise
-          // this.$store.dispatch('login', { userName: this.loginForm.userName, pass: this.loginForm.pass })
-          if (this.loginForm.userName === 'admin' && this.loginForm.pass === '123456') {
-            this.loginForm.role = 2
-            Cookie.setUserInfo(this.loginForm)
-            Cookie.setToken("BUGU_ADMIN")
-            this.$router.push({ name: 'Admin' })
-            this.$message.success('登陆成功', 0.5)
-            // console.log("token：" + Cookie.getToken())
-            // console.log("user：" + Cookie.getUserInfo().role)
-            this.loading = false
-          }
-          else if (this.loginForm.userName === 'wpo' && this.loginForm.pass === '123456') {
-            Cookie.setToken("BUGU_USER")
-            Cookie.setUserInfo(this.loginForm)
-            this.$router.push({ name: 'Project' })
-            this.$message.success('登陆成功', 0.5)
-            // console.log("token：" + Cookie.getToken())
-            // console.log("user：" + Cookie.getUserInfo().role)
-            this.loading = false
+          entranceApi.login({
+            userName: this.loginForm.userName,
+            pass: this.loginForm.pass
+          })
+            .then((res) => {
+              // console.log(res.data)
+              if (res.code === 200) {
+                this.$message.success(res.msg, 0.5)
+                Cookie.setLoginStatus(true)
+                Cookie.setToken(res.data.token)
+                delete res.data.userInfo.pass
+                Cookie.setUserInfo(res.data.userInfo)
+                // console.log(Cookie.getUserInfo().role)
+                this.loading = false
+                if (res.data.userInfo.role === '1') {
+                  this.$router.push({
+                    path: '/usercenter'
+                  })
+                }
+                else if (res.data.userInfo.role === '0') {
+                  // console.log(111)
+                  this.$router.push({
+                    path: '/admin'
+                  })
+                }
 
-          } else {
-            this.$message.error('账号或密码错误', 0.5)
-            // this.$nextTick(() => {
-            //   this.$refs['ruleForm'].resetFields();
-            // })
-            this.loading = false
-          }
+              } else {
+                this.$message.error(res.msg, 0.7)
+                Cookie.setLoginStatus(false)
+                this.loading = false
+              }
+            })
+            .catch((err) => {
+              this.$message.error("登录失败", 0.5)
+              console.log(err)
+              this.loading = false
+            })
         } else {
-          this.$message.error('登陆失败', 0.5)
-          return false
+          this.loading = false
         }
       })
     },

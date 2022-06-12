@@ -1,8 +1,14 @@
+/*
+ * @Description: 
+ * @version: 1.0.0
+ * @Author: WPO
+ * @Date: 2022-03-25 22:18:30
+ * @LastEditors: WPO
+ * @LastEditTime: 2022-04-22 13:54:11
+ */
 import Vue from "vue";
 import VueRouter from "vue-router";
-// import ProjectLayout from "../views/project/Layout"
-// import Entrance from "../views/entrance/Entrance"
-// import Admin from "../views/admin/Admin"
+
 Vue.use(VueRouter);
 
 
@@ -38,12 +44,43 @@ export const constRoutes = [
 ]
 export const asyncRoutes=[
   {
+    path: '/usercenter',
+    name: 'UserCenter',
+    redirect: '/usercenter/projectinfo',
+    //路由的懒加载
+    component: () => import('@/views/user/UserCenter'),
+    meta:{
+      role:"1"
+    },
+    children: [
+      {
+        path: 'userinfo',
+        name: 'UserInfo',
+        component: () => import('@/views/user/components/UserInfo'),
+      },
+      {
+        path: 'projectinfo',
+        name: 'ProjectInfo',
+        component: () => import('@/views/user/components/ProjectInfo'),
+      }
+    ]
+  },
+  {
+    path: '/init',
+    name: 'Init',
+    //路由的懒加载
+    component: () => import('@/views/project/Init'),
+    meta:{
+      role:"1"
+    }
+  },
+  {
     path: '/project',
     name: 'Project',
     //路由的懒加载
     component: () => import('@/views/project/Layout'),
     meta:{
-      role:1
+      role:"1"
     }
   },
   {
@@ -51,15 +88,21 @@ export const asyncRoutes=[
     name:'Admin',
     component:() => import('@/views/admin/Admin'),
     meta:{
-      role:2
+      role:"0"
     }
   }
 ];
 
-const router = new VueRouter({
+export const createRouter = () => new VueRouter({
   mode: "history",
-  base: process.env.BASE_URL,
+  // base: process.env.BASE_URL,
   routes:constRoutes,
 });
+const router = createRouter()
+
+export const resetRouter = () =>  {
+  const newRouter = createRouter()
+  router.matcher = newRouter.matcher // the relevant part
+}
 
 export default router;

@@ -1,0 +1,21 @@
+{
+  "userId": -1,
+  "projectId": -1,
+  "projectToken": "project",
+  "chipId": -1,
+  "heap": "0x200",
+  "stack": "0x400",
+  "classes": [
+    {
+      "classId": -1,
+      "classToken": "main",
+      "methods": [
+        {
+          "methodId": -1,
+          "methodToken": "main",
+          "logic": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,14 +1,21 @@
-// 路由守卫 检测全局所有的路由变化
+/*
+ * @Description: 路由守卫 检测全局所有的路由变化
+ * @version: 1.0.0
+ * @Author: WPO
+ * @Date: 2022-03-25 22:18:30
+ * @LastEditors: WPO
+ * @LastEditTime: 2022-05-05 21:37:12
+ */
+
 import router from '../router'
 import store from '../store'
 import NProgress from 'nprogress' // 进度条
-import { getToken, removeToken, getUserInfo,removeUserInfo,setLoginStatus } from './token'
+import { getToken, removeToken, removeUserInfo,setLoginStatus, getUserInfo, getProjectInfo } from './token'
 import { message } from 'ant-design-vue';
 
 
-const whiteList = ['/entrance', '/page401'] // no redirect whitelist
+const whiteList = ['/entrance', '/404'] // no redirect whitelist
 NProgress.configure({ showSpinner: true }) // showSpinner进度环显示隐藏
-
 /**
   * 这里函数执行时候
   * 1.可以获取地址变化信息
@@ -33,19 +40,30 @@ router.beforeEach(async (to, from, next) => {
   // 存在token则已登录
   if (getToken() && getUserInfo()) {
 		const role = getUserInfo().role
+		// const projectInfo = JSON.parse(sessionStorage.getItem('projectInfo')) ? JSON.parse(sessionStorage.getItem('projectInfo')) : {}
     // 登录过就不能访问登录界面，需要中断这一次路由守卫，执行下一次路由守卫，并且下一次守卫的to是主页
     if (to.path === '/entrance') {
+			// console.log('login')
 			message.warning('用户已登录，返回主页',1)
-      next({ path: '/project' })
+      next({ path: '/usercenter' })
       NProgress.done()
-    } else {
+    } 
+		
+		//没有项目信息 跳转到新建界面
+		else if(to.path === '/project' &&  !getProjectInfo()){
+			// console.log(projectInfo)
+			await store.commit("SET_CREATEVISIBLE",true)
+			next({ path: '/init' })
+		}
+
+		else {
 			if(hasRoute(to)){
 				next()
 			}else{
 				// 根据身份动态加载路由
 				try{
 					const addRoutes = await store.dispatch('addRoutes',role)
-					// console.log("动态增加的路由为",addRoutes)
+					// console.log("动态增加的路由为",addRoutes) 
 					router.addRoutes(addRoutes)
 					// 如果 addRoutes 并未完成，路由守卫会一层一层的执行执行，直到 addRoutes 完成，找到对应的路由
 					next({ ...to, replace: true })

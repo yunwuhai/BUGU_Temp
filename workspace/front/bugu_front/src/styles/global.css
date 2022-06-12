@@ -3,6 +3,7 @@ html {
 }
 body {
   background: rgb(240, 242, 245);
+  overflow: hidden;
 }
 /* 选项卡配置 */
 .ant-tabs-bar {
